@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{84fab379-2894-4a5a-9c7e-1a0c20528621}</TemplateID>
+		<Name Package="{70351ecb-93e9-4b2a-b34c-8f45a72a8e37}" ID="103"/>
+		<Description Package="{70351ecb-93e9-4b2a-b34c-8f45a72a8e37}" ID="102"/>
+		<Icon Package="{70351ecb-93e9-4b2a-b34c-8f45a72a8e37}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>PowerFunctionsReportDSL.ui</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.ui">ui.ui</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.ui.diagram">ui.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

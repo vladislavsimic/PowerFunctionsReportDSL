@@ -1,0 +1,11 @@
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\ItemTemplates\CSharp\1033\\PowerFunctionsReportDSL.zip
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\ItemTemplates\VisualBasic\1033\\PowerFunctionsReportDSL.zip
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.dll
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\Microsoft.VisualStudio.Modeling.Sdk.14.0.dll
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\Microsoft.VisualStudio.Modeling.Sdk.Diagrams.14.0.dll
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\Microsoft.VisualStudio.Modeling.Sdk.Shell.14.0.dll
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\extension.vsixmanifest
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pdb
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.pdb
