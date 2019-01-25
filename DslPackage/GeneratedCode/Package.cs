@@ -27,8 +27,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	[VSShell::PackageRegistration(RegisterUsing = VSShell::RegistrationMethod.Assembly, UseManagedResourcesOnly = true)]
 	[VSShell::ProvideToolWindow(typeof(PowerFunctionsReportDSLExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
 	[VSShell::ProvideToolWindowVisibility(typeof(PowerFunctionsReportDSLExplorerToolWindow), Constants.PowerFunctionsReportDSLEditorFactoryId)]
-	[VSShell::ProvideStaticToolboxGroup("@PowerFunctionsReportDSLToolboxTab;Company.PowerFunctionsReportDSL.Dsl.dll", "SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab")]
-	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
+	[VSShell::ProvideStaticToolboxGroup("@Class ElementsToolboxTab;Company.PowerFunctionsReportDSL.Dsl.dll", "SchneiderElectricDMS.PowerFunctionsReportDSL.Class ElementsToolboxTab")]
+	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.Class ElementsToolboxTab",
 					"@CommentToolboxItem;Company.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.CommentToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 

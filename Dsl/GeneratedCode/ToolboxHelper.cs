@@ -82,7 +82,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			get
 			{
-				return global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("PowerFunctionsReportDSLToolboxTab", global::System.Globalization.CultureInfo.CurrentUICulture);
+				return global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("Class ElementsToolboxTab", global::System.Globalization.CultureInfo.CurrentUICulture);
 			}
 		}
 		
@@ -150,8 +150,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						1, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("CommentToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("CommentToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.Class ElementsToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("Class ElementsToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"CreateCommentF1Keyword", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("CommentToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.

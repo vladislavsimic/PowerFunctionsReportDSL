@@ -218,7 +218,7 @@
     <XmlSerializationDefinition CustomPostLoad="false">
       <XmlSerializationBehaviorMoniker Name="PowerFunctionsReportDSLSerializationBehavior" />
     </XmlSerializationDefinition>
-    <ToolboxTab TabText="PowerFunctionsReportDSL">
+    <ToolboxTab TabText="Class Elements">
       <ElementTool Name="Comment" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Comment" Tooltip="Create a Comment" HelpKeyword="CreateCommentF1Keyword">
         <DomainClassMoniker Name="Comment" />
       </ElementTool>

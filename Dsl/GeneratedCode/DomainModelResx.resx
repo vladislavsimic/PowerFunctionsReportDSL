@@ -289,8 +289,8 @@
     <value>Minimal Language Diagram</value>
     <comment>DisplayName for DomainClass &apos;PowerFunctionsReportDSLDiagram&apos;</comment>
   </data>
-  <data name="PowerFunctionsReportDSLToolboxTab" xml:space="preserve">
-    <value>PowerFunctionsReportDSL</value>
+  <data name="Class ElementsToolboxTab" xml:space="preserve">
+    <value>Class Elements</value>
     <comment>Toolbox item tab name</comment>
   </data>
   <data name="CommentToolboxItem" xml:space="preserve">
