@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.10318</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{736863AD-BCA1-4B1D-86A8-16B98994A337}</ProjectGuid>
+    <ProjectGuid>{69E75BEA-CE17-4FC2-BE77-E20FD92F79C9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Debugging</RootNamespace>
@@ -52,6 +52,10 @@
     <None Include="PowerFunctionsReportDSLReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PowerFunctionsReportDSLReportVB.txt</LastGenOutput>
+    </None>
+    <None Include="Test.ui" />
+    <None Include="Test.ui.diagram">
+      <DependentUpon>Test.ui</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -1,198 +1,326 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<microsoft.VisualStudio.Modeling.DslDesigner.DslDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 24.959441832005979, 10.303712565104167" isCompleteView="false" name="DslDefinition">
+<microsoft.VisualStudio.Modeling.DslDesigner.DslDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 32.259441832005976, 9.8432421875" isCompleteView="false" name="DslDefinition">
   <DslMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/PowerFunctionsReportDSL" />
   <nestedChildShapes>
-    <microsoft.VisualStudio.Modeling.DslDesigner.DomainModelElements Id="8dfe4184-ece7-41fa-b2fd-50d92401071f" absoluteBounds="0, 0, 9.1166666716337215, 10.303712565104167">
+    <microsoft.VisualStudio.Modeling.DslDesigner.DomainModelElements Id="89c099a4-c0b9-4b8c-b2c6-2c360ed0108b" absoluteBounds="0, 0, 9.7166666716337211, 9.8432421875">
       <nestedChildShapes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="236fef15-0195-4947-a405-4cd05a041745" isExpanded="false" absoluteBounds="1.6, 1.5493896484375, 1.35, 0.25">
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="82b93504-ee67-4b56-bdc6-f68cd3b2cff7" isExpanded="false" absoluteBounds="5.5500000000000007, 5.5798600260416658, 1.3500000000000005, 0.25">
+          <DomainRelationshipMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ExampleElementReferencesTargets" />
+          <relativeChildShapes />
+          <nestedChildShapes>
+            <elementListCompartment Id="876630d6-294e-4dfc-ab9c-5ce8f7b37804" absoluteBounds="5.5650000000000013, 5.9298600260416672, 1.3200000000000003, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="550d87f5-c272-472a-ad4c-4448a2ae29ac" isExpanded="false" absoluteBounds="7.8000000000000016, 5.5798600260416658, 1.6666666716337204, 0.39">
+          <SourceRoleNodeMoniker Id="f26210a0-8575-41df-8152-ab73adae1b28" />
+          <nestedChildShapes>
+            <elementListCompartment Id="a51f45e3-7280-45af-9b4c-66938cf09d45" absoluteBounds="7.815, 5.9798600260416679, 1.6054166716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="5ccd4849-0525-49f0-b49b-8c996cfb6139" isExpanded="false" absoluteBounds="1.6, 1.5493896484375, 1.35, 0.25">
           <DomainRelationshipMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRootHasComments" />
           <relativeChildShapes />
           <nestedChildShapes>
-            <elementListCompartment Id="772e2bbd-3a9c-4e64-a612-e8331e885a6b" absoluteBounds="1.615, 1.8093896484375, 1.3200000000000003, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="c9453a7a-949e-4bf3-b2f2-406463b13502" absoluteBounds="1.6, 1.5493896484375, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="1dea48cc-a18a-4e46-8e1e-dce6c4d04ff0" isExpanded="false" absoluteBounds="4.95, 2.7910807291666666, 1.35, 0.25">
-          <DomainRelationshipMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentReferencesSubjects" />
-          <relativeChildShapes />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="125c8a4d-018f-4108-8681-b8bcc22c3eb9" isExpanded="false" absoluteBounds="1.1, 7.3915511067708319, 1.6666666716337204, 0.39">
+          <InheritanceNodeMoniker Id="f14b497e-0804-4487-bc86-4017a17d8844" />
           <nestedChildShapes>
-            <elementListCompartment Id="523a0fdc-20f2-4ffc-90a5-a846eef8648d" absoluteBounds="4.95, 2.7910807291666666, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
-          </nestedChildShapes>
-        </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="8f49ff8b-6ba6-468c-a77a-c2d6ae776a01" isExpanded="false" absoluteBounds="1.6, 4.0327718098958334, 1.35, 0.25">
-          <DomainRelationshipMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRootHasTypes" />
-          <relativeChildShapes />
-          <nestedChildShapes>
-            <elementListCompartment Id="60a1f5aa-dee4-4bf1-bd39-e248aa5cb0d2" absoluteBounds="1.6, 4.0327718098958334, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
-          </nestedChildShapes>
-        </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="19b6f979-efc8-4c23-80a6-702bf31baf8f" absoluteBounds="0.5, 5.154462890625, 1.6666666716337204, 0.7493896484375">
-          <RootNodeMoniker Id="4b1e2889-dc64-436d-bd56-0948b7a21737" />
-          <nestedChildShapes>
-            <elementListCompartment Id="7e5db0fa-d026-4f45-bbc0-023c292b57d1" absoluteBounds="0.515, 5.5544628906249995, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="2f7bf008-aa0e-484a-b65d-0e1d4b36b61e" absoluteBounds="1.1, 7.3915511067708319, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="bb665f81-6bc5-497c-b8de-bcc646c1fb5d" absoluteBounds="3.85, 1.5493896484375, 1.6666666716337204, 0.94169108072916674">
-          <SourceRoleNodeMoniker Id="176022b1-826a-4fee-a453-a22625cbdf64" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="642aec2e-92a1-4e14-8434-a512c05e626e" absoluteBounds="0.5, 6.1498600260416652, 1.6666666716337204, 0.941691080729167">
+          <RootNodeMoniker Id="601a9af8-288a-4d87-bba7-a194d19d2139" />
           <relativeChildShapes>
-            <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPort Id="48badb19-7296-4a12-839b-36b8d968b9bb" absoluteBounds="4.09, 2.441080729166667, 0.1, 0.1" />
+            <microsoft.VisualStudio.Modeling.DslDesigner.InheritancePort Id="0b805eca-99c6-492c-9cc7-140c0bffd5ce" absoluteBounds="0.58, 7.0415511067708323, 0.1, 0.1" />
           </relativeChildShapes>
           <nestedChildShapes>
-            <elementListCompartment Id="86b6d395-6751-4f53-97af-4825c3c4e359" absoluteBounds="3.865, 1.9493896484375002, 1.6366666716337206, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="fb5c22d5-53ab-4252-bfb3-a1c7b6348932" absoluteBounds="0.515, 6.5498600260416655, 1.6366666716337206, 0.44169108072916663" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="cd92b00f-d899-4df8-bc34-7f67060e40ba" absoluteBounds="7.2000000000000011, 2.7910807291666666, 1.6666666716337204, 0.7493896484375">
-          <SourceRoleNodeMoniker Id="d7ce1c9d-8ab4-416e-bd9a-7e07954d89ed" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="38b97cfd-9a41-4331-8f94-03940dffe909" isExpanded="false" absoluteBounds="1.1, 8.0815511067708314, 1.6666666716337204, 0.39">
+          <InheritanceNodeMoniker Id="9e31631f-7de9-4eb8-a233-d602964f28fc" />
           <nestedChildShapes>
-            <elementListCompartment Id="0f818b97-2680-4ecc-b859-9c78b1731fe1" absoluteBounds="7.2150000000000007, 3.1910807291666665, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="f35315c5-9d30-40e1-9ed9-575253869b20" absoluteBounds="1.1, 8.0815511067708314, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="632198e5-be1b-4920-86b9-389b114874d0" absoluteBounds="3.85, 4.0327718098958334, 1.66666667163372, 0.7493896484375">
-          <SourceRoleNodeMoniker Id="9af93e1c-0466-4188-9265-9c65e06d674a" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="f59776ba-fb62-45a3-b57c-f035d4a625bf" isExpanded="false" absoluteBounds="4.95, 2.5987792968749996, 1.35, 0.25">
+          <DomainRelationshipMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentReferencesModelTyped" />
+          <relativeChildShapes />
           <nestedChildShapes>
-            <elementListCompartment Id="d3d7f555-0b5a-4acd-bf87-e6a640f1dd6c" absoluteBounds="3.865, 4.4327718098958337, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="c1c26017-b218-4b57-961f-21f962a1ae21" absoluteBounds="4.95, 2.5987792968749996, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
-        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="9eb598f4-e585-4d3a-81e2-8c0537e9208b" absoluteBounds="0.5, 0.5, 1.6666666716337204, 0.7493896484375">
-          <RootNodeMoniker Id="02ddb074-e7d4-4dfc-955a-c90c57f1dc18" />
+        </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="833a7db3-4ba7-4bec-9595-22628abd2ace" absoluteBounds="3.85, 1.5493896484375, 1.66666667163372, 0.74938964843749956">
+          <SourceRoleNodeMoniker Id="6cacfe81-8324-412f-95e7-9abb25563e8b" />
           <relativeChildShapes>
-            <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPort Id="b35d73d3-5fff-4f32-a149-c5a58dc13348" absoluteBounds="0.74, 1.1993896484375, 0.1, 0.1" />
+            <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPort Id="361b5bc4-6378-499c-a367-c4a2c96f912f" absoluteBounds="4.09, 2.2487792968749996, 0.1, 0.1" />
           </relativeChildShapes>
           <nestedChildShapes>
-            <elementListCompartment Id="6b0c8005-25bf-4e4a-bcb0-7c9deb4b9fca" absoluteBounds="0.515, 0.9, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="ebab5e1b-1d42-402d-8328-f7d9ebf7e224" absoluteBounds="3.865, 1.9493896484375, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape Id="5b8d749e-c5a3-4451-a50e-09e2c0872315" isExpanded="false" absoluteBounds="1.6, 3.2887792968749996, 1.35, 0.25">
+          <DomainRelationshipMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRootHasModelTyped" />
+          <relativeChildShapes />
+          <nestedChildShapes>
+            <elementListCompartment Id="b9cb89a1-76dc-470d-a5ad-075c3efd81a0" absoluteBounds="1.6, 3.2887792968749996, 0.125, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="4aca8c40-ce9f-4a80-b708-e43377dc7813" absoluteBounds="0.5, 0.5, 1.6666666716337204, 0.7493896484375">
+          <RootNodeMoniker Id="6cdd9cf0-2e59-4ded-a4c8-ef30684cdb16" />
+          <relativeChildShapes>
+            <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPort Id="e10cb1e4-5e50-46a4-a1fc-a212e458aef2" absoluteBounds="0.74, 1.1993896484375, 0.1, 0.1" />
+          </relativeChildShapes>
+          <nestedChildShapes>
+            <elementListCompartment Id="021267e5-b55f-4b31-9588-78a29eda008b" absoluteBounds="0.515, 0.9, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="11b40f7b-5aab-4fe1-ac4e-0c5581827c2e" isExpanded="false" absoluteBounds="7.2000000000000011, 2.5987792968749996, 1.6666666716337204, 0.39">
+          <SourceRoleNodeMoniker Id="3fe83d34-849e-4ca1-ac71-0d6b6f303ae5" />
+          <nestedChildShapes>
+            <elementListCompartment Id="876a0e2b-36f4-4d0b-a1cf-27db3a934c5f" absoluteBounds="7.2150000000000007, 2.998779296875, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="3b08e369-6695-47cd-9bcf-1090798c1a1b" absoluteBounds="3.85, 3.2887792968749996, 1.66666667163372, 0.7493896484375">
+          <SourceRoleNodeMoniker Id="ae970830-1301-4507-96f1-780fa7779d6c" />
+          <relativeChildShapes>
+            <microsoft.VisualStudio.Modeling.DslDesigner.InheritancePort Id="55c86ce3-2bc3-4951-9844-1ecbc016be4c" absoluteBounds="3.93, 3.9881689453124993, 0.1, 0.1" />
+          </relativeChildShapes>
+          <nestedChildShapes>
+            <elementListCompartment Id="f694469e-ee01-4c82-8d72-7e6cccd5fe62" absoluteBounds="3.865, 3.688779296875, 1.6366666716337202, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShape Id="642bb2bb-ae1f-4735-aea1-b0c5376b9633" absoluteBounds="4.45, 4.338168945312499, 1.6666666716337204, 0.7493896484375">
+          <InheritanceNodeMoniker Id="96a515d5-b781-47f3-8374-3c2e89fb9dce" />
+          <relativeChildShapes>
+            <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPort Id="c91768e1-e74f-43c7-bd87-2eea212a6469" absoluteBounds="4.69, 5.0375585937499991, 0.1, 0.1" />
+          </relativeChildShapes>
+          <nestedChildShapes>
+            <elementListCompartment Id="7e3e0e17-b6e4-48bc-8711-36b00c9dff6d" absoluteBounds="4.465, 4.7381689453124993, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.ClassShape>
       </nestedChildShapes>
     </microsoft.VisualStudio.Modeling.DslDesigner.DomainModelElements>
-    <microsoft.VisualStudio.Modeling.DslDesigner.DiagramElements Id="b6800165-7d97-4926-a7ba-cf88dcc2e5d1" absoluteBounds="9.1166666716337215, 0, 15.842775160372257, 10.303712565104167">
+    <microsoft.VisualStudio.Modeling.DslDesigner.DiagramElements Id="fbbbf9bc-7815-4e22-b760-fa8600046c2d" absoluteBounds="9.7166666716337211, 0, 22.542775160372251, 9.8432421875">
       <nestedChildShapes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShape Id="16bea84d-125f-43f3-a682-abecbeb1055b" absoluteBounds="9.6166666716337215, 0.5, 1.6666666716337204, 1.2010807291666668">
-          <RootNodeMoniker Id="3eafb2c6-28c2-4e87-8744-ae74625964bd" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShape Id="a7141794-1feb-48a3-95d2-c42bbe4544c5" absoluteBounds="10.216666671633719, 0.5, 1.6666666716337204, 1.2010807291666668">
+          <RootNodeMoniker Id="9f4bd42b-5fb7-469c-be7d-b2a513a68965" />
           <nestedChildShapes>
-            <elementListCompartment Id="db858498-b20e-427e-a977-194a8802fdfa" absoluteBounds="9.631666671633722, 0.9, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
-            <elementListCompartment Id="ff2a6c3b-7d78-4648-90bc-72aa4cfbc57c" absoluteBounds="9.631666671633722, 1.1593896484375001, 1.6366666716337206, 0.44169108072916663" name="Decorators" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="7d5265ce-39f9-48fd-b63a-86f6e915e45a" absoluteBounds="10.23166667163372, 0.9, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="c02aebdf-8da0-4ac2-af05-91d733adf55f" absoluteBounds="10.23166667163372, 1.1593896484375001, 1.6366666716337206, 0.44169108072916663" name="Decorators" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShape Id="0807c4c5-1fd4-480f-8647-6d3b8ccfa741" absoluteBounds="9.6166666716337215, 1.8810807291666667, 1.6870911806821822, 1.008779296875">
-          <RootNodeMoniker Id="f073cd07-215f-4358-91af-d5946b1d42ed" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShape Id="bbc1c675-5031-4c9e-8ed7-ac444eaf5a49" absoluteBounds="10.216666671633719, 1.8810807291666667, 1.6666666716337204, 1.008779296875">
+          <RootNodeMoniker Id="fa247986-4959-46e4-adb4-b470bdecfb63" />
           <nestedChildShapes>
-            <elementListCompartment Id="4fcfbfb0-49bc-427e-a843-87ad8205f3f3" absoluteBounds="9.631666671633722, 2.2810807291666668, 1.6570911806821824, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
-            <elementListCompartment Id="b61ff5b2-f953-48ea-845c-e21448f535f2" absoluteBounds="9.631666671633722, 2.5404703776041666, 1.6570911806821824, 0.2493896484375" name="Decorators" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="dcae050b-e918-4032-9924-2cb2a320d2a9" absoluteBounds="10.23166667163372, 2.2810807291666668, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="b950cf9d-48d8-4c85-8b68-cf346989f073" absoluteBounds="10.23166667163372, 2.5404703776041666, 1.6366666716337206, 0.2493896484375" name="Decorators" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShape>
-        <microsoft.VisualStudio.Modeling.DslDesigner.DiagramShape Id="2c03692a-bc7f-4fb9-beb0-ff21b0cdef27" absoluteBounds="9.6166666716337215, 3.0698600260416669, 2.4979636162519454, 0.7493896484375">
-          <RootNodeMoniker Id="abd8d923-1ccf-40fd-bb95-645727409b2e" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.DiagramShape Id="050f54ab-143e-4dcf-9841-916065f458b8" absoluteBounds="10.216666671633719, 3.0698600260416669, 2.4979636162519454, 0.7493896484375">
+          <RootNodeMoniker Id="c7b07241-3937-4dad-9f65-e0a57870d870" />
           <nestedChildShapes>
-            <elementListCompartment Id="b436b7ca-ad03-45ed-8fbd-c853f82cdb05" absoluteBounds="9.631666671633722, 3.4698600260416668, 2.4679636162519452, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="10183c2e-e80c-4b09-980b-67c83d98e8d8" absoluteBounds="10.23166667163372, 3.4698600260416668, 2.4679636162519452, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </microsoft.VisualStudio.Modeling.DslDesigner.DiagramShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShape Id="8740ef44-2920-47e6-8eda-c8abf8d762dd" absoluteBounds="10.216666671633721, 3.999249674479167, 1.6666666716337204, 1.0087792968750002">
+          <RootNodeMoniker Id="be9525a3-d4ac-4997-a5f1-8b7cdfa33470" />
+          <nestedChildShapes>
+            <elementListCompartment Id="d5b21909-78e0-4911-892e-9ce1875c8074" absoluteBounds="10.231666671633722, 4.3992496744791669, 1.6366666716337206, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="70dcde18-f03c-4a30-a439-3ac2e071a098" absoluteBounds="10.231666671633722, 4.6586393229166667, 1.6366666716337206, 0.2493896484375" name="Decorators" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShape>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShape Id="77c0d634-64a0-44e9-a690-1c34a4f67662" absoluteBounds="10.216666671633721, 5.188028971354167, 1.6870911806821822, 1.0087792968750002">
+          <RootNodeMoniker Id="3bc8815f-89f1-430a-95d0-a39b9154e6f3" />
+          <nestedChildShapes>
+            <elementListCompartment Id="280f6aa8-c064-450b-b192-11dea5cfc0ca" absoluteBounds="10.231666671633722, 5.5880289713541673, 1.6570911806821824, 0.2493896484375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+            <elementListCompartment Id="7de33cdc-edc2-48f8-8099-e4ec1d9f15b6" absoluteBounds="10.231666671633722, 5.8474186197916671, 1.6570911806821824, 0.2493896484375" name="Decorators" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShape>
       </nestedChildShapes>
     </microsoft.VisualStudio.Modeling.DslDesigner.DiagramElements>
-    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(1.6 : 1.7193896484375); (0.79 : 1.7193896484375); (0.79 : 1.2993896484375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="0">
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(6.9 : 5.74986002604167); (7.8 : 5.74986002604167)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="0..*" treeOrder="0">
       <relativeChildShapes />
       <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="236fef15-0195-4947-a405-4cd05a041745" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="b35d73d3-5fff-4f32-a149-c5a58dc13348" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="82b93504-ee67-4b56-bdc6-f68cd3b2cff7" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="550d87f5-c272-472a-ad4c-4448a2ae29ac" />
       </nodes>
     </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(2.95 : 1.7193896484375); (3.85 : 1.7193896484375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="1..1" treeOrder="0">
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(1.6 : 1.7193896484375); (0.79 : 1.7193896484375); (0.79 : 1.2693896484375)]" fixedFrom="NotFixed" fixedTo="Caller" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="0">
       <relativeChildShapes />
       <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="236fef15-0195-4947-a405-4cd05a041745" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="bb665f81-6bc5-497c-b8de-bcc646c1fb5d" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="5ccd4849-0525-49f0-b49b-8c996cfb6139" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="e10cb1e4-5e50-46a4-a1fc-a212e458aef2" />
       </nodes>
     </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.MapConnector edgePoints="[(5.51666667163372 : 2.02023518880208); (9.61666667163372 : 1.10054036458333)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="a145acda-53a8-49fe-963a-6040813e7f8b">
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(2.95 : 1.7193896484375); (3.85 : 1.7193896484375)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="1..1" treeOrder="0">
+      <relativeChildShapes />
       <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="bb665f81-6bc5-497c-b8de-bcc646c1fb5d" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShapeMoniker Id="16bea84d-125f-43f3-a682-abecbeb1055b" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="5ccd4849-0525-49f0-b49b-8c996cfb6139" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="833a7db3-4ba7-4bec-9595-22628abd2ace" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.InheritanceConnector edgePoints="[(0.63 : 7.14155110677083); (0.63 : 7.56155110677083); (1.1 : 7.56155110677083)]" fixedFrom="Caller" fixedTo="NotFixed" TargetRelationshipDomainClassId="f66276b2-b10a-464f-9fe9-baaa9c657a4d" treeOrder="0">
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.InheritancePortMoniker Id="0b805eca-99c6-492c-9cc7-140c0bffd5ce" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="125c8a4d-018f-4108-8681-b8bcc22c3eb9" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.InheritanceConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.InheritanceConnector edgePoints="[(0.63 : 7.14155110677083); (0.63 : 8.25155110677083); (1.1 : 8.25155110677083)]" fixedFrom="Caller" fixedTo="NotFixed" TargetRelationshipDomainClassId="f66276b2-b10a-464f-9fe9-baaa9c657a4d" treeOrder="1">
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.InheritancePortMoniker Id="0b805eca-99c6-492c-9cc7-140c0bffd5ce" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="38b97cfd-9a41-4331-8f94-03940dffe909" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.InheritanceConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(4.95 : 2.768779296875); (4.14 : 2.768779296875); (4.14 : 2.348779296875)]" fixedFrom="NotFixed" fixedTo="Caller" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="0">
+      <relativeChildShapes />
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="f59776ba-fb62-45a3-b57c-f035d4a625bf" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="361b5bc4-6378-499c-a367-c4a2c96f912f" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(6.3 : 2.768779296875); (7.2 : 2.768779296875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="0..*" treeOrder="0">
+      <relativeChildShapes />
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="f59776ba-fb62-45a3-b57c-f035d4a625bf" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="11b40f7b-5aab-4fe1-ac4e-0c5581827c2e" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(1.6 : 3.458779296875); (0.79 : 3.458779296875); (0.79 : 1.2993896484375)]" fixedFrom="NotFixed" fixedTo="Caller" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="1">
+      <relativeChildShapes />
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="5b8d749e-c5a3-4451-a50e-09e2c0872315" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="e10cb1e4-5e50-46a4-a1fc-a212e458aef2" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(2.95 : 3.458779296875); (3.85 : 3.458779296875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="1..1" treeOrder="0">
+      <relativeChildShapes />
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="5b8d749e-c5a3-4451-a50e-09e2c0872315" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="3b08e369-6695-47cd-9bcf-1090798c1a1b" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.MapConnector edgePoints="[(5.51666667163372 : 2.298779296875); (10.2166666716337 : 3.99924967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="a145acda-53a8-49fe-963a-6040813e7f8b">
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="833a7db3-4ba7-4bec-9595-22628abd2ace" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShapeMoniker Id="8740ef44-2920-47e6-8eda-c8abf8d762dd" />
       </nodes>
     </microsoft.VisualStudio.Modeling.DslDesigner.MapConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(4.95 : 2.96108072916667); (4.14 : 2.96108072916667); (4.14 : 2.54108072916667)]" fixedFrom="NotFixed" fixedTo="Caller" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="0">
-      <relativeChildShapes />
+    <microsoft.VisualStudio.Modeling.DslDesigner.MapConnector edgePoints="[(6.3 : 2.848779296875); (10.2166666716337 : 5.18802897135417)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="f17c6989-7cd3-462b-93c7-9418130502e0">
       <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="1dea48cc-a18a-4e46-8e1e-dce6c4d04ff0" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="48badb19-7296-4a12-839b-36b8d968b9bb" />
-      </nodes>
-    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(6.3 : 2.91608072916667); (7.2 : 2.91608072916667)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="0..*" treeOrder="0">
-      <relativeChildShapes />
-      <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="1dea48cc-a18a-4e46-8e1e-dce6c4d04ff0" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="cd92b00f-d899-4df8-bc34-7f67060e40ba" />
-      </nodes>
-    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.MapConnector edgePoints="[(6.3 : 2.91608072916667); (9.61666667163372 : 2.38547037760417)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="f17c6989-7cd3-462b-93c7-9418130502e0">
-      <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="1dea48cc-a18a-4e46-8e1e-dce6c4d04ff0" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShapeMoniker Id="0807c4c5-1fd4-480f-8647-6d3b8ccfa741" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="f59776ba-fb62-45a3-b57c-f035d4a625bf" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShapeMoniker Id="77c0d634-64a0-44e9-a690-1c34a4f67662" />
       </nodes>
     </microsoft.VisualStudio.Modeling.DslDesigner.MapConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(1.6 : 4.20277180989583); (0.79 : 4.20277180989583); (0.79 : 1.2993896484375)]" fixedFrom="NotFixed" fixedTo="Caller" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="1">
+    <microsoft.VisualStudio.Modeling.DslDesigner.MapConnector edgePoints="[(6.9 : 5.57986002604167); (10.2166666716337 : 2.88986002604167)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="f17c6989-7cd3-462b-93c7-9418130502e0">
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="82b93504-ee67-4b56-bdc6-f68cd3b2cff7" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ConnectorShapeMoniker Id="bbc1c675-5031-4c9e-8ed7-ac444eaf5a49" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.MapConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.InheritanceConnector edgePoints="[(3.98 : 4.0881689453125); (3.98 : 4.71286376953125); (4.45 : 4.71286376953125)]" fixedFrom="Caller" fixedTo="Algorithm" TargetRelationshipDomainClassId="f66276b2-b10a-464f-9fe9-baaa9c657a4d" treeOrder="0">
+      <nodes>
+        <microsoft.VisualStudio.Modeling.DslDesigner.InheritancePortMoniker Id="55c86ce3-2bc3-4951-9844-1ecbc016be4c" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="642bb2bb-ae1f-4735-aea1-b0c5376b9633" />
+      </nodes>
+    </microsoft.VisualStudio.Modeling.DslDesigner.InheritanceConnector>
+    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(5.55 : 5.70486002604167); (4.74 : 5.70486002604167); (4.74 : 5.13755859375)]" fixedFrom="NotFixed" fixedTo="Caller" TargetRelationshipDomainClassId="e206851f-31ea-4d49-a443-b8115b3e726e" multiplicitySymbol="0..*" treeOrder="0">
       <relativeChildShapes />
       <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="8f49ff8b-6ba6-468c-a77a-c2d6ae776a01" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="b35d73d3-5fff-4f32-a149-c5a58dc13348" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="82b93504-ee67-4b56-bdc6-f68cd3b2cff7" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipPortMoniker Id="c91768e1-e74f-43c7-bd87-2eea212a6469" />
       </nodes>
     </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
-    <microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector edgePoints="[(2.95 : 4.15777180989583); (3.85 : 4.15777180989583)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="e37b3710-5105-4dea-b3dc-08d96f12af2d" multiplicitySymbol="0..1" treeOrder="0">
-      <relativeChildShapes />
+    <microsoft.VisualStudio.Modeling.DslDesigner.MapConnector edgePoints="[(6.11666667163372 : 4.3381689453125); (10.2166666716337 : 1.70108072916667)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="a145acda-53a8-49fe-963a-6040813e7f8b">
       <nodes>
-        <microsoft.VisualStudio.Modeling.DslDesigner.RelationshipShapeMoniker Id="8f49ff8b-6ba6-468c-a77a-c2d6ae776a01" />
-        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="632198e5-be1b-4920-86b9-389b114874d0" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.ClassShapeMoniker Id="642bb2bb-ae1f-4735-aea1-b0c5376b9633" />
+        <microsoft.VisualStudio.Modeling.DslDesigner.GeometryShapeShapeMoniker Id="a7141794-1feb-48a3-95d2-c42bbe4544c5" />
       </nodes>
-    </microsoft.VisualStudio.Modeling.DslDesigner.RoleConnector>
+    </microsoft.VisualStudio.Modeling.DslDesigner.MapConnector>
   </nestedChildShapes>
   <diagramState>
     <DslDesignerDiagramState>
       <DomainModelElementTree>
         <DslDesignerDiagramTree>
           <Roots>
-            <RootNode Id="02ddb074-e7d4-4dfc-955a-c90c57f1dc18">
+            <RootNode Id="6cdd9cf0-2e59-4ded-a4c8-ef30684cdb16">
               <Class>
                 <DomainClassMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRoot" />
               </Class>
             </RootNode>
-            <RootNode Id="4b1e2889-dc64-436d-bd56-0948b7a21737">
+            <RootNode Id="601a9af8-288a-4d87-bba7-a194d19d2139">
               <Class>
-                <DomainClassMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelType" />
+                <DomainClassMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/NamedElement" />
               </Class>
             </RootNode>
           </Roots>
           <Arcs>
-            <SourceRoleNode Id="176022b1-826a-4fee-a453-a22625cbdf64">
+            <SourceRoleNode Id="f26210a0-8575-41df-8152-ab73adae1b28" IsLeaf="true">
+              <Role>
+                <DomainRoleMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ExampleElementReferencesTargets/Source" />
+              </Role>
+            </SourceRoleNode>
+            <SourceRoleNode Id="6cacfe81-8324-412f-95e7-9abb25563e8b">
               <Role>
                 <DomainRoleMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRootHasComments/ModelRoot" />
               </Role>
             </SourceRoleNode>
-            <SourceRoleNode Id="d7ce1c9d-8ab4-416e-bd9a-7e07954d89ed" IsLeaf="true">
+            <InheritanceNode Id="f14b497e-0804-4487-bc86-4017a17d8844" IsLeaf="true">
+              <InheritanceLink>
+                <ClassHasBaseClassMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelType" />
+              </InheritanceLink>
+            </InheritanceNode>
+            <InheritanceNode Id="9e31631f-7de9-4eb8-a233-d602964f28fc" IsLeaf="true">
+              <InheritanceLink>
+                <ClassHasBaseClassMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRoot" />
+              </InheritanceLink>
+            </InheritanceNode>
+            <SourceRoleNode Id="3fe83d34-849e-4ca1-ac71-0d6b6f303ae5" IsLeaf="true">
               <Role>
-                <DomainRoleMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentReferencesSubjects/Comment" />
+                <DomainRoleMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentReferencesModelTyped/Comment" />
               </Role>
             </SourceRoleNode>
-            <SourceRoleNode Id="9af93e1c-0466-4188-9265-9c65e06d674a" IsLeaf="true">
+            <SourceRoleNode Id="ae970830-1301-4507-96f1-780fa7779d6c">
               <Role>
-                <DomainRoleMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRootHasTypes/ModelRoot" />
+                <DomainRoleMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ModelRootHasModelTyped/ModelRoot" />
               </Role>
             </SourceRoleNode>
+            <InheritanceNode Id="96a515d5-b781-47f3-8374-3c2e89fb9dce">
+              <InheritanceLink>
+                <ClassHasBaseClassMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ExampleElement" />
+              </InheritanceLink>
+            </InheritanceNode>
           </Arcs>
         </DslDesignerDiagramTree>
       </DomainModelElementTree>
       <DiagramElementTree>
         <DslDesignerDiagramTree>
           <Roots>
-            <RootNode Id="3eafb2c6-28c2-4e87-8744-ae74625964bd">
+            <RootNode Id="9f4bd42b-5fb7-469c-be7d-b2a513a68965">
               <Class>
-                <GeometryShapeMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentBoxShape" />
+                <GeometryShapeMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ExampleShape" />
               </Class>
             </RootNode>
-            <RootNode Id="f073cd07-215f-4358-91af-d5946b1d42ed">
+            <RootNode Id="fa247986-4959-46e4-adb4-b470bdecfb63">
               <Class>
-                <ConnectorMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentConnector" />
+                <ConnectorMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/ExampleConnector" />
               </Class>
             </RootNode>
-            <RootNode Id="abd8d923-1ccf-40fd-bb95-645727409b2e">
+            <RootNode Id="c7b07241-3937-4dad-9f65-e0a57870d870">
               <Class>
                 <DiagramMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/PowerFunctionsReportDSLDiagram" />
+              </Class>
+            </RootNode>
+            <RootNode Id="be9525a3-d4ac-4997-a5f1-8b7cdfa33470">
+              <Class>
+                <GeometryShapeMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentShape" />
+              </Class>
+            </RootNode>
+            <RootNode Id="3bc8815f-89f1-430a-95d0-a39b9154e6f3">
+              <Class>
+                <ConnectorMoniker Name="/SchneiderElectricDMS.PowerFunctionsReportDSL/CommentConnector" />
               </Class>
             </RootNode>
           </Roots>

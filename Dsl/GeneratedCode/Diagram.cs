@@ -24,7 +24,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDiagram.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("ec384617-dd3c-4ff2-9055-d8ba3510c79f")]
+	[DslModeling::DomainObjectId("9225a9df-bf9c-406d-a0e6-9bdd6dfde487")]
 	public partial class PowerFunctionsReportDSLDiagram : DslDiagrams::Diagram
 	{
 		#region Diagram boilerplate
@@ -192,15 +192,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
-			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment)
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement)
 			{
-				global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentBoxShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentBoxShape(this.Partition);
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects)
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment)
+			{
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped)
 			{
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector(this.Partition);
+				return newShape;
+			}
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets)
+			{
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -214,34 +225,153 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentBoxShape.DecoratorsInitialized += CommentBoxShapeDecoratorMap.OnDecoratorsInitialized;
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleShape.DecoratorsInitialized += ExampleShapeDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for CommentBoxShape.
+		/// Class containing decorator path traversal methods for ExampleShape.
 		/// </summary>
-		internal static partial class CommentBoxShapeDecoratorMap
+		internal static partial class ExampleShapeDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for CommentBoxShape.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for ExampleShape.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment.TextDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Comment").AssociateValueWith(shape.Store, propertyInfo);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
 		#endregion
+		
+		#region Connect actions
+		private bool changingMouseAction;
+		private global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleRelationshipConnectAction exampleRelationshipConnectAction;
+		private global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentRelationshipConnectAction commentRelationshipConnectAction;
+		/// <summary>
+		/// Virtual method to provide a filter when to select the mouse action
+		/// </summary>
+		/// <param name="activeView">Currently active view</param>
+		/// <param name="filter">filter string used to filter the toolbox items</param>
+		protected virtual bool SelectedToolboxItemSupportsFilterString(DslDiagrams::DiagramView activeView, string filter)
+		{
+			return activeView.SelectedToolboxItemSupportsFilterString(filter);
+		}
+		/// <summary>
+		/// Override to provide the right mouse action when trying
+		/// to create links on the diagram
+		/// </summary>
+		/// <param name="pointArgs"></param>
+		public override void OnViewMouseEnter(DslDiagrams::DiagramPointEventArgs pointArgs)
+		{
+			if (pointArgs  == null) throw new global::System.ArgumentNullException("pointArgs");
+		
+			DslDiagrams::DiagramView activeView = this.ActiveDiagramView;
+			if(activeView != null)
+			{
+				DslDiagrams::MouseAction action = null;
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxHelper.ExampleRelationshipFilterString))
+				{
+					if (this.exampleRelationshipConnectAction == null)
+					{
+						this.exampleRelationshipConnectAction = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleRelationshipConnectAction(this);
+						this.exampleRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.exampleRelationshipConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxHelper.CommentRelationshipFilterString))
+				{
+					if (this.commentRelationshipConnectAction == null)
+					{
+						this.commentRelationshipConnectAction = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentRelationshipConnectAction(this);
+						this.commentRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.commentRelationshipConnectAction;
+				} 
+				else
+				{
+					action = null;
+				}
+				
+				if (pointArgs.DiagramClientView.ActiveMouseAction != action)
+				{
+					try
+					{
+						this.changingMouseAction = true;
+						pointArgs.DiagramClientView.ActiveMouseAction = action;
+					}
+					finally
+					{
+						this.changingMouseAction = false;
+					}
+				}
+			}
+		}
+		
+		/// <summary>
+		/// Snap toolbox selection back to regular pointer after using a custom connect action.
+		/// </summary>
+		private void OnConnectActionDeactivated(object sender, DslDiagrams::DiagramEventArgs e)
+		{
+			OnMouseActionDeactivated();
+		}
+		
+		/// <summary>
+		/// Overridable method to manage the mouse deactivation. The default implementation snap stoolbox selection back to regular pointer 
+		/// after using a custom connect action.
+		/// </summary>
+		protected virtual void OnMouseActionDeactivated()
+		{
+			DslDiagrams::DiagramView activeView = this.ActiveDiagramView;
+		
+			if (activeView != null && activeView.Toolbox != null)
+			{
+				// If we're not changing mouse action due to changing toolbox selection change,
+				// reset toolbox selection.
+				if (!this.changingMouseAction)
+				{
+					activeView.Toolbox.SelectedToolboxItemUsed();
+				}
+			}
+		}
+		#endregion
+		
+		/// <summary>
+		/// Dispose of connect actions.
+		/// </summary>
+		protected override void Dispose(bool disposing)
+		{
+			try
+			{
+				if(disposing)
+				{
+					if(this.exampleRelationshipConnectAction != null)
+					{
+						this.exampleRelationshipConnectAction.Dispose();
+						this.exampleRelationshipConnectAction = null;
+					}
+					if(this.commentRelationshipConnectAction != null)
+					{
+						this.commentRelationshipConnectAction.Dispose();
+						this.commentRelationshipConnectAction = null;
+					}
+				}
+			}
+			finally
+			{
+				base.Dispose(disposing);
+			}
+		}
 		#region Constructors, domain class Id
 	
 		/// <summary>
 		/// PowerFunctionsReportDSLDiagram domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xec384617, 0xdd3c, 0x4ff2, 0x90, 0x55, 0xd8, 0xba, 0x35, 0x10, 0xc7, 0x9f);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9225a9df, 0xbf9c, 0x406d, 0xa0, 0xe6, 0x9b, 0xdd, 0x6d, 0xfd, 0xe4, 0x87);
 		/// <summary>
 		/// Constructor
 		/// </summary>
@@ -282,8 +412,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -299,6 +431,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
+				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement)
+				{
+					parentElement = GetParentForExampleElement((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement)childElement);
+				} else
 				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment)
 				{
 					parentElement = GetParentForComment((global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment)childElement);
@@ -313,6 +449,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				}
 			}
 			public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot GetParentForComment( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment root )
+			{
+				// Segments 0 and 1
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot result = root.ModelRoot;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot GetParentForExampleElement( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType root )
 			{
 				// Segments 0 and 1
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot result = root.ModelRoot;
@@ -408,7 +551,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

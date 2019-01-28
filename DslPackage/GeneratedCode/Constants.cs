@@ -28,15 +28,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		public static readonly global::System.ComponentModel.Design.CommandID ViewPowerFunctionsReportDSLExplorerCommand = new global::System.ComponentModel.Design.CommandID(new global::System.Guid(PowerFunctionsReportDSLCommandSetId), 0x0001);
 	
 		// Package identifier
-		public const string PowerFunctionsReportDSLPackageId = "70351ecb-93e9-4b2a-b34c-8f45a72a8e37";
+		public const string PowerFunctionsReportDSLPackageId = "36189604-6446-4d2c-be43-fbb6d87ba77e";
 		
 		// Editor factory identifier
-		public const string PowerFunctionsReportDSLEditorFactoryId = "7d7406f9-ee01-4a77-804a-bf591476ce84";
+		public const string PowerFunctionsReportDSLEditorFactoryId = "0f86ccf2-8107-445a-97dc-c2958521b825";
 		
 		public const string DefaultDiagramExtension = ".diagram";
 		
 		// Model explorer tool window identifier
-		public const string PowerFunctionsReportDSLModelExplorerToolWindowId = "18de1779-9172-4a19-b541-326f320c5a4f";
+		public const string PowerFunctionsReportDSLModelExplorerToolWindowId = "5c7fe4a1-755c-40cd-8227-ff738d5914d6";
 	}
 }
 //
@@ -47,6 +47,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	internal static partial class Constants
 	{
 		// Menu identifier
-		public const string PowerFunctionsReportDSLCommandSetId = "47472abb-4a9b-4e8e-b893-a865ca4245f6";
+		public const string PowerFunctionsReportDSLCommandSetId = "a0febddb-b15a-4140-89b8-755953df8dc3";
 	}
 }

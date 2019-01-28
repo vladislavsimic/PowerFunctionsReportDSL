@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.10318</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B7AD6641-4C18-40E0-BE92-6B79CE2B1188}</ProjectGuid>
+    <ProjectGuid>{E81E113C-E0D5-42BD-A922-740FCCA2763E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SchneiderElectricDMS.PowerFunctionsReportDSL</RootNamespace>
@@ -155,9 +155,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\File.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>

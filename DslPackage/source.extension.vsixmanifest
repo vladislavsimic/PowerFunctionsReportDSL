@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="70351ecb-93e9-4b2a-b34c-8f45a72a8e37" Version="1.0.0.0" Language="en-US" Publisher="SchneiderElectricDMS" />
+    <Identity Id="36189604-6446-4d2c-be43-fbb6d87ba77e" Version="1.0.0.0" Language="en-US" Publisher="SchneiderElectricDMS" />
     <DisplayName>PowerFunctionsReportDSL</DisplayName>
     <Description>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSL</Description>
   </Metadata>

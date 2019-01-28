@@ -1,6 +1,6 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" language="VB" #>
 <#@ output extension=".txt" #>
-<#@ PowerFunctionsReportDSL processor="PowerFunctionsReportDSLDirectiveProcessor" requires="fileName='Sample.mydsl1'" #>
+<#@ PowerFunctionsReportDSL processor="PowerFunctionsReportDSLDirectiveProcessor" requires="fileName='Sample.ui'" #>
 
 Generated material. Generating code in VB.
 

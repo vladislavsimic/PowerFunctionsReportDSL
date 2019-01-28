@@ -23,7 +23,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	[DslModeling::DependsOnDomainModel(typeof(global::Microsoft.VisualStudio.Modeling.CoreDomainModel))]
 	[DslModeling::DependsOnDomainModel(typeof(global::Microsoft.VisualStudio.Modeling.Diagrams.CoreDesignSurfaceDomainModel))]
 	[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-	[DslModeling::DomainObjectId("70fa60d4-ac1d-4b71-a9a7-fa3687e76a5c")]
+	[DslModeling::DomainObjectId("6a145a5d-3ec1-4a73-ae06-63c45873e65a")]
 	public partial class PowerFunctionsReportDSLDomainModel : DslModeling::DomainModel
 	{
 		#region Constructor, domain model Id
@@ -31,7 +31,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// PowerFunctionsReportDSLDomainModel domain model Id.
 		/// </summary>
-		public static readonly global::System.Guid DomainModelId = new global::System.Guid(0x70fa60d4, 0xac1d, 0x4b71, 0xa9, 0xa7, 0xfa, 0x36, 0x87, 0xe7, 0x6a, 0x5c);
+		public static readonly global::System.Guid DomainModelId = new global::System.Guid(0x6a145a5d, 0x3ec1, 0x4a73, 0xae, 0x06, 0x63, 0xc4, 0x58, 0x73, 0xe6, 0x5a);
 	
 		/// <summary>
 		/// Constructor.
@@ -69,14 +69,19 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			return new global::System.Type[]
 			{
 				typeof(ModelRoot),
+				typeof(ExampleElement),
 				typeof(Comment),
 				typeof(ModelType),
+				typeof(NamedElement),
+				typeof(ExampleElementReferencesTargets),
 				typeof(ModelRootHasComments),
-				typeof(CommentReferencesSubjects),
-				typeof(ModelRootHasTypes),
+				typeof(CommentReferencesModelTyped),
+				typeof(ModelRootHasModelTyped),
 				typeof(PowerFunctionsReportDSLDiagram),
+				typeof(ExampleConnector),
 				typeof(CommentConnector),
-				typeof(CommentBoxShape),
+				typeof(ExampleShape),
+				typeof(CommentShape),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.FixUpDiagram),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ConnectorRolePlayerChanged),
 			};
@@ -90,7 +95,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			return new DomainMemberInfo[]
 			{
-				new DomainMemberInfo(typeof(Comment), "Text", Comment.TextDomainPropertyId, typeof(Comment.TextPropertyHandler)),
+				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -101,12 +106,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			return new DomainRolePlayerInfo[]
 			{
+				new DomainRolePlayerInfo(typeof(ExampleElementReferencesTargets), "Source", ExampleElementReferencesTargets.SourceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ExampleElementReferencesTargets), "Target", ExampleElementReferencesTargets.TargetDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ModelRootHasComments), "ModelRoot", ModelRootHasComments.ModelRootDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ModelRootHasComments), "Element", ModelRootHasComments.ElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(CommentReferencesSubjects), "Comment", CommentReferencesSubjects.CommentDomainRoleId),
-				new DomainRolePlayerInfo(typeof(CommentReferencesSubjects), "Subject", CommentReferencesSubjects.SubjectDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ModelRootHasTypes), "ModelRoot", ModelRootHasTypes.ModelRootDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ModelRootHasTypes), "ModelType", ModelRootHasTypes.ModelTypeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ModelRootHasComments), "Comment", ModelRootHasComments.CommentDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CommentReferencesModelTyped), "Comment", CommentReferencesModelTyped.CommentDomainRoleId),
+				new DomainRolePlayerInfo(typeof(CommentReferencesModelTyped), "ModelType", CommentReferencesModelTyped.ModelTypeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ModelRootHasModelTyped), "ModelRoot", ModelRootHasModelTyped.ModelRootDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ModelRootHasModelTyped), "ModelType", ModelRootHasModelTyped.ModelTypeDomainRoleId),
 			};
 		}
 		#endregion
@@ -128,12 +135,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(6);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
 				createElementMap.Add(typeof(ModelRoot), 0);
-				createElementMap.Add(typeof(Comment), 1);
-				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 2);
-				createElementMap.Add(typeof(CommentConnector), 3);
-				createElementMap.Add(typeof(CommentBoxShape), 4);
+				createElementMap.Add(typeof(ExampleElement), 1);
+				createElementMap.Add(typeof(Comment), 2);
+				createElementMap.Add(typeof(NamedElement), 3);
+				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 4);
+				createElementMap.Add(typeof(ExampleConnector), 5);
+				createElementMap.Add(typeof(CommentConnector), 6);
+				createElementMap.Add(typeof(ExampleShape), 7);
+				createElementMap.Add(typeof(CommentShape), 8);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -148,10 +159,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			switch (index)
 			{
 				case 0: return new ModelRoot(partition, propertyAssignments);
-				case 1: return new Comment(partition, propertyAssignments);
-				case 2: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
-				case 3: return new CommentConnector(partition, propertyAssignments);
-				case 4: return new CommentBoxShape(partition, propertyAssignments);
+				case 1: return new ExampleElement(partition, propertyAssignments);
+				case 2: return new Comment(partition, propertyAssignments);
+				case 3: return new NamedElement(partition, propertyAssignments);
+				case 4: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
+				case 5: return new ExampleConnector(partition, propertyAssignments);
+				case 6: return new CommentConnector(partition, propertyAssignments);
+				case 7: return new ExampleShape(partition, propertyAssignments);
+				case 8: return new CommentShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -174,10 +189,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
-				createElementLinkMap.Add(typeof(ModelRootHasComments), 0);
-				createElementLinkMap.Add(typeof(CommentReferencesSubjects), 1);
-				createElementLinkMap.Add(typeof(ModelRootHasTypes), 2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
+				createElementLinkMap.Add(typeof(ExampleElementReferencesTargets), 0);
+				createElementLinkMap.Add(typeof(ModelRootHasComments), 1);
+				createElementLinkMap.Add(typeof(CommentReferencesModelTyped), 2);
+				createElementLinkMap.Add(typeof(ModelRootHasModelTyped), 3);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -192,9 +208,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 			switch (index)
 			{
-				case 0: return new ModelRootHasComments(partition, roleAssignments, propertyAssignments);
-				case 1: return new CommentReferencesSubjects(partition, roleAssignments, propertyAssignments);
-				case 2: return new ModelRootHasTypes(partition, roleAssignments, propertyAssignments);
+				case 0: return new ExampleElementReferencesTargets(partition, roleAssignments, propertyAssignments);
+				case 1: return new ModelRootHasComments(partition, roleAssignments, propertyAssignments);
+				case 2: return new CommentReferencesModelTyped(partition, roleAssignments, propertyAssignments);
+				case 3: return new ModelRootHasModelTyped(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -363,8 +380,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		public PowerFunctionsReportDSLDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.ElementDomainRoleId, true);
-			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelTypeDomainRoleId, true);
+			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.CommentDomainRoleId, true);
+			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelTypeDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

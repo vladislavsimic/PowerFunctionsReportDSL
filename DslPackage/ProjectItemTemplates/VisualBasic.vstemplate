@@ -1,10 +1,10 @@
 ﻿<!--DSL Tools Language Template-->
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<TemplateData>
-		<TemplateID>{84fab379-2894-4a5a-9c7e-1a0c20528621}</TemplateID>
-		<Name Package="{70351ecb-93e9-4b2a-b34c-8f45a72a8e37}" ID="103"/>
-		<Description Package="{70351ecb-93e9-4b2a-b34c-8f45a72a8e37}" ID="102"/>
-		<Icon Package="{70351ecb-93e9-4b2a-b34c-8f45a72a8e37}" ID="201" />
+		<TemplateID>{43ec37b9-20e4-4a05-86dd-3ef68dc8e5e5}</TemplateID>
+		<Name Package="{36189604-6446-4d2c-be43-fbb6d87ba77e}" ID="103"/>
+		<Description Package="{36189604-6446-4d2c-be43-fbb6d87ba77e}" ID="102"/>
+		<Icon Package="{36189604-6446-4d2c-be43-fbb6d87ba77e}" ID="201" />
 		<ProjectType>VisualBasic</ProjectType>
 		<SortOrder>360</SortOrder>
 		<DefaultName>PowerFunctionsReportDSL.ui</DefaultName>

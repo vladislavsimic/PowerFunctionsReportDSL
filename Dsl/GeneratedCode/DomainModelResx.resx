@@ -133,32 +133,80 @@
     <value>Model Root</value>
     <comment>DisplayName for DomainClass &apos;ModelRoot&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Comment.Description" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement.Description" xml:space="preserve">
     <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
+    <comment>Description for DomainClass &apos;ExampleElement&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement.DisplayName" xml:space="preserve">
+    <value>Example Element</value>
+    <comment>DisplayName for DomainClass &apos;ExampleElement&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Comment.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Comment</value>
     <comment>Description for DomainClass &apos;Comment&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Comment.DisplayName" xml:space="preserve">
     <value>Comment</value>
     <comment>DisplayName for DomainClass &apos;Comment&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Comment/Text.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;Comment&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Comment/Text.DisplayName" xml:space="preserve">
-    <value>Text</value>
-    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;Comment&apos;</comment>
-  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType.Description" xml:space="preserve">
-    <value></value>
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType</value>
     <comment>Description for DomainClass &apos;ModelType&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType.DisplayName" xml:space="preserve">
     <value>Model Type</value>
     <comment>DisplayName for DomainClass &apos;ModelType&apos;</comment>
   </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement</value>
+    <comment>Description for DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.DisplayName" xml:space="preserve">
+    <value>Named Element</value>
+    <comment>DisplayName for DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement/Name.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.Description" xml:space="preserve">
+    <value>Reference relationship between Elements.</value>
+    <comment>Description for DomainClass &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.DisplayName" xml:space="preserve">
+    <value>Example Element References Targets</value>
+    <comment>DisplayName for DomainClass &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Source.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleRelationship.Target</value>
+    <comment>Description for DomainRole &apos;Source&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Source.DisplayName" xml:space="preserve">
+    <value>Source</value>
+    <comment>DisplayName for DomainRole &apos;Source&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Source.PropertyDisplayName" xml:space="preserve">
+    <value>Targets</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Source&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Target.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleRelationship.Source</value>
+    <comment>Description for DomainRole &apos;Target&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Target.DisplayName" xml:space="preserve">
+    <value>Target</value>
+    <comment>DisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Target.PropertyDisplayName" xml:space="preserve">
+    <value>Sources</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;ExampleElementReferencesTargets&apos;</comment>
+  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.Description" xml:space="preserve">
-    <value>Embedding relationship between the Model and Elements</value>
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments</value>
     <comment>Description for DomainClass &apos;ModelRootHasComments&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.DisplayName" xml:space="preserve">
@@ -166,7 +214,7 @@
     <comment>DisplayName for DomainClass &apos;ModelRootHasComments&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/ModelRoot.Description" xml:space="preserve">
-    <value></value>
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.ModelRoot</value>
     <comment>Description for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/ModelRoot.DisplayName" xml:space="preserve">
@@ -177,96 +225,112 @@
     <value>Comments</value>
     <comment>PropertyDisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/Element.Description" xml:space="preserve">
-    <value></value>
-    <comment>Description for DomainRole &apos;Element&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/Comment.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.Comment</value>
+    <comment>Description for DomainRole &apos;Comment&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/Element.DisplayName" xml:space="preserve">
-    <value>Element</value>
-    <comment>DisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/Element.PropertyDisplayName" xml:space="preserve">
-    <value>Model Root</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects</value>
-    <comment>Description for DomainClass &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects.DisplayName" xml:space="preserve">
-    <value>Comment References Subjects</value>
-    <comment>DisplayName for DomainClass &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects/Comment.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects.Comment</value>
-    <comment>Description for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects/Comment.DisplayName" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/Comment.DisplayName" xml:space="preserve">
     <value>Comment</value>
-    <comment>DisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects/Comment.PropertyDisplayName" xml:space="preserve">
-    <value>Subjects</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects/Subject.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects.Subject</value>
-    <comment>Description for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects/Subject.DisplayName" xml:space="preserve">
-    <value>Subject</value>
-    <comment>DisplayName for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesSubjects/Subject.PropertyDisplayName" xml:space="preserve">
-    <value>Comments</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Subject&apos; on DomainRelationship &apos;CommentReferencesSubjects&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes</value>
-    <comment>Description for DomainClass &apos;ModelRootHasTypes&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.DisplayName" xml:space="preserve">
-    <value>Model Root Has Types</value>
-    <comment>DisplayName for DomainClass &apos;ModelRootHasTypes&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelRoot.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelRoot</value>
-    <comment>Description for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelRoot.DisplayName" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments/Comment.PropertyDisplayName" xml:space="preserve">
     <value>Model Root</value>
-    <comment>DisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+    <comment>PropertyDisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;ModelRootHasComments&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelRoot.PropertyDisplayName" xml:space="preserve">
-    <value>Types</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped</value>
+    <comment>Description for DomainClass &apos;CommentReferencesModelTyped&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelType</value>
-    <comment>Description for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped.DisplayName" xml:space="preserve">
+    <value>Comment References Model Typed</value>
+    <comment>DisplayName for DomainClass &apos;CommentReferencesModelTyped&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.DisplayName" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped/Comment.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped.Comment</value>
+    <comment>Description for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped/Comment.DisplayName" xml:space="preserve">
+    <value>Comment</value>
+    <comment>DisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped/Comment.PropertyDisplayName" xml:space="preserve">
+    <value>Model Typed</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Comment&apos; on DomainRelationship &apos;CommentReferencesModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped/ModelType.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped.ModelType</value>
+    <comment>Description for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;CommentReferencesModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped/ModelType.DisplayName" xml:space="preserve">
     <value>Model Type</value>
-    <comment>DisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;CommentReferencesModelTyped&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.PropertyDisplayName" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped/ModelType.PropertyDisplayName" xml:space="preserve">
+    <value>Commented</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;CommentReferencesModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped</value>
+    <comment>Description for DomainClass &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.DisplayName" xml:space="preserve">
+    <value>Model Root Has Model Typed</value>
+    <comment>DisplayName for DomainClass &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelRoot.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelRoot</value>
+    <comment>Description for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelRoot.DisplayName" xml:space="preserve">
     <value>Model Root</value>
-    <comment>PropertyDisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+    <comment>DisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasModelTyped&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentBoxShape.Description" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelRoot.PropertyDisplayName" xml:space="preserve">
+    <value>Model Typed</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelType.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelType</value>
+    <comment>Description for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelType.DisplayName" xml:space="preserve">
+    <value>Model Type</value>
+    <comment>DisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelType.PropertyDisplayName" xml:space="preserve">
+    <value>Model Root</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasModelTyped&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
-    <comment>Description for DomainClass &apos;CommentBoxShape&apos;</comment>
+    <comment>Description for DomainClass &apos;ExampleShape&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentBoxShape.DisplayName" xml:space="preserve">
-    <value>Comment Box Shape</value>
-    <comment>DisplayName for DomainClass &apos;CommentBoxShape&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleShape.DisplayName" xml:space="preserve">
+    <value>Example Shape</value>
+    <comment>DisplayName for DomainClass &apos;ExampleShape&apos;</comment>
   </data>
-  <data name="CommentBoxShapeCommentDefaultText" xml:space="preserve">
-    <value>Comment</value>
+  <data name="ExampleShapeNameDecoratorDefaultText" xml:space="preserve">
+    <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector.Description" xml:space="preserve">
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape</value>
+    <comment>Description for DomainClass &apos;CommentShape&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape.DisplayName" xml:space="preserve">
+    <value>Comment Shape</value>
+    <comment>DisplayName for DomainClass &apos;CommentShape&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
+    <comment>Description for DomainClass &apos;ExampleConnector&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleConnector.DisplayName" xml:space="preserve">
+    <value>Example Connector</value>
+    <comment>DisplayName for DomainClass &apos;ExampleConnector&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector</value>
     <comment>Description for DomainClass &apos;CommentConnector&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector.DisplayName" xml:space="preserve">
@@ -289,16 +353,40 @@
     <value>Minimal Language Diagram</value>
     <comment>DisplayName for DomainClass &apos;PowerFunctionsReportDSLDiagram&apos;</comment>
   </data>
-  <data name="Class ElementsToolboxTab" xml:space="preserve">
-    <value>Class Elements</value>
+  <data name="PowerFunctionsReportDSLToolboxTab" xml:space="preserve">
+    <value>PowerFunctionsReportDSL</value>
     <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="ExampleElementToolboxItem" xml:space="preserve">
+    <value>ExampleElement</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ExampleElementToolboxTooltip" xml:space="preserve">
+    <value>Create an ExampleElement</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ExampleRelationshipToolboxItem" xml:space="preserve">
+    <value>ExampleRelationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ExampleRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Drag between ExampleElements to create an ExampleRelationship</value>
+    <comment>Toolbox tooltip text</comment>
   </data>
   <data name="CommentToolboxItem" xml:space="preserve">
     <value>Comment</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="CommentToolboxTooltip" xml:space="preserve">
-    <value>Create a Comment</value>
+    <value>Comment</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="CommentRelationshipToolboxItem" xml:space="preserve">
+    <value>CommentRelationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="CommentRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Comment Relationship</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -426,8 +514,20 @@ A DomainClass can be serialized as a moniker only if
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ExampleElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ExampleRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\exampleconnectortoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
   <data name="CommentToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="CommentRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\exampleconnectortoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

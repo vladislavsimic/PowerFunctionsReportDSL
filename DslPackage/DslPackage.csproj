@@ -7,12 +7,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20723</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C1EA80ED-6988-495D-B631-8C6E304ECB1D}</ProjectGuid>
+    <ProjectGuid>{EFEA4A16-D9B9-4E55-B75D-D2764FCCAF1B}</ProjectGuid>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\File.ico</ApplicationIcon>
     <RootNamespace>SchneiderElectricDMS.PowerFunctionsReportDSL</RootNamespace>
     <AssemblyName>SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage</AssemblyName>
     <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
@@ -97,8 +96,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandSet.tt</DependentUpon>
     </Compile>
-    <None Include="ProjectItemTemplates\ui.diagram" />
-    <None Include="ProjectItemTemplates\ui.ui" />
     <None Include="source.extension.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>source.extension.vsixmanifest</LastGenOutput>
@@ -177,7 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dsl\Dsl.csproj">
-      <Project>{b7ad6641-4c18-40e0-be92-6b79ce2b1188}</Project>
+      <Project>{e81e113c-e0d5-42bd-a922-740fcca2763e}</Project>
       <Name>Dsl</Name>
       <IncludeOutputGroupsInVSIX>
         BuiltProjectOutputGroup;
@@ -210,6 +207,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualBasic.tt</DependentUpon>
     </VSItemTemplate>
+    <None Include="Resources\File.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Key.snk">
@@ -235,6 +233,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CSharp.vstemplate</LastGenOutput>
     </None>
+    <None Include="ProjectItemTemplates\ui.ui" />
+    <None Include="ProjectItemTemplates\ui.diagram" />
     <None Include="ProjectItemTemplates\VisualBasic.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>VisualBasic.vstemplate</LastGenOutput>
@@ -249,7 +249,6 @@
     <CodeAnalysisDictionary Include="..\CodeAnalysisDictionary.xml">
       <Link>CodeAnalysisDictionary.xml</Link>
     </CodeAnalysisDictionary>
-    <Content Include="Resources\File.ico" />
     <Content Include="Resources\ModelExplorerToolWindowBitmaps.bmp" />
   </ItemGroup>
 </Project>
