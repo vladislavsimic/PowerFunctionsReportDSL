@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<powerFunctionsReportDSLDiagram dslVersion="1.0.0.0" Id="08889370-050e-46a2-854b-e422d264701e" absoluteBounds="0, 0, 11, 8.5" name="EMSLoadFlow">
+  <modelRootMoniker Id="cbb6e612-db7e-4f2a-8ae4-023547f52b66" />
+  <nestedChildShapes>
+    <jMSModelShape Id="63560b5b-f924-46a7-adf7-252b30e4cad2" absoluteBounds="1.875, 2.375, 1.5, 1.3593896484374999">
+      <jMSModelMoniker Id="9a4d177e-20ec-4c6f-b3ab-fe122ae18c9a" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24d4a8bf-82d2-436c-8e5b-8bf276a82091" absoluteBounds="1.8899999999999997, 3.385, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </jMSModelShape>
+  </nestedChildShapes>
+</powerFunctionsReportDSLDiagram>

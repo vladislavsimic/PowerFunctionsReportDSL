@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="cbb6e612-db7e-4f2a-8ae4-023547f52b66" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+  <types>
+    <modelRootHasTypes Id="d41069e6-0cd3-40c7-a3ae-9abc216e45ec">
+      <jMSModel Id="9a4d177e-20ec-4c6f-b3ab-fe122ae18c9a" name="JMSModel1" />
+    </modelRootHasTypes>
+  </types>
+</modelRoot>

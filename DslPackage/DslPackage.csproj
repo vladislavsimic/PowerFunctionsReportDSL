@@ -91,11 +91,19 @@
     <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomCode\CodeGenerationResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodeGenerationResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\CodeGenerator.cs" />
+    <Compile Include="CustomCode\Model\SCGTemplate.cs" />
     <Compile Include="GeneratedCode\CommandSet.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandSet.tt</DependentUpon>
     </Compile>
+    <None Include="CustomCode\Templates\JMSModelTemplate.t4" />
     <None Include="source.extension.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>source.extension.vsixmanifest</LastGenOutput>
@@ -188,6 +196,10 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomCode\CodeGenerationResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CodeGenerationResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="VSPackage.resx">
       <SubType>Designer</SubType>
       <MergeWithCTO>true</MergeWithCTO>
@@ -251,4 +263,5 @@
     </CodeAnalysisDictionary>
     <Content Include="Resources\ModelExplorerToolWindowBitmaps.bmp" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

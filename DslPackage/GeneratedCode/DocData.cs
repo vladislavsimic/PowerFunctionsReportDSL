@@ -366,6 +366,46 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 		}
 
+		/// <summary>
+		/// Called after the document is opened.
+		/// </summary>
+		/// <param name="e">Event Args.</param>
+		protected override void OnDocumentLoaded(global::System.EventArgs e)
+		{
+			base.OnDocumentLoaded(e);
+			this.OnDocumentLoaded();
+		}
+
+		/// <summary>
+		/// Called after the document is reloaded.
+		/// </summary>
+		protected override void OnDocumentReloaded(global::System.EventArgs e)
+		{
+			base.OnDocumentReloaded(e);
+			this.OnDocumentLoaded();
+		}
+		
+		/// <summary>
+		/// Called on both document load and reload.
+		/// </summary>
+		protected virtual void OnDocumentLoaded()
+		{
+			// Enable CompartmentItems events.
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot modelRoot = this.RootElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot;
+			if (modelRoot != null)
+			{
+				global::System.Collections.Generic.IList<DslDiagrams::PresentationElement> diagrams = DslDiagrams::PresentationViewsSubject.GetPresentation(modelRoot);
+				if (diagrams.Count > 0)
+				{
+					global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDiagram diagram = diagrams[0] as global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDiagram;
+					if (diagram != null)
+					{
+						diagram.SubscribeCompartmentItemsEvents();
+					}
+				}
+			}
+		}
+
 
 			
 		/// <summary>

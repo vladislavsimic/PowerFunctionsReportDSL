@@ -1,0 +1,5 @@
+JMS ::::
+Generate: [E:\Master\PowerFunctionsReportDSL\Debugging\JMSModel1.cs]  [JMSModel1]
+Generate: [E:\Master\PowerFunctionsReportDSL\Debugging\JMSModel2.cs]  [JMSModel2]
+Generate: [E:\Master\PowerFunctionsReportDSL\Debugging\JMSModel3.cs]  [JMSModel3]
+

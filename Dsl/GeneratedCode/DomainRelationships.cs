@@ -12,228 +12,6 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 {
 	/// <summary>
-	/// DomainRelationship ExampleElementReferencesTargets
-	/// Reference relationship between Elements.
-	/// </summary>
-	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship()]
-	[DslModeling::DomainObjectId("ae1263a9-701c-4079-ac8f-2604c2b87712")]
-	public partial class ExampleElementReferencesTargets : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ExampleElementReferencesTargets domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xae1263a9, 0x701c, 0x4079, 0xac, 0x8f, 0x26, 0x04, 0xc2, 0xb8, 0x77, 0x12);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ExampleElementReferencesTargets link in the same Partition as the given ExampleElement
-		/// </summary>
-		/// <param name="source">ExampleElement to use as the source of the relationship.</param>
-		/// <param name="target">ExampleElement to use as the target of the relationship.</param>
-		public ExampleElementReferencesTargets(ExampleElement source, ExampleElement target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ExampleElementReferencesTargets.SourceDomainRoleId, source), new DslModeling::RoleAssignment(ExampleElementReferencesTargets.TargetDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ExampleElementReferencesTargets(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ExampleElementReferencesTargets(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ExampleElementReferencesTargets(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ExampleElementReferencesTargets(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region Source domain role code
-		
-		/// <summary>
-		/// Source domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid SourceDomainRoleId = new global::System.Guid(0xb8e27529, 0x812e, 0x45db, 0xa7, 0x8c, 0x16, 0xe6, 0x6e, 0x48, 0xe6, 0x53);
-		
-		/// <summary>
-		/// DomainRole Source
-		/// Description for
-		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleRelationship.Target
-		/// </summary>
-		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Source.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Source.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Targets", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Source.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("b8e27529-812e-45db-a78c-16e66e48e653")]
-		public virtual ExampleElement Source
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ExampleElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Sources of a ExampleElement
-		/// <summary>
-		/// Gets a list of Sources.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ExampleElement> GetSources(ExampleElement element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(element, TargetDomainRoleId);
-		}
-		#endregion
-		#region Target domain role code
-		
-		/// <summary>
-		/// Target domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid TargetDomainRoleId = new global::System.Guid(0x493147e4, 0x598d, 0x40c3, 0x91, 0xb7, 0x1a, 0xd9, 0x81, 0x51, 0x94, 0xf0);
-		
-		/// <summary>
-		/// DomainRole Target
-		/// Description for
-		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleRelationship.Source
-		/// </summary>
-		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Target.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Target.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Sources", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets/Target.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("493147e4-598d-40c3-91b7-1ad9815194f0")]
-		public virtual ExampleElement Target
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ExampleElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access Targets of a ExampleElement
-		/// <summary>
-		/// Gets a list of Targets.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ExampleElement> GetTargets(ExampleElement element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(element, SourceDomainRoleId);
-		}
-		#endregion
-		#region Source link accessor
-		/// <summary>
-		/// Get the list of ExampleElementReferencesTargets links to a ExampleElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets> GetLinksToTargets ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement sourceInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets>(sourceInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.SourceDomainRoleId);
-		}
-		#endregion
-		#region Target link accessor
-		/// <summary>
-		/// Get the list of ExampleElementReferencesTargets links to a ExampleElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets> GetLinksToSources ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement targetInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets>(targetInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.TargetDomainRoleId);
-		}
-		#endregion
-		#region ExampleElementReferencesTargets instance accessors
-		
-		/// <summary>
-		/// Get any ExampleElementReferencesTargets links between a given ExampleElement and a ExampleElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement target )
-		{
-			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets>();
-			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.SourceDomainRoleId);
-			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets link in links )
-			{
-				if ( target.Equals(link.Target) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ExampleElementReferencesTargets link between a given ExampleElementand a ExampleElement.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElement target )
-		{
-			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets.SourceDomainRoleId);
-			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExampleElementReferencesTargets link in links )
-			{
-				if ( target.Equals(link.Target) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace SchneiderElectricDMS.PowerFunctionsReportDSL
-{
-	/// <summary>
 	/// DomainRelationship ModelRootHasComments
 	/// Description for
 	/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments
@@ -699,34 +477,33 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 {
 	/// <summary>
-	/// DomainRelationship ModelRootHasModelTyped
-	/// Description for
-	/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped
+	/// DomainRelationship ModelRootHasTypes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes
 	/// </summary>
-	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("4e4b5839-ccc1-4397-b205-323b48d8fb10")]
-	public partial class ModelRootHasModelTyped : DslModeling::ElementLink
+	public partial class ModelRootHasTypes : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ModelRootHasModelTyped domain class Id.
+		/// ModelRootHasTypes domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4e4b5839, 0xccc1, 0x4397, 0xb2, 0x05, 0x32, 0x3b, 0x48, 0xd8, 0xfb, 0x10);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ModelRootHasModelTyped link in the same Partition as the given ModelRoot
+		/// Creates a ModelRootHasTypes link in the same Partition as the given ModelRoot
 		/// </summary>
 		/// <param name="source">ModelRoot to use as the source of the relationship.</param>
 		/// <param name="target">ModelType to use as the target of the relationship.</param>
-		public ModelRootHasModelTyped(ModelRoot source, ModelType target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ModelRootHasModelTyped.ModelRootDomainRoleId, source), new DslModeling::RoleAssignment(ModelRootHasModelTyped.ModelTypeDomainRoleId, target)}, null)
+		public ModelRootHasTypes(ModelRoot source, ModelType target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ModelRootHasTypes.ModelRootDomainRoleId, source), new DslModeling::RoleAssignment(ModelRootHasTypes.ModelTypeDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -735,7 +512,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ModelRootHasModelTyped(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ModelRootHasTypes(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -746,7 +523,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ModelRootHasModelTyped(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ModelRootHasTypes(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -756,7 +533,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ModelRootHasModelTyped(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ModelRootHasTypes(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -767,7 +544,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ModelRootHasModelTyped(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ModelRootHasTypes(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -782,11 +559,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// DomainRole ModelRoot
 		/// Description for
-		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelRoot
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelRoot
 		/// </summary>
-		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelRoot.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelRoot.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ModelTyped", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelRoot.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelRoot.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelRoot.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Types", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelRoot.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("0ae701ba-c94b-43d1-be4f-07b3a5ec7c20")]
 		public virtual ModelRoot ModelRoot
 		{
@@ -834,11 +611,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// DomainRole ModelType
 		/// Description for
-		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelType
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelType
 		/// </summary>
-		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelType.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelType.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ModelRoot", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped/ModelType.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ModelRoot", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("7c256cee-4104-4ef5-93bf-db2c35e0a465")]
 		public virtual ModelType ModelType
 		{
@@ -855,37 +632,37 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 				
 		#endregion
-		#region Static methods to access ModelTyped of a ModelRoot
+		#region Static methods to access Types of a ModelRoot
 		/// <summary>
-		/// Gets a list of ModelTyped.
+		/// Gets a list of Types.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ModelType> GetModelTyped(ModelRoot element)
+		public static DslModeling::LinkedElementCollection<ModelType> GetTypes(ModelRoot element)
 		{
 			return GetRoleCollection<DslModeling::LinkedElementCollection<ModelType>, ModelType>(element, ModelRootDomainRoleId);
 		}
 		#endregion
 		#region ModelRoot link accessor
 		/// <summary>
-		/// Get the list of ModelRootHasModelTyped links to a ModelRoot.
+		/// Get the list of ModelRootHasTypes links to a ModelRoot.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped> GetLinksToModelTyped ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot modelRootInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes> GetLinksToTypes ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot modelRootInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped>(modelRootInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelRootDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes>(modelRootInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelRootDomainRoleId);
 		}
 		#endregion
 		#region ModelType link accessor
 		/// <summary>
-		/// Get the ModelRootHasModelTyped link to a ModelType.
+		/// Get the ModelRootHasTypes link to a ModelType.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped GetLinkToModelRoot (global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType modelTypeInstance)
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes GetLinkToModelRoot (global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType modelTypeInstance)
 		{
-			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped>(modelTypeInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelTypeDomainRoleId);
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes>(modelTypeInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelTypeDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ModelType not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -897,18 +674,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 		}
 		#endregion
-		#region ModelRootHasModelTyped instance accessors
+		#region ModelRootHasTypes instance accessors
 		
 		/// <summary>
-		/// Get any ModelRootHasModelTyped links between a given ModelRoot and a ModelType.
+		/// Get any ModelRootHasTypes links between a given ModelRoot and a ModelType.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType target )
 		{
-			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped>();
-			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelRootDomainRoleId);
-			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped link in links )
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelRootDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes link in links )
 			{
 				if ( target.Equals(link.ModelType) )
 				{
@@ -918,16 +695,258 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ModelRootHasModelTyped link between a given ModelRootand a ModelType.
+		/// Get the one ModelRootHasTypes link between a given ModelRootand a ModelType.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType target )
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType target )
 		{
-			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped.ModelRootDomainRoleId);
-			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasModelTyped link in links )
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelRootDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes link in links )
 			{
 				if ( target.Equals(link.ModelType) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship JMSModelHasAttributes
+	/// Description for
+	/// SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("66860efb-33a0-47f2-b3e4-db5037eb307e")]
+	public partial class JMSModelHasAttributes : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// JMSModelHasAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x66860efb, 0x33a0, 0x47f2, 0xb3, 0xe4, 0xdb, 0x50, 0x37, 0xeb, 0x30, 0x7e);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a JMSModelHasAttributes link in the same Partition as the given JMSModel
+		/// </summary>
+		/// <param name="source">JMSModel to use as the source of the relationship.</param>
+		/// <param name="target">ClassAttribute to use as the target of the relationship.</param>
+		public JMSModelHasAttributes(JMSModel source, ClassAttribute target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(JMSModelHasAttributes.JMSModelDomainRoleId, source), new DslModeling::RoleAssignment(JMSModelHasAttributes.ClassAttributeDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public JMSModelHasAttributes(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public JMSModelHasAttributes(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public JMSModelHasAttributes(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public JMSModelHasAttributes(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region JMSModel domain role code
+		
+		/// <summary>
+		/// JMSModel domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid JMSModelDomainRoleId = new global::System.Guid(0x94717ec5, 0xb798, 0x4924, 0x96, 0x06, 0xac, 0xd1, 0xc3, 0x77, 0x7b, 0xaa);
+		
+		/// <summary>
+		/// DomainRole JMSModel
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.JMSModel
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes/JMSModel.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes/JMSModel.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Attributes", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes/JMSModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("94717ec5-b798-4924-9606-acd1c3777baa")]
+		public virtual JMSModel JMSModel
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (JMSModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, JMSModelDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, JMSModelDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access JMSModel of a ClassAttribute
+		/// <summary>
+		/// Gets JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static JMSModel GetJMSModel(ClassAttribute element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ClassAttributeDomainRoleId) as JMSModel;
+		}
+		
+		/// <summary>
+		/// Sets JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetJMSModel(ClassAttribute element, JMSModel newJMSModel)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ClassAttributeDomainRoleId, newJMSModel);
+		}
+		#endregion
+		#region ClassAttribute domain role code
+		
+		/// <summary>
+		/// ClassAttribute domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ClassAttributeDomainRoleId = new global::System.Guid(0xba6dca6a, 0xb9a3, 0x4498, 0xa6, 0x24, 0x5e, 0xf2, 0xc7, 0x23, 0x9c, 0x55);
+		
+		/// <summary>
+		/// DomainRole ClassAttribute
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.ClassAttribute
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes/ClassAttribute.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes/ClassAttribute.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "JMSModel", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes/ClassAttribute.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("ba6dca6a-b9a3-4498-a624-5ef2c7239c55")]
+		public virtual ClassAttribute ClassAttribute
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ClassAttribute)DslModeling::DomainRoleInfo.GetRolePlayer(this, ClassAttributeDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ClassAttributeDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Attributes of a JMSModel
+		/// <summary>
+		/// Gets a list of Attributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<ClassAttribute> GetAttributes(JMSModel element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ClassAttribute>, ClassAttribute>(element, JMSModelDomainRoleId);
+		}
+		#endregion
+		#region JMSModel link accessor
+		/// <summary>
+		/// Get the list of JMSModelHasAttributes links to a JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes> GetLinksToAttributes ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel jMSModelInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes>(jMSModelInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.JMSModelDomainRoleId);
+		}
+		#endregion
+		#region ClassAttribute link accessor
+		/// <summary>
+		/// Get the JMSModelHasAttributes link to a ClassAttribute.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes GetLinkToJMSModel (global::SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute classAttributeInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes>(classAttributeInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.ClassAttributeDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ClassAttribute not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region JMSModelHasAttributes instance accessors
+		
+		/// <summary>
+		/// Get any JMSModelHasAttributes links between a given JMSModel and a ClassAttribute.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.JMSModelDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes link in links )
+			{
+				if ( target.Equals(link.ClassAttribute) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one JMSModelHasAttributes link between a given JMSModeland a ClassAttribute.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.JMSModelDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes link in links )
+			{
+				if ( target.Equals(link.ClassAttribute) )
 				{
 					return link;
 				}
