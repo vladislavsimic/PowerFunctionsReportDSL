@@ -29,8 +29,8 @@ E:\Master\PowerFunctionsReportDSL\Dsl\bin\Debug\Microsoft.VisualStudio.Modeling.
 E:\Master\PowerFunctionsReportDSL\Dsl\bin\Debug\Microsoft.VisualStudio.TextTemplating.14.0.xml
 E:\Master\PowerFunctionsReportDSL\Dsl\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.xml
 E:\Master\PowerFunctionsReportDSL\Dsl\bin\Debug\Microsoft.VisualStudio.TextTemplating.Interfaces.11.0.xml
+E:\Master\PowerFunctionsReportDSL\Dsl\obj\Debug\Dsl.csprojResolveAssemblyReference.cache
 E:\Master\PowerFunctionsReportDSL\Dsl\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx.resources
 E:\Master\PowerFunctionsReportDSL\Dsl\obj\Debug\Dsl.csproj.GenerateResource.Cache
 E:\Master\PowerFunctionsReportDSL\Dsl\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll
 E:\Master\PowerFunctionsReportDSL\Dsl\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.pdb
-E:\Master\PowerFunctionsReportDSL\Dsl\obj\Debug\Dsl.csprojResolveAssemblyReference.cache

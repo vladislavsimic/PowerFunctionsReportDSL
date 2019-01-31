@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="JMSEnumTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\JMSEnumTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="JMSModelResultsTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\JMSModelResultsTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="JMSModelTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Templates\JMSModelTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

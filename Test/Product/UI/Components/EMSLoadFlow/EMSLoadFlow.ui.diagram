@@ -1,12 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<powerFunctionsReportDSLDiagram dslVersion="1.0.0.0" Id="08889370-050e-46a2-854b-e422d264701e" absoluteBounds="0, 0, 11, 8.5" name="EMSLoadFlow">
-  <modelRootMoniker Id="cbb6e612-db7e-4f2a-8ae4-023547f52b66" />
+<powerFunctionsReportDSLDiagram dslVersion="1.0.0.0" Id="1d387a8e-97e2-4e84-a6d1-f7c3290b59a1" absoluteBounds="0, 0, 12.375, 8.5" name="EMSLoadFlow">
+  <modelRootMoniker Id="664550ed-79fe-4137-823e-5941de17f519" />
   <nestedChildShapes>
-    <jMSModelShape Id="63560b5b-f924-46a7-adf7-252b30e4cad2" absoluteBounds="1.875, 2.375, 1.5, 1.3593896484374999">
-      <jMSModelMoniker Id="9a4d177e-20ec-4c6f-b3ab-fe122ae18c9a" />
+    <jMSModelShape Id="99f6aea2-7829-4786-8646-0dd29ad554ea" absoluteBounds="1.75, 2.375, 1.5, 1.3593896484374999">
+      <jMSModelMoniker Id="4f152d1e-2800-41d6-ab36-f0888882018c" />
       <nestedChildShapes>
-        <elementListCompartment Id="24d4a8bf-82d2-436c-8e5b-8bf276a82091" absoluteBounds="1.8899999999999997, 3.385, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fe3563d1-b728-4d96-a7da-382643ce5e11" absoluteBounds="1.7649999999999997, 3.385, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </jMSModelShape>
+    <jMSModelShape Id="a9c2205b-fda3-49b6-b964-06842e2c99d4" absoluteBounds="4.375, 2.375, 1.5, 1.3593896484374994">
+      <jMSModelMoniker Id="06b2bc37-0a3b-4bfa-b2a7-b3c50fa0a0b9" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24734244-e9a3-4740-b79f-311ac722e1bd" absoluteBounds="4.39, 3.385, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </jMSModelShape>
+    <jMSModelShape Id="584b22f8-7c8d-4980-a69d-c34dad3edd61" absoluteBounds="7.5, 2.75, 1.5, 1.3593896484374999">
+      <jMSModelMoniker Id="07d628d8-795e-4ee3-bcad-ec6d51617fd3" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10ed7ec0-154a-4eee-9276-e77b0e43dd9f" absoluteBounds="7.5150000000000006, 3.76, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </jMSModelShape>
+    <jMSModelShape Id="959d6258-d88b-468e-b690-3c863b2fc891" absoluteBounds="10.625, 2.5, 1.5, 1.3593896484374999">
+      <jMSModelMoniker Id="31b539b5-419a-4368-ba5c-d841745e803e" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9fbe42c3-88ca-4b3e-83a8-5248d9fbcdc3" absoluteBounds="10.64, 3.51, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </jMSModelShape>
+    <undirectionalConnector Id="c45ceaac-fd46-418e-9b12-61e506ea2868" edgePoints="[(4.375 : 3.05469482421875); (3.25 : 3.05469482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <undirectionalAssociationMoniker Id="f41fe22b-a453-47b7-ab9c-2799ad8ab181" />
+      <relativeChildShapes />
+      <nodes>
+        <jMSModelShapeMoniker Id="a9c2205b-fda3-49b6-b964-06842e2c99d4" />
+        <jMSModelShapeMoniker Id="99f6aea2-7829-4786-8646-0dd29ad554ea" />
+      </nodes>
+    </undirectionalConnector>
+    <generalizationConnector Id="12bcdc37-c1bb-41d9-b377-103ac30d385b" edgePoints="[(7.5 : 3.24219482421875); (5.875 : 3.24219482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <generalizationMoniker Id="13d66d8c-1695-4ad8-86c2-01797d141744" />
+      <nodes>
+        <jMSModelShapeMoniker Id="584b22f8-7c8d-4980-a69d-c34dad3edd61" />
+        <jMSModelShapeMoniker Id="a9c2205b-fda3-49b6-b964-06842e2c99d4" />
+      </nodes>
+    </generalizationConnector>
+    <generalizationConnector Id="4ea071f5-8d54-485c-8491-893ad944ece6" edgePoints="[(10.625 : 3.30469482421875); (9 : 3.30469482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <generalizationMoniker Id="4bf705b9-f956-48be-8339-a4a36fcd5de2" />
+      <nodes>
+        <jMSModelShapeMoniker Id="959d6258-d88b-468e-b690-3c863b2fc891" />
+        <jMSModelShapeMoniker Id="584b22f8-7c8d-4980-a69d-c34dad3edd61" />
+      </nodes>
+    </generalizationConnector>
+    <enumShape Id="a47be321-7af2-434f-bdc2-4a01985c38e9" absoluteBounds="7.25, 0.75, 2, 1.4362939453124999">
+      <enumMoniker Id="3463d724-7574-4f5b-b426-48445acf0497" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b74539ed-fe4c-40a2-8436-60c511907563" absoluteBounds="7.265, 1.26, 1.9700000000000002, 0.8262939453125" name="EnumAttributes" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </enumShape>
+    <undirectionalConnector Id="6954f7a2-cf91-4bbb-a725-9d92ce0c3650" edgePoints="[(8.25 : 2.75); (8.25 : 2.1862939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <undirectionalAssociationMoniker Id="6266137e-542c-404b-8a35-245dde2ab0a3" />
+      <relativeChildShapes />
+      <nodes>
+        <jMSModelShapeMoniker Id="584b22f8-7c8d-4980-a69d-c34dad3edd61" />
+        <enumShapeMoniker Id="a47be321-7af2-434f-bdc2-4a01985c38e9" />
+      </nodes>
+    </undirectionalConnector>
   </nestedChildShapes>
 </powerFunctionsReportDSLDiagram>

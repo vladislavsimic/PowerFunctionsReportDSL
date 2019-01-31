@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TextTemplating.VSHost;
-using SchneiderElectricDMS.DMSFunctionsDSL.DslPackage.CustomCode.CodeGeneration.Model;
+using SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +24,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 
 			SCGTemplate JMSModelTemplate = new SCGTemplate(CodeGenerationResource.JMSModelTemplate, string.Empty, ".cs");
 			string genCode = GenerateCode(JMSModelTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			JMSResultsTemplate JMSModelResultsTemplate = new JMSResultsTemplate(CodeGenerationResource.JMSModelResultsTemplate, string.Empty, ".cs", "Results");
+			genCode = GenerateCode(JMSModelResultsTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate JMSEnumTemplate = new SCGTemplate(CodeGenerationResource.JMSEnumTemplate, string.Empty, ".cs");
+			genCode = GenerateCode(JMSEnumTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
 			return Encoding.ASCII.GetBytes(sb.ToString());

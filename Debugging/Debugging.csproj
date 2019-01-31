@@ -45,13 +45,6 @@
       <SubType>
       </SubType>
     </None>
-    <None Include="EMSLoadFlow.ui">
-      <Generator>UIGenerator</Generator>
-      <LastGenOutput>EMSLoadFlow.txt</LastGenOutput>
-    </None>
-    <None Include="EMSLoadFlow.ui.diagram">
-      <DependentUpon>EMSLoadFlow.ui</DependentUpon>
-    </None>
     <None Include="PowerFunctionsReportDSLReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PowerFunctionsReportDSLReport.txt</LastGenOutput>
@@ -65,11 +58,6 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EMSLoadFlow.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EMSLoadFlow.ui</DependentUpon>
-    </Content>
     <Content Include="PowerFunctionsReportDSLReport.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

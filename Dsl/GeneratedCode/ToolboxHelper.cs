@@ -48,6 +48,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </remarks>
 		public const string ToolboxFilterString = "PowerFunctionsReportDSL.1.0";
 		/// <summary>
+		/// Toolbox item filter string used to identify Generalization connector tool.
+		/// </summary>
+		public const string GeneralizationFilterString = "Generalization.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify UndirectionalAssociation connector tool.
+		/// </summary>
+		public const string UndirectionalAssociationFilterString = "UndirectionalAssociation.1.0";
+		/// <summary>
 		/// Toolbox item filter string used to identify CommentRelationship connector tool.
 		/// </summary>
 		public const string CommentRelationshipFilterString = "CommentRelationship.1.0";
@@ -98,7 +106,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			get
 			{
-				return 3;
+				return 6;
 			}
 		}
 		
@@ -147,11 +155,79 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			global::System.Globalization.CultureInfo resourceCulture = global::System.Globalization.CultureInfo.CurrentUICulture;
 			switch(itemId)
 			{
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.EnumToolboxItem":
+					// Add Enum shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.EnumToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						1, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("EnumToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EnumToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Enum", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("EnumToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelToolboxItem":
+					// Add JMSModel shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						2, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("JMSModelToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("JMSModelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"JMSModel", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("JMSModelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationToolboxItem":
+
+					// Add Generalization connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						3, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("GeneralizationToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("GeneralizationToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Generalization", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("GeneralizationToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(GeneralizationFilterString)
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociationToolboxItem":
+
+					// Add UndirectionalAssociation connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociationToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						4, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("UndirectionalAssociationToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("UndirectionalAssociationToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"UndirectionalAssociation", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("UndirectionalAssociationToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(UndirectionalAssociationFilterString)
+						});
+					break;
 				case "SchneiderElectricDMS.PowerFunctionsReportDSL.CommentToolboxItem":
 					// Add Comment shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SchneiderElectricDMS.PowerFunctionsReportDSL.CommentToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						1, // Position relative to other items in the same toolbox tab.
+						5, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("CommentToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("CommentToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -168,7 +244,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					// Add CommentRelationship connector tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"SchneiderElectricDMS.PowerFunctionsReportDSL.CommentRelationshipToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						2, // Position relative to other items in the same toolbox tab.
+						6, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("CommentRelationshipToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("CommentRelationshipToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
 						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -179,22 +255,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(CommentRelationshipFilterString)
-						});
-					break;
-				case "SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelToolboxItem":
-					// Add JMSModel shape tool.
-					result = new DslDesign::ModelingToolboxItem(
-						"SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						3, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("JMSModelToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("JMSModelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"JMSModel", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("JMSModelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
 				default:

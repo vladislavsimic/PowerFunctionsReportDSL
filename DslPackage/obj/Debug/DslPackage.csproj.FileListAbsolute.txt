@@ -185,6 +185,7 @@ E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.VisualStudio.Co
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\EnvDTE90.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csprojResolveAssemblyReference.cache
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\VSPackage.resources
+E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.CodeGenerationResource.resources
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csproj.GenerateResource.Cache
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\Commands.cto
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\VSCT.read.1.tlog
@@ -196,4 +197,3 @@ E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.Powe
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.latest.pkgdef
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\extension.vsixmanifest
-E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.CodeGenerationResource.resources

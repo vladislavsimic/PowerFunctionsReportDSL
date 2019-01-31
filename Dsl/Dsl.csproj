@@ -77,6 +77,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
     </None>
+    <Compile Include="CustomCode\Converters\AccessModifierConverter.cs" />
+    <Compile Include="CustomCode\Converters\TypesToCSharpType.cs" />
+    <Compile Include="CustomCode\Helpers\JMSHelper.cs" />
     <Compile Include="GeneratedCode\ConnectionBuilders.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +158,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\GeneralizationTool.bmp" />
+    <Content Include="Resources\UnidirectionTool.bmp" />
     <None Include="DslDefinition.dsl.diagram">
       <DependentUpon>DslDefinition.dsl</DependentUpon>
     </None>
@@ -251,7 +256,5 @@
     <EmbeddedResource Include="Resources\ConnectorSourceSearch.cur" />
     <EmbeddedResource Include="Resources\ConnectorTargetSearch.cur" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomCode\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

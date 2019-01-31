@@ -4,6 +4,7 @@
 <#@ parameter name="delimiter" type="System.String" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters" #>
+<#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers " #>
 <#
   // Create a file segment for each element:
    foreach (ModelType type in this.ModelRoot.Types)
@@ -11,7 +12,7 @@
 	   if(type is JMSModel)
 	   {
 		    JMSModel jmsModel = type as JMSModel;
-            if(!jmsModel.ShouldGenerate || jmsModel.Type != JMSResultType.Record) continue;
+            if(!jmsModel.ShouldGenerate || jmsModel.Type != JMSResultType.Results) continue;
 
     // First item is the delimiter:
 #>
@@ -46,6 +47,16 @@ namespace <#=classNamespace#>
 <#
     }
 #>
+<#
+    string knownTypes = string.Empty;
+    if(jmsModel.MainReportClass)
+    {
+        knownTypes  = JMSHelper.GetKnownTypes(jmsModel);
+#>
+<#
+    }
+#>
+    <#=knownTypes#>
     public class <#=jmsModel.Name#><#=superclass#>
     {
 
@@ -80,8 +91,9 @@ namespace <#=classNamespace#>
         public <#=customType#> <#=attr.Name#> { get; set; }
 <#
     }
+     string associationProperties = JMSHelper.GetJMSModelAssociationProperties(jmsModel);
 #>
-
+        <#=associationProperties#>
         #endregion Properties
     }
 }

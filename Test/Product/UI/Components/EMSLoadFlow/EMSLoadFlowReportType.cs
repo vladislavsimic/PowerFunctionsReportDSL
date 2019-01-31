@@ -6,3 +6,16 @@
 //	and will be lost if the code is regenerated.		        #
 //														        #
 //###############################################################
+
+ 
+namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
+{
+
+    public enum EMSLoadFlowReportType
+    {
+        Node,
+		Section,
+		Transformer,
+		        
+    }
+}

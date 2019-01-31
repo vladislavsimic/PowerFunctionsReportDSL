@@ -268,6 +268,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 		/// <summary>
+		/// Most connectors are mapped to element links, but there can be exceptions. This method tell if a connector should be
+		/// mapped to an element link.
+		/// </summary>
+		public override bool IsConnectorMappedToLink(DslDiagrams::BinaryLinkShape connector)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert(connector != null);
+			if (connector == null)
+				throw new global::System.ArgumentNullException("connector");
+			#endregion
+			if (connector.GetType() == typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.AssociationConnector))
+				return false;
+			return base.IsConnectorMappedToLink(connector);
+		}
+		
+		/// <summary>
 		/// Creates a new shape for the given model element as part of view fixup
 		/// </summary>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily", Justification = "Generated code.")]
@@ -280,6 +296,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)
+			{
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation)
+			{
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector(this.Partition);
+				return newShape;
+			}
 			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment)
 			{
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape(this.Partition);
@@ -289,6 +316,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped)
 			{
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector(this.Partition);
+				return newShape;
+			}
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Generalization)
+			{
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -303,6 +335,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			base.InitializeShapeFields(shapeFields);
 			global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape.DecoratorsInitialized += JMSModelShapeDecoratorMap.OnDecoratorsInitialized;
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape.DecoratorsInitialized += EnumShapeDecoratorMap.OnDecoratorsInitialized;
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector.DecoratorsInitialized += UndirectionalConnectorDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -323,10 +357,72 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 		}
 		
+		/// <summary>
+		/// Class containing decorator path traversal methods for EnumShape.
+		/// </summary>
+		internal static partial class EnumShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for EnumShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for AssociationConnector.
+		/// </summary>
+		internal static partial class AssociationConnectorDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for AssociationConnector.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for UndirectionalConnector.
+		/// </summary>
+		internal static partial class UndirectionalConnectorDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for UndirectionalConnector.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				AssociationConnectorDecoratorMap.OnDecoratorsInitialized(sender, e);
+				
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.SourceMultiplicityDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "SourceMultiplicity").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.SourceRoleNameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "SourceRoleName").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.TargetMultiplicityDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TargetMultiplicity").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.TargetRoleNameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "TargetRoleName").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
 		#endregion
 		
 		#region Connect actions
 		private bool changingMouseAction;
+		private global::SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationConnectAction generalizationConnectAction;
+		private global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociationConnectAction undirectionalAssociationConnectAction;
 		private global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentRelationshipConnectAction commentRelationshipConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
@@ -350,7 +446,25 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			if(activeView != null)
 			{
 				DslDiagrams::MouseAction action = null;
-				if (SelectedToolboxItemSupportsFilterString(activeView, global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxHelper.CommentRelationshipFilterString))
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxHelper.GeneralizationFilterString))
+				{
+					if (this.generalizationConnectAction == null)
+					{
+						this.generalizationConnectAction = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationConnectAction(this);
+						this.generalizationConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.generalizationConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxHelper.UndirectionalAssociationFilterString))
+				{
+					if (this.undirectionalAssociationConnectAction == null)
+					{
+						this.undirectionalAssociationConnectAction = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociationConnectAction(this);
+						this.undirectionalAssociationConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.undirectionalAssociationConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxHelper.CommentRelationshipFilterString))
 				{
 					if (this.commentRelationshipConnectAction == null)
 					{
@@ -416,6 +530,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			{
 				if(disposing)
 				{
+					if(this.generalizationConnectAction != null)
+					{
+						this.generalizationConnectAction.Dispose();
+						this.generalizationConnectAction = null;
+					}
+					if(this.undirectionalAssociationConnectAction != null)
+					{
+						this.undirectionalAssociationConnectAction.Dispose();
+						this.undirectionalAssociationConnectAction = null;
+					}
 					if(this.commentRelationshipConnectAction != null)
 					{
 						this.commentRelationshipConnectAction.Dispose();
@@ -476,8 +600,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Generalization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -496,6 +623,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel)
 				{
 					parentElement = GetParentForJMSModel((global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel)childElement);
+				} else
+				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)
+				{
+					parentElement = GetParentForEnum((global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)childElement);
 				} else
 				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment)
 				{
@@ -518,6 +649,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				return result;
 			}
 			public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot GetParentForJMSModel( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType root )
+			{
+				// Segments 0 and 1
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot result = root.ModelRoot;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot GetParentForEnum( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType root )
 			{
 				// Segments 0 and 1
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot result = root.ModelRoot;
@@ -613,6 +751,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Rule to update compartments when an item is added to the list
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
 		{
 			/// <summary>
@@ -634,6 +773,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					global::System.Collections.IEnumerable elements = GetJMSModelForJMSModelShapeAttributesCompartmentFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes)e.ModelElement);
 					UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape), "AttributesCompartment", repaintOnly);
 				}
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)
+				{
+					global::System.Collections.IEnumerable elements = GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
+				}
 			}
 			
 			#region static DomainPath traversal methods to get the list of compartments to update
@@ -648,6 +792,20 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			{
 				// Segments 1 and 0
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel result = root.JMSModel;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetEnumForEnumShapeEnumAttributesFromLastLink(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues root)
+			{
+				// Segment 0
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum result = root.Enum;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetEnumForEnumShapeEnumAttributes(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute root)
+			{
+				// Segments 1 and 0
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum result = root.Enum;
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
@@ -697,6 +855,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Rule to update compartments when an items is removed from the list
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
 		{
 			/// <summary>
@@ -716,6 +875,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetJMSModelForJMSModelShapeAttributesCompartmentFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape), "AttributesCompartment", repaintOnly);
 				}
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
+				}
 			}
 		}
 		
@@ -723,6 +887,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Rule to update compartments when the property on an item being displayed changes.
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
 		{
 			/// <summary>
@@ -742,6 +907,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetJMSModelForJMSModelShapeAttributesCompartment((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape), "AttributesCompartment", repaintOnly);
 				}
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute.NameDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
+				}
 			}
 		}
 		
@@ -749,6 +919,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Rule to update compartments when a roleplayer change happens
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
 		{
 			/// <summary>
@@ -790,6 +961,33 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape), "AttributesCompartment", repaintOnly);
 					}
 				}
+				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape compartmentShape = pel as global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
+					}
+				}
 			}
 		}
 	
@@ -797,6 +995,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Rule to update compartments when the order of items in the list changes.
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
 		{
 			/// <summary>
@@ -819,6 +1018,61 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape), "AttributesCompartment", repaintOnly);
 					}
 				}
+				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// A rule which fires when data mapped to outer text decorators has changed,
+		/// so we can update the decorator host's bounds.
+		/// </summary>
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association), InitiallyDisabled=true)]
+		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
+		{
+			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+			public override void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e)
+			{
+				if(e == null) throw new global::System.ArgumentNullException("e");
+				
+				if (e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.SourceMultiplicityDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector.FindUndirectionalConnectorDecorator("SourceMultiplicity");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.SourceRoleNameDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector.FindUndirectionalConnectorDecorator("SourceRoleName");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.TargetMultiplicityDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector.FindUndirectionalConnectorDecorator("TargetMultiplicity");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.DomainClassId);
+					}
+				}
+				else if (e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.Association.TargetRoleNameDomainPropertyId)
+				{
+					DslDiagrams::Decorator decorator = global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector.FindUndirectionalConnectorDecorator("TargetRoleName");
+					if(decorator != null)
+					{
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.DomainClassId);
+					}
+				}
 			}
 		}
 	
@@ -826,6 +1080,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CommentReferencesModelTyped), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Generalization), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

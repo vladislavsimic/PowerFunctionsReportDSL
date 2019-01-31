@@ -63,6 +63,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] JMSEnumTemplate {
+            get {
+                object obj = ResourceManager.GetObject("JMSEnumTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] JMSModelResultsTemplate {
+            get {
+                object obj = ResourceManager.GetObject("JMSModelResultsTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] JMSModelTemplate {
             get {
                 object obj = ResourceManager.GetObject("JMSModelTemplate", resourceCulture);

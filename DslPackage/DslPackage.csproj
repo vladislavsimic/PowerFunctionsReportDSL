@@ -97,12 +97,15 @@
       <DependentUpon>CodeGenerationResource.resx</DependentUpon>
     </Compile>
     <Compile Include="CustomCode\CodeGenerator.cs" />
+    <Compile Include="CustomCode\Model\JMSResultsTemplate.cs" />
     <Compile Include="CustomCode\Model\SCGTemplate.cs" />
     <Compile Include="GeneratedCode\CommandSet.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CommandSet.tt</DependentUpon>
     </Compile>
+    <None Include="CustomCode\Templates\JMSEnumTemplate.t4" />
+    <None Include="CustomCode\Templates\JMSModelResultsTemplate.t4" />
     <None Include="CustomCode\Templates\JMSModelTemplate.t4" />
     <None Include="source.extension.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -263,5 +266,7 @@
     </CodeAnalysisDictionary>
     <Content Include="Resources\ModelExplorerToolWindowBitmaps.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="CustomCode\TextTemplatesModel\" />
+  </ItemGroup>
 </Project>
