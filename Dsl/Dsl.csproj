@@ -80,6 +80,9 @@
     <Compile Include="CustomCode\Converters\AccessModifierConverter.cs" />
     <Compile Include="CustomCode\Converters\TypesToCSharpType.cs" />
     <Compile Include="CustomCode\Helpers\JMSHelper.cs" />
+    <Compile Include="CustomCode\Model\CodeHandler.cs" />
+    <Compile Include="CustomCode\Model\JMSModelCSharp.cs" />
+    <Compile Include="CustomCode\Model\ModelClassCSharp.cs" />
     <Compile Include="GeneratedCode\ConnectionBuilders.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -13,9 +13,8 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
     public enum EMSLoadFlowReportType
     {
-        Node,
-		Section,
-		Transformer,
+        Capacitor,
+		Nodes,
 		        
     }
 }

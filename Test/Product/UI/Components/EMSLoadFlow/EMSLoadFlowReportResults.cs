@@ -7,10 +7,11 @@
 //														        #
 //###############################################################
 
+
 using System.Runtime.Serialization;
 using TelventDMS.Common.DMS.Common;
 
- 
+
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport.EMSLoadFlowReport
 {
     [DataContract]
@@ -18,20 +19,23 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport.EMSLoadFlowRep
 
     public class EMSLoadFlowReport : JobResult
     {
-
         #region Constructors
 
-        public EMSLoadFlowReport()
-        {
-        }        
+         public EMSLoadFlowReport()
+		{
+		}
+      
 
         #endregion Constructors
 
         #region Properties
 
+        
+
         public EMSLoadFlowReportType EMSLFReportType { get; set; }
 
 		
+
         #endregion Properties
     }
 }

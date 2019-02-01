@@ -4,6 +4,9 @@
 <#@ parameter name="delimiter" type="System.String" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters" #>
+<#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model" #>
+<#@ import namespace="System.Collections.Generic" #>
+
 <#
   // Create a file segment for each element:
    foreach (ModelType type in this.ModelRoot.Types)
@@ -23,64 +26,28 @@
 //	and will be lost if the code is regenerated.		        #
 //														        #
 //###############################################################
-
-using System.Runtime.Serialization;
-using TelventDMS.Common.DMS.Common;
-
 <#
-    string classNamespace = "TelventDMS.Services.JobManagerService." + this.ModelRoot.Name + "Report." + jmsModel.Name;
-    string superclass = string.Empty;
-    if (jmsModel.Superclass != null)
-    {
-        superclass = " : " + jmsModel.Superclass.Name;
+    JMSModelCSharp jmsCSharp = new JMSModelCSharp(jmsModel);
+    jmsCSharp.ObtainCode();
+    Dictionary<string, string> props = jmsCSharp.Properties;
+#>
 
-    }
-#> 
-namespace <#=classNamespace#>
+<#=props["usings"]#>
+
+namespace <#=props["classNamespace"]#>
 {
-<#
-    if(jmsModel.IsDataContract) 
+    <#=props["dataContract"]#>
+    public class <#=jmsModel.Name#><#=props["superclass"]#>
     {
-#>
-    [DataContract]
-<#
-    }
-#>
-    public class <#=jmsModel.Name#><#=superclass#>
-    {
-
-<#
-    if(jmsModel.HasDefaultConstructor)
-    {
-#>
         #region Constructors
 
-        public <#=jmsModel.Name#>()
-        {
-        }        
+        <#=props["defaultConstructor"]#>        
 
         #endregion Constructors
-<#
-    }
-#>
 
         #region Properties
-
-<#
-    foreach (ClassAttribute attr in jmsModel.Attributes)
-    {
-        string customType= TypesToCSharpType.Convert(attr);
-        if(attr.IsDataMember)
-        {
-#>
-        [DataMember]
-<#
-        }
-#>
-        public <#=customType#> <#=attr.Name#> { get; set; }
-<#
-    }
-#>
+        
+        <#=props["attributes"]#>
 
         #endregion Properties
     }

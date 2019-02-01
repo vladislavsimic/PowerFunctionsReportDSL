@@ -10,22 +10,32 @@
 using System.Runtime.Serialization;
 using TelventDMS.Common.DMS.Common;
 
- 
+
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport.EMSLoadFlowCapacitorReportRecord
 {
     [DataContract]
     public class EMSLoadFlowCapacitorReportRecord
     {
-
         #region Constructors
 
         public EMSLoadFlowCapacitorReportRecord()
-        {
-        }        
+		{
+		}
+        
 
         #endregion Constructors
 
         #region Properties
+        
+        		[DataMember]
+		public int P { get; set; }
+
+		[DataMember]
+		public int Q { get; set; }
+
+		[DataMember]
+		public int I { get; set; }
+
 
 
         #endregion Properties
