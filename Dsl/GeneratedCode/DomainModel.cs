@@ -78,6 +78,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				typeof(ModelClass),
 				typeof(Enum),
 				typeof(EnumAttribute),
+				typeof(UIElement),
+				typeof(Tab),
+				typeof(UIElementAttributes),
+				typeof(DataGrid),
+				typeof(ColumnAttributes),
+				typeof(TabAttributes),
+				typeof(DataGridAttributes),
 				typeof(ModelRootHasComments),
 				typeof(CommentReferencesModelTyped),
 				typeof(ModelRootHasTypes),
@@ -86,14 +93,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				typeof(Association),
 				typeof(UndirectionalAssociation),
 				typeof(EnumHasValues),
+				typeof(TabReferencesTargetTabbed),
+				typeof(TabReferencesDataGrid),
+				typeof(TabHasAttributes),
+				typeof(DataGridHasAttributes),
+				typeof(DataGridHasColumns),
+				typeof(DataGridJMSViewModel),
 				typeof(PowerFunctionsReportDSLDiagram),
 				typeof(CommentConnector),
 				typeof(GeneralizationConnector),
 				typeof(AssociationConnector),
 				typeof(UndirectionalConnector),
+				typeof(UIConnector),
+				typeof(TabConnector),
+				typeof(ViewModelConnector),
 				typeof(CommentShape),
 				typeof(JMSModelShape),
 				typeof(EnumShape),
+				typeof(TabShape),
+				typeof(UIElementShape),
+				typeof(DataGridShape),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.FixUpDiagram),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DecoratorPropertyChanged),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ConnectorRolePlayerChanged),
@@ -118,13 +137,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(JMSModel), "IsDataContract", JMSModel.IsDataContractDomainPropertyId, typeof(JMSModel.IsDataContractPropertyHandler)),
 				new DomainMemberInfo(typeof(JMSModel), "Type", JMSModel.TypeDomainPropertyId, typeof(JMSModel.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(JMSModel), "HasDefaultConstructor", JMSModel.HasDefaultConstructorDomainPropertyId, typeof(JMSModel.HasDefaultConstructorPropertyHandler)),
-				new DomainMemberInfo(typeof(JMSModel), "MainReportClass", JMSModel.MainReportClassDomainPropertyId, typeof(JMSModel.MainReportClassPropertyHandler)),
+				new DomainMemberInfo(typeof(JMSModel), "HasKnownTypes", JMSModel.HasKnownTypesDomainPropertyId, typeof(JMSModel.HasKnownTypesPropertyHandler)),
+				new DomainMemberInfo(typeof(JMSModel), "FolderName", JMSModel.FolderNameDomainPropertyId, typeof(JMSModel.FolderNamePropertyHandler)),
 				new DomainMemberInfo(typeof(ClassModelElement), "Description", ClassModelElement.DescriptionDomainPropertyId, typeof(ClassModelElement.DescriptionPropertyHandler)),
 				new DomainMemberInfo(typeof(ClassAttribute), "InitialValue", ClassAttribute.InitialValueDomainPropertyId, typeof(ClassAttribute.InitialValuePropertyHandler)),
 				new DomainMemberInfo(typeof(ClassAttribute), "Type", ClassAttribute.TypeDomainPropertyId, typeof(ClassAttribute.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(ClassAttribute), "AccessModifier", ClassAttribute.AccessModifierDomainPropertyId, typeof(ClassAttribute.AccessModifierPropertyHandler)),
 				new DomainMemberInfo(typeof(ClassAttribute), "IsDataMember", ClassAttribute.IsDataMemberDomainPropertyId, typeof(ClassAttribute.IsDataMemberPropertyHandler)),
+				new DomainMemberInfo(typeof(ClassAttribute), "ModelCode", ClassAttribute.ModelCodeDomainPropertyId, typeof(ClassAttribute.ModelCodePropertyHandler)),
+				new DomainMemberInfo(typeof(ClassAttribute), "MeasurementType", ClassAttribute.MeasurementTypeDomainPropertyId, typeof(ClassAttribute.MeasurementTypePropertyHandler)),
 				new DomainMemberInfo(typeof(ModelClass), "ShouldGenerate", ModelClass.ShouldGenerateDomainPropertyId, typeof(ModelClass.ShouldGeneratePropertyHandler)),
+				new DomainMemberInfo(typeof(UIElement), "ShouldGenerate", UIElement.ShouldGenerateDomainPropertyId, typeof(UIElement.ShouldGeneratePropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttributes), "Binding", ColumnAttributes.BindingDomainPropertyId, typeof(ColumnAttributes.BindingPropertyHandler)),
 				new DomainMemberInfo(typeof(Association), "SourceMultiplicity", Association.SourceMultiplicityDomainPropertyId, typeof(Association.SourceMultiplicityPropertyHandler)),
 				new DomainMemberInfo(typeof(Association), "SourceRoleName", Association.SourceRoleNameDomainPropertyId, typeof(Association.SourceRoleNamePropertyHandler)),
 				new DomainMemberInfo(typeof(Association), "TargetMultiplicity", Association.TargetMultiplicityDomainPropertyId, typeof(Association.TargetMultiplicityPropertyHandler)),
@@ -132,6 +156,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(Association), "AccessModifier", Association.AccessModifierDomainPropertyId, typeof(Association.AccessModifierPropertyHandler)),
 				new DomainMemberInfo(typeof(Association), "IsDataMember", Association.IsDataMemberDomainPropertyId, typeof(Association.IsDataMemberPropertyHandler)),
 				new DomainMemberInfo(typeof(Association), "Description", Association.DescriptionDomainPropertyId, typeof(Association.DescriptionPropertyHandler)),
+				new DomainMemberInfo(typeof(Association), "ModelCode", Association.ModelCodeDomainPropertyId, typeof(Association.ModelCodePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -158,6 +183,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainRolePlayerInfo(typeof(UndirectionalAssociation), "ModelClass", UndirectionalAssociation.ModelClassDomainRoleId),
 				new DomainRolePlayerInfo(typeof(EnumHasValues), "Enum", EnumHasValues.EnumDomainRoleId),
 				new DomainRolePlayerInfo(typeof(EnumHasValues), "EnumAttribute", EnumHasValues.EnumAttributeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TabReferencesTargetTabbed), "SourceTab", TabReferencesTargetTabbed.SourceTabDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TabReferencesTargetTabbed), "TargetTab", TabReferencesTargetTabbed.TargetTabDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TabReferencesDataGrid), "Tab", TabReferencesDataGrid.TabDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TabReferencesDataGrid), "DataGrid", TabReferencesDataGrid.DataGridDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TabHasAttributes), "Tab", TabHasAttributes.TabDomainRoleId),
+				new DomainRolePlayerInfo(typeof(TabHasAttributes), "TabAttributes", TabHasAttributes.TabAttributesDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridHasAttributes), "DataGrid", DataGridHasAttributes.DataGridDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridHasAttributes), "DataGridAttributes", DataGridHasAttributes.DataGridAttributesDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridHasColumns), "DataGrid", DataGridHasColumns.DataGridDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridHasColumns), "ColumnAttributes", DataGridHasColumns.ColumnAttributesDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridJMSViewModel), "DataGrid", DataGridJMSViewModel.DataGridDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridJMSViewModel), "JMSModel", DataGridJMSViewModel.JMSModelDomainRoleId),
 			};
 		}
 		#endregion
@@ -179,7 +216,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(18);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(31);
 				createElementMap.Add(typeof(ModelRoot), 0);
 				createElementMap.Add(typeof(Comment), 1);
 				createElementMap.Add(typeof(NamedElement), 2);
@@ -187,13 +224,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				createElementMap.Add(typeof(ClassAttribute), 4);
 				createElementMap.Add(typeof(Enum), 5);
 				createElementMap.Add(typeof(EnumAttribute), 6);
-				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 7);
-				createElementMap.Add(typeof(CommentConnector), 8);
-				createElementMap.Add(typeof(GeneralizationConnector), 9);
-				createElementMap.Add(typeof(UndirectionalConnector), 10);
-				createElementMap.Add(typeof(CommentShape), 11);
-				createElementMap.Add(typeof(JMSModelShape), 12);
-				createElementMap.Add(typeof(EnumShape), 13);
+				createElementMap.Add(typeof(Tab), 7);
+				createElementMap.Add(typeof(DataGrid), 8);
+				createElementMap.Add(typeof(ColumnAttributes), 9);
+				createElementMap.Add(typeof(TabAttributes), 10);
+				createElementMap.Add(typeof(DataGridAttributes), 11);
+				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 12);
+				createElementMap.Add(typeof(CommentConnector), 13);
+				createElementMap.Add(typeof(GeneralizationConnector), 14);
+				createElementMap.Add(typeof(UndirectionalConnector), 15);
+				createElementMap.Add(typeof(TabConnector), 16);
+				createElementMap.Add(typeof(ViewModelConnector), 17);
+				createElementMap.Add(typeof(CommentShape), 18);
+				createElementMap.Add(typeof(JMSModelShape), 19);
+				createElementMap.Add(typeof(EnumShape), 20);
+				createElementMap.Add(typeof(TabShape), 21);
+				createElementMap.Add(typeof(DataGridShape), 22);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -214,13 +260,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				case 4: return new ClassAttribute(partition, propertyAssignments);
 				case 5: return new Enum(partition, propertyAssignments);
 				case 6: return new EnumAttribute(partition, propertyAssignments);
-				case 7: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
-				case 8: return new CommentConnector(partition, propertyAssignments);
-				case 9: return new GeneralizationConnector(partition, propertyAssignments);
-				case 10: return new UndirectionalConnector(partition, propertyAssignments);
-				case 11: return new CommentShape(partition, propertyAssignments);
-				case 12: return new JMSModelShape(partition, propertyAssignments);
-				case 13: return new EnumShape(partition, propertyAssignments);
+				case 7: return new Tab(partition, propertyAssignments);
+				case 8: return new DataGrid(partition, propertyAssignments);
+				case 9: return new ColumnAttributes(partition, propertyAssignments);
+				case 10: return new TabAttributes(partition, propertyAssignments);
+				case 11: return new DataGridAttributes(partition, propertyAssignments);
+				case 12: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
+				case 13: return new CommentConnector(partition, propertyAssignments);
+				case 14: return new GeneralizationConnector(partition, propertyAssignments);
+				case 15: return new UndirectionalConnector(partition, propertyAssignments);
+				case 16: return new TabConnector(partition, propertyAssignments);
+				case 17: return new ViewModelConnector(partition, propertyAssignments);
+				case 18: return new CommentShape(partition, propertyAssignments);
+				case 19: return new JMSModelShape(partition, propertyAssignments);
+				case 20: return new EnumShape(partition, propertyAssignments);
+				case 21: return new TabShape(partition, propertyAssignments);
+				case 22: return new DataGridShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -243,7 +298,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(14);
 				createElementLinkMap.Add(typeof(ModelRootHasComments), 0);
 				createElementLinkMap.Add(typeof(CommentReferencesModelTyped), 1);
 				createElementLinkMap.Add(typeof(ModelRootHasTypes), 2);
@@ -252,6 +307,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				createElementLinkMap.Add(typeof(Association), 5);
 				createElementLinkMap.Add(typeof(UndirectionalAssociation), 6);
 				createElementLinkMap.Add(typeof(EnumHasValues), 7);
+				createElementLinkMap.Add(typeof(TabReferencesTargetTabbed), 8);
+				createElementLinkMap.Add(typeof(TabReferencesDataGrid), 9);
+				createElementLinkMap.Add(typeof(TabHasAttributes), 10);
+				createElementLinkMap.Add(typeof(DataGridHasAttributes), 11);
+				createElementLinkMap.Add(typeof(DataGridHasColumns), 12);
+				createElementLinkMap.Add(typeof(DataGridJMSViewModel), 13);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -274,6 +335,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				case 5: return new Association(partition, roleAssignments, propertyAssignments);
 				case 6: return new UndirectionalAssociation(partition, roleAssignments, propertyAssignments);
 				case 7: return new EnumHasValues(partition, roleAssignments, propertyAssignments);
+				case 8: return new TabReferencesTargetTabbed(partition, roleAssignments, propertyAssignments);
+				case 9: return new TabReferencesDataGrid(partition, roleAssignments, propertyAssignments);
+				case 10: return new TabHasAttributes(partition, roleAssignments, propertyAssignments);
+				case 11: return new DataGridHasAttributes(partition, roleAssignments, propertyAssignments);
+				case 12: return new DataGridHasColumns(partition, roleAssignments, propertyAssignments);
+				case 13: return new DataGridJMSViewModel(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -458,6 +525,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelTypeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.ClassAttributeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.EnumAttributeDomainRoleId, true);
+			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributesDomainRoleId, true);
+			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributesDomainRoleId, true);
+			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributesDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
@@ -739,6 +809,458 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSResultType/Results.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		Results = 1,
+		/// <summary>
+		/// Bean
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSResultType.Bean
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSResultType/Bean.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Bean = 3,
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainEnumeration: ModelCodeTypes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum ModelCodeTypes
+	{
+		/// <summary>
+		/// Empty
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Empty
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Empty.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Empty = 0,
+		/// <summary>
+		/// Byte
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Byte
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Byte.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Byte = 2,
+		/// <summary>
+		/// Int32
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Int32
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Int32.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Int32 = 3,
+		/// <summary>
+		/// Int64
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Int64
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Int64.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Int64 = 4,
+		/// <summary>
+		/// Float
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Float
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Float.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Float = 5,
+		/// <summary>
+		/// Double
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Double
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Double.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Double = 6,
+		/// <summary>
+		/// String
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.String
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/String.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		String = 7,
+		/// <summary>
+		/// DateTime
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.DateTime
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/DateTime.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		DateTime = 8,
+		/// <summary>
+		/// Reference
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Reference
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Reference.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Reference = 9,
+		/// <summary>
+		/// Bool
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Bool
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Bool.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Bool = 1,
+		/// <summary>
+		/// Enum
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Enum
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Enum.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Enum = 10,
+		/// <summary>
+		/// Struct
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Struct
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Struct.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Struct = 11,
+		/// <summary>
+		/// TimeSpan
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.TimeSpan
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/TimeSpan.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		TimeSpan = 12,
+		/// <summary>
+		/// Complex
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Complex
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Complex.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Complex = 13,
+		/// <summary>
+		/// BoolVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.BoolVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/BoolVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		BoolVector = 17,
+		/// <summary>
+		/// DoubleVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.DoubleVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/DoubleVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		DoubleVector = 22,
+		/// <summary>
+		/// StringVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.StringVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/StringVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		StringVector = 23,
+		/// <summary>
+		/// DateTimeVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.DateTimeVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/DateTimeVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		DateTimeVector = 24,
+		/// <summary>
+		/// ReferenceVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.ReferenceVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/ReferenceVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ReferenceVector = 25,
+		/// <summary>
+		/// EnumVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.EnumVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/EnumVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		EnumVector = 26,
+		/// <summary>
+		/// StructVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.StructVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/StructVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		StructVector = 27,
+		/// <summary>
+		/// TimeSpanVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.TimeSpanVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/TimeSpanVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		TimeSpanVector = 28,
+		/// <summary>
+		/// ComplexVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.ComplexVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/ComplexVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ComplexVector = 29,
+		/// <summary>
+		/// ByteVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.ByteVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/ByteVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ByteVector = 18,
+		/// <summary>
+		/// Int32Vector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Int32Vector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Int32Vector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Int32Vector = 19,
+		/// <summary>
+		/// Int64Vector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Int64Vector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Int64Vector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Int64Vector = 20,
+		/// <summary>
+		/// FloatVector
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.FloatVector
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/FloatVector.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		FloatVector = 21,
+		/// <summary>
+		/// BoolArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.BoolArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/BoolArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		BoolArray = 33,
+		/// <summary>
+		/// Int64Array
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Int64Array
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Int64Array.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Int64Array = 36,
+		/// <summary>
+		/// FloatArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.FloatArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/FloatArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		FloatArray = 37,
+		/// <summary>
+		/// DoubleArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.DoubleArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/DoubleArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		DoubleArray = 38,
+		/// <summary>
+		/// StringArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.StringArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/StringArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		StringArray = 39,
+		/// <summary>
+		/// DateTimeArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.DateTimeArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/DateTimeArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		DateTimeArray = 40,
+		/// <summary>
+		/// ReferenceArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.ReferenceArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/ReferenceArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ReferenceArray = 41,
+		/// <summary>
+		/// EnumArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.EnumArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/EnumArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		EnumArray = 42,
+		/// <summary>
+		/// StructArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.StructArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/StructArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		StructArray = 43,
+		/// <summary>
+		/// ByteArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.ByteArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/ByteArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ByteArray = 34,
+		/// <summary>
+		/// Int32Array
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.Int32Array
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/Int32Array.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Int32Array = 35,
+		/// <summary>
+		/// TimeSpanArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.TimeSpanArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/TimeSpanArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		TimeSpanArray = 44,
+		/// <summary>
+		/// ComplexArray
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes.ComplexArray
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ModelCodeTypes/ComplexArray.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ComplexArray = 45,
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainEnumeration: MeasurementType
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum MeasurementType
+	{
+		/// <summary>
+		/// Unitless
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Unitless
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Unitless.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Unitless = 0,
+		/// <summary>
+		/// Percent
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Percent
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Percent.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Percent = 27,
+		/// <summary>
+		/// RelativeVoltage
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.RelativeVoltage
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/RelativeVoltage.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		RelativeVoltage = 29,
+		/// <summary>
+		/// Voltage
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Voltage
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Voltage.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Voltage = 1,
+		/// <summary>
+		/// Temperature
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Temperature
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Temperature.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Temperature = 7,
+		/// <summary>
+		/// ActiveEnergy
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.ActiveEnergy
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/ActiveEnergy.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ActiveEnergy = 8,
+		/// <summary>
+		/// ReactiveEnergy
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.ReactiveEnergy
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/ReactiveEnergy.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ReactiveEnergy = 9,
+		/// <summary>
+		/// ApparentPower
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.ApparentPower
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/ApparentPower.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ApparentPower = 10,
+		/// <summary>
+		/// VoltageAngle
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.VoltageAngle
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/VoltageAngle.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		VoltageAngle = 11,
+		/// <summary>
+		/// Status
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Status
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Status.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Status = 12,
+		/// <summary>
+		/// Impedance
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Impedance
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Impedance.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Impedance = 22,
+		/// <summary>
+		/// Admittance
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Admittance
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Admittance.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Admittance = 24,
+		/// <summary>
+		/// Current
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Current
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Current.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Current = 2,
+		/// <summary>
+		/// ActivePower
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.ActivePower
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/ActivePower.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ActivePower = 3,
+		/// <summary>
+		/// ReactivePower
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.ReactivePower
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/ReactivePower.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		ReactivePower = 4,
+		/// <summary>
+		/// CosPhi
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.CosPhi
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/CosPhi.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		CosPhi = 5,
+		/// <summary>
+		/// Frequency
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.Frequency
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/Frequency.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		Frequency = 6,
+		/// <summary>
+		/// EMSApparentPowerM
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.EMSApparentPowerM
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/EMSApparentPowerM.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		EMSApparentPowerM = 39,
+		/// <summary>
+		/// EMSReactivePowerM
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.EMSReactivePowerM
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/EMSReactivePowerM.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		EMSReactivePowerM = 40,
+		/// <summary>
+		/// EMSActivePowerM
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.EMSActivePowerM
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/EMSActivePowerM.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		EMSActivePowerM = 41,
+		/// <summary>
+		/// None
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType.None
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.MeasurementType/None.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		None = 100,
 	}
 }
 

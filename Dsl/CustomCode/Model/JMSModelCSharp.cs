@@ -52,6 +52,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			Properties.Add("attributes", JMSHelper.GetJMSClassAttributes(jmsModel));
 			Properties.Add("knownTypes", JMSHelper.GetKnownTypes(jmsModel));
 			Properties.Add("associationProperties", JMSHelper.GetJMSModelAssociationProperties(jmsModel));
+			Properties.Add("jobData", JMSHelper.GetJMSJobData(jmsModel));
 		}
 
 		#endregion Methods

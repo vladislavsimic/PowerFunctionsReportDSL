@@ -29,6 +29,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 				case Types.Int:
 					return "int";
 				case Types.Long:
+					return "long";
 				case Types.GID:
 					return "long";
 				case Types.LID:

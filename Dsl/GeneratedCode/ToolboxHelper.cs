@@ -59,6 +59,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// Toolbox item filter string used to identify CommentRelationship connector tool.
 		/// </summary>
 		public const string CommentRelationshipFilterString = "CommentRelationship.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify TabTabReference connector tool.
+		/// </summary>
+		public const string TabTabReferenceFilterString = "TabTabReference.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify TabDataGridReference connector tool.
+		/// </summary>
+		public const string TabDataGridReferenceFilterString = "TabDataGridReference.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify DataGridViewModel connector tool.
+		/// </summary>
+		public const string DataGridViewModelFilterString = "DataGridViewModel.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -106,7 +118,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			get
 			{
-				return 6;
+				return 11;
 			}
 		}
 		
@@ -255,6 +267,92 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(CommentRelationshipFilterString)
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.TabToolboxItem":
+					// Add Tab shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.TabToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						7, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("TabToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("TabToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"Tab", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("TabToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridToolboxItem":
+					// Add DataGrid shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						8, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("DataGridToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("DataGridToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"DataGrid", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("DataGridToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.TabTabReferenceToolboxItem":
+
+					// Add TabTabReference connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.TabTabReferenceToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						9, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("TabTabReferenceToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("TabTabReferenceToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"TabTabReference", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("TabTabReferenceToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(TabTabReferenceFilterString)
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.TabDataGridReferenceToolboxItem":
+
+					// Add TabDataGridReference connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.TabDataGridReferenceToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						10, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("TabDataGridReferenceToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("TabDataGridReferenceToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"TabDataGridReference", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("TabDataGridReferenceToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(TabDataGridReferenceFilterString)
+						});
+					break;
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridViewModelToolboxItem":
+
+					// Add DataGridViewModel connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridViewModelToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						11, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("DataGridViewModelToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("DataGridViewModelToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"DataGridViewModel", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("DataGridViewModelToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(DataGridViewModelFilterString)
 						});
 					break;
 				default:

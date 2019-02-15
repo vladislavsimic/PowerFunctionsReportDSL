@@ -41,13 +41,14 @@ namespace <#=props["classNamespace"]#>
     {
         #region Constructors
 
-        <#=props["defaultConstructor"]#>        
+<#=props["defaultConstructor"]#>        
 
         #endregion Constructors
 
         #region Properties
         
-        <#=props["attributes"]#>
+<#=props["attributes"]#>
+<#=props["associationProperties"]#>
 
         #endregion Properties
     }

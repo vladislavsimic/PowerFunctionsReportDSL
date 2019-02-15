@@ -38,20 +38,20 @@
 namespace <#=props["classNamespace"]#>
 {
     <#=props["dataContract"]#>
-    <#=props["knownTypes"]#>
+<#=props["knownTypes"]#>
     public class <#=jmsModel.Name#><#=props["superclass"]#>
     {
         #region Constructors
 
-         <#=props["defaultConstructor"]#>      
+<#=props["defaultConstructor"]#>      
 
         #endregion Constructors
 
         #region Properties
 
-        <#=props["attributes"]#>
+<#=props["attributes"]#>
 
-        <#=props["associationProperties"]#>
+<#=props["associationProperties"]#>
 
         #endregion Properties
     }

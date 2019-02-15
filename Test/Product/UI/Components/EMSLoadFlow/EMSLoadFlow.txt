@@ -1,8 +1,13 @@
 JMS ::::
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\EMSLoadFlowCapacitorReportRecord.cs]  [EMSLoadFlowCapacitorReportRecord]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\EMSLoadFlowCapacitorReportResultResults.cs]  [EMSLoadFlowCapacitorReportResult]
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\EMSLoadFlowReportResults.cs]  [EMSLoadFlowReport]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\EMSLoadFlowReportType.cs]  [EMSLoadFlowReportType]
+
+
+
+
+UI ::::
+
+
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\DataGrid1View.xaml]  [DataGrid1]
 

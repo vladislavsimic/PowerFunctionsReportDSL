@@ -1,64 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="cb314b56-c8bb-4c85-9fd8-5454a1260a94" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fa794d81-fc75-4968-aa95-c9362df3acaf" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="0f7c46b3-c6a8-4cf2-92c3-9bbd425e2b9d">
-      <jMSModel Id="30d9b56e-7826-4836-b45d-d75369a0b291" name="EMSLoadFlowCapacitorReportRecord">
-        <attributes>
-          <jMSModelHasAttributes Id="93590db6-42ed-4205-b8f7-0a538c6f365f">
-            <classAttribute Id="8f9ef784-8212-4328-8184-09432509dfe6" name="P" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="89cb12a8-4191-4425-a3a4-7e14dbb1c913">
-            <classAttribute Id="59fc2776-8599-42d7-ac5b-e7c3cfd932f8" name="Q" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="62fc4429-9738-44a7-b014-2bb70635756b">
-            <classAttribute Id="69920707-0e0c-436b-bc53-7b52eec3239c" name="I" />
-          </jMSModelHasAttributes>
-        </attributes>
-      </jMSModel>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="2584670f-fe1a-42a0-9e4d-fa700f5a58a9">
-      <jMSModel Id="26b4a798-a860-4982-8055-c5c22949d22c" name="EMSLoadFlowCapacitorReportResult" type="Results">
-        <targets>
-          <undirectionalAssociation Id="bbc6e87a-2021-4d68-b8e6-b9d72311aadd" targetMultiplicity="ZeroMany" targetRoleName="Records">
-            <jMSModelMoniker Id="30d9b56e-7826-4836-b45d-d75369a0b291" />
-          </undirectionalAssociation>
-        </targets>
-      </jMSModel>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="cb0c552d-0bfc-4502-a26b-1034819b527d">
-      <jMSModel Id="9b527d9f-eaf7-4d56-8dd3-3117c1134565" name="EMSLoadFlowReport" type="Results" mainReportClass="true">
-        <subclasses>
-          <generalization Id="7c5fff90-94ee-413d-be63-d8f581d760f5">
-            <jMSModelMoniker Id="26b4a798-a860-4982-8055-c5c22949d22c" />
-          </generalization>
-        </subclasses>
-        <targets>
-          <undirectionalAssociation Id="261d3ce6-5769-4af1-9dab-a01411a0b26e" targetRoleName="EMSLFReportType">
-            <enumMoniker Id="957966b1-00ca-402a-83f9-0014d798db9e" />
-          </undirectionalAssociation>
-        </targets>
-      </jMSModel>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="0e62b250-b1cb-47ef-b14c-615631c59cd7">
-      <enum Id="957966b1-00ca-402a-83f9-0014d798db9e" name="EMSLoadFlowReportType">
-        <values>
-          <enumHasValues Id="460d3cc5-8909-479d-8511-76ee877c0757">
-            <enumAttribute Id="e154cd7e-86e0-4c67-bc96-123aa4737c72" name="Capacitor" />
-          </enumHasValues>
-          <enumHasValues Id="bf076539-98eb-4e66-8668-9c34c701b53e">
-            <enumAttribute Id="3ed5c4ce-d8cb-4311-9ded-92d19bab8cbf" name="Nodes" />
-          </enumHasValues>
-        </values>
-      </enum>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="424d753e-692c-437b-9253-5ec5cc767146">
-      <jMSModel Id="c0f62567-7716-443a-b06a-6dbc10507b3d" name="JobResult" shouldGenerate="false">
-        <subclasses>
-          <generalization Id="595fb3bf-dedf-4f07-906b-c299eeac570a">
-            <jMSModelMoniker Id="9b527d9f-eaf7-4d56-8dd3-3117c1134565" />
-          </generalization>
-        </subclasses>
-      </jMSModel>
+    <modelRootHasTypes Id="8aa3ab9c-c0b5-4fa0-80a6-a92add0da3b3">
+      <dataGrid Id="80d79fc1-c3d0-48bc-8262-45624c005a52" name="DataGrid1" />
     </modelRootHasTypes>
   </types>
 </modelRoot>

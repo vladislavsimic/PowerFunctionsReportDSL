@@ -121,10 +121,22 @@
   <data name="JMSEnumTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Templates\JMSEnumTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="JMSJobTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\JMSJobTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="JMSModelResultsTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Templates\JMSModelResultsTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="JMSModelTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Templates\JMSModelTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UIViewCsTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\UI\UIViewCsTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UIViewModelTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\UI\UIViewModelTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UIViewTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\UI\UIViewTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

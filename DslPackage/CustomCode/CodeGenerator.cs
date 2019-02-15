@@ -20,19 +20,37 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 
 			//JMS code generation
 			StringBuilder sb = new StringBuilder();
-			sb.AppendLine("JMS ::::");
+			string folderRelativePath = "..\\..\\..\\..\\Services\\JobManagerService\\" + fileName + "Report";
+			sb.AppendLine("JMS ::::\n\n");
 
-			SCGTemplate JMSModelTemplate = new SCGTemplate(CodeGenerationResource.JMSModelTemplate, string.Empty, ".cs");
+			SCGTemplate JMSModelTemplate = new SCGTemplate(CodeGenerationResource.JMSModelTemplate, folderRelativePath, ".cs");
 			string genCode = GenerateCode(JMSModelTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			JMSResultsTemplate JMSModelResultsTemplate = new JMSResultsTemplate(CodeGenerationResource.JMSModelResultsTemplate, string.Empty, ".cs", "Results");
+			SCGTemplate JMSModelResultsTemplate = new SCGTemplate(CodeGenerationResource.JMSModelResultsTemplate, folderRelativePath, ".cs");
 			genCode = GenerateCode(JMSModelResultsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			SCGTemplate JMSEnumTemplate = new SCGTemplate(CodeGenerationResource.JMSEnumTemplate, string.Empty, ".cs");
+			SCGTemplate JMSJobTemplate = new SCGTemplate(CodeGenerationResource.JMSJobTemplate, folderRelativePath, ".cs");
+			genCode = GenerateCode(JMSJobTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate JMSEnumTemplate = new SCGTemplate(CodeGenerationResource.JMSEnumTemplate, folderRelativePath, ".cs");
 			genCode = GenerateCode(JMSEnumTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
+
+			folderRelativePath = "\\ViewModels";
+			sb.AppendLine("UI ::::\n\n");
+
+			SCGTemplate UIViewModelTemplate = new SCGTemplate(CodeGenerationResource.UIViewModelTemplate, folderRelativePath, ".cs", "ViewModel");
+			genCode = GenerateCode(UIViewModelTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			folderRelativePath = "\\View";
+			SCGTemplate UIViewTemplate = new SCGTemplate(CodeGenerationResource.UIViewTemplate, folderRelativePath, ".xaml", "View");
+			genCode = GenerateCode(UIViewTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
 
 			return Encoding.ASCII.GetBytes(sb.ToString());
 		}

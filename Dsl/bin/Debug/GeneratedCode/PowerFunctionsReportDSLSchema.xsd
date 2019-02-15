@@ -245,8 +245,10 @@
         <xsd:attribute name="type" type="JMSResultType" />
         <!-- Property: HasDefaultConstructor -->
         <xsd:attribute name="hasDefaultConstructor" type="xsd:boolean" />
-        <!-- Property: MainReportClass -->
-        <xsd:attribute name="mainReportClass" type="xsd:boolean" />
+        <!-- Property: HasKnownTypes -->
+        <xsd:attribute name="hasKnownTypes" type="xsd:boolean" />
+        <!-- Property: FolderName -->
+        <xsd:attribute name="folderName" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -311,6 +313,10 @@
         <xsd:attribute name="accessModifier" type="TypeAccessModifier" />
         <!-- Property: IsDataMember -->
         <xsd:attribute name="isDataMember" type="xsd:boolean" />
+        <!-- Property: ModelCode -->
+        <xsd:attribute name="modelCode" type="xsd:string" />
+        <!-- Property: MeasurementType -->
+        <xsd:attribute name="measurementType" type="MeasurementType" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -423,6 +429,293 @@
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="ClassModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- UIElement -->
+  <xsd:element name="uIElement" abstract="true" type="UIElement" substitutionGroup="modelType" />
+  <xsd:complexType name="UIElement" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="ModelType">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: ShouldGenerate -->
+        <xsd:attribute name="shouldGenerate" type="xsd:boolean" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- UIElement Moniker -->
+  <xsd:element name="uIElementMoniker" abstract="true" type="UIElementMoniker" substitutionGroup="modelTypeMoniker" />
+  <xsd:complexType name="UIElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for UIElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ModelTypeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Tab -->
+  <xsd:element name="tab" type="Tab" substitutionGroup="uIElement" />
+  <xsd:complexType name="Tab">
+    <xsd:complexContent>
+      <xsd:extension base="UIElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: TabReferencesTargetTabbed -->
+          <xsd:element name="targetTabbed" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of TabReferencesTargetTabbed</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="tabReferencesTargetTabbed" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of TabReferencesTargetTabbed needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: TabReferencesDataGrid -->
+          <xsd:element name="dataGrid" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of TabReferencesDataGrid</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="tabReferencesDataGrid" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of TabReferencesDataGrid needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: TabHasAttributes -->
+          <xsd:element name="attributes" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of TabHasAttributes</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="tabHasAttributes" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of TabHasAttributes needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Tab Moniker -->
+  <xsd:element name="tabMoniker" type="TabMoniker" substitutionGroup="uIElementMoniker" />
+  <xsd:complexType name="TabMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Tab instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UIElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- UIElementAttributes -->
+  <xsd:element name="uIElementAttributes" abstract="true" type="UIElementAttributes" substitutionGroup="namedElement" />
+  <xsd:complexType name="UIElementAttributes" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- UIElementAttributes Moniker -->
+  <xsd:element name="uIElementAttributesMoniker" abstract="true" type="UIElementAttributesMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="UIElementAttributesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for UIElementAttributes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGrid -->
+  <xsd:element name="dataGrid" type="DataGrid" substitutionGroup="uIElement" />
+  <xsd:complexType name="DataGrid">
+    <xsd:complexContent>
+      <xsd:extension base="UIElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: DataGridHasAttributes -->
+          <xsd:element name="attributes" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of DataGridHasAttributes</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="dataGridHasAttributes" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DataGridHasAttributes needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: DataGridHasColumns -->
+          <xsd:element name="columns" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of DataGridHasColumns</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="dataGridHasColumns" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DataGridHasColumns needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: DataGridJMSViewModel -->
+          <xsd:element name="jMSModel" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of DataGridJMSViewModel</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="dataGridJMSViewModel" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DataGridJMSViewModel needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGrid Moniker -->
+  <xsd:element name="dataGridMoniker" type="DataGridMoniker" substitutionGroup="uIElementMoniker" />
+  <xsd:complexType name="DataGridMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGrid instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UIElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ColumnAttributes -->
+  <xsd:element name="columnAttributes" type="ColumnAttributes" substitutionGroup="uIElementAttributes" />
+  <xsd:complexType name="ColumnAttributes">
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributes">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Binding -->
+        <xsd:attribute name="binding" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ColumnAttributes Moniker -->
+  <xsd:element name="columnAttributesMoniker" type="ColumnAttributesMoniker" substitutionGroup="uIElementAttributesMoniker" />
+  <xsd:complexType name="ColumnAttributesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ColumnAttributes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributesMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabAttributes -->
+  <xsd:element name="tabAttributes" type="TabAttributes" substitutionGroup="uIElementAttributes" />
+  <xsd:complexType name="TabAttributes">
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributes">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabAttributes Moniker -->
+  <xsd:element name="tabAttributesMoniker" type="TabAttributesMoniker" substitutionGroup="uIElementAttributesMoniker" />
+  <xsd:complexType name="TabAttributesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for TabAttributes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributesMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridAttributes -->
+  <xsd:element name="dataGridAttributes" type="DataGridAttributes" substitutionGroup="uIElementAttributes" />
+  <xsd:complexType name="DataGridAttributes">
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributes">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridAttributes Moniker -->
+  <xsd:element name="dataGridAttributesMoniker" type="DataGridAttributesMoniker" substitutionGroup="uIElementAttributesMoniker" />
+  <xsd:complexType name="DataGridAttributesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGridAttributes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributesMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -660,6 +953,8 @@
         <xsd:attribute name="isDataMember" type="xsd:boolean" />
         <!-- Property: Description -->
         <xsd:attribute name="description" type="xsd:string" />
+        <!-- Property: ModelCode -->
+        <xsd:attribute name="modelCode" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -748,6 +1043,246 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- TabReferencesTargetTabbed -->
+  <xsd:element name="tabReferencesTargetTabbed" type="TabReferencesTargetTabbed" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TabReferencesTargetTabbed">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Tab -->
+          <xsd:element ref="tabMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabReferencesTargetTabbed Moniker -->
+  <xsd:element name="tabReferencesTargetTabbedMoniker" type="TabReferencesTargetTabbedMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TabReferencesTargetTabbedMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for TabReferencesTargetTabbed instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabReferencesDataGrid -->
+  <xsd:element name="tabReferencesDataGrid" type="TabReferencesDataGrid" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TabReferencesDataGrid">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end DataGrid -->
+          <xsd:element ref="dataGridMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabReferencesDataGrid Moniker -->
+  <xsd:element name="tabReferencesDataGridMoniker" type="TabReferencesDataGridMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TabReferencesDataGridMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for TabReferencesDataGrid instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabHasAttributes -->
+  <xsd:element name="tabHasAttributes" type="TabHasAttributes" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="TabHasAttributes">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end TabAttributes -->
+          <xsd:element ref="tabAttributes" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- TabHasAttributes Moniker -->
+  <xsd:element name="tabHasAttributesMoniker" type="TabHasAttributesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TabHasAttributesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for TabHasAttributes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridHasAttributes -->
+  <xsd:element name="dataGridHasAttributes" type="DataGridHasAttributes" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DataGridHasAttributes">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end DataGridAttributes -->
+          <xsd:element ref="dataGridAttributes" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridHasAttributes Moniker -->
+  <xsd:element name="dataGridHasAttributesMoniker" type="DataGridHasAttributesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DataGridHasAttributesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGridHasAttributes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridHasColumns -->
+  <xsd:element name="dataGridHasColumns" type="DataGridHasColumns" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DataGridHasColumns">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ColumnAttributes -->
+          <xsd:element ref="columnAttributes" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridHasColumns Moniker -->
+  <xsd:element name="dataGridHasColumnsMoniker" type="DataGridHasColumnsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DataGridHasColumnsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGridHasColumns instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridJMSViewModel -->
+  <xsd:element name="dataGridJMSViewModel" type="DataGridJMSViewModel" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DataGridJMSViewModel">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end JMSModel -->
+          <xsd:element ref="jMSModelMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridJMSViewModel Moniker -->
+  <xsd:element name="dataGridJMSViewModelMoniker" type="DataGridJMSViewModelMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DataGridJMSViewModelMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGridJMSViewModel instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- Enum Types -->
   <xsd:simpleType name="Types">
     <xsd:restriction base="xsd:string">
@@ -795,6 +1330,80 @@
       <xsd:enumeration value="Record"/>
       <xsd:enumeration value="Job"/>
       <xsd:enumeration value="Results"/>
+      <xsd:enumeration value="Bean"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum ModelCodeTypes -->
+  <xsd:simpleType name="ModelCodeTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Empty"/>
+      <xsd:enumeration value="Byte"/>
+      <xsd:enumeration value="Int32"/>
+      <xsd:enumeration value="Int64"/>
+      <xsd:enumeration value="Float"/>
+      <xsd:enumeration value="Double"/>
+      <xsd:enumeration value="String"/>
+      <xsd:enumeration value="DateTime"/>
+      <xsd:enumeration value="Reference"/>
+      <xsd:enumeration value="Bool"/>
+      <xsd:enumeration value="Enum"/>
+      <xsd:enumeration value="Struct"/>
+      <xsd:enumeration value="TimeSpan"/>
+      <xsd:enumeration value="Complex"/>
+      <xsd:enumeration value="BoolVector"/>
+      <xsd:enumeration value="DoubleVector"/>
+      <xsd:enumeration value="StringVector"/>
+      <xsd:enumeration value="DateTimeVector"/>
+      <xsd:enumeration value="ReferenceVector"/>
+      <xsd:enumeration value="EnumVector"/>
+      <xsd:enumeration value="StructVector"/>
+      <xsd:enumeration value="TimeSpanVector"/>
+      <xsd:enumeration value="ComplexVector"/>
+      <xsd:enumeration value="ByteVector"/>
+      <xsd:enumeration value="Int32Vector"/>
+      <xsd:enumeration value="Int64Vector"/>
+      <xsd:enumeration value="FloatVector"/>
+      <xsd:enumeration value="BoolArray"/>
+      <xsd:enumeration value="Int64Array"/>
+      <xsd:enumeration value="FloatArray"/>
+      <xsd:enumeration value="DoubleArray"/>
+      <xsd:enumeration value="StringArray"/>
+      <xsd:enumeration value="DateTimeArray"/>
+      <xsd:enumeration value="ReferenceArray"/>
+      <xsd:enumeration value="EnumArray"/>
+      <xsd:enumeration value="StructArray"/>
+      <xsd:enumeration value="ByteArray"/>
+      <xsd:enumeration value="Int32Array"/>
+      <xsd:enumeration value="TimeSpanArray"/>
+      <xsd:enumeration value="ComplexArray"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum MeasurementType -->
+  <xsd:simpleType name="MeasurementType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Unitless"/>
+      <xsd:enumeration value="Percent"/>
+      <xsd:enumeration value="RelativeVoltage"/>
+      <xsd:enumeration value="Voltage"/>
+      <xsd:enumeration value="Temperature"/>
+      <xsd:enumeration value="ActiveEnergy"/>
+      <xsd:enumeration value="ReactiveEnergy"/>
+      <xsd:enumeration value="ApparentPower"/>
+      <xsd:enumeration value="VoltageAngle"/>
+      <xsd:enumeration value="Status"/>
+      <xsd:enumeration value="Impedance"/>
+      <xsd:enumeration value="Admittance"/>
+      <xsd:enumeration value="Current"/>
+      <xsd:enumeration value="ActivePower"/>
+      <xsd:enumeration value="ReactivePower"/>
+      <xsd:enumeration value="CosPhi"/>
+      <xsd:enumeration value="Frequency"/>
+      <xsd:enumeration value="EMSApparentPowerM"/>
+      <xsd:enumeration value="EMSReactivePowerM"/>
+      <xsd:enumeration value="EMSActivePowerM"/>
+      <xsd:enumeration value="None"/>
     </xsd:restriction>
   </xsd:simpleType>
   

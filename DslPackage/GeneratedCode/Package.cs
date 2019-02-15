@@ -76,6 +76,46 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					"@CommentRelationshipToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 5)]
+	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
+					"@TabToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"SchneiderElectricDMS.PowerFunctionsReportDSL.TabToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"Tab", 
+					"@TabToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
+					"@DataGridToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"DataGrid", 
+					"@DataGridToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 7)]
+	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
+					"@TabTabReferenceToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"SchneiderElectricDMS.PowerFunctionsReportDSL.TabTabReferenceToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"TabTabReference", 
+					"@TabTabReferenceToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 8)]
+	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
+					"@TabDataGridReferenceToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"SchneiderElectricDMS.PowerFunctionsReportDSL.TabDataGridReferenceToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"TabDataGridReference", 
+					"@TabDataGridReferenceToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 9)]
+	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
+					"@DataGridViewModelToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridViewModelToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"DataGridViewModel", 
+					"@DataGridViewModelToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					0xff00ff,
+					Index = 10)]
 	[VSShell::ProvideEditorFactory(typeof(PowerFunctionsReportDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(PowerFunctionsReportDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(PowerFunctionsReportDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

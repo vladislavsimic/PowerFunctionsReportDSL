@@ -78,11 +78,17 @@
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
     </None>
     <Compile Include="CustomCode\Converters\AccessModifierConverter.cs" />
+    <Compile Include="CustomCode\Converters\MyTypeConverter.cs" />
     <Compile Include="CustomCode\Converters\TypesToCSharpType.cs" />
+    <Compile Include="CustomCode\Converters\TypesToModelCodeCastConverter.cs" />
     <Compile Include="CustomCode\Helpers\JMSHelper.cs" />
+    <Compile Include="CustomCode\Helpers\UIHelper.cs" />
     <Compile Include="CustomCode\Model\CodeHandler.cs" />
     <Compile Include="CustomCode\Model\JMSModelCSharp.cs" />
     <Compile Include="CustomCode\Model\ModelClassCSharp.cs" />
+    <Compile Include="CustomCode\Model\Strings.cs" />
+    <Compile Include="CustomCode\Model\UIViewModel.cs" />
+    <Compile Include="CustomCode\Model\UI\DataGridCSharp.cs" />
     <Compile Include="GeneratedCode\ConnectionBuilders.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

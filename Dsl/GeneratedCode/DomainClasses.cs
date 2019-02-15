@@ -9,6 +9,8 @@
 
 using DslModeling = global::Microsoft.VisualStudio.Modeling;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
+using SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters;
+
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 {
 	/// <summary>
@@ -873,60 +875,60 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 		#endregion
-		#region MainReportClass domain property code
+		#region HasKnownTypes domain property code
 		
 		/// <summary>
-		/// MainReportClass domain property Id.
+		/// HasKnownTypes domain property Id.
 		/// </summary>
-		public static readonly global::System.Guid MainReportClassDomainPropertyId = new global::System.Guid(0x989a9706, 0x3b2d, 0x4409, 0xbf, 0xf0, 0x87, 0xbf, 0xcd, 0x2d, 0x9d, 0x35);
+		public static readonly global::System.Guid HasKnownTypesDomainPropertyId = new global::System.Guid(0x989a9706, 0x3b2d, 0x4409, 0xbf, 0xf0, 0x87, 0xbf, 0xcd, 0x2d, 0x9d, 0x35);
 		
 		/// <summary>
-		/// Storage for MainReportClass
+		/// Storage for HasKnownTypes
 		/// </summary>
-		private global::System.Boolean mainReportClassPropertyStorage;
+		private global::System.Boolean hasKnownTypesPropertyStorage;
 		
 		/// <summary>
-		/// Gets or sets the value of MainReportClass domain property.
-		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Main
-		/// Report Class
+		/// Gets or sets the value of HasKnownTypes domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Has Known
+		/// Types
 		/// </summary>
-		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/MainReportClass.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/MainReportClass.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/HasKnownTypes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/HasKnownTypes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("989a9706-3b2d-4409-bff0-87bfcd2d9d35")]
-		public global::System.Boolean MainReportClass
+		public global::System.Boolean HasKnownTypes
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return mainReportClassPropertyStorage;
+				return hasKnownTypesPropertyStorage;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				MainReportClassPropertyHandler.Instance.SetValue(this, value);
+				HasKnownTypesPropertyHandler.Instance.SetValue(this, value);
 			}
 		}
 		/// <summary>
-		/// Value handler for the JMSModel.MainReportClass domain property.
+		/// Value handler for the JMSModel.HasKnownTypes domain property.
 		/// </summary>
-		internal sealed partial class MainReportClassPropertyHandler : DslModeling::DomainPropertyValueHandler<JMSModel, global::System.Boolean>
+		internal sealed partial class HasKnownTypesPropertyHandler : DslModeling::DomainPropertyValueHandler<JMSModel, global::System.Boolean>
 		{
-			private MainReportClassPropertyHandler() { }
+			private HasKnownTypesPropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the JMSModel.MainReportClass domain property value handler.
+			/// Gets the singleton instance of the JMSModel.HasKnownTypes domain property value handler.
 			/// </summary>
-			public static readonly MainReportClassPropertyHandler Instance = new MainReportClassPropertyHandler();
+			public static readonly HasKnownTypesPropertyHandler Instance = new HasKnownTypesPropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the JMSModel.MainReportClass domain property.
+			/// Gets the Id of the JMSModel.HasKnownTypes domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
 				[global::System.Diagnostics.DebuggerStepThrough]
 				get
 				{
-					return MainReportClassDomainPropertyId;
+					return HasKnownTypesDomainPropertyId;
 				}
 			}
 			
@@ -938,7 +940,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			public override sealed global::System.Boolean GetValue(JMSModel element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.mainReportClassPropertyStorage;
+				return element.hasKnownTypesPropertyStorage;
 			}
 		
 			/// <summary>
@@ -954,7 +956,95 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
-					element.mainReportClassPropertyStorage = newValue;
+					element.hasKnownTypesPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region FolderName domain property code
+		
+		/// <summary>
+		/// FolderName domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid FolderNameDomainPropertyId = new global::System.Guid(0xe7d5847a, 0x2fea, 0x4816, 0xaa, 0x66, 0xfc, 0x60, 0xb9, 0x1d, 0x2c, 0xbe);
+		
+		/// <summary>
+		/// Storage for FolderName
+		/// </summary>
+		private global::System.String folderNamePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of FolderName domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Folder
+		/// Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/FolderName.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/FolderName.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("e7d5847a-2fea-4816-aa66-fc60b91d2cbe")]
+		public global::System.String FolderName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return folderNamePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				FolderNamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the JMSModel.FolderName domain property.
+		/// </summary>
+		internal sealed partial class FolderNamePropertyHandler : DslModeling::DomainPropertyValueHandler<JMSModel, global::System.String>
+		{
+			private FolderNamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the JMSModel.FolderName domain property value handler.
+			/// </summary>
+			public static readonly FolderNamePropertyHandler Instance = new FolderNamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the JMSModel.FolderName domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return FolderNameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(JMSModel element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.folderNamePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(JMSModel element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.folderNamePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -1041,6 +1131,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<ModelClass>, ModelClass>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.JMSModelDomainRoleId);
+			}
+		}
+		#endregion
+		#region DataGrid opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of DataGrid.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModel
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<DataGrid> DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<DataGrid>, DataGrid>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId);
 			}
 		}
 		#endregion
@@ -1399,7 +1505,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Storage for Type
 		/// </summary>
-		private Types typePropertyStorage = Types.Int;
+		private Types typePropertyStorage = Types.Float;
 		
 		/// <summary>
 		/// Gets or sets the value of Type domain property.
@@ -1407,7 +1513,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute/Type.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute/Type.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[global::System.ComponentModel.DefaultValue(Types.Int)]
+		[global::System.ComponentModel.DefaultValue(Types.Float)]
 		[DslModeling::DomainObjectId("2d411332-72ca-497e-9b2e-93bba3032d06")]
 		public Types Type
 		{
@@ -1649,6 +1755,183 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.isDataMemberPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ModelCode domain property code
+		
+		/// <summary>
+		/// ModelCode domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ModelCodeDomainPropertyId = new global::System.Guid(0xf6be6a7b, 0x5e44, 0x43f2, 0xab, 0x97, 0xc5, 0x6c, 0x95, 0x24, 0x2d, 0x17);
+		
+		/// <summary>
+		/// Storage for ModelCode
+		/// </summary>
+		private global::System.String modelCodePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ModelCode domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Model Code
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute/ModelCode.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute/ModelCode.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("f6be6a7b-5e44-43f2-ab97-c56c95242d17")]
+		public global::System.String ModelCode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return modelCodePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ModelCodePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ClassAttribute.ModelCode domain property.
+		/// </summary>
+		internal sealed partial class ModelCodePropertyHandler : DslModeling::DomainPropertyValueHandler<ClassAttribute, global::System.String>
+		{
+			private ModelCodePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ClassAttribute.ModelCode domain property value handler.
+			/// </summary>
+			public static readonly ModelCodePropertyHandler Instance = new ModelCodePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ClassAttribute.ModelCode domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ModelCodeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ClassAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.modelCodePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ClassAttribute element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.modelCodePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region MeasurementType domain property code
+		
+		/// <summary>
+		/// MeasurementType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid MeasurementTypeDomainPropertyId = new global::System.Guid(0x386a150a, 0x60f2, 0x43dc, 0x93, 0xce, 0x62, 0x5a, 0x2f, 0x97, 0xe3, 0x7e);
+		
+		/// <summary>
+		/// Storage for MeasurementType
+		/// </summary>
+		private MeasurementType measurementTypePropertyStorage = MeasurementType.None;
+		
+		/// <summary>
+		/// Gets or sets the value of MeasurementType domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Measurement Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute/MeasurementType.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute/MeasurementType.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue(MeasurementType.None)]
+		[DslModeling::DomainObjectId("386a150a-60f2-43dc-93ce-625a2f97e37e")]
+		public MeasurementType MeasurementType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return measurementTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				MeasurementTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ClassAttribute.MeasurementType domain property.
+		/// </summary>
+		internal sealed partial class MeasurementTypePropertyHandler : DslModeling::DomainPropertyValueHandler<ClassAttribute, MeasurementType>
+		{
+			private MeasurementTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ClassAttribute.MeasurementType domain property value handler.
+			/// </summary>
+			public static readonly MeasurementTypePropertyHandler Instance = new MeasurementTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ClassAttribute.MeasurementType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return MeasurementTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed MeasurementType GetValue(ClassAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.measurementTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ClassAttribute element, MeasurementType newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				MeasurementType oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.measurementTypePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -2037,6 +2320,873 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.EnumAttributeDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass UIElement
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("66aabeac-09c2-4ce5-9322-96b3248a8383")]
+	public abstract partial class UIElement : ModelType
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// UIElement domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x66aabeac, 0x09c2, 0x4ce5, 0x93, 0x22, 0x96, 0xb3, 0x24, 0x8a, 0x83, 0x83);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected UIElement(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ShouldGenerate domain property code
+		
+		/// <summary>
+		/// ShouldGenerate domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ShouldGenerateDomainPropertyId = new global::System.Guid(0xbda40396, 0x0863, 0x4f18, 0xae, 0x95, 0x01, 0x9c, 0xce, 0xcc, 0x52, 0x13);
+		
+		/// <summary>
+		/// Storage for ShouldGenerate
+		/// </summary>
+		private global::System.Boolean shouldGeneratePropertyStorage = true;
+		
+		/// <summary>
+		/// Gets or sets the value of ShouldGenerate domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement.Should
+		/// Generate
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement/ShouldGenerate.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement/ShouldGenerate.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue(true)]
+		[DslModeling::DomainObjectId("bda40396-0863-4f18-ae95-019ccecc5213")]
+		public global::System.Boolean ShouldGenerate
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return shouldGeneratePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ShouldGeneratePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the UIElement.ShouldGenerate domain property.
+		/// </summary>
+		internal sealed partial class ShouldGeneratePropertyHandler : DslModeling::DomainPropertyValueHandler<UIElement, global::System.Boolean>
+		{
+			private ShouldGeneratePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the UIElement.ShouldGenerate domain property value handler.
+			/// </summary>
+			public static readonly ShouldGeneratePropertyHandler Instance = new ShouldGeneratePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the UIElement.ShouldGenerate domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ShouldGenerateDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(UIElement element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.shouldGeneratePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(UIElement element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.shouldGeneratePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass Tab
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Tab
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Tab.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Tab.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("122c8e33-a382-4cd3-9f1c-1de20c059896")]
+	public partial class Tab : UIElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Tab domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x122c8e33, 0xa382, 0x4cd3, 0x9f, 0x1c, 0x1d, 0xe2, 0x0c, 0x05, 0x98, 0x96);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Tab(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Tab(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region TargetTabbed opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of TargetTabbed.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.SourceTab
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Tab> TargetTabbed
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Tab>, Tab>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.SourceTabDomainRoleId);
+			}
+		}
+		#endregion
+		#region SourceTabbed opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of SourceTabbed.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.TargetTab
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Tab> SourceTabbed
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Tab>, Tab>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.TargetTabDomainRoleId);
+			}
+		}
+		#endregion
+		#region DataGrid opposite domain role accessor
+		/// <summary>
+		/// Gets or sets DataGrid.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.Tab
+		/// </summary>
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.TabDomainRoleId) as DataGrid;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.TabDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Attributes opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Attributes.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.Tab
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<TabAttributes> Attributes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<TabAttributes>, TabAttributes>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes sourceTabAttributes1 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes;
+			if (sourceTabAttributes1 != null)
+			{
+				// Create link for path TabHasAttributes.Attributes
+				this.Attributes.Add(sourceTabAttributes1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes sourceTabAttributes1 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes;
+			if (sourceTabAttributes1 != null)
+			{
+				// Delete link for path TabHasAttributes.Attributes
+				
+				foreach (DslModeling::ElementLink link in global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.GetLinks((global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab)this, sourceTabAttributes1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabDomainRoleId, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributesDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass UIElementAttributes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElementAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UIElementAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UIElementAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("dbbae87e-0a21-474c-8c31-dcaf405fb63c")]
+	public abstract partial class UIElementAttributes : NamedElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// UIElementAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdbbae87e, 0x0a21, 0x474c, 0x8c, 0x31, 0xdc, 0xaf, 0x40, 0x5f, 0xb6, 0x3c);
+		/// <summary>
+		/// Constructor.
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		protected UIElementAttributes(DslModeling::Partition partition, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass DataGrid
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("b78be496-b7e6-4883-84f6-7a38cd6a9680")]
+	public partial class DataGrid : UIElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// DataGrid domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb78be496, 0xb7e6, 0x4883, 0x84, 0xf6, 0x7a, 0x38, 0xcd, 0x6a, 0x96, 0x80);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DataGrid(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DataGrid(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Tab opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Tab.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.DataGrid
+		/// </summary>
+		public virtual Tab Tab
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.DataGridDomainRoleId) as Tab;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.DataGridDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Attributes opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Attributes.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGrid
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<DataGridAttributes> Attributes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<DataGridAttributes>, DataGridAttributes>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridDomainRoleId);
+			}
+		}
+		#endregion
+		#region Columns opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Columns.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGrid
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ColumnAttributes> Columns
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ColumnAttributes>, ColumnAttributes>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGridDomainRoleId);
+			}
+		}
+		#endregion
+		#region JMSModel opposite domain role accessor
+		/// <summary>
+		/// Gets or sets JMSModel.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGrid
+		/// </summary>
+		public virtual JMSModel JMSModel
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGridDomainRoleId) as JMSModel;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGridDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes sourceDataGridAttributes1 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes;
+			if (sourceDataGridAttributes1 != null)
+			{
+				// Create link for path DataGridHasAttributes.Attributes
+				this.Attributes.Add(sourceDataGridAttributes1);
+
+				return;
+			}
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes sourceColumnAttributes2 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes;
+			if (sourceColumnAttributes2 != null)
+			{
+				// Create link for path DataGridHasColumns.Columns
+				this.Columns.Add(sourceColumnAttributes2);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes sourceDataGridAttributes1 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes;
+			if (sourceDataGridAttributes1 != null)
+			{
+				// Delete link for path DataGridHasAttributes.Attributes
+				
+				foreach (DslModeling::ElementLink link in global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.GetLinks((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)this, sourceDataGridAttributes1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridDomainRoleId, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributesDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes sourceColumnAttributes2 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes;
+			if (sourceColumnAttributes2 != null)
+			{
+				// Delete link for path DataGridHasColumns.Columns
+				
+				foreach (DslModeling::ElementLink link in global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.GetLinks((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)this, sourceColumnAttributes2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGridDomainRoleId, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributesDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass ColumnAttributes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("cf1c89dc-fb64-49d8-acaf-5fcf1fa77925")]
+	public partial class ColumnAttributes : UIElementAttributes
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// ColumnAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xcf1c89dc, 0xfb64, 0x49d8, 0xac, 0xaf, 0x5f, 0xcf, 0x1f, 0xa7, 0x79, 0x25);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ColumnAttributes(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public ColumnAttributes(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Binding domain property code
+		
+		/// <summary>
+		/// Binding domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid BindingDomainPropertyId = new global::System.Guid(0xd48555ac, 0x48a2, 0x4fe7, 0xba, 0xf0, 0xb3, 0xac, 0x93, 0xd9, 0xcc, 0xff);
+		
+		/// <summary>
+		/// Storage for Binding
+		/// </summary>
+		private global::System.String bindingPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Binding domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes.Binding
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes/Binding.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes/Binding.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d48555ac-48a2-4fe7-baf0-b3ac93d9ccff")]
+		[System.ComponentModel.TypeConverter(typeof(MyTypeConverter))]
+		public global::System.String Binding
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return bindingPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				BindingPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ColumnAttributes.Binding domain property.
+		/// </summary>
+		internal sealed partial class BindingPropertyHandler : DslModeling::DomainPropertyValueHandler<ColumnAttributes, global::System.String>
+		{
+			private BindingPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ColumnAttributes.Binding domain property value handler.
+			/// </summary>
+			public static readonly BindingPropertyHandler Instance = new BindingPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ColumnAttributes.Binding domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return BindingDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ColumnAttributes element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.bindingPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ColumnAttributes element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.bindingPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region DataGrid opposite domain role accessor
+		/// <summary>
+		/// Gets or sets DataGrid.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributes
+		/// </summary>
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributesDomainRoleId) as DataGrid;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributesDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass TabAttributes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("370bf9b5-4a84-4deb-8eab-9267ce36c6d2")]
+	public partial class TabAttributes : UIElementAttributes
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// TabAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x370bf9b5, 0x4a84, 0x4deb, 0x8e, 0xab, 0x92, 0x67, 0xce, 0x36, 0xc6, 0xd2);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public TabAttributes(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public TabAttributes(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Tab opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Tab.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributes
+		/// </summary>
+		public virtual Tab Tab
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributesDomainRoleId) as Tab;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributesDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass DataGridAttributes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("c6c0e26a-2576-4220-8bb8-a997c3eb8320")]
+	public partial class DataGridAttributes : UIElementAttributes
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// DataGridAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc6c0e26a, 0x2576, 0x4220, 0x8b, 0xb8, 0xa9, 0x97, 0xc3, 0xeb, 0x83, 0x20);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DataGridAttributes(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DataGridAttributes(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataGrid opposite domain role accessor
+		/// <summary>
+		/// Gets or sets DataGrid.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributes
+		/// </summary>
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributesDomainRoleId) as DataGrid;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributesDomainRoleId, value);
 			}
 		}
 		#endregion

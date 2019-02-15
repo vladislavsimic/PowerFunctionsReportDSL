@@ -73,6 +73,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] JMSJobTemplate {
+            get {
+                object obj = ResourceManager.GetObject("JMSJobTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] JMSModelResultsTemplate {
             get {
                 object obj = ResourceManager.GetObject("JMSModelResultsTemplate", resourceCulture);
@@ -86,6 +96,36 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode {
         internal static byte[] JMSModelTemplate {
             get {
                 object obj = ResourceManager.GetObject("JMSModelTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] UIViewCsTemplate {
+            get {
+                object obj = ResourceManager.GetObject("UIViewCsTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] UIViewModelTemplate {
+            get {
+                object obj = ResourceManager.GetObject("UIViewModelTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] UIViewTemplate {
+            get {
+                object obj = ResourceManager.GetObject("UIViewTemplate", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -1975,6 +1975,94 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 		#endregion
+		#region ModelCode domain property code
+		
+		/// <summary>
+		/// ModelCode domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ModelCodeDomainPropertyId = new global::System.Guid(0x2b1cc60f, 0x7173, 0x476b, 0xa9, 0x20, 0x8c, 0x11, 0x1f, 0x9b, 0x04, 0xe1);
+		
+		/// <summary>
+		/// Storage for ModelCode
+		/// </summary>
+		private global::System.String modelCodePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ModelCode domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Model
+		/// Code
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Association/ModelCode.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Association/ModelCode.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("2b1cc60f-7173-476b-a920-8c111f9b04e1")]
+		public global::System.String ModelCode
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return modelCodePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ModelCodePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Association.ModelCode domain property.
+		/// </summary>
+		internal sealed partial class ModelCodePropertyHandler : DslModeling::DomainPropertyValueHandler<Association, global::System.String>
+		{
+			private ModelCodePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Association.ModelCode domain property value handler.
+			/// </summary>
+			public static readonly ModelCodePropertyHandler Instance = new ModelCodePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Association.ModelCode domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ModelCodeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Association element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.modelCodePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Association element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.modelCodePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Source link accessor
 		/// <summary>
 		/// Get the list of Association links to a JMSModel.
@@ -2515,6 +2603,1456 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues link in links )
 			{
 				if ( target.Equals(link.EnumAttribute) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship TabReferencesTargetTabbed
+	/// Description for
+	/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("5b95880b-0ed6-4c12-8b04-4dc05aaaeeaa")]
+	public partial class TabReferencesTargetTabbed : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// TabReferencesTargetTabbed domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5b95880b, 0x0ed6, 0x4c12, 0x8b, 0x04, 0x4d, 0xc0, 0x5a, 0xaa, 0xee, 0xaa);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a TabReferencesTargetTabbed link in the same Partition as the given Tab
+		/// </summary>
+		/// <param name="source">Tab to use as the source of the relationship.</param>
+		/// <param name="target">Tab to use as the target of the relationship.</param>
+		public TabReferencesTargetTabbed(Tab source, Tab target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(TabReferencesTargetTabbed.SourceTabDomainRoleId, source), new DslModeling::RoleAssignment(TabReferencesTargetTabbed.TargetTabDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public TabReferencesTargetTabbed(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public TabReferencesTargetTabbed(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public TabReferencesTargetTabbed(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public TabReferencesTargetTabbed(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region SourceTab domain role code
+		
+		/// <summary>
+		/// SourceTab domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SourceTabDomainRoleId = new global::System.Guid(0x92c2ba81, 0xa679, 0x47bd, 0xbb, 0xf0, 0xb6, 0xc5, 0xdb, 0x72, 0x53, 0x97);
+		
+		/// <summary>
+		/// DomainRole SourceTab
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.SourceTab
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed/SourceTab.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed/SourceTab.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "TargetTabbed", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed/SourceTab.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("92c2ba81-a679-47bd-bbf0-b6c5db725397")]
+		public virtual Tab SourceTab
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Tab)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceTabDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceTabDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access SourceTabbed of a Tab
+		/// <summary>
+		/// Gets a list of SourceTabbed.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Tab> GetSourceTabbed(Tab element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Tab>, Tab>(element, TargetTabDomainRoleId);
+		}
+		#endregion
+		#region TargetTab domain role code
+		
+		/// <summary>
+		/// TargetTab domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TargetTabDomainRoleId = new global::System.Guid(0xb06f5450, 0x03d5, 0x4302, 0xb6, 0xf5, 0x00, 0xa7, 0xbd, 0xdc, 0xaa, 0x29);
+		
+		/// <summary>
+		/// DomainRole TargetTab
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.TargetTab
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed/TargetTab.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed/TargetTab.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "SourceTabbed", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed/TargetTab.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("b06f5450-03d5-4302-b6f5-00a7bddcaa29")]
+		public virtual Tab TargetTab
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Tab)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetTabDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetTabDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access TargetTabbed of a Tab
+		/// <summary>
+		/// Gets a list of TargetTabbed.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Tab> GetTargetTabbed(Tab element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Tab>, Tab>(element, SourceTabDomainRoleId);
+		}
+		#endregion
+		#region SourceTab link accessor
+		/// <summary>
+		/// Get the list of TabReferencesTargetTabbed links to a Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed> GetLinksToTargetTabbed ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab sourceTabInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed>(sourceTabInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.SourceTabDomainRoleId);
+		}
+		#endregion
+		#region TargetTab link accessor
+		/// <summary>
+		/// Get the list of TabReferencesTargetTabbed links to a Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed> GetLinksToSourceTabbed ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab targetTabInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed>(targetTabInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.TargetTabDomainRoleId);
+		}
+		#endregion
+		#region TabReferencesTargetTabbed instance accessors
+		
+		/// <summary>
+		/// Get any TabReferencesTargetTabbed links between a given Tab and a Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.SourceTabDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed link in links )
+			{
+				if ( target.Equals(link.TargetTab) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one TabReferencesTargetTabbed link between a given Taband a Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.SourceTabDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed link in links )
+			{
+				if ( target.Equals(link.TargetTab) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship TabReferencesDataGrid
+	/// Description for
+	/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("508add89-35e2-4324-9825-1d67d0d43678")]
+	public partial class TabReferencesDataGrid : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// TabReferencesDataGrid domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x508add89, 0x35e2, 0x4324, 0x98, 0x25, 0x1d, 0x67, 0xd0, 0xd4, 0x36, 0x78);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a TabReferencesDataGrid link in the same Partition as the given Tab
+		/// </summary>
+		/// <param name="source">Tab to use as the source of the relationship.</param>
+		/// <param name="target">DataGrid to use as the target of the relationship.</param>
+		public TabReferencesDataGrid(Tab source, DataGrid target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(TabReferencesDataGrid.TabDomainRoleId, source), new DslModeling::RoleAssignment(TabReferencesDataGrid.DataGridDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public TabReferencesDataGrid(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public TabReferencesDataGrid(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public TabReferencesDataGrid(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public TabReferencesDataGrid(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Tab domain role code
+		
+		/// <summary>
+		/// Tab domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TabDomainRoleId = new global::System.Guid(0x216c2616, 0xe332, 0x49e9, 0x82, 0x67, 0x04, 0x07, 0xa3, 0x6a, 0x45, 0x9d);
+		
+		/// <summary>
+		/// DomainRole Tab
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.Tab
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid/Tab.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid/Tab.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid/Tab.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("216c2616-e332-49e9-8267-0407a36a459d")]
+		public virtual Tab Tab
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Tab)DslModeling::DomainRoleInfo.GetRolePlayer(this, TabDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TabDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Tab of a DataGrid
+		/// <summary>
+		/// Gets Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Tab GetTab(DataGrid element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DataGridDomainRoleId) as Tab;
+		}
+		
+		/// <summary>
+		/// Sets Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetTab(DataGrid element, Tab newTab)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, DataGridDomainRoleId, newTab);
+		}
+		#endregion
+		#region DataGrid domain role code
+		
+		/// <summary>
+		/// DataGrid domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridDomainRoleId = new global::System.Guid(0x2282742b, 0x83b5, 0x4faf, 0x93, 0x88, 0x8e, 0xb2, 0x70, 0x33, 0xa9, 0xfd);
+		
+		/// <summary>
+		/// DomainRole DataGrid
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.DataGrid
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid/DataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid/DataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Tab", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid/DataGrid.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("2282742b-83b5-4faf-9388-8eb27033a9fd")]
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGrid)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataGrid of a Tab
+		/// <summary>
+		/// Gets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DataGrid GetDataGrid(Tab element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, TabDomainRoleId) as DataGrid;
+		}
+		
+		/// <summary>
+		/// Sets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetDataGrid(Tab element, DataGrid newDataGrid)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, TabDomainRoleId, newDataGrid);
+		}
+		#endregion
+		#region Tab link accessor
+		/// <summary>
+		/// Get the TabReferencesDataGrid link to a Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid GetLinkToDataGrid (global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab tabInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid>(tabInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.TabDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Tab not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region DataGrid link accessor
+		/// <summary>
+		/// Get the TabReferencesDataGrid link to a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid GetLinkToTab (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid dataGridInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid>(dataGridInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.DataGridDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DataGrid not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region TabReferencesDataGrid instance accessors
+		
+		/// <summary>
+		/// Get any TabReferencesDataGrid links between a given Tab and a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.TabDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid link in links )
+			{
+				if ( target.Equals(link.DataGrid) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one TabReferencesDataGrid link between a given Taband a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid.TabDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid link in links )
+			{
+				if ( target.Equals(link.DataGrid) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship TabHasAttributes
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("8db1a25a-0591-40f6-b67f-ec4527abb8ee")]
+	public partial class TabHasAttributes : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// TabHasAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8db1a25a, 0x0591, 0x40f6, 0xb6, 0x7f, 0xec, 0x45, 0x27, 0xab, 0xb8, 0xee);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a TabHasAttributes link in the same Partition as the given Tab
+		/// </summary>
+		/// <param name="source">Tab to use as the source of the relationship.</param>
+		/// <param name="target">TabAttributes to use as the target of the relationship.</param>
+		public TabHasAttributes(Tab source, TabAttributes target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(TabHasAttributes.TabDomainRoleId, source), new DslModeling::RoleAssignment(TabHasAttributes.TabAttributesDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public TabHasAttributes(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public TabHasAttributes(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public TabHasAttributes(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public TabHasAttributes(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Tab domain role code
+		
+		/// <summary>
+		/// Tab domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TabDomainRoleId = new global::System.Guid(0xe603c66b, 0x41d9, 0x4075, 0x99, 0xca, 0xf2, 0x45, 0xda, 0x87, 0x9f, 0xbe);
+		
+		/// <summary>
+		/// DomainRole Tab
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.Tab
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes/Tab.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes/Tab.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Attributes", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes/Tab.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("e603c66b-41d9-4075-99ca-f245da879fbe")]
+		public virtual Tab Tab
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Tab)DslModeling::DomainRoleInfo.GetRolePlayer(this, TabDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TabDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Tab of a TabAttributes
+		/// <summary>
+		/// Gets Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Tab GetTab(TabAttributes element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, TabAttributesDomainRoleId) as Tab;
+		}
+		
+		/// <summary>
+		/// Sets Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetTab(TabAttributes element, Tab newTab)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, TabAttributesDomainRoleId, newTab);
+		}
+		#endregion
+		#region TabAttributes domain role code
+		
+		/// <summary>
+		/// TabAttributes domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TabAttributesDomainRoleId = new global::System.Guid(0xed158173, 0x2feb, 0x4efb, 0xb2, 0xb4, 0xb2, 0x9e, 0x19, 0xac, 0xd9, 0xdc);
+		
+		/// <summary>
+		/// DomainRole TabAttributes
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributes
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes/TabAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes/TabAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Tab", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes/TabAttributes.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("ed158173-2feb-4efb-b2b4-b29e19acd9dc")]
+		public virtual TabAttributes TabAttributes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (TabAttributes)DslModeling::DomainRoleInfo.GetRolePlayer(this, TabAttributesDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TabAttributesDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Attributes of a Tab
+		/// <summary>
+		/// Gets a list of Attributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<TabAttributes> GetAttributes(Tab element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<TabAttributes>, TabAttributes>(element, TabDomainRoleId);
+		}
+		#endregion
+		#region Tab link accessor
+		/// <summary>
+		/// Get the list of TabHasAttributes links to a Tab.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes> GetLinksToAttributes ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab tabInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes>(tabInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabDomainRoleId);
+		}
+		#endregion
+		#region TabAttributes link accessor
+		/// <summary>
+		/// Get the TabHasAttributes link to a TabAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes GetLinkToTab (global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes tabAttributesInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes>(tabAttributesInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributesDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of TabAttributes not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region TabHasAttributes instance accessors
+		
+		/// <summary>
+		/// Get any TabHasAttributes links between a given Tab and a TabAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes link in links )
+			{
+				if ( target.Equals(link.TabAttributes) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one TabHasAttributes link between a given Taband a TabAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes link in links )
+			{
+				if ( target.Equals(link.TabAttributes) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship DataGridHasAttributes
+	/// Description for
+	/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("ef9946c4-2a1e-42f7-84cd-eb02957576ca")]
+	public partial class DataGridHasAttributes : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DataGridHasAttributes domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xef9946c4, 0x2a1e, 0x42f7, 0x84, 0xcd, 0xeb, 0x02, 0x95, 0x75, 0x76, 0xca);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DataGridHasAttributes link in the same Partition as the given DataGrid
+		/// </summary>
+		/// <param name="source">DataGrid to use as the source of the relationship.</param>
+		/// <param name="target">DataGridAttributes to use as the target of the relationship.</param>
+		public DataGridHasAttributes(DataGrid source, DataGridAttributes target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DataGridHasAttributes.DataGridDomainRoleId, source), new DslModeling::RoleAssignment(DataGridHasAttributes.DataGridAttributesDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridHasAttributes(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridHasAttributes(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridHasAttributes(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridHasAttributes(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataGrid domain role code
+		
+		/// <summary>
+		/// DataGrid domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridDomainRoleId = new global::System.Guid(0xfc49cc72, 0xaff6, 0x4b84, 0xb7, 0xe0, 0x48, 0x45, 0x68, 0x2b, 0x04, 0x17);
+		
+		/// <summary>
+		/// DomainRole DataGrid
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGrid
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes/DataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes/DataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Attributes", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes/DataGrid.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("fc49cc72-aff6-4b84-b7e0-4845682b0417")]
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGrid)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataGrid of a DataGridAttributes
+		/// <summary>
+		/// Gets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DataGrid GetDataGrid(DataGridAttributes element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DataGridAttributesDomainRoleId) as DataGrid;
+		}
+		
+		/// <summary>
+		/// Sets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetDataGrid(DataGridAttributes element, DataGrid newDataGrid)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, DataGridAttributesDomainRoleId, newDataGrid);
+		}
+		#endregion
+		#region DataGridAttributes domain role code
+		
+		/// <summary>
+		/// DataGridAttributes domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridAttributesDomainRoleId = new global::System.Guid(0xeeaac050, 0xbe58, 0x42cc, 0xba, 0x88, 0xd1, 0x47, 0xc9, 0x22, 0x0d, 0x83);
+		
+		/// <summary>
+		/// DomainRole DataGridAttributes
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributes
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes/DataGridAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes/DataGridAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes/DataGridAttributes.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("eeaac050-be58-42cc-ba88-d147c9220d83")]
+		public virtual DataGridAttributes DataGridAttributes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGridAttributes)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridAttributesDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridAttributesDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Attributes of a DataGrid
+		/// <summary>
+		/// Gets a list of Attributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<DataGridAttributes> GetAttributes(DataGrid element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<DataGridAttributes>, DataGridAttributes>(element, DataGridDomainRoleId);
+		}
+		#endregion
+		#region DataGrid link accessor
+		/// <summary>
+		/// Get the list of DataGridHasAttributes links to a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes> GetLinksToAttributes ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid dataGridInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes>(dataGridInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridDomainRoleId);
+		}
+		#endregion
+		#region DataGridAttributes link accessor
+		/// <summary>
+		/// Get the DataGridHasAttributes link to a DataGridAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes GetLinkToDataGrid (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes dataGridAttributesInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes>(dataGridAttributesInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributesDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DataGridAttributes not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region DataGridHasAttributes instance accessors
+		
+		/// <summary>
+		/// Get any DataGridHasAttributes links between a given DataGrid and a DataGridAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes link in links )
+			{
+				if ( target.Equals(link.DataGridAttributes) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DataGridHasAttributes link between a given DataGridand a DataGridAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes link in links )
+			{
+				if ( target.Equals(link.DataGridAttributes) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship DataGridHasColumns
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("f693fce7-caf5-47c3-a524-39c9466b18b9")]
+	public partial class DataGridHasColumns : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DataGridHasColumns domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf693fce7, 0xcaf5, 0x47c3, 0xa5, 0x24, 0x39, 0xc9, 0x46, 0x6b, 0x18, 0xb9);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DataGridHasColumns link in the same Partition as the given DataGrid
+		/// </summary>
+		/// <param name="source">DataGrid to use as the source of the relationship.</param>
+		/// <param name="target">ColumnAttributes to use as the target of the relationship.</param>
+		public DataGridHasColumns(DataGrid source, ColumnAttributes target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DataGridHasColumns.DataGridDomainRoleId, source), new DslModeling::RoleAssignment(DataGridHasColumns.ColumnAttributesDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridHasColumns(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridHasColumns(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridHasColumns(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridHasColumns(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataGrid domain role code
+		
+		/// <summary>
+		/// DataGrid domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridDomainRoleId = new global::System.Guid(0x70bb8c67, 0x4c2a, 0x4783, 0xb7, 0x89, 0xdb, 0xf4, 0x91, 0xaa, 0x4f, 0x49);
+		
+		/// <summary>
+		/// DomainRole DataGrid
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGrid
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/DataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/DataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Columns", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/DataGrid.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("70bb8c67-4c2a-4783-b789-dbf491aa4f49")]
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGrid)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataGrid of a ColumnAttributes
+		/// <summary>
+		/// Gets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DataGrid GetDataGrid(ColumnAttributes element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ColumnAttributesDomainRoleId) as DataGrid;
+		}
+		
+		/// <summary>
+		/// Sets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetDataGrid(ColumnAttributes element, DataGrid newDataGrid)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ColumnAttributesDomainRoleId, newDataGrid);
+		}
+		#endregion
+		#region ColumnAttributes domain role code
+		
+		/// <summary>
+		/// ColumnAttributes domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ColumnAttributesDomainRoleId = new global::System.Guid(0x194c9b48, 0xc6fa, 0x464d, 0xbc, 0xa4, 0xd5, 0xd4, 0x8c, 0x2c, 0xc5, 0x06);
+		
+		/// <summary>
+		/// DomainRole ColumnAttributes
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributes
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/ColumnAttributes.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/ColumnAttributes.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/ColumnAttributes.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("194c9b48-c6fa-464d-bca4-d5d48c2cc506")]
+		public virtual ColumnAttributes ColumnAttributes
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ColumnAttributes)DslModeling::DomainRoleInfo.GetRolePlayer(this, ColumnAttributesDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ColumnAttributesDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Columns of a DataGrid
+		/// <summary>
+		/// Gets a list of Columns.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<ColumnAttributes> GetColumns(DataGrid element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ColumnAttributes>, ColumnAttributes>(element, DataGridDomainRoleId);
+		}
+		#endregion
+		#region DataGrid link accessor
+		/// <summary>
+		/// Get the list of DataGridHasColumns links to a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns> GetLinksToColumns ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid dataGridInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns>(dataGridInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGridDomainRoleId);
+		}
+		#endregion
+		#region ColumnAttributes link accessor
+		/// <summary>
+		/// Get the DataGridHasColumns link to a ColumnAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns GetLinkToDataGrid (global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes columnAttributesInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns>(columnAttributesInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributesDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ColumnAttributes not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region DataGridHasColumns instance accessors
+		
+		/// <summary>
+		/// Get any DataGridHasColumns links between a given DataGrid and a ColumnAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns link in links )
+			{
+				if ( target.Equals(link.ColumnAttributes) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DataGridHasColumns link between a given DataGridand a ColumnAttributes.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns link in links )
+			{
+				if ( target.Equals(link.ColumnAttributes) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship DataGridJMSViewModel
+	/// Description for
+	/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("65ab45bd-1318-49bb-ae12-042d2aea3937")]
+	public partial class DataGridJMSViewModel : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DataGridJMSViewModel domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x65ab45bd, 0x1318, 0x49bb, 0xae, 0x12, 0x04, 0x2d, 0x2a, 0xea, 0x39, 0x37);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DataGridJMSViewModel link in the same Partition as the given DataGrid
+		/// </summary>
+		/// <param name="source">DataGrid to use as the source of the relationship.</param>
+		/// <param name="target">JMSModel to use as the target of the relationship.</param>
+		public DataGridJMSViewModel(DataGrid source, JMSModel target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DataGridJMSViewModel.DataGridDomainRoleId, source), new DslModeling::RoleAssignment(DataGridJMSViewModel.JMSModelDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridJMSViewModel(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridJMSViewModel(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridJMSViewModel(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridJMSViewModel(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataGrid domain role code
+		
+		/// <summary>
+		/// DataGrid domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridDomainRoleId = new global::System.Guid(0x06ef3887, 0xb487, 0x45ca, 0x9f, 0xfb, 0x75, 0xbb, 0xe9, 0xfd, 0xcc, 0xb6);
+		
+		/// <summary>
+		/// DomainRole DataGrid
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGrid
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/DataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/DataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "JMSModel", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/DataGrid.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("06ef3887-b487-45ca-9ffb-75bbe9fdccb6")]
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGrid)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataGrid of a JMSModel
+		/// <summary>
+		/// Gets a list of DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<DataGrid> GetDataGrid(JMSModel element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<DataGrid>, DataGrid>(element, JMSModelDomainRoleId);
+		}
+		#endregion
+		#region JMSModel domain role code
+		
+		/// <summary>
+		/// JMSModel domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid JMSModelDomainRoleId = new global::System.Guid(0x45b0af11, 0xef66, 0x4525, 0xbb, 0x6d, 0x29, 0x23, 0x96, 0x3c, 0xe3, 0xb2);
+		
+		/// <summary>
+		/// DomainRole JMSModel
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModel
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("45b0af11-ef66-4525-bb6d-2923963ce3b2")]
+		public virtual JMSModel JMSModel
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (JMSModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, JMSModelDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, JMSModelDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access JMSModel of a DataGrid
+		/// <summary>
+		/// Gets JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static JMSModel GetJMSModel(DataGrid element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DataGridDomainRoleId) as JMSModel;
+		}
+		
+		/// <summary>
+		/// Sets JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetJMSModel(DataGrid element, JMSModel newJMSModel)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, DataGridDomainRoleId, newJMSModel);
+		}
+		#endregion
+		#region DataGrid link accessor
+		/// <summary>
+		/// Get the DataGridJMSViewModel link to a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel GetLinkToJMSModel (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid dataGridInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>(dataGridInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGridDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DataGrid not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region JMSModel link accessor
+		/// <summary>
+		/// Get the list of DataGridJMSViewModel links to a JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> GetLinksToDataGrid ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel jMSModelInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>(jMSModelInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId);
+		}
+		#endregion
+		#region DataGridJMSViewModel instance accessors
+		
+		/// <summary>
+		/// Get any DataGridJMSViewModel links between a given DataGrid and a JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel link in links )
+			{
+				if ( target.Equals(link.JMSModel) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DataGridJMSViewModel link between a given DataGridand a JMSModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel link in links )
+			{
+				if ( target.Equals(link.JMSModel) )
 				{
 					return link;
 				}
