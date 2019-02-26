@@ -241,8 +241,6 @@
         </xsd:attribute>
         <!-- Property: IsDataContract -->
         <xsd:attribute name="isDataContract" type="xsd:boolean" />
-        <!-- Property: Type -->
-        <xsd:attribute name="type" type="JMSResultType" />
         <!-- Property: HasDefaultConstructor -->
         <xsd:attribute name="hasDefaultConstructor" type="xsd:boolean" />
         <!-- Property: HasKnownTypes -->

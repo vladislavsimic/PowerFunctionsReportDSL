@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
-	public class UIViewModel : CodeHandler
+	public class UIViewModel : ICodeHandler
 	{
 		private JMSModel jmsModel;
 

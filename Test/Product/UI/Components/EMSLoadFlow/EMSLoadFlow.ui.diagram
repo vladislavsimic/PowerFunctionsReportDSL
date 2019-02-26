@@ -1,13 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<powerFunctionsReportDSLDiagram dslVersion="1.0.0.0" Id="631b2a31-7298-4699-b30b-954e380db0e7" absoluteBounds="0, 0, 11, 8.5" name="EMSLoadFlow">
-  <modelRootMoniker Id="fa794d81-fc75-4968-aa95-c9362df3acaf" />
+<powerFunctionsReportDSLDiagram dslVersion="1.0.0.0" Id="5c616a3e-d418-4c05-9237-3b5cb250ac81" absoluteBounds="0, 0, 13.875, 8.5" name="EMSLoadFlow">
+  <modelRootMoniker Id="9706ab6f-4759-4369-b2b5-bb99c81e5a49" />
   <nestedChildShapes>
-    <dataGridShape Id="acc2c860-d791-4f1e-a73f-31c935cfdfc8" absoluteBounds="4.25, 2.75, 1.5, 1.6187792968749992">
-      <dataGridMoniker Id="80d79fc1-c3d0-48bc-8262-45624c005a52" />
+    <tabShape Id="63a29703-0f19-4525-bb6f-354a34f0957a" absoluteBounds="7.875, 0.75, 1.5, 1.3593896484374999">
+      <tabMoniker Id="a39dddbd-34cb-49cd-ab2b-a25d5c9750e3" />
       <nestedChildShapes>
-        <elementListCompartment Id="5772b00a-80e3-4c48-b2b2-833cc6d833ae" absoluteBounds="4.265, 3.76, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="e20c4560-99d8-4a07-9581-e10098de24a0" absoluteBounds="4.265, 4.0193896484375, 1.4700000000000002, 0.2493896484375" name="Columns" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0972a5b0-c035-4a46-9c5d-357809853bec" absoluteBounds="7.89, 1.7599999999999998, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
-    </dataGridShape>
+    </tabShape>
+    <tabShape Id="f79e3590-754d-4f85-a0b0-f25d5fa98014" absoluteBounds="7, 2.75, 1.5, 1.3593896484374994">
+      <tabMoniker Id="99260445-d60f-409d-8063-6b3d2800c890" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d3f8778-5188-4881-8683-0a64d7e31e67" absoluteBounds="7.0150000000000006, 3.76, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </tabShape>
+    <tabShape Id="e20c5f9c-91fd-4989-8f3d-1b880872dc24" absoluteBounds="8.625, 2.75, 1.5, 1.3593896484374994">
+      <tabMoniker Id="3879a590-2e65-42e8-bb03-4d0838d50c45" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c1c7a98-342f-4b1f-a2f6-e42cffc8bea2" absoluteBounds="8.64, 3.76, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </tabShape>
+    <tabConnector Id="cfeb3bc5-f871-4819-8964-287a7ec68dc2" edgePoints="[(8.1875 : 2.1093896484375); (8.1875 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <tabReferencesTargetTabbedMoniker Id="dd7e832f-c165-4df4-9850-ec73fadc1013" />
+      <nodes>
+        <tabShapeMoniker Id="63a29703-0f19-4525-bb6f-354a34f0957a" />
+        <tabShapeMoniker Id="f79e3590-754d-4f85-a0b0-f25d5fa98014" />
+      </nodes>
+    </tabConnector>
+    <tabConnector Id="b8319435-39d4-4b44-bf3e-0c14ed0a8dbd" edgePoints="[(9 : 2.1093896484375); (9 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <tabReferencesTargetTabbedMoniker Id="ff6b8f2a-7d5c-4341-bf24-892ea5842930" />
+      <nodes>
+        <tabShapeMoniker Id="63a29703-0f19-4525-bb6f-354a34f0957a" />
+        <tabShapeMoniker Id="e20c5f9c-91fd-4989-8f3d-1b880872dc24" />
+      </nodes>
+    </tabConnector>
+    <jMSModelShape Id="0fbacbaa-2eea-4833-ad09-e8c28d11b368" absoluteBounds="1.75, 0.625, 1.5, 1.3593896484374999">
+      <jMSModelMoniker Id="88253080-ff97-4b99-8bbd-3168a17caac4" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eedbb196-b4d9-465c-9ab2-b01bb7e4477b" absoluteBounds="1.765, 1.6349999999999998, 1.4700000000000002, 0.2493896484375" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </jMSModelShape>
+    <tabShape Id="5d54be1f-d295-494b-81b8-fb4e2e5f47af" absoluteBounds="11.125, 0.875, 1.5, 1.3593896484374999">
+      <tabMoniker Id="da96fe7e-ea12-44cf-9b58-a6315ff36101" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15933a3e-5cc0-4b83-bb13-2699583f55b2" absoluteBounds="11.14, 1.8849999999999998, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </tabShape>
+    <tabShape Id="694511fc-1f04-4eca-8ff9-717a169b60a5" absoluteBounds="10.5, 2.75, 1.5, 1.3593896484374994">
+      <tabMoniker Id="1e418432-7cb9-438c-abda-d9e9395496c1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52da35cf-943e-4afa-864e-dae934ddc1b9" absoluteBounds="10.515, 3.76, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </tabShape>
+    <tabShape Id="37f88b02-8a46-4a6b-949b-38f50494d58e" absoluteBounds="12.125, 2.75, 1.5, 1.3593896484374994">
+      <tabMoniker Id="e9c57989-bf2e-4d19-9c8c-d2b0c15a5ee0" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ba51bb8-d317-4b70-9ead-36f6554e9641" absoluteBounds="12.14, 3.76, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </tabShape>
+    <tabConnector Id="8b9efe46-9a65-4140-86f7-ee5ec3eeceda" edgePoints="[(11.5625 : 2.2343896484375); (11.5625 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <tabReferencesTargetTabbedMoniker Id="a35a5e0f-bb7c-4edc-ba87-083955b7b3b5" />
+      <nodes>
+        <tabShapeMoniker Id="5d54be1f-d295-494b-81b8-fb4e2e5f47af" />
+        <tabShapeMoniker Id="694511fc-1f04-4eca-8ff9-717a169b60a5" />
+      </nodes>
+    </tabConnector>
+    <tabConnector Id="99d972a4-5ca0-4774-9fbb-34392eb43813" edgePoints="[(12.375 : 2.2343896484375); (12.375 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <tabReferencesTargetTabbedMoniker Id="a43d8693-85fe-4da4-bd76-f877642f4778" />
+      <nodes>
+        <tabShapeMoniker Id="5d54be1f-d295-494b-81b8-fb4e2e5f47af" />
+        <tabShapeMoniker Id="37f88b02-8a46-4a6b-949b-38f50494d58e" />
+      </nodes>
+    </tabConnector>
   </nestedChildShapes>
 </powerFunctionsReportDSLDiagram>

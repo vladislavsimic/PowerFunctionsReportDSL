@@ -189,14 +189,6 @@
     <value>Is Data Contract</value>
     <comment>DisplayName for DomainProperty &apos;IsDataContract&apos; on DomainClass &apos;JMSModel&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/Type.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Type</value>
-    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;JMSModel&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/Type.DisplayName" xml:space="preserve">
-    <value>Type</value>
-    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;JMSModel&apos;</comment>
-  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/HasDefaultConstructor.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Has Default Constructor</value>
     <comment>Description for DomainProperty &apos;HasDefaultConstructor&apos; on DomainClass &apos;JMSModel&apos;</comment>

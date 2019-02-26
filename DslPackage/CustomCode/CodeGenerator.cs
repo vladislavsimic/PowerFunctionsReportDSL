@@ -23,16 +23,32 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			string folderRelativePath = "..\\..\\..\\..\\Services\\JobManagerService\\" + fileName + "Report";
 			sb.AppendLine("JMS ::::\n\n");
 
-			SCGTemplate JMSModelTemplate = new SCGTemplate(CodeGenerationResource.JMSModelTemplate, folderRelativePath, ".cs");
+			SCGTemplate JMSModelTemplate = new SCGTemplate(CodeGenerationResource.JMSModelTemplate, folderRelativePath, ".cs", "Record");
 			string genCode = GenerateCode(JMSModelTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			SCGTemplate JMSModelResultsTemplate = new SCGTemplate(CodeGenerationResource.JMSModelResultsTemplate, folderRelativePath, ".cs");
+			SCGTemplate JMSModelResultsTemplate = new SCGTemplate(CodeGenerationResource.JMSModelResultsTemplate, folderRelativePath, ".cs", "Results");
 			genCode = GenerateCode(JMSModelResultsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			SCGTemplate JMSJobTemplate = new SCGTemplate(CodeGenerationResource.JMSJobTemplate, folderRelativePath, ".cs");
+			SCGTemplate JMSJobTemplate = new SCGTemplate(CodeGenerationResource.JMSJobTemplate, folderRelativePath, ".cs", "Job");
 			genCode = GenerateCode(JMSJobTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate JMSBeanTemplate = new SCGTemplate(CodeGenerationResource.JMSBeanTemplate, folderRelativePath, ".cs", "RecordBean");
+			genCode = GenerateCode(JMSBeanTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate JMSJobparamTemplate = new SCGTemplate(CodeGenerationResource.JMSJobParam, folderRelativePath, ".cs", "ReportJobParam");
+			genCode = GenerateCode(JMSJobparamTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate JMSReportResultTemplate = new SCGTemplate(CodeGenerationResource.JMSReportResult, folderRelativePath, ".cs", "ReportResult");
+			genCode = GenerateCode(JMSReportResultTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate JMSReportTypeTemplate = new SCGTemplate(CodeGenerationResource.JMSReportTypeTemplate, folderRelativePath, ".cs", "ReportType");
+			genCode = GenerateCode(JMSReportTypeTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
 			SCGTemplate JMSEnumTemplate = new SCGTemplate(CodeGenerationResource.JMSEnumTemplate, folderRelativePath, ".cs");
@@ -49,6 +65,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			folderRelativePath = "\\View";
 			SCGTemplate UIViewTemplate = new SCGTemplate(CodeGenerationResource.UIViewTemplate, folderRelativePath, ".xaml", "View");
 			genCode = GenerateCode(UIViewTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate UIViewCsTemplate = new SCGTemplate(CodeGenerationResource.UIViewCsTemplate, folderRelativePath, ".xaml.cs", "View");
+			genCode = GenerateCode(UIViewCsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
 

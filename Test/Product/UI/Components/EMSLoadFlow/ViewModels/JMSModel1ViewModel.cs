@@ -22,11 +22,11 @@ using TelventDMS.Common.DMS.Common.Converters;
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 {
-    public partial class EMSLoadFlowNodeReportRecordViewModel : ViewModelBase, ILocatable
+    public partial class JMSModel1ViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         
-		private EMSLoadFlowNodeReportRecord reportRecord;
+		private JMSModel1 reportRecord;
 
 		private DMSType recordType;
 
@@ -39,16 +39,16 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Constructors
 
-		public EMSLoadFlowNodeReportRecordViewModel()
+		public JMSModel1ViewModel()
 		{
 		}
  
 
-		public EMSLoadFlowNodeReportRecordViewModel(EMSLoadFlowNodeReportRecord reportRecord, bool tabularViewActive)
+		public JMSModel1ViewModel(JMSModel1 reportRecord, bool tabularViewActive)
 		{
 			if (reportRecord == null)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowNodeReportRecordViewModel(), should not be null.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to JMSModel1ViewModel(), should not be null.");
 				return;
 			}
 			this.reportRecord = reportRecord;
@@ -100,7 +100,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public EMSLoadFlowNodeReportRecord ReportRecord
+		public JMSModel1 ReportRecord
 		{
 			get
 			{
@@ -135,62 +135,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			{
 				rowIsNotVisible = value;
 				OnPropertyChanged("RowIsNotVisible");
-			}
-		}
-
-		public float VoltageLevel
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Voltage, reportRecord.VoltageLevel);
-			}
-		}
-
-		public float Voltage
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Voltage, reportRecord.Voltage);
-			}
-		}
-
-		public float PhaseAngle
-		{
-			get
-			{
-				return reportRecord.PhaseAngle;
-			}
-		}
-
-		public float PInj
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSActivePowerM, reportRecord.PInj);
-			}
-		}
-
-		public float QInj
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSReactivePowerM, reportRecord.QInj);
-			}
-		}
-
-		public float IInj
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Current, reportRecord.IInj);
-			}
-		}
-
-		public float CosPhi
-		{
-			get
-			{
-				return reportRecord.CosPhi;
 			}
 		}
 

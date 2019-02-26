@@ -1,8 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fa794d81-fc75-4968-aa95-c9362df3acaf" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9706ab6f-4759-4369-b2b5-bb99c81e5a49" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="8aa3ab9c-c0b5-4fa0-80a6-a92add0da3b3">
-      <dataGrid Id="80d79fc1-c3d0-48bc-8262-45624c005a52" name="DataGrid1" />
+    <modelRootHasTypes Id="2eb0ea02-fe34-426c-b215-4fef7d5eb26c">
+      <tab Id="a39dddbd-34cb-49cd-ab2b-a25d5c9750e3" name="TabNodes">
+        <targetTabbed>
+          <tabReferencesTargetTabbed Id="dd7e832f-c165-4df4-9850-ec73fadc1013">
+            <tabMoniker Id="99260445-d60f-409d-8063-6b3d2800c890" />
+          </tabReferencesTargetTabbed>
+          <tabReferencesTargetTabbed Id="ff6b8f2a-7d5c-4341-bf24-892ea5842930">
+            <tabMoniker Id="3879a590-2e65-42e8-bb03-4d0838d50c45" />
+          </tabReferencesTargetTabbed>
+        </targetTabbed>
+      </tab>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="3fde5f75-6a22-4127-97c8-840444bdd497">
+      <tab Id="99260445-d60f-409d-8063-6b3d2800c890" name="ActivePowerNodes" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="e232255c-46be-4a33-8cd1-67895204a54b">
+      <tab Id="3879a590-2e65-42e8-bb03-4d0838d50c45" name="ReactivePowerNodes" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="8d8bee23-4c9d-4538-bad3-edd4ac2fce0a">
+      <jMSModel Id="88253080-ff97-4b99-8bbd-3168a17caac4" name="JMSModel1" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="2e364086-9a21-49de-b0ce-1dc675941fd3">
+      <tab Id="da96fe7e-ea12-44cf-9b58-a6315ff36101" name="TabSections">
+        <targetTabbed>
+          <tabReferencesTargetTabbed Id="a35a5e0f-bb7c-4edc-ba87-083955b7b3b5">
+            <tabMoniker Id="1e418432-7cb9-438c-abda-d9e9395496c1" />
+          </tabReferencesTargetTabbed>
+          <tabReferencesTargetTabbed Id="a43d8693-85fe-4da4-bd76-f877642f4778">
+            <tabMoniker Id="e9c57989-bf2e-4d19-9c8c-d2b0c15a5ee0" />
+          </tabReferencesTargetTabbed>
+        </targetTabbed>
+      </tab>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="697a15d0-2e22-4189-9ac9-0d82a52e5a1d">
+      <tab Id="1e418432-7cb9-438c-abda-d9e9395496c1" name="TabSectionActive" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="16670fe0-cc14-4a3e-8cff-ec8b2e1cbb31">
+      <tab Id="e9c57989-bf2e-4d19-9c8c-d2b0c15a5ee0" name="TabSectionsReactive" />
     </modelRootHasTypes>
   </types>
 </modelRoot>

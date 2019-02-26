@@ -2838,23 +2838,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					}
 				}
 			}
-			// Type
-			if (!serializationContext.Result.Failed)
-			{
-				string attribType = PowerFunctionsReportDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "type");
-				if (attribType != null)
-				{
-					JMSResultType valueOfType;
-					if (DslModeling::SerializationUtilities.TryGetValue<JMSResultType>(serializationContext, attribType, out valueOfType))
-					{
-						instanceOfJMSModel.Type = valueOfType;
-					}
-					else
-					{	// Invalid property value, ignored.
-						PowerFunctionsReportDSLSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "type", typeof(JMSResultType), attribType);
-					}
-				}
-			}
 			// HasDefaultConstructor
 			if (!serializationContext.Result.Failed)
 			{
@@ -3546,19 +3529,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "true") != 0)
 					{	// No need to write the value out if it's the same as default value.
 						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "isDataContract", serializedPropValue);
-					}
-				}
-			}
-			// Type
-			if (!serializationContext.Result.Failed)
-			{
-				JMSResultType propValue = instanceOfJMSModel.Type;
-				string serializedPropValue = DslModeling::SerializationUtilities.GetString<JMSResultType>(serializationContext, propValue);
-				if (!serializationContext.Result.Failed)
-				{
-					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "Record") != 0)
-					{	// No need to write the value out if it's the same as default value.
-						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "type", serializedPropValue);
 					}
 				}
 			}

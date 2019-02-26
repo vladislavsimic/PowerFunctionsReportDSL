@@ -29,30 +29,89 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		internal static string GetXamlCode(DataGrid dataGrid)
+		internal static string GetXamlCode(ModelRoot modelRoot)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine("<UserControl x:Class=\"TelventDMS.UI.Components." + dataGrid.ModelRoot.Name + ".View." + dataGrid.Name + "View\"");
+			List<Tab> tabs = new List<Tab>();
+
+			foreach (ModelType type in modelRoot.Types)
+			{
+				if (type is Tab)
+				{
+					Tab tab = type as Tab;
+					if (tab.SourceTabbed.Count == 0)
+					{
+						tabs.Add(tab);
+					}
+				}
+			}
+
+			sb.AppendLine("<ad:ReportDocument x:Class=\"TelventDMS.UI.Components." + modelRoot.Name + ".View." + modelRoot.Name + "View\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:d=\"http://schemas.microsoft.com/expression/blend/2008\"");
 
-			sb.AppendLine(GetAdditionalLibraries(dataGrid));
+			sb.AppendLine(GetAdditionalLibraries(modelRoot));
 
 			sb.AppendLine(Resources.Tab3 + ">");
 
-			sb.AppendLine(GetControlResources(dataGrid));
+			sb.AppendLine(GetControlResources(modelRoot));
 
-			sb.AppendLine(GetDataGridContent(dataGrid));
+			sb.AppendLine(Resources.Tab1 + "<Grid>");
+			sb.AppendLine(Resources.Tab2 + "<TabControl Name=\"tabControl\">");
 
+			foreach(Tab tab in tabs)
+			{
+				sb.AppendLine(GetTabXaml(tab));
+			}
+
+			sb.AppendLine(Resources.Tab2 + "<TabControl>");
+			sb.AppendLine(Resources.Tab1 + "</Grid>");
 			sb.AppendLine("</UserControl>");
 
 			return sb.ToString();
 		}
 
-		private static string GetDataGridContent(DataGrid dataGrid)
+		private static string GetTabXaml(Tab tab)
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.AppendLine(Resources.Tab3 + "<TabItem Name=" + tab.Name + " Header=\"Test\">");
+			sb.AppendLine(Resources.Tab4 + "<Grid>");
+			
+
+			if (tab.TargetTabbed.Count == 0)
+			{
+				sb.AppendLine(Resources.Tab5 + "<Grid x:Name=\"NoResults" + tab.Name + "\" Visibility=\"Collapsed\">");
+				sb.AppendLine(Resources.Tab6 + "ScrollViewer VerticalScrollBarVisibility=\"Auto\" HorizontalScrollBarVisibility=\"Auto\"");
+				sb.AppendLine(Resources.Tab7 + "<TextBlock Style=\"{DynamicResource HeaderTextBlockStyle}\" Opacity=\"0.3\" Text=\"{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }\" VerticalAlignment=\"Center\" HorizontalAlignment=\"Center\" />");
+				sb.AppendLine(Resources.Tab6 + "</ScrollViewer>");
+				sb.AppendLine(Resources.Tab5 + "</Grid>");
+				if (tab.DataGrid != null)
+				{
+					sb.AppendLine(Resources.Tab5 + "<Grid Margin=\"0 5 0 0 \" Name=\"" + tab.Name + "DataGridHeader\">");
+					sb.AppendLine(Resources.Tab5 + "</Grid>");
+				}
+			}
+			else
+			{
+				sb.AppendLine(Resources.Tab5 + "<TabControl>");
+				foreach(Tab tagetTab in tab.TargetTabbed)
+				{
+					sb.AppendLine(GetTabXaml(tagetTab));
+				}
+				sb.AppendLine(Resources.Tab5 + "</TabControl>");
+			}
+
+			sb.AppendLine(Resources.Tab4 + "</Grid>");
+			sb.AppendLine(Resources.Tab3 + "</TabItem>");
+
+			return sb.ToString();
+		}
+
+		private static string GetDataGridContent(Tab tab)
 		{
 			StringBuilder sb = new StringBuilder();
 
@@ -62,11 +121,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		private static string GetAdditionalLibraries(DataGrid dataGrid)
+		private static string GetAdditionalLibraries(ModelRoot modelRoot)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			string projectName = dataGrid.ModelRoot.Name;
+			string projectName = modelRoot.Name;
 
 			sb.AppendLine(Resources.Tab3 + "xmlns:local=\"clr -namespace:TelventDMS.UI.Components." + projectName + ".View\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:localization = \"clr-namespace:TelventDMS.UI.Components." + projectName + "\"");
@@ -75,15 +134,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		private static string GetControlResources(DataGrid dataGrid)
+		private static string GetControlResources(ModelRoot modelRoot)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab1 + "<UserControl.Resources>");
+			sb.AppendLine(Resources.Tab1 + "<ad:ReportDocument.Resources>");
 			sb.AppendLine(Resources.Tab2 + "<ResourceDictionary>");
 			sb.AppendLine(Resources.Tab3 + "<localization:LocalizedStrings x:Key=\"LocalizedStrings\" />");
 			sb.AppendLine(Resources.Tab2 + "</ResourceDictionary>");
-			sb.AppendLine(Resources.Tab1 + "</UserControl.Resources>");
+			sb.AppendLine(Resources.Tab1 + "</ad:ReportDocument.Resources>");
 
 			return sb.ToString();
 		}

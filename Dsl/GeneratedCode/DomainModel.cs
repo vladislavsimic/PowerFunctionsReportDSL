@@ -135,7 +135,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(NamedElement), "Alias", NamedElement.AliasDomainPropertyId, typeof(NamedElement.AliasPropertyHandler)),
 				new DomainMemberInfo(typeof(JMSModel), "IsDataContract", JMSModel.IsDataContractDomainPropertyId, typeof(JMSModel.IsDataContractPropertyHandler)),
-				new DomainMemberInfo(typeof(JMSModel), "Type", JMSModel.TypeDomainPropertyId, typeof(JMSModel.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(JMSModel), "HasDefaultConstructor", JMSModel.HasDefaultConstructorDomainPropertyId, typeof(JMSModel.HasDefaultConstructorPropertyHandler)),
 				new DomainMemberInfo(typeof(JMSModel), "HasKnownTypes", JMSModel.HasKnownTypesDomainPropertyId, typeof(JMSModel.HasKnownTypesPropertyHandler)),
 				new DomainMemberInfo(typeof(JMSModel), "FolderName", JMSModel.FolderNameDomainPropertyId, typeof(JMSModel.FolderNamePropertyHandler)),

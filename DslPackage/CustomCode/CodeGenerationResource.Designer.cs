@@ -63,9 +63,29 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] JMSBeanTemplate {
+            get {
+                object obj = ResourceManager.GetObject("JMSBeanTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] JMSEnumTemplate {
             get {
                 object obj = ResourceManager.GetObject("JMSEnumTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] JMSJobParam {
+            get {
+                object obj = ResourceManager.GetObject("JMSJobParam", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -96,6 +116,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode {
         internal static byte[] JMSModelTemplate {
             get {
                 object obj = ResourceManager.GetObject("JMSModelTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] JMSReportResult {
+            get {
+                object obj = ResourceManager.GetObject("JMSReportResult", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] JMSReportTypeTemplate {
+            get {
+                object obj = ResourceManager.GetObject("JMSReportTypeTemplate", resourceCulture);
                 return ((byte[])(obj));
             }
         }

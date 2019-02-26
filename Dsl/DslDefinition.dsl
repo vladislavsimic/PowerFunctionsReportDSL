@@ -54,11 +54,6 @@
             <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="c8bce15c-99a2-4a4f-bab2-5b43c12f804a" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Type" Name="Type" DisplayName="Type" DefaultValue="Record">
-          <Type>
-            <DomainEnumerationMoniker Name="JMSResultType" />
-          </Type>
-        </DomainProperty>
         <DomainProperty Id="74902c3f-b848-4b69-868b-bff3729b552d" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Has Default Constructor" Name="HasDefaultConstructor" DisplayName="Has Default Constructor" DefaultValue="true">
           <Type>
             <ExternalTypeMoniker Name="/System/Boolean" />
@@ -799,9 +794,6 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="undirectionalAssociationTargets">
             <DomainRelationshipMoniker Name="UndirectionalAssociation" />
           </XmlRelationshipData>
-          <XmlPropertyData XmlName="type">
-            <DomainPropertyMoniker Name="JMSModel/Type" />
-          </XmlPropertyData>
           <XmlPropertyData XmlName="hasDefaultConstructor">
             <DomainPropertyMoniker Name="JMSModel/HasDefaultConstructor" />
           </XmlPropertyData>

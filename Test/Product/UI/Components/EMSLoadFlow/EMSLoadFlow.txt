@@ -1,13 +1,27 @@
 JMS ::::
 
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\JMSModel1Record.cs]  [JMSModel1]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\JMSModel1Results.cs]  [JMSModel1]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowJob.cs]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowRecordBean.cs]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportJobParam.cs]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportResult.cs]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportType.cs]  [EMSLoadFlow]
 
 
 UI ::::
 
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\JMSModel1ViewModel.cs]  [JMSModel1]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\DataGrid1View.xaml]  [DataGrid1]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml.cs]  [EMSLoadFlow]
 

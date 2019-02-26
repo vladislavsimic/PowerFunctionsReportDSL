@@ -14,7 +14,7 @@
 	   if(type is JMSModel)
 	   {
 		    JMSModel jmsModel = type as JMSModel;
-            if(!jmsModel.ShouldGenerate || jmsModel.Type != JMSResultType.Record) continue;
+            if (!jmsModel.ShouldGenerate) continue;
 
     // First item is the delimiter:
 #>
@@ -27,28 +27,28 @@
 //														        #
 //###############################################################
 <#
-    JMSModelCSharp jmsCSharp = new JMSModelCSharp(jmsModel);
-    jmsCSharp.ObtainCode();
-    Dictionary<string, string> props = jmsCSharp.Properties;
+    JMSRecord record = new JMSRecord(jmsModel);
+    record.ObtainCode();
+    Dictionary<string, string> code = record.GeneratedCode;
 #>
 
-<#=props["usings"]#>
+<#=code["usings"]#>
 
-namespace <#=props["classNamespace"]#>
+namespace <#=code["classNamespace"]#>
 {
-    <#=props["dataContract"]#>
-    public class <#=jmsModel.Name#><#=props["superclass"]#>
+    <#=code["dataContract"]#>
+    public partial class <#=jmsModel.Name#>Record<#=code["superclass"]#>
     {
         #region Constructors
 
-<#=props["defaultConstructor"]#>        
+<#=code["defaultConstructor"]#>        
 
         #endregion Constructors
 
         #region Properties
         
-<#=props["attributes"]#>
-<#=props["associationProperties"]#>
+<#=code["attributes"]#>
+<#=code["associationProperties"]#>
 
         #endregion Properties
     }

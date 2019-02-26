@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
-	public interface CodeHandler
+	public interface ICodeHandler
 	{
 		void ObtainCode();
 	}

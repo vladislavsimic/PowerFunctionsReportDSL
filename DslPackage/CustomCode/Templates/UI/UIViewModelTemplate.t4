@@ -14,7 +14,7 @@
 	   if(type is JMSModel)
 	   {
 		    JMSModel jmsModel = type as JMSModel;
-            if(!jmsModel.ShouldGenerate || jmsModel.Type != JMSResultType.Record) continue;
+            if(!jmsModel.ShouldGenerate) continue;
 
     // First item is the delimiter:
 #>

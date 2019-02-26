@@ -9,8 +9,6 @@
 
 using DslModeling = global::Microsoft.VisualStudio.Modeling;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
-using SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters;
-
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 {
 	/// <summary>
@@ -692,94 +690,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.isDataContractPropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
-		#endregion
-		#region Type domain property code
-		
-		/// <summary>
-		/// Type domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid TypeDomainPropertyId = new global::System.Guid(0xc8bce15c, 0x99a2, 0x4a4f, 0xba, 0xb2, 0x5b, 0x43, 0xc1, 0x2f, 0x80, 0x4a);
-		
-		/// <summary>
-		/// Storage for Type
-		/// </summary>
-		private JMSResultType typePropertyStorage = JMSResultType.Record;
-		
-		/// <summary>
-		/// Gets or sets the value of Type domain property.
-		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Type
-		/// </summary>
-		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/Type.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel/Type.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[global::System.ComponentModel.DefaultValue(JMSResultType.Record)]
-		[DslModeling::DomainObjectId("c8bce15c-99a2-4a4f-bab2-5b43c12f804a")]
-		public JMSResultType Type
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return typePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				TypePropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the JMSModel.Type domain property.
-		/// </summary>
-		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<JMSModel, JMSResultType>
-		{
-			private TypePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the JMSModel.Type domain property value handler.
-			/// </summary>
-			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the JMSModel.Type domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return TypeDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed JMSResultType GetValue(JMSModel element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.typePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(JMSModel element, JMSResultType newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				JMSResultType oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.typePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -2979,7 +2889,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes/Binding.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes/Binding.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("d48555ac-48a2-4fe7-baf0-b3ac93d9ccff")]
-		[System.ComponentModel.TypeConverter(typeof(MyTypeConverter))]
 		public global::System.String Binding
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
