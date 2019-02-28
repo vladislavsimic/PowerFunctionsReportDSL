@@ -24,56 +24,35 @@
 
 	<Grid>
 		<TabControl Name="tabControl">
-			<TabItem Name=TabNodes Header="Test">
+			<TabItem Name="NodesTab" Header="Test">
 				<Grid>
-					<TabControl>
-						<TabItem Name=ActivePowerNodes Header="Test">
-							<Grid>
-								<Grid x:Name="NoResultsActivePowerNodes" Visibility="Collapsed">
-									ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-										<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
-									</ScrollViewer>
-								</Grid>
-							</Grid>
-						</TabItem>
-
-						<TabItem Name=ReactivePowerNodes Header="Test">
-							<Grid>
-								<Grid x:Name="NoResultsReactivePowerNodes" Visibility="Collapsed">
-									ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-										<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
-									</ScrollViewer>
-								</Grid>
-							</Grid>
-						</TabItem>
-					</TabControl>
-				</Grid>
-			</TabItem>
-
-			<TabItem Name=TabSections Header="Test">
-				<Grid>
-					<TabControl>
-						<TabItem Name=TabSectionActive Header="Test">
-							<Grid>
-								<Grid x:Name="NoResultsTabSectionActive" Visibility="Collapsed">
-									ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-										<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
-									</ScrollViewer>
-								</Grid>
-							</Grid>
-						</TabItem>
-
-						<TabItem Name=TabSectionsReactive Header="Test">
-							<Grid>
-								<Grid x:Name="NoResultsTabSectionsReactive" Visibility="Collapsed">
-									ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-										<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
-									</ScrollViewer>
-								</Grid>
-							</Grid>
-						</TabItem>
-
-					</TabControl>
+					<Grid x:Name="NoResultsNodesTab" Visibility="Collapsed">
+						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+							<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
+						</ScrollViewer>
+					</Grid>
+					<Grid Margin="0 5 0 0 " Name="NodesTabDataGridHeader">
+						<DataGrid Name="NodesTabDataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True">
+							CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True"
+							<DataGrid.Columns>
+								<DataGridTemplateColumn Header="{ Binding Path = Resources.ELEMENT, Source = { StaticResource LocalizedStrings } }" Width="Auto" MinWidth="200"  x:Name="NodesTree" SortMemberPath="Title">
+									<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<dgtvi:DataGridTreeViewItem DataContext="{ Binding DataGridTreeViewItemInfo}" VerticalAlignment="Center" NoLevel="{ Binding DataContext.TabularViewIsActive, RelativeSource ={ RelativeSource AncestorType = Grid} }">
+										</dgtvi:DataGridTreeViewItem>
+									</DataTemplate>
+									</DataGridTemplateColumn.CellTemplate>
+								</DataGridTemplateColumn>
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesVoltageLevel" Header="Voltage Level" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="VoltageLevel"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesVoltage" Header="Voltage" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Voltage"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesPhaseAngle" Header="Phase Angle" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="PhaseAngle"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesPInj" Header="P Inj" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Pinj"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesQInj" Header="P Inj" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Qinj"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesIInj" Header="I Inj" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Iinj"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesCosPhi" Header="Cos Phi" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="CosPhi"}" />
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
 				</Grid>
 			</TabItem>
 

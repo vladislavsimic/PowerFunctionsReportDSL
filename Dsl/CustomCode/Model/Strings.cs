@@ -15,7 +15,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		private const string tab5 = "\t\t\t\t\t";
 		private const string tab6 = "\t\t\t\t\t\t";
 		private const string tab7 = "\t\t\t\t\t\t\t";
-
+		private const string tab8 = "\t\t\t\t\t\t\t\t";
+		private const string tab9 = "\t\t\t\t\t\t\t\t\t";
+		private const string tab10 = "\t\t\t\t\t\t\t\t\t";
+		private const string tab11 = "\t\t\t\t\t\t\t\t\t\t";
 
 		static Resources()
 		{
@@ -48,6 +51,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		public static string Tab7
 		{
 			get { return tab7; }
+		}
+		public static string Tab8
+		{
+			get { return tab8; }
+		}
+		public static string Tab9
+		{
+			get { return tab9; }
+		}
+		public static string Tab10
+		{
+			get { return tab10; }
+		}
+		public static string Tab11
+		{
+			get { return tab11; }
 		}
 
 		public static string DetailsElementGid

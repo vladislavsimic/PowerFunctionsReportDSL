@@ -18,13 +18,13 @@ using System.Runtime.Serialization;
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
     [DataContract]
-    public partial class JMSModel1Results : EMSLoadFlowReportResult
+    public partial class EMSLoadFlowNodeReportRecordResults : EMSLoadFlowReportResult
     {
         #region Constructors
 
-		public JMSModel1Results()
+		public EMSLoadFlowNodeReportRecordResults()
 		{
-			ReportType = EMSLoadFlowReportType.JMSModel1;
+			ReportType = EMSLoadFlowReportType.EMSLoadFlowNodeReportRecord;
 		}
       
 
@@ -33,7 +33,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
         #region Properties
 
 		[DataMember]
-		public List<JMSModel1Record> JMSModel1Records { get; set; }
+		public List<EMSLoadFlowNodeReportRecordRecord> EMSLoadFlowNodeReportRecordRecords { get; set; }
 
 
         #endregion Properties

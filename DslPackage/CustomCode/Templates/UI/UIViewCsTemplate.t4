@@ -35,16 +35,25 @@
 
 namespace <#=code["classNamespace"]#>
 {
-    public partial class <#=this.ModelRoot.Name#>View : UserControl
+    public partial class <#=this.ModelRoot.Name#>View : ReportDocument, IDisposable
     {
+        #region Fields
+
+<#=code["fields"]#>
+
+        #endregion Fields
+
         #region Constructors
 
-        public <#=this.ModelRoot.Name#>View()
-        {
-            InitializeComponent();
-        }
+<#=code["constructor"]#>
 
         #endregion Constructors
+
+        #region Methods
+
+<#=code["methods"]#>
+
+        #endregion Methods
 
     }
 }

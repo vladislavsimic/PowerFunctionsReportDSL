@@ -989,7 +989,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
-			internal static global::System.Collections.ICollection GetTabForTabShapeAttributes(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes root)
+			internal static global::System.Collections.ICollection GetTabForTabShapeAttributes(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute root)
 			{
 				// Segments 1 and 0
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab result = root.Tab;
@@ -1003,7 +1003,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
-			internal static global::System.Collections.ICollection GetDataGridForDataGridShapeAttributes(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes root)
+			internal static global::System.Collections.ICollection GetDataGridForDataGridShapeAttributes(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute root)
 			{
 				// Segments 1 and 0
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid result = root.DataGrid;
@@ -1017,7 +1017,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
-			internal static global::System.Collections.ICollection GetDataGridForDataGridShapeColumns(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes root)
+			internal static global::System.Collections.ICollection GetDataGridForDataGridShapeColumns(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute root)
 			{
 				// Segments 1 and 0
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid result = root.DataGrid;
@@ -1121,9 +1121,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
 		{
 			/// <summary>
@@ -1148,19 +1148,19 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
 				}
-				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes.NameDomainPropertyId)
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute.NameDomainPropertyId)
 				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes)e.ModelElement);
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape), "Attributes", repaintOnly);
 				}
-				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes.NameDomainPropertyId)
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute.NameDomainPropertyId)
 				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes)e.ModelElement);
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Attributes", repaintOnly);
 				}
-				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes.NameDomainPropertyId)
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.NameDomainPropertyId)
 				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes)e.ModelElement);
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
 				}
 			}
@@ -1246,7 +1246,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					if(e.DomainRole.IsSource)
 					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetTabForTabShapeAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes)e.OldRolePlayer);
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetTabForTabShapeAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute)e.OldRolePlayer);
 						//foreach(DslModeling::ModelElement element in oldElements)
 						//{
 						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
@@ -1265,7 +1265,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					}
 					else 
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes)e.NewRolePlayer);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute)e.NewRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape), "Attributes", repaintOnly);
 					}
 				}
@@ -1273,7 +1273,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					if(e.DomainRole.IsSource)
 					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes)e.OldRolePlayer);
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute)e.OldRolePlayer);
 						//foreach(DslModeling::ModelElement element in oldElements)
 						//{
 						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
@@ -1292,7 +1292,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					}
 					else 
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes)e.NewRolePlayer);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute)e.NewRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Attributes", repaintOnly);
 					}
 				}
@@ -1300,7 +1300,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					if(e.DomainRole.IsSource)
 					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumnsFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes)e.OldRolePlayer);
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumnsFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute)e.OldRolePlayer);
 						//foreach(DslModeling::ModelElement element in oldElements)
 						//{
 						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
@@ -1319,7 +1319,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					}
 					else 
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes)e.NewRolePlayer);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute)e.NewRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
 					}
 				}
@@ -1368,7 +1368,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					if(!e.CounterpartDomainRole.IsSource)
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes)e.CounterpartRolePlayer);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute)e.CounterpartRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape), "Attributes", repaintOnly);
 					}
 				}
@@ -1376,7 +1376,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					if(!e.CounterpartDomainRole.IsSource)
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes)e.CounterpartRolePlayer);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute)e.CounterpartRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Attributes", repaintOnly);
 					}
 				}
@@ -1384,7 +1384,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					if(!e.CounterpartDomainRole.IsSource)
 					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes)e.CounterpartRolePlayer);
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute)e.CounterpartRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
 					}
 				}

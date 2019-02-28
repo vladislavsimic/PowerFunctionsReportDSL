@@ -25,16 +25,64 @@ using System.Windows.Shapes
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.View
 {
-    public partial class EMSLoadFlowView : UserControl
+    public partial class EMSLoadFlowView : ReportDocument, IDisposable
     {
+        #region Fields
+
+		private IShellView shellView;
+		private EMSLoadFlowReportViewModel reportViewModel;
+		private List<long> visibleItemsIds = new List<long>();
+		private IWorkspaceManager workspaceManager;
+		private IModuleEnvironment moduleEnvironment;
+
+
+        #endregion Fields
+
         #region Constructors
 
-        public EMSLoadFlowView()
-        {
-            InitializeComponent();
-        }
+		public EMSLoadFlowReportView(IShellView shellView)
+		{
+			InitializeComponent();
+			CanSaveLayout = true;
+			ShouldPersistFilter = true;
+			HelpProvider.SetContextHelpId(this, "EMSLoadFlow Report");
+			this.shellView = shellView;
+			this.reportViewModel = new EMSLoadFlowReportViewModel(this);
+			moduleEnvironment = ServiceLocator.Current.GetInstance<IModuleEnvironment>();
+			DataContext = reportViewModel;
+			tabControl.SelectionChanged += TabControl_SelectionChanged;
+			CommonHtv.SelectedItemChanged += HTV_SelectedItemChanged;
+			CommonHtv.ExpandedCollapsed += HTV_SelectedItemChanged;
+
+			Title = Properties.EMSLoadFlowResourcesGenerated.EMSLoadFlow_EMSLoadFlow;
+			InfoTip = Properties.EMSLoadFlowResourcesGenerated.EMSLoadFlow_EMSLoadFlow;
+
+			this.workspaceManager = moduleEnvironment.WorkspaceManager;
+		}
+
 
         #endregion Constructors
+
+        #region Methods
+
+		protected internal void HTV_SelectedItemChanged(HierarchyTreeView sender)
+		{
+			List<long> tempItems = sender.GetVisibleItemsIds();
+			if (!visibleItemsIds.SequenceEqual(tempItems))
+			{
+				visibleItemsIds = tempItems;
+				reportWindowVM.DataProvider.ProvideRecords(visibleItemsIds, true);
+			}
+		}
+
+
+		private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+		}
+
+
+
+        #endregion Methods
 
     }
 }

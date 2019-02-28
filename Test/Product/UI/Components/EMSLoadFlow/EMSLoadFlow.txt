@@ -1,9 +1,9 @@
 JMS ::::
 
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\JMSModel1Record.cs]  [JMSModel1]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowNodeReportRecordRecord.cs]  [EMSLoadFlowNodeReportRecord]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\JMSModel1Results.cs]  [JMSModel1]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowNodeReportRecordResults.cs]  [EMSLoadFlowNodeReportRecord]
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowJob.cs]  [EMSLoadFlow]
 
@@ -19,7 +19,7 @@ Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerSer
 UI ::::
 
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\JMSModel1ViewModel.cs]  [JMSModel1]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowNodeReportRecordViewModel.cs]  [EMSLoadFlowNodeReportRecord]
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml]  [EMSLoadFlow]
 

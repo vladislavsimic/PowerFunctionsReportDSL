@@ -29,6 +29,20 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
         #region Properties
 
+		public float VoltageLevel { get; set; }
+
+		public float Voltage { get; set; }
+
+		public float PhaseAngle { get; set; }
+
+		public float Pinj { get; set; }
+
+		public float Qinj { get; set; }
+
+		public float Iinj { get; set; }
+
+		public float CosPhi { get; set; }
+
 
 
         #endregion Properties

@@ -78,9 +78,11 @@
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
     </None>
     <Compile Include="CustomCode\Converters\AccessModifierConverter.cs" />
+    <Compile Include="CustomCode\Converters\HorizontalAlignmentConverter.cs" />
     <Compile Include="CustomCode\Converters\MyTypeConverter.cs" />
     <Compile Include="CustomCode\Converters\TypesToCSharpType.cs" />
     <Compile Include="CustomCode\Converters\TypesToModelCodeCastConverter.cs" />
+    <Compile Include="CustomCode\Converters\VerticalAlignmentConverter.cs" />
     <Compile Include="CustomCode\Helpers\JMSHelper.cs" />
     <Compile Include="CustomCode\Helpers\UIHelper.cs" />
     <Compile Include="CustomCode\Model\ICodeHandler.cs" />

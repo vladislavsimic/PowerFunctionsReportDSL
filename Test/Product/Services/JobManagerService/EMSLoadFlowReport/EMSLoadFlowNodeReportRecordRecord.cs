@@ -17,11 +17,11 @@ using System.Runtime.Serialization;
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
     [DataContract]
-    public partial class JMSModel1Record : HierarchicalReportRecord
+    public partial class EMSLoadFlowNodeReportRecordRecord : HierarchicalReportRecord
     {
         #region Constructors
 
-		public JMSModel1Record()
+		public EMSLoadFlowNodeReportRecordRecord()
 		{
 		}
         
@@ -30,6 +30,27 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
         #region Properties
         
+		[DataMember]
+		public float VoltageLevel { get; set; }
+
+		[DataMember]
+		public float Voltage { get; set; }
+
+		[DataMember]
+		public float PhaseAngle { get; set; }
+
+		[DataMember]
+		public float Pinj { get; set; }
+
+		[DataMember]
+		public float Qinj { get; set; }
+
+		[DataMember]
+		public float Iinj { get; set; }
+
+		[DataMember]
+		public float CosPhi { get; set; }
+
 
 
 

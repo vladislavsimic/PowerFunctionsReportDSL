@@ -534,9 +534,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- UIElementAttributes -->
-  <xsd:element name="uIElementAttributes" abstract="true" type="UIElementAttributes" substitutionGroup="namedElement" />
-  <xsd:complexType name="UIElementAttributes" abstract="true" >
+  <!-- UIElementAttribute -->
+  <xsd:element name="uIElementAttribute" abstract="true" type="UIElementAttribute" substitutionGroup="namedElement" />
+  <xsd:complexType name="UIElementAttribute" abstract="true" >
     <xsd:complexContent>
       <xsd:extension base="NamedElement">
         <!-- Id -->
@@ -549,11 +549,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- UIElementAttributes Moniker -->
-  <xsd:element name="uIElementAttributesMoniker" abstract="true" type="UIElementAttributesMoniker" substitutionGroup="namedElementMoniker" />
-  <xsd:complexType name="UIElementAttributesMoniker">
+  <!-- UIElementAttribute Moniker -->
+  <xsd:element name="uIElementAttributeMoniker" abstract="true" type="UIElementAttributeMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="UIElementAttributeMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for UIElementAttributes instance.</xsd:documentation>
+      <xsd:documentation>Moniker for UIElementAttribute instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="NamedElementMoniker">
@@ -635,11 +635,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ColumnAttributes -->
-  <xsd:element name="columnAttributes" type="ColumnAttributes" substitutionGroup="uIElementAttributes" />
-  <xsd:complexType name="ColumnAttributes">
+  <!-- ColumnAttribute -->
+  <xsd:element name="columnAttribute" type="ColumnAttribute" substitutionGroup="uIElementAttribute" />
+  <xsd:complexType name="ColumnAttribute">
     <xsd:complexContent>
-      <xsd:extension base="UIElementAttributes">
+      <xsd:extension base="UIElementAttribute">
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -648,27 +648,35 @@
         </xsd:attribute>
         <!-- Property: Binding -->
         <xsd:attribute name="binding" type="xsd:string" />
+        <!-- Property: Width -->
+        <xsd:attribute name="width" type="xsd:string" />
+        <!-- Property: VerticalAlignment -->
+        <xsd:attribute name="verticalAlignment" type="VerticalAlignment" />
+        <!-- Property: HorizontalAlignment -->
+        <xsd:attribute name="horizontalAlignment" type="HorizontalAlignment" />
+        <!-- Property: Header -->
+        <xsd:attribute name="header" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ColumnAttributes Moniker -->
-  <xsd:element name="columnAttributesMoniker" type="ColumnAttributesMoniker" substitutionGroup="uIElementAttributesMoniker" />
-  <xsd:complexType name="ColumnAttributesMoniker">
+  <!-- ColumnAttribute Moniker -->
+  <xsd:element name="columnAttributeMoniker" type="ColumnAttributeMoniker" substitutionGroup="uIElementAttributeMoniker" />
+  <xsd:complexType name="ColumnAttributeMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ColumnAttributes instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ColumnAttribute instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="UIElementAttributesMoniker">
+      <xsd:extension base="UIElementAttributeMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TabAttributes -->
-  <xsd:element name="tabAttributes" type="TabAttributes" substitutionGroup="uIElementAttributes" />
-  <xsd:complexType name="TabAttributes">
+  <!-- TabAttribute -->
+  <xsd:element name="tabAttribute" type="TabAttribute" substitutionGroup="uIElementAttribute" />
+  <xsd:complexType name="TabAttribute">
     <xsd:complexContent>
-      <xsd:extension base="UIElementAttributes">
+      <xsd:extension base="UIElementAttribute">
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -679,23 +687,23 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- TabAttributes Moniker -->
-  <xsd:element name="tabAttributesMoniker" type="TabAttributesMoniker" substitutionGroup="uIElementAttributesMoniker" />
-  <xsd:complexType name="TabAttributesMoniker">
+  <!-- TabAttribute Moniker -->
+  <xsd:element name="tabAttributeMoniker" type="TabAttributeMoniker" substitutionGroup="uIElementAttributeMoniker" />
+  <xsd:complexType name="TabAttributeMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for TabAttributes instance.</xsd:documentation>
+      <xsd:documentation>Moniker for TabAttribute instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="UIElementAttributesMoniker">
+      <xsd:extension base="UIElementAttributeMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DataGridAttributes -->
-  <xsd:element name="dataGridAttributes" type="DataGridAttributes" substitutionGroup="uIElementAttributes" />
-  <xsd:complexType name="DataGridAttributes">
+  <!-- DataGridAttribute -->
+  <xsd:element name="dataGridAttribute" type="DataGridAttribute" substitutionGroup="uIElementAttribute" />
+  <xsd:complexType name="DataGridAttribute">
     <xsd:complexContent>
-      <xsd:extension base="UIElementAttributes">
+      <xsd:extension base="UIElementAttribute">
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -706,14 +714,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DataGridAttributes Moniker -->
-  <xsd:element name="dataGridAttributesMoniker" type="DataGridAttributesMoniker" substitutionGroup="uIElementAttributesMoniker" />
-  <xsd:complexType name="DataGridAttributesMoniker">
+  <!-- DataGridAttribute Moniker -->
+  <xsd:element name="dataGridAttributeMoniker" type="DataGridAttributeMoniker" substitutionGroup="uIElementAttributeMoniker" />
+  <xsd:complexType name="DataGridAttributeMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for DataGridAttributes instance.</xsd:documentation>
+      <xsd:documentation>Moniker for DataGridAttribute instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="UIElementAttributesMoniker">
+      <xsd:extension base="UIElementAttributeMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1127,8 +1135,8 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end TabAttributes -->
-          <xsd:element ref="tabAttributes" minOccurs="1" maxOccurs="1">
+          <!-- Target end TabAttribute -->
+          <xsd:element ref="tabAttribute" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -1167,8 +1175,8 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end DataGridAttributes -->
-          <xsd:element ref="dataGridAttributes" minOccurs="1" maxOccurs="1">
+          <!-- Target end DataGridAttribute -->
+          <xsd:element ref="dataGridAttribute" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -1207,8 +1215,8 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end ColumnAttributes -->
-          <xsd:element ref="columnAttributes" minOccurs="1" maxOccurs="1">
+          <!-- Target end ColumnAttribute -->
+          <xsd:element ref="columnAttribute" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -1402,6 +1410,26 @@
       <xsd:enumeration value="EMSReactivePowerM"/>
       <xsd:enumeration value="EMSActivePowerM"/>
       <xsd:enumeration value="None"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum HorizontalAlignment -->
+  <xsd:simpleType name="HorizontalAlignment">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Center"/>
+      <xsd:enumeration value="Left"/>
+      <xsd:enumeration value="Right"/>
+      <xsd:enumeration value="Stretch"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum VerticalAlignment -->
+  <xsd:simpleType name="VerticalAlignment">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Bottom"/>
+      <xsd:enumeration value="Center"/>
+      <xsd:enumeration value="Stretch"/>
+      <xsd:enumeration value="Top"/>
     </xsd:restriction>
   </xsd:simpleType>
   

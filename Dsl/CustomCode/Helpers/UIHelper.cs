@@ -78,20 +78,64 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab3 + "<TabItem Name=" + tab.Name + " Header=\"Test\">");
+			sb.AppendLine(Resources.Tab3 + "<TabItem Name=\"" + tab.Name + "\" Header=\"Test\">");
 			sb.AppendLine(Resources.Tab4 + "<Grid>");
 			
 
 			if (tab.TargetTabbed.Count == 0)
 			{
 				sb.AppendLine(Resources.Tab5 + "<Grid x:Name=\"NoResults" + tab.Name + "\" Visibility=\"Collapsed\">");
-				sb.AppendLine(Resources.Tab6 + "ScrollViewer VerticalScrollBarVisibility=\"Auto\" HorizontalScrollBarVisibility=\"Auto\"");
+				sb.AppendLine(Resources.Tab6 + "<ScrollViewer VerticalScrollBarVisibility=\"Auto\" HorizontalScrollBarVisibility=\"Auto\">");
 				sb.AppendLine(Resources.Tab7 + "<TextBlock Style=\"{DynamicResource HeaderTextBlockStyle}\" Opacity=\"0.3\" Text=\"{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }\" VerticalAlignment=\"Center\" HorizontalAlignment=\"Center\" />");
 				sb.AppendLine(Resources.Tab6 + "</ScrollViewer>");
 				sb.AppendLine(Resources.Tab5 + "</Grid>");
+
 				if (tab.DataGrid != null)
 				{
 					sb.AppendLine(Resources.Tab5 + "<Grid Margin=\"0 5 0 0 \" Name=\"" + tab.Name + "DataGridHeader\">");
+					sb.AppendLine(Resources.Tab6 + "<DataGrid Name=\"" + tab.Name + "DataGrid\"  HorizontalScrollBarVisibility=\"Auto\" SelectionMode=\"Single\" SelectionUnit=\"FullRow\" IsSynchronizedWithCurrentItem=\"True\"");
+					sb.AppendLine(Resources.Tab7 + "CanUserAddRows=\"False\" CanUserDeleteRows=\"False\" CanUserResizeRows=\"False\" CanUserSortColumns=\"False\" AutoGenerateColumns=\"False\" IsReadOnly=\"True\">");
+
+					if (tab.DataGrid.Columns.Count > 0)
+					{
+						DataGrid dg = tab.DataGrid;
+
+						sb.AppendLine(Resources.Tab7 + "<DataGrid.Columns>");
+
+						sb.AppendLine(Resources.Tab8 + "<DataGridTemplateColumn Header=\"{ Binding Path = Resources.ELEMENT, Source = { StaticResource LocalizedStrings } }\" Width=\"Auto\" MinWidth=\"200\"  x:Name=\"" + dg.Name + "Tree\" SortMemberPath=\"Title\">");
+						sb.AppendLine(Resources.Tab9 + "<DataGridTemplateColumn.CellTemplate>");
+						sb.AppendLine(Resources.Tab10 + "<DataTemplate>");
+						sb.AppendLine(Resources.Tab11 + "<dgtvi:DataGridTreeViewItem DataContext=\"{ Binding DataGridTreeViewItemInfo}\" VerticalAlignment=\"Center\" NoLevel=\"{ Binding DataContext.TabularViewIsActive, RelativeSource ={ RelativeSource AncestorType = Grid} }\">");
+						sb.AppendLine(Resources.Tab11 + "</dgtvi:DataGridTreeViewItem>");
+						sb.AppendLine(Resources.Tab10 + "</DataTemplate>");
+						sb.AppendLine(Resources.Tab9 + "</DataGridTemplateColumn.CellTemplate>");
+						sb.AppendLine(Resources.Tab8 + "</DataGridTemplateColumn>");
+
+						foreach(ColumnAttribute attr in dg.Columns)
+						{
+							string name = string.Format("x:Name=\"Col{0}{1}\"", dg.Name ,attr.Name);
+
+							string header = string.Empty;
+							if (attr.Header != null)
+							{
+								header = " Header=\"" + attr.Header + "\"";
+							}
+							else
+							{
+								header = " Header=\"" + attr.Name + "\"";
+							}
+							string binding = " Binding=\"{Binding Path=" + attr.Binding + "}\"";
+							string width = string.Format(" Width=\"{0}\"", attr.Width);
+							string horizontalAlignment = string.Format(" HorizontalAlignment=\"{0}\"", HorizontalAlignmentConverter.Convert(attr.HorizontalAlignment));
+							string verticalAlignment = string.Format(" VerticalAlignment=\"{0}\"", VerticalAlignmentConverter.Convert(attr.VerticalAlignment));
+
+							sb.AppendLine(Resources.Tab8 + "<cc:ExtendedDataGridTextColumn " + name + header + width + horizontalAlignment + verticalAlignment + binding +" />");
+						}
+
+						sb.AppendLine(Resources.Tab7 + "</DataGrid.Columns>");
+					}
+
+					sb.AppendLine(Resources.Tab6 + "</DataGrid>");
 					sb.AppendLine(Resources.Tab5 + "</Grid>");
 				}
 			}
@@ -219,6 +263,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			sb.AppendLine(Resources.Tab3 + "DataGridTreeViewItemInfo.Lid = reportRecord.Lid;");
 			sb.AppendLine(Resources.Tab3 + "DataGridTreeViewItemInfo.Level = reportRecord.Level;");
 			sb.AppendLine(Resources.Tab3 + "DataGridTreeViewItemInfo.ElementIsShownInTabularView = reportRecord.ElementIsShownInTabularView;");
+			sb.AppendLine(Resources.Tab3 + "if (String.IsNullOrEmpty(reportRecord.Title))");
+			sb.AppendLine(Resources.Tab3 + "{");
+			sb.AppendLine(Resources.Tab4 + "DataGridTreeViewItemInfo.Title = DmsTypeToEntityNameMapper.GetAutomatedName((DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(reportRecord.Lid), reportRecord.Lid);");
+			sb.AppendLine(Resources.Tab3 + "}");
+			sb.AppendLine(Resources.Tab3 + "else");
+			sb.AppendLine(Resources.Tab3 + "{");
+			sb.AppendLine(Resources.Tab4 + "DataGridTreeViewItemInfo.Title = reportRecord.Title;");
+			sb.AppendLine(Resources.Tab3 + "}");
 			sb.AppendLine(Resources.Tab3 + "tabularViewIsActive = tabularViewActive;");
 			sb.AppendLine(Resources.Tab3 + "if (tabularViewActive && !this.reportRecord.ElementIsShownInTabularView)");
 			sb.AppendLine(Resources.Tab3 + "{");

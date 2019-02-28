@@ -1222,7 +1222,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
 																				"Attributes", 
 																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId, 
-																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes.DomainClassId, 
+																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute.DomainClassId, 
 																				GetElementsFromTabForAttributes,
 																				null,
 																				null,
@@ -1260,7 +1260,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			{
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab root = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab)rootElement;
 					// Segments 0 and 1
-					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttributes> result = root.Attributes;
+					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute> result = root.Attributes;
 				return result;
 			}
 			#endregion
@@ -1836,7 +1836,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
 																				"Attributes", 
 																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId, 
-																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes.DomainClassId, 
+																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute.DomainClassId, 
 																				GetElementsFromDataGridForAttributes,
 																				null,
 																				null,
@@ -1844,7 +1844,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					mappings[localCompartmentMappingsOffset+1] = new DslDiagrams::ElementListCompartmentMapping(
 																				"Columns", 
 																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId, 
-																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes.DomainClassId, 
+																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.DomainClassId, 
 																				GetElementsFromDataGridForColumns,
 																				null,
 																				null,
@@ -1882,14 +1882,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			{
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid root = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)rootElement;
 					// Segments 0 and 1
-					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttributes> result = root.Attributes;
+					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute> result = root.Attributes;
 				return result;
 			}
 			internal static global::System.Collections.IList GetElementsFromDataGridForColumns(DslModeling::ModelElement rootElement)
 			{
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid root = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)rootElement;
 					// Segments 0 and 1
-					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttributes> result = root.Columns;
+					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute> result = root.Columns;
 				return result;
 			}
 			#endregion

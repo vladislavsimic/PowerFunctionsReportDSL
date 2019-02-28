@@ -49,7 +49,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 			// in which case context.Instance will be an array.
 			Store store = GetStore(context.Instance);
 
-			ColumnAttributes attr = (ColumnAttributes)context.Instance;
+			ColumnAttribute attr = (ColumnAttribute)context.Instance;
 			DataGrid dataGrid = attr.DataGrid;
 
 			List<string> values = new List<string>();
