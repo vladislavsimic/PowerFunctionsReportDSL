@@ -21,6 +21,8 @@ UI ::::
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowNodeReportRecordViewModel.cs]  [EMSLoadFlowNodeReportRecord]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowReportViewModel.cs]  [EMSLoadFlow]
+
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml]  [EMSLoadFlow]
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml.cs]  [EMSLoadFlow]

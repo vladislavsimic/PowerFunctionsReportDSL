@@ -33,24 +33,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 		[DataMember]
 		public float VoltageLevel { get; set; }
 
-		[DataMember]
-		public float Voltage { get; set; }
-
-		[DataMember]
-		public float PhaseAngle { get; set; }
-
-		[DataMember]
-		public float Pinj { get; set; }
-
-		[DataMember]
-		public float Qinj { get; set; }
-
-		[DataMember]
-		public float Iinj { get; set; }
-
-		[DataMember]
-		public float CosPhi { get; set; }
-
 
 
 

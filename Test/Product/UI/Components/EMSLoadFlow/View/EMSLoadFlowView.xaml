@@ -24,16 +24,16 @@
 
 	<Grid>
 		<TabControl Name="tabControl">
-			<TabItem Name="NodesTab" Header="Test">
+			<TabItem Name="TabNodes" Header="Test">
 				<Grid>
-					<Grid x:Name="NoResultsNodesTab" Visibility="Collapsed">
+					<Grid x:Name="NoResultsTabNodes" Visibility="Collapsed">
 						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
 							<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
 						</ScrollViewer>
 					</Grid>
-					<Grid Margin="0 5 0 0 " Name="NodesTabDataGridHeader">
-						<DataGrid Name="NodesTabDataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True">
-							CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True"
+					<Grid Margin="0 5 0 0 " Name="TabNodesDataGridHeader">
+						<DataGrid Name="TabNodesDataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True"
+							CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
 							<DataGrid.Columns>
 								<DataGridTemplateColumn Header="{ Binding Path = Resources.ELEMENT, Source = { StaticResource LocalizedStrings } }" Width="Auto" MinWidth="200"  x:Name="NodesTree" SortMemberPath="Title">
 									<DataGridTemplateColumn.CellTemplate>
@@ -43,13 +43,7 @@
 									</DataTemplate>
 									</DataGridTemplateColumn.CellTemplate>
 								</DataGridTemplateColumn>
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesVoltageLevel" Header="Voltage Level" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="VoltageLevel"}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesVoltage" Header="Voltage" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Voltage"}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesPhaseAngle" Header="Phase Angle" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="PhaseAngle"}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesPInj" Header="P Inj" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Pinj"}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesQInj" Header="P Inj" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Qinj"}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesIInj" Header="I Inj" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="Iinj"}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColNodesCosPhi" Header="Cos Phi" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path="CosPhi"}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColNodesVoltageLevel" Header="Voltage Level" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=VoltageLevel}" />
 							</DataGrid.Columns>
 						</DataGrid>
 					</Grid>

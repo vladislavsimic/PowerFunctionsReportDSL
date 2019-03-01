@@ -142,6 +142,9 @@
   <data name="JMSReportTypeTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Templates\JMSReportTypeTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="UIReportViewModelTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Templates\UI\UIReportViewModelTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="UIViewCsTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Templates\UI\UIViewCsTemplate.t4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

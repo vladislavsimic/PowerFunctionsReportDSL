@@ -57,6 +57,14 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			DataGridTreeViewItemInfo.Lid = reportRecord.Lid;
 			DataGridTreeViewItemInfo.Level = reportRecord.Level;
 			DataGridTreeViewItemInfo.ElementIsShownInTabularView = reportRecord.ElementIsShownInTabularView;
+			if (String.IsNullOrEmpty(reportRecord.Title))
+			{
+				DataGridTreeViewItemInfo.Title = DmsTypeToEntityNameMapper.GetAutomatedName((DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(reportRecord.Lid), reportRecord.Lid);
+			}
+			else
+			{
+				DataGridTreeViewItemInfo.Title = reportRecord.Title;
+			}
 			tabularViewIsActive = tabularViewActive;
 			if (tabularViewActive && !this.reportRecord.ElementIsShownInTabularView)
 			{
@@ -143,54 +151,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			get
 			{
 				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Voltage, reportRecord.VoltageLevel);
-			}
-		}
-
-		public float Voltage
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Voltage, reportRecord.Voltage);
-			}
-		}
-
-		public float PhaseAngle
-		{
-			get
-			{
-				return reportRecord.PhaseAngle;
-			}
-		}
-
-		public float Pinj
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSActivePowerM, reportRecord.Pinj);
-			}
-		}
-
-		public float Qinj
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSReactivePowerM, reportRecord.Qinj);
-			}
-		}
-
-		public float Iinj
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Current, reportRecord.Iinj);
-			}
-		}
-
-		public float CosPhi
-		{
-			get
-			{
-				return reportRecord.CosPhi;
 			}
 		}
 

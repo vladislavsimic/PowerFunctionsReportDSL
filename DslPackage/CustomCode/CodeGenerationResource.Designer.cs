@@ -143,6 +143,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] UIReportViewModelTemplate {
+            get {
+                object obj = ResourceManager.GetObject("UIReportViewModelTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] UIViewCsTemplate {
             get {
                 object obj = ResourceManager.GetObject("UIViewCsTemplate", resourceCulture);

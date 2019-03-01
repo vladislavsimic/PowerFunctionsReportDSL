@@ -26,12 +26,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
 					ModelCode.,
-					ModelCode.,
-					ModelCode.,
-					ModelCode.,
-					ModelCode.,
-					ModelCode.,
-					ModelCode.,
 
 				}, new List<Association>(), busnodeGids, new List<Association>(), ref mdc);
 			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
@@ -47,12 +41,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 						throw new ArgumentNullException("busnodeGids");
 					}
 					data.VoltageLevel = rds[i].GetProperty(ModelCode.).AsFloat();
-					data.Voltage = rds[i].GetProperty(ModelCode.).AsFloat();
-					data.PhaseAngle = rds[i].GetProperty(ModelCode.).AsFloat();
-					data.Pinj = rds[i].GetProperty(ModelCode.).AsFloat();
-					data.Qinj = rds[i].GetProperty(ModelCode.).AsFloat();
-					data.Iinj = rds[i].GetProperty(ModelCode.).AsFloat();
-					data.CosPhi = rds[i].GetProperty(ModelCode.).AsFloat();
 
 				}
 				count -= rds.Count;

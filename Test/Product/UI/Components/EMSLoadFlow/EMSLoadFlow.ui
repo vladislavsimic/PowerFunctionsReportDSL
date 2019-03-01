@@ -1,70 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b8f2493e-42a2-4b41-9397-eaf2b6121e8f" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="48ef2c3f-6536-4031-8d9b-5b18d5237491" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="1b46b3ef-b743-4bfd-82f4-3611f4018100">
-      <tab Id="ecf6a6d9-df6b-421e-8915-03a95dff1367" name="NodesTab">
+    <modelRootHasTypes Id="43ed3dbb-0484-4ddc-8fff-8507916146de">
+      <tab Id="c9ffb045-36a5-48e0-9ea1-5d955a3d6546" name="TabNodes">
         <dataGrid>
-          <tabReferencesDataGrid Id="156155b2-9c50-439b-840a-5d79a35ffec4">
-            <dataGridMoniker Id="1e93ca0e-bdcc-496a-87df-cdd996d76af4" />
+          <tabReferencesDataGrid Id="01f4ae13-553d-47fb-8de0-1a095cfff390">
+            <dataGridMoniker Id="0a38259d-a3fd-4d5a-99d1-46bf69bb52f0" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="17a45285-1730-4245-a98d-f91fdeac3159">
-      <dataGrid Id="1e93ca0e-bdcc-496a-87df-cdd996d76af4" name="Nodes">
+    <modelRootHasTypes Id="6f8eb2f2-bb5b-4798-be76-d01148ede561">
+      <dataGrid Id="0a38259d-a3fd-4d5a-99d1-46bf69bb52f0" name="Nodes">
         <columns>
-          <dataGridHasColumns Id="c6598141-78b7-4ee2-b407-d4646ad04011">
-            <columnAttribute Id="5e332e8c-8b1f-42b5-9dac-6ae13c4197b8" name="VoltageLevel" binding="VoltageLevel" header="Voltage Level" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="fcbfa1d2-0c9f-4e5c-ba29-911505d6df6c">
-            <columnAttribute Id="f13dcf32-6d27-4a4d-9a8f-d7fb0ef4e185" name="Voltage" binding="Voltage" header="Voltage" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="f21a9a4f-2feb-46f6-9544-d8c80a997151">
-            <columnAttribute Id="3a2de7a6-c5cf-4231-baa3-9420a20090fb" name="PhaseAngle" binding="PhaseAngle" header="Phase Angle" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="8c803648-7e6f-4485-b8ec-36717eacf6d4">
-            <columnAttribute Id="e99ae788-0c24-499f-9471-ec75b58e3c10" name="PInj" binding="Pinj" header="P Inj" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="536d3f1a-1e55-4373-9bc3-d77515389f52">
-            <columnAttribute Id="85642cb9-21e9-45c7-9bb5-000bf1b336ae" name="QInj" binding="Qinj" header="P Inj" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="77670439-03db-4c11-8b36-69cdc18aeda1">
-            <columnAttribute Id="6f067637-5879-43d7-bd29-0b8c481b9282" name="IInj" binding="Iinj" header="I Inj" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="c41247fb-c2ef-472b-aa50-4183fa6584b3">
-            <columnAttribute Id="e4beb0be-75d2-49a5-b4c7-ecd8f38abf34" name="CosPhi" binding="CosPhi" header="Cos Phi" />
+          <dataGridHasColumns Id="1e44bf61-1b8c-4839-8e88-999084dc6e85">
+            <columnAttribute Id="3882a455-8bf3-48fa-ac60-c4c3ba4c7eaa" name="VoltageLevel" binding="VoltageLevel" header="Voltage Level" />
           </dataGridHasColumns>
         </columns>
         <jMSModel>
-          <dataGridJMSViewModel Id="01acd4ed-1303-4be3-8d9a-bc94ddaaeca1">
-            <jMSModelMoniker Id="53101f5a-6dd2-4b0f-81d2-bd6eadd7126f" />
+          <dataGridJMSViewModel Id="0339f65e-9f22-4a28-9b41-160c08fab4b2">
+            <jMSModelMoniker Id="05b2191f-45db-415b-bc43-7a64eec23d81" />
           </dataGridJMSViewModel>
         </jMSModel>
       </dataGrid>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="c5851190-2e57-4b2d-94db-e33eb3778000">
-      <jMSModel Id="53101f5a-6dd2-4b0f-81d2-bd6eadd7126f" name="EMSLoadFlowNodeReportRecord">
+    <modelRootHasTypes Id="cee08c3b-761e-496e-b10d-8225b2c422ff">
+      <jMSModel Id="05b2191f-45db-415b-bc43-7a64eec23d81" name="EMSLoadFlowNodeReportRecord">
         <attributes>
-          <jMSModelHasAttributes Id="b40f58c6-0993-4e69-b708-b68d8ef373a3">
-            <classAttribute Id="fc1ab616-a265-48fe-a805-a2a31ddd0901" name="VoltageLevel" measurementType="Voltage" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="bc357e40-fd98-4f61-8a3f-4170992e1755">
-            <classAttribute Id="5613f136-fb68-415c-a2ce-195dcdb3e2c7" name="Voltage" measurementType="Voltage" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="c3f5c11d-5804-4d58-bbc8-934cac304842">
-            <classAttribute Id="92699aa2-3ada-4d8e-aefe-aec45721f59b" name="PhaseAngle" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="3ed0224e-fe92-4a20-b959-1cea6b6dbe8a">
-            <classAttribute Id="8d6ba6db-c424-4693-9849-aefc8f98255c" name="Pinj" measurementType="EMSActivePowerM" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="24c41f7a-7b7e-45e1-9870-9e505b48e702">
-            <classAttribute Id="4f308c50-a0f2-406b-bb97-128ba759d1e1" name="Qinj" measurementType="EMSReactivePowerM" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="da4ec25c-c6bc-4dac-a57d-b89db82062c8">
-            <classAttribute Id="bd072e4e-a093-4d6c-8876-76a0e741face" name="Iinj" measurementType="Current" />
-          </jMSModelHasAttributes>
-          <jMSModelHasAttributes Id="718681a4-fb8f-4cbf-8686-f04e8f952efd">
-            <classAttribute Id="4332a595-d9cd-4c2c-a925-ebc26b74443e" name="CosPhi" />
+          <jMSModelHasAttributes Id="d795930c-8c34-45cd-a3ed-4769a010edd4">
+            <classAttribute Id="66436b07-af21-4d30-8342-905613a9541b" name="VoltageLevel" measurementType="Voltage" />
           </jMSModelHasAttributes>
         </attributes>
       </jMSModel>

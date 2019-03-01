@@ -62,6 +62,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			genCode = GenerateCode(UIViewModelTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
+			SCGTemplate UIReportViewModelTemplate = new SCGTemplate(CodeGenerationResource.UIReportViewModelTemplate, folderRelativePath, ".cs", "ReportViewModel");
+			genCode = GenerateCode(UIReportViewModelTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
 			folderRelativePath = "\\View";
 			SCGTemplate UIViewTemplate = new SCGTemplate(CodeGenerationResource.UIViewTemplate, folderRelativePath, ".xaml", "View");
 			genCode = GenerateCode(UIViewTemplate, inputFileName, inputFileContent);
