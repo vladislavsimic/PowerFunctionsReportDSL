@@ -12,7 +12,13 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
     public enum EMSLoadFlowReportType
     {
 
-		EMSLoadFlowNodeReportRecord,
+		Tab1,
+		Tab2,
+		Tab3,
+		Tab4,
+		Tab5,
+		Tab66666666666666,
+		Tab7,
 		NoResults,
 
 

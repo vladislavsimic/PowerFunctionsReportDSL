@@ -3930,13 +3930,23 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		#endregion
 		#region Static methods to access DataGrid of a JMSModel
 		/// <summary>
-		/// Gets a list of DataGrid.
+		/// Gets DataGrid.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<DataGrid> GetDataGrid(JMSModel element)
+		public static DataGrid GetDataGrid(JMSModel element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<DataGrid>, DataGrid>(element, JMSModelDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, JMSModelDomainRoleId) as DataGrid;
+		}
+		
+		/// <summary>
+		/// Sets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetDataGrid(JMSModel element, DataGrid newDataGrid)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, JMSModelDomainRoleId, newDataGrid);
 		}
 		#endregion
 		#region JMSModel domain role code
@@ -3953,7 +3963,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel/JMSModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
 		[DslModeling::DomainObjectId("45b0af11-ef66-4525-bb6d-2923963ce3b2")]
 		public virtual JMSModel JMSModel
 		{
@@ -4013,13 +4023,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		#endregion
 		#region JMSModel link accessor
 		/// <summary>
-		/// Get the list of DataGridJMSViewModel links to a JMSModel.
+		/// Get the DataGridJMSViewModel link to a JMSModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> GetLinksToDataGrid ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel jMSModelInstance )
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel GetLinkToDataGrid (global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel jMSModelInstance)
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>(jMSModelInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId);
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel>(jMSModelInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of JMSModel not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
 		}
 		#endregion
 		#region DataGridJMSViewModel instance accessors

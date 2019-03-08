@@ -178,6 +178,13 @@
       <BaseClass>
         <DomainClassMoniker Name="UIElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="d1af7d4c-32ea-486c-9331-c643f2d90eb5" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Tab.Header" Name="Header" DisplayName="Header">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -523,7 +530,7 @@
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="45b0af11-ef66-4525-bb6d-2923963ce3b2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModel" Name="JMSModel" DisplayName="JMSModel" PropertyName="DataGrid" PropertyDisplayName="Data Grid">
+        <DomainRole Id="45b0af11-ef66-4525-bb6d-2923963ce3b2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModel" Name="JMSModel" DisplayName="JMSModel" PropertyName="DataGrid" Multiplicity="ZeroOne" PropertyDisplayName="Data Grid">
           <RolePlayer>
             <DomainClassMoniker Name="JMSModel" />
           </RolePlayer>
@@ -967,6 +974,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="attributes">
             <DomainRelationshipMoniker Name="TabHasAttributes" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="header">
+            <DomainPropertyMoniker Name="Tab/Header" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="TabShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="tabShapeMoniker" ElementName="tabShape" MonikerTypeName="TabShapeMoniker">
@@ -1382,7 +1392,7 @@
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
-  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
+  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="E:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
     <RootClass>
       <DomainClassMoniker Name="ModelRoot" />
     </RootClass>

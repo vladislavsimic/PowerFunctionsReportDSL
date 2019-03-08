@@ -1,37 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="48ef2c3f-6536-4031-8d9b-5b18d5237491" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="555af364-2e97-4c35-a52a-252cd82cf017" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="43ed3dbb-0484-4ddc-8fff-8507916146de">
-      <tab Id="c9ffb045-36a5-48e0-9ea1-5d955a3d6546" name="TabNodes">
-        <dataGrid>
-          <tabReferencesDataGrid Id="01f4ae13-553d-47fb-8de0-1a095cfff390">
-            <dataGridMoniker Id="0a38259d-a3fd-4d5a-99d1-46bf69bb52f0" />
-          </tabReferencesDataGrid>
-        </dataGrid>
+    <modelRootHasTypes Id="d650778c-b844-43c3-8949-0048c5aa09e6">
+      <tab Id="22885d12-49b0-4b6f-8d0b-a782f00170b5" name="Tab1" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="937539a4-e3b3-49a0-83b5-065fd588816b">
+      <tab Id="148917ea-c326-4a5c-9c7b-eefbb65f2cfd" name="Tab2">
+        <targetTabbed>
+          <tabReferencesTargetTabbed Id="864cf821-ef5a-4d64-929c-58cbabe55f30">
+            <tabMoniker Id="fd651da6-0c48-4f3e-88a3-17a0dc22725b" />
+          </tabReferencesTargetTabbed>
+          <tabReferencesTargetTabbed Id="36ce154c-4ce6-4182-bdff-6337df27908a">
+            <tabMoniker Id="8dfdb30c-545c-4ad2-a39f-376563ef5aa0" />
+          </tabReferencesTargetTabbed>
+        </targetTabbed>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="6f8eb2f2-bb5b-4798-be76-d01148ede561">
-      <dataGrid Id="0a38259d-a3fd-4d5a-99d1-46bf69bb52f0" name="Nodes">
-        <columns>
-          <dataGridHasColumns Id="1e44bf61-1b8c-4839-8e88-999084dc6e85">
-            <columnAttribute Id="3882a455-8bf3-48fa-ac60-c4c3ba4c7eaa" name="VoltageLevel" binding="VoltageLevel" header="Voltage Level" />
-          </dataGridHasColumns>
-        </columns>
-        <jMSModel>
-          <dataGridJMSViewModel Id="0339f65e-9f22-4a28-9b41-160c08fab4b2">
-            <jMSModelMoniker Id="05b2191f-45db-415b-bc43-7a64eec23d81" />
-          </dataGridJMSViewModel>
-        </jMSModel>
-      </dataGrid>
+    <modelRootHasTypes Id="6fdc003e-4977-4026-b599-9a8ef9ab1ee0">
+      <tab Id="ddb121dc-79c6-47c5-9638-e27ea855c85d" name="Tab3" />
     </modelRootHasTypes>
-    <modelRootHasTypes Id="cee08c3b-761e-496e-b10d-8225b2c422ff">
-      <jMSModel Id="05b2191f-45db-415b-bc43-7a64eec23d81" name="EMSLoadFlowNodeReportRecord">
-        <attributes>
-          <jMSModelHasAttributes Id="d795930c-8c34-45cd-a3ed-4769a010edd4">
-            <classAttribute Id="66436b07-af21-4d30-8342-905613a9541b" name="VoltageLevel" measurementType="Voltage" />
-          </jMSModelHasAttributes>
-        </attributes>
-      </jMSModel>
+    <modelRootHasTypes Id="a81093ce-db67-4e55-866c-74eeebbfdae9">
+      <tab Id="fd651da6-0c48-4f3e-88a3-17a0dc22725b" name="Tab4" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="2ed8c5af-66d9-42e1-a496-05d45273bd14">
+      <tab Id="8dfdb30c-545c-4ad2-a39f-376563ef5aa0" name="Tab5">
+        <targetTabbed>
+          <tabReferencesTargetTabbed Id="818e377f-2012-42d5-88c8-6e600313adcc">
+            <tabMoniker Id="14fdc07e-2874-4b36-a143-e62ffba31839" />
+          </tabReferencesTargetTabbed>
+          <tabReferencesTargetTabbed Id="4675c6cf-5009-4184-aed8-ace12566a9fa">
+            <tabMoniker Id="c4d4641c-f34b-40d3-88f1-ff2f6fbe68c2" />
+          </tabReferencesTargetTabbed>
+        </targetTabbed>
+      </tab>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="940aad3c-da03-44d7-8161-f49dc795619d">
+      <tab Id="14fdc07e-2874-4b36-a143-e62ffba31839" name="Tab66666666666666" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="bb520084-98dd-425e-b196-6505d4a8f986">
+      <tab Id="c4d4641c-f34b-40d3-88f1-ff2f6fbe68c2" name="Tab7" />
     </modelRootHasTypes>
   </types>
 </modelRoot>

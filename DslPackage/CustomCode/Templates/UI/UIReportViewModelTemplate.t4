@@ -6,7 +6,6 @@
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model" #>
 <#@ import namespace="System.Collections.Generic" #>
-
 <#
    // Create a file segment for each element:
    foreach (ModelType type in this.ModelRoot.Types)
@@ -50,13 +49,90 @@ namespace <#=props["classNamespace"]#>
 
         #region Properties
         
-<#=props["properties"]#>
+        public HierarchyTreeDataProvider TreeDataProvider { get; set; }
+
+        public HierarchyType HierarchyType
+		{
+			get { return hierarchyType; }
+			set
+			{
+				hierarchyType = value;
+				DataProvider.ReportParameter.HierarchyType = hierarchyType;
+				DataProvider.Reset();
+
+				TreeDataProvider.ReportParameter.HeirarchyType = hierarchyType;
+				TreeDataProvider.Reset();
+			}
+		}
+
+        public <#=this.ModelRoot.Name#>ReportDataProvider DataProvider { get; set; }
 
         #endregion Properties
 
+        #region Command Properties
+
+        public ICommand RefreshCommand
+		{
+			get
+			{
+				return refreshCommand ?? (refreshCommand = new RelayCommand(param => RefreshCommandExecute()));
+			}
+		}
+
+        #endregion Command Properties
+
+        #region Command Methods
+
+        public void RefreshCommandExecute()
+		{
+			reportView.CommonHtv.RefreshHierarchyTreeView();
+		}
+
+        #endregion Command Methods
+
         #region Methods
 
-<#=props["methods"]#>
+        protected internal void HierarchyTreeViewRefreshed()
+		{
+			DataProvider.Refresh();
+		}
+
+        protected internal void ReportView_Loaded(object sender, RoutedEventArgs e)
+		{
+			<#=this.ModelRoot.Name#>ReportView view = sender as <#=this.ModelRoot.Name#>ReportView;
+			if (DataProvider == null)
+			{
+				DataProvider = new <#=this.ModelRoot.Name#>ReportDataProvider(view);
+			}
+			if (DataProvider.IsInitialized) return;
+			DataProvider.ReportParameter.HierarchyType = HierarchyType.Container;
+			DataProvider.ReportParameter.HierarchyNetworkType = HierarchyNetworkType.EMS;
+			DataProvider.Init();
+		}
+
+        protected internal void TreeDataProvider_ExpandTreeOnReportEventHandler(List<long> inputGids)
+		{
+			TreeDataProvider.ExpandTreeOnOpenEventHandler -= TreeDataProvider_ExpandTreeOnReportEventHandler;
+			if (inputGids != null)
+			{
+				reportView.CommonHtv.ExpandTreeItemsWithSelectedGids(inputGids);
+			}
+		}
+
+        protected internal void GenInfo_RefreshTap(object sender, RoutedEventArgs e)
+		{
+			if (reportView.CommonHtv.GetRoots().Count > 0)
+			{
+				RefreshCommandExecute();
+			}
+		}
+
+        protected override void OnDispose()
+		{
+			DataProvider.Terminate();
+
+			TreeDataProvider.Terminate();
+		}
 
         #endregion Methods
     }

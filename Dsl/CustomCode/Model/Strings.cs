@@ -190,7 +190,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "public " + model.Name + " ReportRecord");
+			sb.AppendLine(Resources.Tab2 + "public " + model.Name + "Record ReportRecord");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab3 + "get");
 			sb.AppendLine(Resources.Tab3 + "{");

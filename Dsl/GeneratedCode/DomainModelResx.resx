@@ -341,6 +341,14 @@
     <value>Tab</value>
     <comment>DisplayName for DomainClass &apos;Tab&apos;</comment>
   </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Tab/Header.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Tab.Header</value>
+    <comment>Description for DomainProperty &apos;Header&apos; on DomainClass &apos;Tab&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Tab/Header.DisplayName" xml:space="preserve">
+    <value>Header</value>
+    <comment>DisplayName for DomainProperty &apos;Header&apos; on DomainClass &apos;Tab&apos;</comment>
+  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UIElementAttribute.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElementAttribute</value>
     <comment>Description for DomainClass &apos;UIElementAttribute&apos;</comment>

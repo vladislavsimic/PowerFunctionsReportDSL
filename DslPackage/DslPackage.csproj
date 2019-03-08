@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ApplicationIcon>Resources\File.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Ikonica.ico</ApplicationIcon>
     <RootNamespace>SchneiderElectricDMS.PowerFunctionsReportDSL</RootNamespace>
     <AssemblyName>SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage</AssemblyName>
     <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
@@ -111,6 +111,9 @@
     <None Include="CustomCode\Templates\JMSModelTemplate.t4" />
     <None Include="CustomCode\Templates\JMSReportResult.t4" />
     <None Include="CustomCode\Templates\JMSReportTypeTemplate.t4" />
+    <None Include="CustomCode\Templates\UI\UILocalizedStringsTemplate.t4" />
+    <None Include="CustomCode\Templates\UI\UIModuleCommandsTemplate.t4" />
+    <None Include="CustomCode\Templates\UI\UIReportDataProvider.t4" />
     <None Include="CustomCode\Templates\UI\UIReportViewModelTemplate.t4" />
     <None Include="CustomCode\Templates\UI\UIViewCsTemplate.t4" />
     <None Include="CustomCode\Templates\UI\UIViewModelTemplate.t4" />
@@ -230,7 +233,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualBasic.tt</DependentUpon>
     </VSItemTemplate>
-    <None Include="Resources\File.ico" />
+    <Content Include="Resources\Ikonica.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Key.snk">

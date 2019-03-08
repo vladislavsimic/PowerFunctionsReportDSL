@@ -35,7 +35,7 @@
 
 namespace <#=code["classNamespace"]#>
 {
-    public partial class <#=this.ModelRoot.Name#>View : ReportDocument, IDisposable
+    public partial class <#=this.ModelRoot.Name#>ReportView : ReportDocument, IDisposable
     {
         #region Fields
 

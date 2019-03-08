@@ -96,6 +96,7 @@
     <Compile Include="CustomCode\Model\JMSResults.cs" />
     <Compile Include="CustomCode\Model\Strings.cs" />
     <Compile Include="CustomCode\Model\UIViewModel.cs" />
+    <Compile Include="CustomCode\Model\UI\UIReportDataProvider.cs" />
     <Compile Include="CustomCode\Model\UI\UIReportViewModel.cs" />
     <Compile Include="CustomCode\Model\UI\UITab.cs" />
     <Compile Include="GeneratedCode\ConnectionBuilders.cs">

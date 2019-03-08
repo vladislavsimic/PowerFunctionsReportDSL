@@ -17,15 +17,14 @@ using System.Runtime.Serialization;
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
     [DataContract]
-    public partial class EMSLoadFlowNodeReportRecord : AsyncJob
+    public partial class JMSModel1 : AsyncJob
     {
-		private void FillEMSLoadFlowNodeReportRecordProperties(List<long> gids)
+		private void FillJMSModel1Properties(List<long> gids)
 		{
 			long mdc = 0;
 			if (gids.Count <= 0) return;
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
-					ModelCode.,
 
 				}, new List<Association>(), busnodeGids, new List<Association>(), ref mdc);
 			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
@@ -37,10 +36,36 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 					EMSLoadFlowRecordBean data = (hierarhyRecordData[rds[i].Id] as EMSLoadFlowRecordBean)
 					if (data == null)
 					{
-						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingEMSLoadFlowNodeReportRecord. Record data is null!");
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingJMSModel1. Record data is null!");
 						throw new ArgumentNullException("busnodeGids");
 					}
-					data.VoltageLevel = rds[i].GetProperty(ModelCode.).AsFloat();
+
+				}
+				count -= rds.Count;
+			}
+			GdaQuery.IteratorClose(iteratorId);
+		}
+
+		private void FillJMSModel2Properties(List<long> gids)
+		{
+			long mdc = 0;
+			if (gids.Count <= 0) return;
+			var iteratorId = GdaQuery.GetDescendentValues(0,
+				new List<ModelCode> {
+
+				}, new List<Association>(), busnodeGids, new List<Association>(), ref mdc);
+			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
+			while (count > 0)
+			{
+				List<ResourceDescription> rds = GdaQuery.IteratorNext(50000, iteratorId);
+				for (int i = 0; i < rds.Count; i++)
+				{
+					EMSLoadFlowRecordBean data = (hierarhyRecordData[rds[i].Id] as EMSLoadFlowRecordBean)
+					if (data == null)
+					{
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingJMSModel2. Record data is null!");
+						throw new ArgumentNullException("busnodeGids");
+					}
 
 				}
 				count -= rds.Count;

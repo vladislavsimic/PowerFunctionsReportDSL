@@ -1,17 +1,11 @@
 JMS ::::
 
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowNodeReportRecordRecord.cs]  [EMSLoadFlowNodeReportRecord]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowNodeReportRecordResults.cs]  [EMSLoadFlowNodeReportRecord]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowJob.cs]  [EMSLoadFlow]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowRecordBean.cs]  [EMSLoadFlow]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportJobParam.cs]  [EMSLoadFlow]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportResult.cs]  [EMSLoadFlow]
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportType.cs]  [EMSLoadFlow]
 
@@ -19,11 +13,25 @@ Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerSer
 UI ::::
 
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowNodeReportRecordViewModel.cs]  [EMSLoadFlowNodeReportRecord]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\\LocalizedStrings.cs]  [LocalizedStrings]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\\EMSLoadFlowModuleCommands.cs]  [EMSLoadFlow]
+
+UI Models ::::
+
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\Models\EMSLoadFlowReportDataProvider.cs]  [EMSLoadFlow]
+
+UI View Model ::::
+
+
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowReportViewModel.cs]  [EMSLoadFlow]
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml]  [EMSLoadFlow]
+UI View ::::
 
-Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowView.xaml.cs]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowReportView.xaml]  [EMSLoadFlow]
+
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\View\EMSLoadFlowReportView.xaml.cs]  [EMSLoadFlow]
 

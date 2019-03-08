@@ -55,8 +55,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			genCode = GenerateCode(JMSEnumTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			folderRelativePath = "\\ViewModels";
+			folderRelativePath = "\\";
 			sb.AppendLine("UI ::::\n\n");
+
+			SCGTemplate UILocalizedStringsTemplate = new SCGTemplate(CodeGenerationResource.UILocalizedStringsTemplate, folderRelativePath, ".cs", "");
+			genCode = GenerateCode(UILocalizedStringsTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			SCGTemplate UIModuleCommandsTemplate = new SCGTemplate(CodeGenerationResource.UIModuleCommandsTemplate, folderRelativePath, ".cs", "ModuleCommands");
+			genCode = GenerateCode(UIModuleCommandsTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			folderRelativePath = "\\Models";
+			sb.AppendLine("UI Models ::::\n\n");
+
+			SCGTemplate UIReportDataProviderTemplate = new SCGTemplate(CodeGenerationResource.UIReportDataProvider, folderRelativePath, ".cs", "ReportDataProvider");
+			genCode = GenerateCode(UIReportDataProviderTemplate, inputFileName, inputFileContent);
+			sb.AppendLine(genCode);
+
+			folderRelativePath = "\\ViewModels";
+			sb.AppendLine("UI View Model ::::\n\n");
 
 			SCGTemplate UIViewModelTemplate = new SCGTemplate(CodeGenerationResource.UIViewModelTemplate, folderRelativePath, ".cs", "ViewModel");
 			genCode = GenerateCode(UIViewModelTemplate, inputFileName, inputFileContent);
@@ -67,11 +85,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			sb.AppendLine(genCode);
 
 			folderRelativePath = "\\View";
-			SCGTemplate UIViewTemplate = new SCGTemplate(CodeGenerationResource.UIViewTemplate, folderRelativePath, ".xaml", "View");
+			sb.AppendLine("UI View ::::\n\n");
+
+			SCGTemplate UIViewTemplate = new SCGTemplate(CodeGenerationResource.UIViewTemplate, folderRelativePath, ".xaml", "ReportView");
 			genCode = GenerateCode(UIViewTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			SCGTemplate UIViewCsTemplate = new SCGTemplate(CodeGenerationResource.UIViewCsTemplate, folderRelativePath, ".xaml.cs", "View");
+			SCGTemplate UIViewCsTemplate = new SCGTemplate(CodeGenerationResource.UIViewCsTemplate, folderRelativePath, ".xaml.cs", "ReportView");
 			genCode = GenerateCode(UIViewCsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 

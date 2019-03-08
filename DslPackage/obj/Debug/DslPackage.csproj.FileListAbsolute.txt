@@ -97,9 +97,13 @@ E:\UIGenerator\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS
 E:\UIGenerator\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
 E:\UIGenerator\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.latest.pkgdef
 E:\UIGenerator\PowerFunctionsReportDSL\DslPackage\obj\Debug\extension.vsixmanifest
+E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csprojResolveAssemblyReference.cache
+E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.CodeGenerationResource.resources
+E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csproj.GenerateResource.Cache
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\CSharp\1033\PowerFunctionsReportDSL.zip
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\VisualBasic\1033\PowerFunctionsReportDSL.zip
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\GeneratedCode\PowerFunctionsReportDSLSchema.xsd
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Resources\Ikonica.ico
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pdb
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
@@ -183,10 +187,7 @@ E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Newtonsoft.Json.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\System.Threading.Tasks.Dataflow.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\EnvDTE90.xml
-E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csprojResolveAssemblyReference.cache
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\VSPackage.resources
-E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.CodeGenerationResource.resources
-E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csproj.GenerateResource.Cache
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\Commands.cto
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\VSCT.read.1.tlog
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\VSCT.write.1.tlog

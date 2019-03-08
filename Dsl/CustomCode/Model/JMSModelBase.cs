@@ -8,7 +8,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
 	public abstract class JMSModelBase
 	{
-
 		#region Fields
 
 		private JMSModel model;
@@ -23,6 +22,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			this.model = model;
 			this.generatedCode = new Dictionary<string, string>();
+		}
+
+		public JMSModelBase()
+		{
+			this.generatedCode = new Dictionary<string, string>();
+
 		}
 
 		#endregion Constructor

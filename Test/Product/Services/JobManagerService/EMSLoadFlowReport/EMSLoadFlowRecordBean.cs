@@ -29,8 +29,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
         #region Properties
 
-		public float VoltageLevel { get; set; }
-
 
 
         #endregion Properties

@@ -869,6 +869,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					{
 						global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid sourceDataGrid = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)candidateSource;
 						global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel targetJMSModel = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel)candidateTarget;
+						if(targetJMSModel == null || global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.GetLinkToDataGrid(targetJMSModel) != null) return false;
 						if(sourceDataGrid == null || global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.GetLinkToJMSModel(sourceDataGrid) != null) return false;
 						if(targetJMSModel == null || sourceDataGrid == null || global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.GetLinks(sourceDataGrid, targetJMSModel).Count > 0) return false;
 						return true;

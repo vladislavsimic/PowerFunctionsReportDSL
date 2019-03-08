@@ -7,5 +7,6 @@ C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Schneider
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\extension.vsixmanifest
+C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\Resources\\Ikonica.ico
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pdb
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.pdb

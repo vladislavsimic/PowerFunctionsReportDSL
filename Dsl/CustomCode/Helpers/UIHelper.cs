@@ -16,7 +16,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 
 			sb.AppendLine("using System;");
 			sb.AppendLine("using TelventDMS.Common.Platform.Logger;");
-			sb.AppendLine("using TelventDMS.Common.Component.Utils;");
 			sb.AppendLine("using TelventDMS.Common.DMS.Common;");
 			sb.AppendLine("using TelventDMS.UI.Components.CompositeCommon;");
 			sb.AppendLine("using TelventDMS.UI.Components.CompositeCommon.Converters;");
@@ -47,7 +46,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 				}
 			}
 
-			sb.AppendLine("<ad:ReportDocument x:Class=\"TelventDMS.UI.Components." + modelRoot.Name + ".View." + modelRoot.Name + "View\"");
+			sb.AppendLine("<ad:ReportDocument x:Class=\"TelventDMS.UI.Components." + modelRoot.Name + ".View." + modelRoot.Name + "ReportView\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\"");
@@ -60,16 +59,45 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			sb.AppendLine(GetControlResources(modelRoot));
 
 			sb.AppendLine(Resources.Tab1 + "<Grid>");
-			sb.AppendLine(Resources.Tab2 + "<TabControl Name=\"tabControl\">");
+
+			sb.AppendLine(Resources.Tab2 + "<Grid.RowDefinitions>");
+			sb.AppendLine(Resources.Tab3 + "<RowDefinition Height=\"Auto\" />");
+			sb.AppendLine(Resources.Tab3 + "<RowDefinition Height=\" * \" />");
+			sb.AppendLine(Resources.Tab2 + "</Grid.RowDefinitions>");
+
+			sb.AppendLine(Resources.Tab2 + "<reportGeneralInfoControl:GeneralInfo Grid.Row=\"0\"  FunctionReportName=\"{ Binding ElementName = EMSLoadFlowReport, Path = Title}\"");
+			sb.AppendLine(Resources.Tab3 + "Name = \"genInfo\" HaveSelectedButton = \"False\" HaveOptionButton = \"False\" HasMessages = \"false\"  HasStatus = \"false\"  HaveTreeView = \"true\" /> ");
+
+			sb.AppendLine(Resources.Tab2 + "<Grid Grid.Row=\"1\">");
+
+			sb.AppendLine(Resources.Tab3 + "<Grid.ColumnDefinitions>");
+			sb.AppendLine(Resources.Tab4 + "<ColumnDefinition Width=\"250\" MinWidth=\"200\" />");
+			sb.AppendLine(Resources.Tab4 + "<ColumnDefinition Width=\"Auto\" />");
+			sb.AppendLine(Resources.Tab4 + "<ColumnDefinition Width=\" * \" />");
+			sb.AppendLine(Resources.Tab3 + "</Grid.ColumnDefinitions>");
+
+			sb.AppendLine(Resources.Tab3 + "<Grid Grid.Column=\"0\">");
+			sb.AppendLine(Resources.Tab4 + "<Grid.RowDefinitions>");
+			sb.AppendLine(Resources.Tab5 + "<RowDefinition Height=\"*\" />");
+			sb.AppendLine(Resources.Tab4 + "</Grid.RowDefinitions>");
+			sb.AppendLine(Resources.Tab4 + "<htv:HierarchyTreeView Grid.Row=\"0\" Name=\"CommonHtv\" HierarchyTreeDataProvider=\"{ Binding Path = TreeDataProvider}\"/>");
+			sb.AppendLine(Resources.Tab3 + "</Grid>");
+
+			sb.AppendLine(Resources.Tab3 + "<GridSplitter x:Name=\"GridSplitter\" ResizeDirection=\"Columns\" ResizeBehavior=\"PreviousAndNext\" Grid.Column=\"1\"");
+			sb.AppendLine(Resources.Tab4 + "custCtrl:GridExpander.Direction=\"Previous\" custCtrl:GridExpander.Header=\"{ Binding Path = Resources.EMSLoadFlow_NETWORK_TREE, Source = { StaticResource LocalizedStrings }}\" />");
+
+			sb.AppendLine(Resources.Tab2 + "<TabControl Name=\"tabControl\" Grid.Column=\"2\">");
 
 			foreach(Tab tab in tabs)
 			{
 				sb.AppendLine(GetTabXaml(tab));
 			}
 
-			sb.AppendLine(Resources.Tab2 + "<TabControl>");
+			sb.AppendLine(Resources.Tab2 + "</TabControl>");
+
+			sb.AppendLine(Resources.Tab2 + "</Grid>");
 			sb.AppendLine(Resources.Tab1 + "</Grid>");
-			sb.AppendLine("</UserControl>");
+			sb.AppendLine("</ad:ReportDocument>");
 
 			return sb.ToString();
 		}
@@ -78,7 +106,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab3 + "<TabItem Name=\"" + tab.Name + "\" Header=\"Test\">");
+			string tabHeader = string.Empty;
+			if (tab.Header != null)
+			{
+				tabHeader = tab.Header;
+			}
+			else
+			{
+				tabHeader = tab.Name;
+			}
+
+			sb.AppendLine(Resources.Tab3 + "<TabItem Name=\"" + tab.Name + "\" Header=\"" + tabHeader + "\">");
 			sb.AppendLine(Resources.Tab4 + "<Grid>");
 			
 
@@ -92,14 +130,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 
 				if (tab.DataGrid != null)
 				{
+					DataGrid dg = tab.DataGrid;
+
 					sb.AppendLine(Resources.Tab5 + "<Grid Margin=\"0 5 0 0 \" Name=\"" + tab.Name + "DataGridHeader\">");
-					sb.AppendLine(Resources.Tab6 + "<DataGrid Name=\"" + tab.Name + "DataGrid\"  HorizontalScrollBarVisibility=\"Auto\" SelectionMode=\"Single\" SelectionUnit=\"FullRow\" IsSynchronizedWithCurrentItem=\"True\"");
+					sb.AppendLine(Resources.Tab6 + "<DataGrid Name=\"" + dg.Name + "DataGrid\"  HorizontalScrollBarVisibility=\"Auto\" SelectionMode=\"Single\" SelectionUnit=\"FullRow\" IsSynchronizedWithCurrentItem=\"True\"");
 					sb.AppendLine(Resources.Tab7 + "CanUserAddRows=\"False\" CanUserDeleteRows=\"False\" CanUserResizeRows=\"False\" CanUserSortColumns=\"False\" AutoGenerateColumns=\"False\" IsReadOnly=\"True\">");
 
-					if (tab.DataGrid.Columns.Count > 0)
+					if (dg.Columns.Count > 0)
 					{
-						DataGrid dg = tab.DataGrid;
-
 						sb.AppendLine(Resources.Tab7 + "<DataGrid.Columns>");
 
 						sb.AppendLine(Resources.Tab8 + "<DataGridTemplateColumn Header=\"{ Binding Path = Resources.ELEMENT, Source = { StaticResource LocalizedStrings } }\" Width=\"Auto\" MinWidth=\"200\"  x:Name=\"" + dg.Name + "Tree\" SortMemberPath=\"Title\">");
@@ -141,7 +179,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			}
 			else
 			{
-				sb.AppendLine(Resources.Tab5 + "<TabControl>");
+				sb.AppendLine(Resources.Tab5 + "<TabControl Name=\"" + tab.Name +"TabControl\">");
 				foreach(Tab tagetTab in tab.TargetTabbed)
 				{
 					sb.AppendLine(GetTabXaml(tagetTab));
@@ -171,8 +209,20 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 
 			string projectName = modelRoot.Name;
 
-			sb.AppendLine(Resources.Tab3 + "xmlns:local=\"clr -namespace:TelventDMS.UI.Components." + projectName + ".View\"");
+			sb.AppendLine(Resources.Tab3 + "x:Name = \"" + projectName + "Report\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:local=\"clr-namespace:TelventDMS.UI.Components." + projectName + ".View\"");
 			sb.AppendLine(Resources.Tab3 + "xmlns:localization = \"clr-namespace:TelventDMS.UI.Components." + projectName + "\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:htv = \"clr-namespace:TelventDMS.UI.Components.CustomControls.HierarchyTreeViewControl;assembly=TelventDMS.UI.Components.CustomControls\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:dgtvi = \"clr-namespace:TelventDMS.UI.Components.CustomControls.DataGridTreeViewItemControl;assembly=TelventDMS.UI.Components.CustomControls\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:cc = \"clr-namespace:TelventDMS.UI.Resources.Controls;assembly=TelventDMS.UI.Resources\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:custCtrl = \"clr-namespace:TelventDMS.UI.Components.CustomControls;assembly=TelventDMS.UI.Components.CustomControls\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:con = \"clr-namespace:TelventDMS.UI.Components.CustomControls.GridFilterControl;assembly=TelventDMS.UI.Components.CustomControls\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:ad = \"clr-namespace:TelventDMS.UI.Components.CompositeCommon.AvalonDocument;assembly=TelventDMS.UI.Components.CompositeCommon\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:ext = \"clr-namespace:TelventDMS.UI.Components.CompositeCommon.AttachedProperties;assembly=TelventDMS.UI.Components.CompositeCommon\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:reportGeneralInfoControl = \"clr-namespace:TelventDMS.UI.Components.CustomControls.ReportGeneralInfoControl.Views;assembly=TelventDMS.UI.Components.CustomControls\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:common = \"clr-namespace:TelventDMS.Common.DMS.Common;assembly=TelventDMS.Common.DMS.Common\"");
+			sb.AppendLine(Resources.Tab3 + "xmlns:i = \"http://schemas.microsoft.com/expression/2010/interactivity\"");
+			sb.AppendLine(Resources.Tab3 + "Title = \"" + modelRoot.Name + " report\"");
 
 
 			return sb.ToString();
@@ -195,7 +245,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "private " + jmsModel.Name + " reportRecord;");
+			sb.AppendLine(Resources.Tab2 + "private " + jmsModel.Name + "Record reportRecord;");
 			sb.AppendLine();
 			sb.AppendLine(Resources.Tab2 + "private DMSType recordType;");
 			sb.AppendLine();
@@ -250,7 +300,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "public " + jmsModel.Name + "ViewModel(" + jmsModel.Name + " reportRecord, bool tabularViewActive)");
+			sb.AppendLine(Resources.Tab2 + "public " + jmsModel.Name + "ViewModel(" + jmsModel.Name + "Record reportRecord, bool tabularViewActive)");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab3 + "if (reportRecord == null)");
 			sb.AppendLine(Resources.Tab3 + "{");

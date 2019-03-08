@@ -51,18 +51,167 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 			sb.AppendLine(GetHierarhyTreeViewMethod());
 			sb.AppendLine();
-			sb.AppendLine(GetTabControlSelectionChanged());
+			sb.AppendLine(GetMainTabControlSelectionChanged());
+			sb.AppendLine(GetTabControlsSelectionChangedMethods());
+			sb.AppendLine(GetTabControlUpdateMethods());
+			sb.AppendLine();
+			sb.AppendLine(GetDispose());
 
 
 			return sb.ToString();
 		}
 
-		private string GetTabControlSelectionChanged()
+		private string GetTabControlUpdateMethods()
 		{
 			StringBuilder sb = new StringBuilder();
 
+			List<Tab> tabControls = new List<Tab>();
+			foreach (ModelType type in tab.ModelRoot.Types)
+			{
+				if (!(type is Tab))
+				{
+					continue;
+				}
+				Tab tempTab = type as Tab;
+				if (tempTab.TargetTabbed.Count != 0)
+				{
+					tabControls.Add(tempTab);
+				}
+			}
+
+			foreach(Tab tempTab in tabControls)
+			{
+				sb.AppendLine(Resources.Tab2 + "protected internal void " + tempTab.Name + "TabControlUpdate(TabControl tc)");
+				sb.AppendLine(Resources.Tab2 + "{");
+				sb.AppendLine(Resources.Tab3 + "if (tc == null || tc.SelectedItem == null || reportViewModel.DataProvider == null) return;");
+				sb.AppendLine(Resources.Tab3 + "TabItem selectedTabItem = tc.SelectedItem as TabItem;");
+
+				string condition = "if";
+				foreach(Tab targetTab in tempTab.TargetTabbed)
+				{
+					if(targetTab.TargetTabbed.Count == 0)
+					{
+						sb.AppendLine(Resources.Tab3 + condition + " (Equals(selectedTabItem, " + targetTab.Name + ") && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies." + tab.ModelRoot.Name + "ReportType." + targetTab.Name + ")");
+						sb.AppendLine(Resources.Tab3 + "{");
+						sb.AppendLine(Resources.Tab4 + "reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies." + tab.ModelRoot.Name + "ReportType." + targetTab.Name + ";");
+						sb.AppendLine(Resources.Tab4 + "reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;");
+						sb.AppendLine(Resources.Tab4 + "reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);");
+						sb.AppendLine(Resources.Tab3 + "}");
+					}
+					else
+					{
+						sb.AppendLine(Resources.Tab3 + condition + " (Equals(selectedTabItem, " + targetTab.Name + ")");
+						sb.AppendLine(Resources.Tab3 + "{");
+						sb.AppendLine(Resources.Tab4 + targetTab.Name + "TabControlUpdate(" + targetTab.Name +"TabControl);");
+						sb.AppendLine(Resources.Tab3 + "}");
+					}
+					condition = "else if";
+				}
+
+				sb.AppendLine(Resources.Tab2 + "}");
+			}
+
+			return sb.ToString();
+		}
+
+		private string GetTabControlsSelectionChangedMethods()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			List<Tab> tabControls = new List<Tab>();
+			foreach (ModelType type in tab.ModelRoot.Types)
+			{
+				if (!(type is Tab))
+				{
+					continue;
+				}
+				Tab tempTab = type as Tab;
+				if (tempTab.TargetTabbed.Count != 0)
+				{
+					tabControls.Add(tempTab);
+				}
+			}
+			foreach(Tab tempTab in tabControls)
+			{
+				sb.AppendLine(Resources.Tab2 + "private void " + tempTab.Name +"TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)");
+				sb.AppendLine(Resources.Tab2 + "{");
+				sb.AppendLine(Resources.Tab3 + "if (!(e.Source is TabControl) || e.Source != sender) return;");
+				sb.AppendLine(Resources.Tab3 + "TabControl tc = sender as TabControl;");
+				sb.AppendLine(Resources.Tab3 + tempTab.Name + "TabControlUpdate(tc);");
+				sb.AppendLine(Resources.Tab2 + "}");
+			}
+
+			return sb.ToString();
+		}
+
+		private string GetDispose()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.AppendLine(Resources.Tab2 + "public void Dispose()");
+			sb.AppendLine(Resources.Tab2 + "{");
+			sb.AppendLine(Resources.Tab3 + "reportViewModel.Dispose();");
+			sb.AppendLine(Resources.Tab2 + "}");
+
+			return sb.ToString();
+		}
+
+		private string GetMainTabControlSelectionChanged()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			List<Tab> tabs = new List<Tab>();
+			List<Tab> tabControls = new List<Tab>();
+			foreach (ModelType type in tab.ModelRoot.Types)
+			{
+				if (!(type is Tab))
+				{
+					continue;
+				}
+				Tab tab = type as Tab;
+				if (tab.TargetTabbed.Count == 0 && tab.SourceTabbed.Count == 0)
+				{
+					tabs.Add(type as Tab);
+				}
+				else if(tab.TargetTabbed.Count != 0 && tab.SourceTabbed.Count == 0)
+				{
+					tabControls.Add(type as Tab);
+				}
+			}
+
 			sb.AppendLine(Resources.Tab2 + "private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)");
 			sb.AppendLine(Resources.Tab2 + "{");
+			sb.AppendLine(Resources.Tab3 + "TabControl tc = sender as TabControl;");
+			sb.AppendLine(Resources.Tab3 + "if (tc != null)");
+			sb.AppendLine(Resources.Tab3 + "{");
+			sb.AppendLine(Resources.Tab4 + "var selectedTabItem = tc.SelectedItem as TabItem;");
+			sb.AppendLine(Resources.Tab4 + "if (!(e.Source is TabControl) || e.Source != sender || selectedTabItem == null || reportViewModel.DataProvider == null)");
+			sb.AppendLine(Resources.Tab4 + "{");
+			sb.AppendLine(Resources.Tab5 + "return;");
+			sb.AppendLine(Resources.Tab4 + "}");
+
+			string condition = "if";
+			foreach (Tab tempTab in tabs)
+			{
+				sb.AppendLine(Resources.Tab4 +  condition + " (Equals(selectedTabItem, " + tempTab.Name + ") && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies." + tab.ModelRoot.Name + "ReportType." + tempTab.Name + ")");
+				sb.AppendLine(Resources.Tab4 + "{");
+				sb.AppendLine(Resources.Tab5 + "reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies." + tab.ModelRoot.Name + "ReportType." + tempTab.Name + ";");
+				sb.AppendLine(Resources.Tab5 + "reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;");
+				sb.AppendLine(Resources.Tab5 + "reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);");
+				sb.AppendLine(Resources.Tab4 + "}");
+				condition = "else if";
+			}
+
+			foreach(Tab tempTab in tabControls)
+			{
+				sb.AppendLine(Resources.Tab4 + condition + " (Equals(selectedTabItem, " + tempTab.Name + "))");
+				sb.AppendLine(Resources.Tab4 + "{");
+				sb.AppendLine(Resources.Tab5 + tempTab.Name + "TabControlUpdate(" + tempTab.Name + "TabControl);");
+				sb.AppendLine(Resources.Tab4 + "}");
+				condition = "else if";
+			}
+
+			sb.AppendLine(Resources.Tab3 + "}");
 			sb.AppendLine(Resources.Tab2 + "}");
 
 			return sb.ToString();
@@ -78,7 +227,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(Resources.Tab3 + "if (!visibleItemsIds.SequenceEqual(tempItems))");
 			sb.AppendLine(Resources.Tab3 + "{");
 			sb.AppendLine(Resources.Tab4 + "visibleItemsIds = tempItems;");
-			sb.AppendLine(Resources.Tab4 + "reportWindowVM.DataProvider.ProvideRecords(visibleItemsIds, true);");
+			sb.AppendLine(Resources.Tab4 + "reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);");
 			sb.AppendLine(Resources.Tab3 + "}");
 			sb.AppendLine(Resources.Tab2 + "}");
 
@@ -102,16 +251,43 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(Resources.Tab3 + "moduleEnvironment = ServiceLocator.Current.GetInstance<IModuleEnvironment>();");
 			sb.AppendLine(Resources.Tab3 + "DataContext = reportViewModel;");
 			sb.AppendLine(Resources.Tab3 + "tabControl.SelectionChanged += TabControl_SelectionChanged;");
+			sb.AppendLine(GetTabControls());
 			sb.AppendLine(Resources.Tab3 + "CommonHtv.SelectedItemChanged += HTV_SelectedItemChanged;");
 			sb.AppendLine(Resources.Tab3 + "CommonHtv.ExpandedCollapsed += HTV_SelectedItemChanged;");
 			sb.AppendLine();
-			sb.AppendLine(Resources.Tab3 + "Title = Properties." + root.Name + "ResourcesGenerated." + root.Name + "_" + root.Name + ";");
-			sb.AppendLine(Resources.Tab3 + "InfoTip = Properties." + root.Name + "ResourcesGenerated." + root.Name + "_" + root.Name + ";");
+			sb.AppendLine(Resources.Tab3 + "Title = \"" + root.Name +" Report\";");  //Properties." + root.Name + "ResourcesGenerated." + root.Name + "_" + root.Name + ";");
+			sb.AppendLine(Resources.Tab3 + "InfoTip = \"" + root.Name + " Report\";");  //Properties." + root.Name + "ResourcesGenerated." + root.Name + "_" + root.Name + ";");
 			sb.AppendLine();
 			sb.AppendLine(Resources.Tab3 + "this.workspaceManager = moduleEnvironment.WorkspaceManager;");
 
 			sb.AppendLine(Resources.Tab2 + "}");
 
+
+			return sb.ToString();
+		}
+
+		private string GetTabControls()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			List<Tab> tabControls = new List<Tab>();
+			foreach(ModelType type in tab.ModelRoot.Types)
+			{
+				if(!(type is Tab))
+				{
+					continue;
+				}
+				Tab tempTab = type as Tab;
+				if (tempTab.TargetTabbed.Count != 0)
+				{
+					tabControls.Add(tempTab);
+				}
+			}
+			foreach(Tab tempTab in tabControls)
+			{
+				sb.AppendLine(Resources.Tab3 + tempTab.Name + "TabControl.SelectionChanged += " + tempTab.Name + "TabControl_SelectionChanged;");
+
+			}
 
 			return sb.ToString();
 		}
@@ -150,20 +326,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine("using System");
-			sb.AppendLine("using System.Collections.Generic");
-			sb.AppendLine("using System.Linq");
-			sb.AppendLine("using System.Text");
-			sb.AppendLine("using System.Threading.Tasks");
-			sb.AppendLine("using System.Windows");
-			sb.AppendLine("using System.Windows.Controls");
-			sb.AppendLine("using System.Windows.Data");
-			sb.AppendLine("using System.Windows.Documents");
-			sb.AppendLine("using System.Windows.Input");
-			sb.AppendLine("using System.Windows.Media");
-			sb.AppendLine("using System.Windows.Media.Imaging");
-			sb.AppendLine("using System.Windows.Navigation");
-			sb.AppendLine("using System.Windows.Shapes");
+			sb.AppendLine("using Microsoft.Practices.ServiceLocation;");
+			sb.AppendLine("using System;");
+			sb.AppendLine("using System.Collections.Generic;");
+			sb.AppendLine("using System.Linq;");
+			sb.AppendLine("using System.Text;");
+			sb.AppendLine("using System.Threading.Tasks;");
+			sb.AppendLine("using System.Windows;");
+			sb.AppendLine("using System.Windows.Controls;");
+			sb.AppendLine("using System.Windows.Data;");
+			sb.AppendLine("using System.Windows.Documents;");
+			sb.AppendLine("using System.Windows.Input;");
+			sb.AppendLine("using System.Windows.Media;");
+			sb.AppendLine("using System.Windows.Media.Imaging;");
+			sb.AppendLine("using System.Windows.Navigation;");
+			sb.AppendLine("using System.Windows.Shapes;");
+			sb.AppendLine("using TelventDMS.UI.Components.CompositeCommon.AvalonDocument;");
+			sb.AppendLine("using TelventDMS.UI.Components.CompositeCommon.Help;");
+			sb.AppendLine("using TelventDMS.UI.Components.CompositeCommon.Interfaces;");
+			sb.AppendLine("using TelventDMS.UI.Components.CustomControls.HierarchyTreeViewControl;");
+			sb.AppendLine("using TelventDMS.UI.Components.EMSLoadFlow.ViewModels;");
 
 			return sb.ToString();
 		}

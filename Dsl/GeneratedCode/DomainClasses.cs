@@ -1047,18 +1047,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		#endregion
 		#region DataGrid opposite domain role accessor
-		
 		/// <summary>
-		/// Gets a list of DataGrid.
+		/// Gets or sets DataGrid.
 		/// Description for
 		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModel
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<DataGrid> DataGrid
+		public virtual DataGrid DataGrid
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<DataGrid>, DataGrid>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId);
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId) as DataGrid;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModelDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -2395,6 +2399,93 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			: base(partition, propertyAssignments)
 		{
 		}
+		#endregion
+		#region Header domain property code
+		
+		/// <summary>
+		/// Header domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid HeaderDomainPropertyId = new global::System.Guid(0xd1af7d4c, 0x32ea, 0x486c, 0x93, 0x31, 0xc6, 0x43, 0xf2, 0xd9, 0x0e, 0xb5);
+		
+		/// <summary>
+		/// Storage for Header
+		/// </summary>
+		private global::System.String headerPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Header domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Tab.Header
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Tab/Header.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Tab/Header.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("d1af7d4c-32ea-486c-9331-c643f2d90eb5")]
+		public global::System.String Header
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return headerPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				HeaderPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Tab.Header domain property.
+		/// </summary>
+		internal sealed partial class HeaderPropertyHandler : DslModeling::DomainPropertyValueHandler<Tab, global::System.String>
+		{
+			private HeaderPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Tab.Header domain property value handler.
+			/// </summary>
+			public static readonly HeaderPropertyHandler Instance = new HeaderPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Tab.Header domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return HeaderDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Tab element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.headerPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Tab element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.headerPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
 		#endregion
 		#region TargetTabbed opposite domain role accessor
 		

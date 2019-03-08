@@ -6,11 +6,28 @@ using System.Threading.Tasks;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
-	public class JMSReportType : JMSModelBase, ICodeHandler
+	public class JMSReportType : ICodeHandler
 	{
-		public JMSReportType(JMSModel model) : base(model)
-		{
+		private ModelRoot root;
 
+		private Dictionary<string, string> generatedCode;
+
+		public JMSReportType(ModelRoot root)
+		{
+			this.root = root;
+			this.generatedCode = new Dictionary<string, string>();
+		}
+
+		public Dictionary<string, string> GeneratedCode
+		{
+			get
+			{
+				return generatedCode;
+			}
+			set
+			{
+				generatedCode = value;
+			}
 		}
 
 		public void ObtainCode()
@@ -19,51 +36,31 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			GeneratedCode.Add("enumAttributes", GetJMSClassAttributes());
 		}
 
-		protected override string GetClassNamespace()
+		protected string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + root.Name + "Report";
 		}
 
-		protected override string GetDefaultConstructor()
-		{
-			throw new NotImplementedException();
-		}
-
-		protected override string GetJMSClassAttributes()
+		protected string GetJMSClassAttributes()
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach (ModelType type in JmsModel.ModelRoot.Types)
+			foreach (ModelType type in root.Types)
 			{
-				if (!(type is JMSModel))
+				if (!(type is Tab))
 				{
 					continue;
 				}
-				JMSModel model = type as JMSModel;
-				if (!model.ShouldGenerate)
+				Tab tab = type as Tab;
+				if (!tab.ShouldGenerate)
 				{
 					continue;
 				}
-				sb.AppendLine(Resources.Tab2 + model.Name + ",");
+				sb.AppendLine(Resources.Tab2 + tab.Name + ",");
 			}
 			sb.AppendLine(Resources.Tab2 + "NoResults,");
 
 			return sb.ToString();
-		}
-
-		protected override string GetSuperClass()
-		{
-			throw new NotImplementedException();
-		}
-
-		protected override string GetUsings()
-		{
-			throw new NotImplementedException();
-		}
-
-		protected override string IsDataContractString()
-		{
-			throw new NotImplementedException();
 		}
 	}
 }

@@ -60,17 +60,90 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Properties
         
+        public HierarchyTreeDataProvider TreeDataProvider { get; set; }
 
+        public HierarchyType HierarchyType
+		{
+			get { return hierarchyType; }
+			set
+			{
+				hierarchyType = value;
+				DataProvider.ReportParameter.HierarchyType = hierarchyType;
+				DataProvider.Reset();
+
+				TreeDataProvider.ReportParameter.HeirarchyType = hierarchyType;
+				TreeDataProvider.Reset();
+			}
+		}
+
+        public EMSLoadFlowReportDataProvider DataProvider { get; set; }
 
         #endregion Properties
 
+        #region Command Properties
+
+        public ICommand RefreshCommand
+		{
+			get
+			{
+				return refreshCommand ?? (refreshCommand = new RelayCommand(param => RefreshCommandExecute()));
+			}
+		}
+
+        #endregion Command Properties
+
+        #region Command Methods
+
+        public void RefreshCommandExecute()
+		{
+			reportView.CommonHtv.RefreshHierarchyTreeView();
+		}
+
+        #endregion Command Methods
+
         #region Methods
 
-		protected internal void HierarchyTreeViewRefreshed()
+        protected internal void HierarchyTreeViewRefreshed()
 		{
 			DataProvider.Refresh();
 		}
 
+        protected internal void ReportView_Loaded(object sender, RoutedEventArgs e)
+		{
+			EMSLoadFlowReportView view = sender as EMSLoadFlowReportView;
+			if (DataProvider == null)
+			{
+				DataProvider = new EMSLoadFlowReportDataProvider(view);
+			}
+			if (DataProvider.IsInitialized) return;
+			DataProvider.ReportParameter.HierarchyType = HierarchyType.Container;
+			DataProvider.ReportParameter.HierarchyNetworkType = HierarchyNetworkType.EMS;
+			DataProvider.Init();
+		}
+
+        protected internal void TreeDataProvider_ExpandTreeOnReportEventHandler(List<long> inputGids)
+		{
+			TreeDataProvider.ExpandTreeOnOpenEventHandler -= TreeDataProvider_ExpandTreeOnReportEventHandler;
+			if (inputGids != null)
+			{
+				reportView.CommonHtv.ExpandTreeItemsWithSelectedGids(inputGids);
+			}
+		}
+
+        protected internal void GenInfo_RefreshTap(object sender, RoutedEventArgs e)
+		{
+			if (reportView.CommonHtv.GetRoots().Count > 0)
+			{
+				RefreshCommandExecute();
+			}
+		}
+
+        protected override void OnDispose()
+		{
+			DataProvider.Terminate();
+
+			TreeDataProvider.Terminate();
+		}
 
         #endregion Methods
     }

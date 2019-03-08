@@ -147,6 +147,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(ClassAttribute), "MeasurementType", ClassAttribute.MeasurementTypeDomainPropertyId, typeof(ClassAttribute.MeasurementTypePropertyHandler)),
 				new DomainMemberInfo(typeof(ModelClass), "ShouldGenerate", ModelClass.ShouldGenerateDomainPropertyId, typeof(ModelClass.ShouldGeneratePropertyHandler)),
 				new DomainMemberInfo(typeof(UIElement), "ShouldGenerate", UIElement.ShouldGenerateDomainPropertyId, typeof(UIElement.ShouldGeneratePropertyHandler)),
+				new DomainMemberInfo(typeof(Tab), "Header", Tab.HeaderDomainPropertyId, typeof(Tab.HeaderPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "Binding", ColumnAttribute.BindingDomainPropertyId, typeof(ColumnAttribute.BindingPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "Width", ColumnAttribute.WidthDomainPropertyId, typeof(ColumnAttribute.WidthPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "VerticalAlignment", ColumnAttribute.VerticalAlignmentDomainPropertyId, typeof(ColumnAttribute.VerticalAlignmentPropertyHandler)),
