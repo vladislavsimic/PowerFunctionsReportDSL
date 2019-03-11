@@ -7,6 +7,7 @@
 //														        #
 //###############################################################
 
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,26 +18,22 @@ using System.Runtime.Serialization;
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
     [DataContract]
-    public partial class EMSLoadFlowSwitchingDeviceRecord : HierarchicalReportRecord
+    public partial class EMSLoadFlowGeneratorResults : EMSLoadFlowReportResult
     {
         #region Constructors
 
-		public EMSLoadFlowSwitchingDeviceRecord()
+		public EMSLoadFlowGeneratorResults()
 		{
+			ReportType = EMSLoadFlowReportType.EMSLoadFlowGenerator;
 		}
-        
+      
 
         #endregion Constructors
 
         #region Properties
-        
-		[DataMember]
-		public float P { get; set; }
 
 		[DataMember]
-		public float Q { get; set; }
-
-
+		public List<EMSLoadFlowGeneratorRecord> Records { get; set; }
 
 
         #endregion Properties

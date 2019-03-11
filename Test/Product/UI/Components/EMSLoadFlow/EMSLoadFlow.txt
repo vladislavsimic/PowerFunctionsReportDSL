@@ -1,14 +1,23 @@
 JMS ::::
 
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowGeneratorRecord.cs]  [EMSLoadFlowGenerator]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowConsumerRecord.cs]  [EMSLoadFlowConsumer]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowGeneratorResults.cs]  [EMSLoadFlowGenerator]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowConsumerResults.cs]  [EMSLoadFlowConsumer]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowJob.cs]  [EMSLoadFlow]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowRecordBean.cs]  [EMSLoadFlow]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportJobParam.cs]  [EMSLoadFlow]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportResult.cs]  [EMSLoadFlow]
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportType.cs]  [EMSLoadFlow]
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\ELimitViolation.cs]  [ELimitViolation]
 
 UI ::::
 
@@ -25,6 +34,8 @@ Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadF
 UI View Model ::::
 
 
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowGeneratorViewModel.cs]  [EMSLoadFlowGenerator]
+Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowConsumerViewModel.cs]  [EMSLoadFlowConsumer]
 
 Generate: [E:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowReportViewModel.cs]  [EMSLoadFlow]
 

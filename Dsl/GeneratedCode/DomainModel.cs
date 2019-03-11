@@ -72,9 +72,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				typeof(Comment),
 				typeof(ModelType),
 				typeof(NamedElement),
-				typeof(JMSModel),
-				typeof(ClassModelElement),
-				typeof(ClassAttribute),
+				typeof(ModelElement),
+				typeof(ModelAttribute),
 				typeof(ModelClass),
 				typeof(Enum),
 				typeof(EnumAttribute),
@@ -88,33 +87,23 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				typeof(ModelRootHasComments),
 				typeof(CommentReferencesModelTyped),
 				typeof(ModelRootHasTypes),
-				typeof(JMSModelHasAttributes),
-				typeof(Generalization),
-				typeof(Association),
-				typeof(UndirectionalAssociation),
 				typeof(EnumHasValues),
 				typeof(TabReferencesTargetTabbed),
 				typeof(TabReferencesDataGrid),
 				typeof(TabHasAttributes),
 				typeof(DataGridHasAttributes),
 				typeof(DataGridHasColumns),
-				typeof(DataGridJMSViewModel),
 				typeof(PowerFunctionsReportDSLDiagram),
 				typeof(CommentConnector),
-				typeof(GeneralizationConnector),
-				typeof(AssociationConnector),
-				typeof(UndirectionalConnector),
 				typeof(UIConnector),
 				typeof(TabConnector),
 				typeof(ViewModelConnector),
 				typeof(CommentShape),
-				typeof(JMSModelShape),
 				typeof(EnumShape),
 				typeof(TabShape),
 				typeof(UIElementShape),
 				typeof(DataGridShape),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.FixUpDiagram),
-				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DecoratorPropertyChanged),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ConnectorRolePlayerChanged),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CompartmentItemAddRule),
 				typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CompartmentItemDeleteRule),
@@ -134,33 +123,24 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			{
 				new DomainMemberInfo(typeof(NamedElement), "Name", NamedElement.NameDomainPropertyId, typeof(NamedElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(NamedElement), "Alias", NamedElement.AliasDomainPropertyId, typeof(NamedElement.AliasPropertyHandler)),
-				new DomainMemberInfo(typeof(JMSModel), "IsDataContract", JMSModel.IsDataContractDomainPropertyId, typeof(JMSModel.IsDataContractPropertyHandler)),
-				new DomainMemberInfo(typeof(JMSModel), "HasDefaultConstructor", JMSModel.HasDefaultConstructorDomainPropertyId, typeof(JMSModel.HasDefaultConstructorPropertyHandler)),
-				new DomainMemberInfo(typeof(JMSModel), "HasKnownTypes", JMSModel.HasKnownTypesDomainPropertyId, typeof(JMSModel.HasKnownTypesPropertyHandler)),
-				new DomainMemberInfo(typeof(JMSModel), "FolderName", JMSModel.FolderNameDomainPropertyId, typeof(JMSModel.FolderNamePropertyHandler)),
-				new DomainMemberInfo(typeof(ClassModelElement), "Description", ClassModelElement.DescriptionDomainPropertyId, typeof(ClassModelElement.DescriptionPropertyHandler)),
-				new DomainMemberInfo(typeof(ClassAttribute), "InitialValue", ClassAttribute.InitialValueDomainPropertyId, typeof(ClassAttribute.InitialValuePropertyHandler)),
-				new DomainMemberInfo(typeof(ClassAttribute), "Type", ClassAttribute.TypeDomainPropertyId, typeof(ClassAttribute.TypePropertyHandler)),
-				new DomainMemberInfo(typeof(ClassAttribute), "AccessModifier", ClassAttribute.AccessModifierDomainPropertyId, typeof(ClassAttribute.AccessModifierPropertyHandler)),
-				new DomainMemberInfo(typeof(ClassAttribute), "IsDataMember", ClassAttribute.IsDataMemberDomainPropertyId, typeof(ClassAttribute.IsDataMemberPropertyHandler)),
-				new DomainMemberInfo(typeof(ClassAttribute), "ModelCode", ClassAttribute.ModelCodeDomainPropertyId, typeof(ClassAttribute.ModelCodePropertyHandler)),
-				new DomainMemberInfo(typeof(ClassAttribute), "MeasurementType", ClassAttribute.MeasurementTypeDomainPropertyId, typeof(ClassAttribute.MeasurementTypePropertyHandler)),
+				new DomainMemberInfo(typeof(ModelElement), "Description", ModelElement.DescriptionDomainPropertyId, typeof(ModelElement.DescriptionPropertyHandler)),
+				new DomainMemberInfo(typeof(ModelAttribute), "Type", ModelAttribute.TypeDomainPropertyId, typeof(ModelAttribute.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(ModelAttribute), "IsDataMember", ModelAttribute.IsDataMemberDomainPropertyId, typeof(ModelAttribute.IsDataMemberPropertyHandler)),
+				new DomainMemberInfo(typeof(ModelAttribute), "ModelCode", ModelAttribute.ModelCodeDomainPropertyId, typeof(ModelAttribute.ModelCodePropertyHandler)),
+				new DomainMemberInfo(typeof(ModelAttribute), "MeasurementType", ModelAttribute.MeasurementTypeDomainPropertyId, typeof(ModelAttribute.MeasurementTypePropertyHandler)),
 				new DomainMemberInfo(typeof(ModelClass), "ShouldGenerate", ModelClass.ShouldGenerateDomainPropertyId, typeof(ModelClass.ShouldGeneratePropertyHandler)),
 				new DomainMemberInfo(typeof(UIElement), "ShouldGenerate", UIElement.ShouldGenerateDomainPropertyId, typeof(UIElement.ShouldGeneratePropertyHandler)),
 				new DomainMemberInfo(typeof(Tab), "Header", Tab.HeaderDomainPropertyId, typeof(Tab.HeaderPropertyHandler)),
-				new DomainMemberInfo(typeof(ColumnAttribute), "Binding", ColumnAttribute.BindingDomainPropertyId, typeof(ColumnAttribute.BindingPropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "BindingName", ColumnAttribute.BindingNameDomainPropertyId, typeof(ColumnAttribute.BindingNamePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "Width", ColumnAttribute.WidthDomainPropertyId, typeof(ColumnAttribute.WidthPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "VerticalAlignment", ColumnAttribute.VerticalAlignmentDomainPropertyId, typeof(ColumnAttribute.VerticalAlignmentPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "HorizontalAlignment", ColumnAttribute.HorizontalAlignmentDomainPropertyId, typeof(ColumnAttribute.HorizontalAlignmentPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "Header", ColumnAttribute.HeaderDomainPropertyId, typeof(ColumnAttribute.HeaderPropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "SourceMultiplicity", Association.SourceMultiplicityDomainPropertyId, typeof(Association.SourceMultiplicityPropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "SourceRoleName", Association.SourceRoleNameDomainPropertyId, typeof(Association.SourceRoleNamePropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "TargetMultiplicity", Association.TargetMultiplicityDomainPropertyId, typeof(Association.TargetMultiplicityPropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "TargetRoleName", Association.TargetRoleNameDomainPropertyId, typeof(Association.TargetRoleNamePropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "AccessModifier", Association.AccessModifierDomainPropertyId, typeof(Association.AccessModifierPropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "IsDataMember", Association.IsDataMemberDomainPropertyId, typeof(Association.IsDataMemberPropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "Description", Association.DescriptionDomainPropertyId, typeof(Association.DescriptionPropertyHandler)),
-				new DomainMemberInfo(typeof(Association), "ModelCode", Association.ModelCodeDomainPropertyId, typeof(Association.ModelCodePropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "Type", ColumnAttribute.TypeDomainPropertyId, typeof(ColumnAttribute.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "IsDataMember", ColumnAttribute.IsDataMemberDomainPropertyId, typeof(ColumnAttribute.IsDataMemberPropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "ModelCode", ColumnAttribute.ModelCodeDomainPropertyId, typeof(ColumnAttribute.ModelCodePropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "MeasurementType", ColumnAttribute.MeasurementTypeDomainPropertyId, typeof(ColumnAttribute.MeasurementTypePropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "ShouldGenerate", ColumnAttribute.ShouldGenerateDomainPropertyId, typeof(ColumnAttribute.ShouldGeneratePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -177,14 +157,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainRolePlayerInfo(typeof(CommentReferencesModelTyped), "ModelType", CommentReferencesModelTyped.ModelTypeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ModelRootHasTypes), "ModelRoot", ModelRootHasTypes.ModelRootDomainRoleId),
 				new DomainRolePlayerInfo(typeof(ModelRootHasTypes), "ModelType", ModelRootHasTypes.ModelTypeDomainRoleId),
-				new DomainRolePlayerInfo(typeof(JMSModelHasAttributes), "JMSModel", JMSModelHasAttributes.JMSModelDomainRoleId),
-				new DomainRolePlayerInfo(typeof(JMSModelHasAttributes), "ClassAttribute", JMSModelHasAttributes.ClassAttributeDomainRoleId),
-				new DomainRolePlayerInfo(typeof(Generalization), "Superclass", Generalization.SuperclassDomainRoleId),
-				new DomainRolePlayerInfo(typeof(Generalization), "Subclasses", Generalization.SubclassesDomainRoleId),
-				new DomainRolePlayerInfo(typeof(Association), "Source", Association.SourceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(Association), "Target", Association.TargetDomainRoleId),
-				new DomainRolePlayerInfo(typeof(UndirectionalAssociation), "JMSModel", UndirectionalAssociation.JMSModelDomainRoleId),
-				new DomainRolePlayerInfo(typeof(UndirectionalAssociation), "ModelClass", UndirectionalAssociation.ModelClassDomainRoleId),
 				new DomainRolePlayerInfo(typeof(EnumHasValues), "Enum", EnumHasValues.EnumDomainRoleId),
 				new DomainRolePlayerInfo(typeof(EnumHasValues), "EnumAttribute", EnumHasValues.EnumAttributeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(TabReferencesTargetTabbed), "SourceTab", TabReferencesTargetTabbed.SourceTabDomainRoleId),
@@ -197,8 +169,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainRolePlayerInfo(typeof(DataGridHasAttributes), "DataGridAttribute", DataGridHasAttributes.DataGridAttributeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(DataGridHasColumns), "DataGrid", DataGridHasColumns.DataGridDomainRoleId),
 				new DomainRolePlayerInfo(typeof(DataGridHasColumns), "ColumnAttribute", DataGridHasColumns.ColumnAttributeDomainRoleId),
-				new DomainRolePlayerInfo(typeof(DataGridJMSViewModel), "DataGrid", DataGridJMSViewModel.DataGridDomainRoleId),
-				new DomainRolePlayerInfo(typeof(DataGridJMSViewModel), "JMSModel", DataGridJMSViewModel.JMSModelDomainRoleId),
 			};
 		}
 		#endregion
@@ -220,30 +190,26 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(31);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(26);
 				createElementMap.Add(typeof(ModelRoot), 0);
 				createElementMap.Add(typeof(Comment), 1);
 				createElementMap.Add(typeof(NamedElement), 2);
-				createElementMap.Add(typeof(JMSModel), 3);
-				createElementMap.Add(typeof(ClassAttribute), 4);
-				createElementMap.Add(typeof(Enum), 5);
-				createElementMap.Add(typeof(EnumAttribute), 6);
-				createElementMap.Add(typeof(Tab), 7);
-				createElementMap.Add(typeof(DataGrid), 8);
-				createElementMap.Add(typeof(ColumnAttribute), 9);
-				createElementMap.Add(typeof(TabAttribute), 10);
-				createElementMap.Add(typeof(DataGridAttribute), 11);
-				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 12);
-				createElementMap.Add(typeof(CommentConnector), 13);
-				createElementMap.Add(typeof(GeneralizationConnector), 14);
-				createElementMap.Add(typeof(UndirectionalConnector), 15);
-				createElementMap.Add(typeof(TabConnector), 16);
-				createElementMap.Add(typeof(ViewModelConnector), 17);
-				createElementMap.Add(typeof(CommentShape), 18);
-				createElementMap.Add(typeof(JMSModelShape), 19);
-				createElementMap.Add(typeof(EnumShape), 20);
-				createElementMap.Add(typeof(TabShape), 21);
-				createElementMap.Add(typeof(DataGridShape), 22);
+				createElementMap.Add(typeof(ModelAttribute), 3);
+				createElementMap.Add(typeof(Enum), 4);
+				createElementMap.Add(typeof(EnumAttribute), 5);
+				createElementMap.Add(typeof(Tab), 6);
+				createElementMap.Add(typeof(DataGrid), 7);
+				createElementMap.Add(typeof(ColumnAttribute), 8);
+				createElementMap.Add(typeof(TabAttribute), 9);
+				createElementMap.Add(typeof(DataGridAttribute), 10);
+				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 11);
+				createElementMap.Add(typeof(CommentConnector), 12);
+				createElementMap.Add(typeof(TabConnector), 13);
+				createElementMap.Add(typeof(ViewModelConnector), 14);
+				createElementMap.Add(typeof(CommentShape), 15);
+				createElementMap.Add(typeof(EnumShape), 16);
+				createElementMap.Add(typeof(TabShape), 17);
+				createElementMap.Add(typeof(DataGridShape), 18);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -260,26 +226,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				case 0: return new ModelRoot(partition, propertyAssignments);
 				case 1: return new Comment(partition, propertyAssignments);
 				case 2: return new NamedElement(partition, propertyAssignments);
-				case 3: return new JMSModel(partition, propertyAssignments);
-				case 4: return new ClassAttribute(partition, propertyAssignments);
-				case 5: return new Enum(partition, propertyAssignments);
-				case 6: return new EnumAttribute(partition, propertyAssignments);
-				case 7: return new Tab(partition, propertyAssignments);
-				case 8: return new DataGrid(partition, propertyAssignments);
-				case 9: return new ColumnAttribute(partition, propertyAssignments);
-				case 10: return new TabAttribute(partition, propertyAssignments);
-				case 11: return new DataGridAttribute(partition, propertyAssignments);
-				case 12: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
-				case 13: return new CommentConnector(partition, propertyAssignments);
-				case 14: return new GeneralizationConnector(partition, propertyAssignments);
-				case 15: return new UndirectionalConnector(partition, propertyAssignments);
-				case 16: return new TabConnector(partition, propertyAssignments);
-				case 17: return new ViewModelConnector(partition, propertyAssignments);
-				case 18: return new CommentShape(partition, propertyAssignments);
-				case 19: return new JMSModelShape(partition, propertyAssignments);
-				case 20: return new EnumShape(partition, propertyAssignments);
-				case 21: return new TabShape(partition, propertyAssignments);
-				case 22: return new DataGridShape(partition, propertyAssignments);
+				case 3: return new ModelAttribute(partition, propertyAssignments);
+				case 4: return new Enum(partition, propertyAssignments);
+				case 5: return new EnumAttribute(partition, propertyAssignments);
+				case 6: return new Tab(partition, propertyAssignments);
+				case 7: return new DataGrid(partition, propertyAssignments);
+				case 8: return new ColumnAttribute(partition, propertyAssignments);
+				case 9: return new TabAttribute(partition, propertyAssignments);
+				case 10: return new DataGridAttribute(partition, propertyAssignments);
+				case 11: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
+				case 12: return new CommentConnector(partition, propertyAssignments);
+				case 13: return new TabConnector(partition, propertyAssignments);
+				case 14: return new ViewModelConnector(partition, propertyAssignments);
+				case 15: return new CommentShape(partition, propertyAssignments);
+				case 16: return new EnumShape(partition, propertyAssignments);
+				case 17: return new TabShape(partition, propertyAssignments);
+				case 18: return new DataGridShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -302,21 +264,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(14);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
 				createElementLinkMap.Add(typeof(ModelRootHasComments), 0);
 				createElementLinkMap.Add(typeof(CommentReferencesModelTyped), 1);
 				createElementLinkMap.Add(typeof(ModelRootHasTypes), 2);
-				createElementLinkMap.Add(typeof(JMSModelHasAttributes), 3);
-				createElementLinkMap.Add(typeof(Generalization), 4);
-				createElementLinkMap.Add(typeof(Association), 5);
-				createElementLinkMap.Add(typeof(UndirectionalAssociation), 6);
-				createElementLinkMap.Add(typeof(EnumHasValues), 7);
-				createElementLinkMap.Add(typeof(TabReferencesTargetTabbed), 8);
-				createElementLinkMap.Add(typeof(TabReferencesDataGrid), 9);
-				createElementLinkMap.Add(typeof(TabHasAttributes), 10);
-				createElementLinkMap.Add(typeof(DataGridHasAttributes), 11);
-				createElementLinkMap.Add(typeof(DataGridHasColumns), 12);
-				createElementLinkMap.Add(typeof(DataGridJMSViewModel), 13);
+				createElementLinkMap.Add(typeof(EnumHasValues), 3);
+				createElementLinkMap.Add(typeof(TabReferencesTargetTabbed), 4);
+				createElementLinkMap.Add(typeof(TabReferencesDataGrid), 5);
+				createElementLinkMap.Add(typeof(TabHasAttributes), 6);
+				createElementLinkMap.Add(typeof(DataGridHasAttributes), 7);
+				createElementLinkMap.Add(typeof(DataGridHasColumns), 8);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -334,17 +291,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				case 0: return new ModelRootHasComments(partition, roleAssignments, propertyAssignments);
 				case 1: return new CommentReferencesModelTyped(partition, roleAssignments, propertyAssignments);
 				case 2: return new ModelRootHasTypes(partition, roleAssignments, propertyAssignments);
-				case 3: return new JMSModelHasAttributes(partition, roleAssignments, propertyAssignments);
-				case 4: return new Generalization(partition, roleAssignments, propertyAssignments);
-				case 5: return new Association(partition, roleAssignments, propertyAssignments);
-				case 6: return new UndirectionalAssociation(partition, roleAssignments, propertyAssignments);
-				case 7: return new EnumHasValues(partition, roleAssignments, propertyAssignments);
-				case 8: return new TabReferencesTargetTabbed(partition, roleAssignments, propertyAssignments);
-				case 9: return new TabReferencesDataGrid(partition, roleAssignments, propertyAssignments);
-				case 10: return new TabHasAttributes(partition, roleAssignments, propertyAssignments);
-				case 11: return new DataGridHasAttributes(partition, roleAssignments, propertyAssignments);
-				case 12: return new DataGridHasColumns(partition, roleAssignments, propertyAssignments);
-				case 13: return new DataGridJMSViewModel(partition, roleAssignments, propertyAssignments);
+				case 3: return new EnumHasValues(partition, roleAssignments, propertyAssignments);
+				case 4: return new TabReferencesTargetTabbed(partition, roleAssignments, propertyAssignments);
+				case 5: return new TabReferencesDataGrid(partition, roleAssignments, propertyAssignments);
+				case 6: return new TabHasAttributes(partition, roleAssignments, propertyAssignments);
+				case 7: return new DataGridHasAttributes(partition, roleAssignments, propertyAssignments);
+				case 8: return new DataGridHasColumns(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -465,7 +417,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.EnableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.FixUpDiagram));
-			ruleManager.EnableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ConnectorRolePlayerChanged));
 			ruleManager.EnableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CompartmentItemAddRule));
 			ruleManager.EnableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CompartmentItemDeleteRule));
@@ -483,7 +434,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			
 			DslModeling::RuleManager ruleManager = store.RuleManager;
 			ruleManager.DisableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.FixUpDiagram));
-			ruleManager.DisableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ConnectorRolePlayerChanged));
 			ruleManager.DisableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CompartmentItemAddRule));
 			ruleManager.DisableRule(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.CompartmentItemDeleteRule));
@@ -527,7 +477,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.CommentDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelTypeDomainRoleId, true);
-			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.ClassAttributeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.EnumAttributeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributeDomainRoleId, true);
@@ -705,13 +654,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Types/ULong.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		ULong,
-		/// <summary>
-		/// ELimitViolation
-		/// Description for
-		/// SchneiderElectricDMS.PowerFunctionsReportDSL.Types.ELimitViolation
-		/// </summary>
-		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.Types/ELimitViolation.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-		ELimitViolation,
 	}
 }
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL

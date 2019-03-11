@@ -186,7 +186,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			}
 		}
 
-		public static string GetReportRecordFor(JMSModel model)
+		public static string GetReportRecordFor(DataGrid model)
 		{
 			StringBuilder sb = new StringBuilder();
 

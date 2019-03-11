@@ -11,10 +11,10 @@
   // Create a file segment for each element:
    foreach (ModelType type in this.ModelRoot.Types)
    { 
-	   if(type is JMSModel)
+	   if(type is DataGrid)
 	   {
-		    JMSModel jmsModel = type as JMSModel;
-            if(!jmsModel.ShouldGenerate) continue;
+		    DataGrid dg = type as DataGrid;
+            if(!dg.ShouldGenerate) continue;
 
     // First item is the delimiter:
 #>
@@ -27,7 +27,7 @@
 //														        #
 //###############################################################
 <#
-    UIViewModel uiViewModel = new UIViewModel(jmsModel);
+    UIViewModel uiViewModel = new UIViewModel(dg);
     uiViewModel.ObtainCode();
     Dictionary<string, string> props = uiViewModel.Properties;
 #>
@@ -36,7 +36,7 @@
 
 <#=props["classNamespace"]#>
 {
-    public partial class <#=jmsModel.Name#>ViewModel : ViewModelBase, ILocatable
+    public partial class <#=dg.Name#>ViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         

@@ -10,21 +10,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 {
 	public static class JMSHelper
 	{
-		public static string GetKnownTypes(JMSModel jmsModel)
-		{
-			StringBuilder sb = new StringBuilder();
-
-			if (jmsModel.HasKnownTypes)
-			{
-				foreach (Generalization generalization in Generalization.GetLinksToSubclasses(jmsModel))
-				{
-					sb.AppendLine(Resources.Tab1 + "[KnownType(typeof(" + generalization.Subclasses.Name + "))]");
-				}
-			}
-			
-			return sb.ToString();
-		}
-
 		public static string GetJMSEnumAttributes(Enum enumClass)
 		{
 			StringBuilder sb = new StringBuilder();

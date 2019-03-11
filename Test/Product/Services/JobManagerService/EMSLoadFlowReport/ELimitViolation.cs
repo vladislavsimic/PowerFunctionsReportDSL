@@ -7,15 +7,12 @@
 //														        #
 //###############################################################
 
+ 
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
-    public enum EMSLoadFlowReportType
+
+    public enum ELimitViolation
     {
-
-		Generator,
-		Consumer,
-		NoResults,
-
-
+        
     }
 }

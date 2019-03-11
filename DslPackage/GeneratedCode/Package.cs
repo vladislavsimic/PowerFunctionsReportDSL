@@ -37,37 +37,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
-					"@JMSModelToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					"SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"JMSModel", 
-					"@JMSModelToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 1)]
-	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
-					"@GeneralizationToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					"SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"Generalization", 
-					"@GeneralizationToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 2)]
-	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
-					"@UndirectionalAssociationToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					"SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociationToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"UndirectionalAssociation", 
-					"@UndirectionalAssociationToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 3)]
-	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
 					"@CommentToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.CommentToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"Comment", 
 					"@CommentToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 4)]
+					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
 					"@CommentRelationshipToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.CommentRelationshipToolboxItem", 
@@ -75,7 +51,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					"CommentRelationship", 
 					"@CommentRelationshipToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 5)]
+					Index = 2)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
 					"@TabToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.TabToolboxItem", 
@@ -83,7 +59,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					"Tab", 
 					"@TabToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 6)]
+					Index = 3)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
 					"@DataGridToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridToolboxItem", 
@@ -91,7 +67,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					"DataGrid", 
 					"@DataGridToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 7)]
+					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
 					"@TabTabReferenceToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.TabTabReferenceToolboxItem", 
@@ -99,7 +75,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					"TabTabReference", 
 					"@TabTabReferenceToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 8)]
+					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
 					"@TabDataGridReferenceToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					"SchneiderElectricDMS.PowerFunctionsReportDSL.TabDataGridReferenceToolboxItem", 
@@ -107,15 +83,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					"TabDataGridReference", 
 					"@TabDataGridReferenceToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
-					Index = 9)]
-	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
-					"@DataGridViewModelToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					"SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridViewModelToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"DataGridViewModel", 
-					"@DataGridViewModelToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					0xff00ff,
-					Index = 10)]
+					Index = 6)]
 	[VSShell::ProvideEditorFactory(typeof(PowerFunctionsReportDSLEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(PowerFunctionsReportDSLEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(PowerFunctionsReportDSLEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

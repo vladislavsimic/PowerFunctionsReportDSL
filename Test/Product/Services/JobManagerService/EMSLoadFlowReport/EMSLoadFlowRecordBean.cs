@@ -29,6 +29,16 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
         #region Properties
 
+		public float P { get; set; }
+
+		public float Loading { get; set; }
+
+		public float Q { get; set; }
+
+		public float P { get; set; }
+
+		public float PowerFactor { get; set; }
+
 
 
         #endregion Properties

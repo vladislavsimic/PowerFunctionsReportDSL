@@ -12,7 +12,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 	{
 		#region Constructor
 
-		public JMSRecord(JMSModel model): base(model)
+		public JMSRecord(DataGrid dg): base(dg)
 		{
 		}
 
@@ -33,19 +33,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + DataGrid.ModelRoot.Name + "Report";
 		}
 
 		protected override string GetDefaultConstructor()
 		{
 			StringBuilder sb = new StringBuilder();
 
-			if (JmsModel.HasDefaultConstructor)
-			{
-				sb.AppendLine(Resources.Tab2 + "public " + JmsModel.Name + "Record()");
-				sb.AppendLine(Resources.Tab2 + "{");
-				sb.AppendLine(Resources.Tab2 + "}");
-			}
+			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.Name + "Record()");
+			sb.AppendLine(Resources.Tab2 + "{");
+			sb.AppendLine(Resources.Tab2 + "}");
 
 			return sb.ToString();
 		}
@@ -54,7 +51,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach (ClassAttribute attr in JmsModel.Attributes)
+			foreach (ColumnAttribute attr in DataGrid.Columns)
 			{
 				string customType = TypesToCSharpType.Convert(attr);
 				if (attr.IsDataMember)
@@ -90,10 +87,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			string dataContract = string.Empty;
 
-			if (JmsModel.IsDataContract)
-			{
-				dataContract = "[DataContract]";
-			}
+			dataContract = "[DataContract]";
 
 			return dataContract;
 		}
@@ -104,7 +98,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			string assName = string.Empty;
 			string accModifier = string.Empty;
 
-			foreach (Association association in Association.GetLinksToTargets(JmsModel))
+			/*foreach (Association association in Association.GetLinksToTargets(JmsModel))
 			{
 				accModifier = AccessModifierConverter.ConvertModifier(association);
 				if (String.IsNullOrEmpty(association.TargetRoleName))
@@ -136,7 +130,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 				}
 
 				sb.AppendLine();
-			}
+			}*/
 
 
 			return sb.ToString();

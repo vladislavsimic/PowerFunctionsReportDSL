@@ -17,14 +17,17 @@ using System.Runtime.Serialization;
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
     [DataContract]
-    public partial class JMSModel1 : AsyncJob
+    public partial class EMSLoadFlowGenerator : AsyncJob
     {
-		private void FillJMSModel1Properties(List<long> gids)
+		private void FillEMSLoadFlowGeneratorProperties(List<long> gids)
 		{
 			long mdc = 0;
 			if (gids.Count <= 0) return;
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
+					ModelCode.,
+					ModelCode.,
+					ModelCode.,
 
 				}, new List<Association>(), busnodeGids, new List<Association>(), ref mdc);
 			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
@@ -36,22 +39,26 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 					EMSLoadFlowRecordBean data = (hierarhyRecordData[rds[i].Id] as EMSLoadFlowRecordBean)
 					if (data == null)
 					{
-						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingJMSModel1. Record data is null!");
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingEMSLoadFlowGenerator. Record data is null!");
 						throw new ArgumentNullException("busnodeGids");
 					}
+					data.P = rds[i].GetProperty(ModelCode.).AsFloat();
+					data.Loading = rds[i].GetProperty(ModelCode.).AsFloat();
+					data.Q = rds[i].GetProperty(ModelCode.).AsFloat();
 
-				}
 				count -= rds.Count;
 			}
 			GdaQuery.IteratorClose(iteratorId);
 		}
 
-		private void FillJMSModel2Properties(List<long> gids)
+		private void FillEMSLoadFlowConsumerProperties(List<long> gids)
 		{
 			long mdc = 0;
 			if (gids.Count <= 0) return;
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
+					ModelCode.,
+					ModelCode.,
 
 				}, new List<Association>(), busnodeGids, new List<Association>(), ref mdc);
 			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
@@ -63,11 +70,12 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 					EMSLoadFlowRecordBean data = (hierarhyRecordData[rds[i].Id] as EMSLoadFlowRecordBean)
 					if (data == null)
 					{
-						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingJMSModel2. Record data is null!");
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLF]: Error occurred while collectingEMSLoadFlowConsumer. Record data is null!");
 						throw new ArgumentNullException("busnodeGids");
 					}
+					data.P = rds[i].GetProperty(ModelCode.).AsFloat();
+					data.PowerFactor = rds[i].GetProperty(ModelCode.).AsFloat();
 
-				}
 				count -= rds.Count;
 			}
 			GdaQuery.IteratorClose(iteratorId);

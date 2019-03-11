@@ -8,7 +8,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
 	public class JMSJobParam : JMSModelBase, ICodeHandler
 	{
-		public JMSJobParam(JMSModel model):base(model)
+		public JMSJobParam(DataGrid dg):base(dg)
 		{
 			
 		}
@@ -24,7 +24,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + DataGrid.ModelRoot.Name + "Report";
 		}
 
 		protected override string GetDefaultConstructor()
@@ -43,7 +43,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(dataMember);
 			sb.AppendLine(Resources.Tab2 + "public HierarchyType HierarchyType { get; set; }");
 			sb.AppendLine(dataMember);
-			sb.AppendLine(Resources.Tab2 + "public " + JmsModel.ModelRoot.Name + "ReportType ReportType { get; set; }");
+			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.ModelRoot.Name + "ReportType ReportType { get; set; }");
 			sb.AppendLine(dataMember);
 			sb.AppendLine(Resources.Tab2 + "public HierarchyNetworkType HierarchyNetworkType { get; set; }");
 

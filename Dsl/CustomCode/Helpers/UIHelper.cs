@@ -10,7 +10,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 {
 	public static class UIHelper
 	{
-		internal static string GetUsings(JMSModel jmsModel)
+		internal static string GetUsings(DataGrid dg)
 		{
 			StringBuilder sb = new StringBuilder();
 
@@ -162,7 +162,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 							{
 								header = " Header=\"" + attr.Name + "\"";
 							}
-							string binding = " Binding=\"{Binding Path=" + attr.Binding + "}\"";
+							string binding = string.Empty;
+							if (string.IsNullOrEmpty(attr.BindingName))
+							{
+								binding = " Binding=\"{Binding Path=" + attr.Name + "}\"";
+							}
+							else
+							{
+								binding = " Binding=\"{Binding Path=" + attr.BindingName + "}\"";
+							}
 							string width = string.Format(" Width=\"{0}\"", attr.Width);
 							string horizontalAlignment = string.Format(" HorizontalAlignment=\"{0}\"", HorizontalAlignmentConverter.Convert(attr.HorizontalAlignment));
 							string verticalAlignment = string.Format(" VerticalAlignment=\"{0}\"", VerticalAlignmentConverter.Convert(attr.VerticalAlignment));
@@ -241,11 +249,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		internal static string GetViewModelFields(JMSModel jmsModel)
+		internal static string GetViewModelFields(DataGrid dg)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "private " + jmsModel.Name + "Record reportRecord;");
+			sb.AppendLine(Resources.Tab2 + "private " + dg.Name + "Record reportRecord;");
 			sb.AppendLine();
 			sb.AppendLine(Resources.Tab2 + "private DMSType recordType;");
 			sb.AppendLine();
@@ -256,7 +264,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		internal static string GetViewModelProperties(JMSModel jmsModel)
+		internal static string GetViewModelProperties(DataGrid dg)
 		{
 			StringBuilder sb = new StringBuilder();
 
@@ -268,14 +276,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 
 			sb.AppendLine(Resources.Title);
 
-			sb.AppendLine(Resources.GetReportRecordFor(jmsModel));
+			sb.AppendLine(Resources.GetReportRecordFor(dg));
 
 			sb.AppendLine(Resources.TabularViewIsActive);
 
 			sb.AppendLine(Resources.RowIsNotVisible);
 
-			foreach (ClassAttribute attribute in jmsModel.Attributes)
+			foreach (ColumnAttribute attribute in dg.Columns)
 			{
+				if (!attribute.ShouldGenerate)
+				{
+					continue;
+				}
 				sb.AppendLine(Resources.Tab2 + "public " + TypesToCSharpType.Convert(attribute) + " " + attribute.Name[0].ToString().ToUpper() + attribute.Name.Substring(1));
 				sb.AppendLine(Resources.Tab2 + "{");
 				sb.AppendLine(Resources.Tab3 + "get");
@@ -296,15 +308,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		internal static string GetViewModelConstructor(JMSModel jmsModel)
+		internal static string GetViewModelConstructor(DataGrid dg)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "public " + jmsModel.Name + "ViewModel(" + jmsModel.Name + "Record reportRecord, bool tabularViewActive)");
+			sb.AppendLine(Resources.Tab2 + "public " + dg.Name + "ViewModel(" + dg.Name + "Record reportRecord, bool tabularViewActive)");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab3 + "if (reportRecord == null)");
 			sb.AppendLine(Resources.Tab3 + "{");
-			sb.AppendLine(Resources.Tab4 + "DMSLogger.Log(DMSLogger.LogLevel.Error, \"Parameter reportRecord passed to " + jmsModel.Name + "ViewModel(), should not be null.\");");
+			sb.AppendLine(Resources.Tab4 + "DMSLogger.Log(DMSLogger.LogLevel.Error, \"Parameter reportRecord passed to " + dg.Name + "ViewModel(), should not be null.\");");
 			sb.AppendLine(Resources.Tab4 + "return;");
 			sb.AppendLine(Resources.Tab3 + "}");
 			sb.AppendLine(Resources.Tab3 + "this.reportRecord = reportRecord;");
@@ -331,22 +343,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			return sb.ToString();
 		}
 
-		internal static string GetDefaultViewModelConstructor(JMSModel jmsModel)
+		internal static string GetDefaultViewModelConstructor(DataGrid dg)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "public " + jmsModel.Name + "ViewModel()");
+			sb.AppendLine(Resources.Tab2 + "public " + dg.Name + "ViewModel()");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab2 + "}");
 
 			return sb.ToString();
 		}
 
-		internal static string GetNamespace(JMSModel jmsModel)
+		internal static string GetNamespace(DataGrid dg)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.Append("namespace TelventDMS.UI.Components." + jmsModel.ModelRoot.Name + ".ViewModels");
+			sb.Append("namespace TelventDMS.UI.Components." + dg.ModelRoot.Name + ".ViewModels");
 
 			return sb.ToString();
 		}

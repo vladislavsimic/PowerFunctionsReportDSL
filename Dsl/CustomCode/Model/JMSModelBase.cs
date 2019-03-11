@@ -10,7 +10,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 	{
 		#region Fields
 
-		private JMSModel model;
+		private DataGrid dataGrid;
 
 		private Dictionary<string, string> generatedCode;
 
@@ -18,9 +18,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		#region Constructor
 
-		public JMSModelBase(JMSModel model)
+		public JMSModelBase(DataGrid dg)
 		{
-			this.model = model;
+			this.dataGrid = dg;
 			this.generatedCode = new Dictionary<string, string>();
 		}
 
@@ -34,15 +34,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		#region Properties
 
-		public JMSModel JmsModel
+		public DataGrid DataGrid
 		{
 			get
 			{
-				return model;
+				return dataGrid;
 			}
 			set
 			{
-				model = value;
+				dataGrid = value;
 			}
 		}
 

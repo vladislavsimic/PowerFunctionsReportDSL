@@ -9,7 +9,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
 	public class JMSBean : JMSModelBase, ICodeHandler
 	{
-		public JMSBean(JMSModel model) : base(model)
+		public JMSBean(DataGrid dg) : base(dg)
 		{
 
 		}
@@ -25,32 +25,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + DataGrid.ModelRoot.Name + "Report";
 		}
 
 		protected override string GetDefaultConstructor()
 		{
 			StringBuilder sb = new StringBuilder();
 
-			if (JmsModel.HasDefaultConstructor)
-			{
-				sb.AppendLine(Resources.Tab2 + "public " + JmsModel.ModelRoot.Name + "RecordBean()");
-				sb.AppendLine(Resources.Tab2 + "{");
-				sb.AppendLine(Resources.Tab2 + "}");
-			}
-
-			foreach (ModelType type in JmsModel.ModelRoot.Types)
-			{
-				if (!(type is Tab))
-				{
-					continue;
-				}
-				Tab tab = type as Tab;
-				if (tab.SourceTabbed.Count == 0)
-				{
-
-				}
-			}
+			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.ModelRoot.Name + "RecordBean()");
+			sb.AppendLine(Resources.Tab2 + "{");
+			sb.AppendLine(Resources.Tab2 + "}");
 
 			return sb.ToString();
 		}
@@ -62,25 +46,25 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			string assName = string.Empty;
 			string accModifier = string.Empty;
 
-			foreach (ModelType type in JmsModel.ModelRoot.Types)
+			foreach (ModelType type in DataGrid.ModelRoot.Types)
 			{
-				if (!(type is JMSModel))
+				if (!(type is DataGrid))
 				{
 					continue;
 				}
-				JMSModel model = type as JMSModel;
+				DataGrid model = type as DataGrid;
 				if (!model.ShouldGenerate)
 				{
 					continue;
 				}
-				foreach (ClassAttribute attr in model.Attributes)
+				foreach (ColumnAttribute attr in model.Columns)
 				{
 					string customType = TypesToCSharpType.Convert(attr);
 
 					sb.AppendLine(Resources.Tab2 + "public " + customType + " " + attr.Name + " { get; set; }");
 					sb.AppendLine();
 				}
-				foreach(Association association in Association.GetLinksToTargets(model))
+				/*foreach(Association association in Association.GetLinksToTargets(model))
 				{
 					accModifier = AccessModifierConverter.ConvertModifier(association);
 					if (String.IsNullOrEmpty(association.TargetRoleName))
@@ -104,7 +88,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 						default:
 							break;
 					}
-				}
+				}*/
 			}
 
 			return sb.ToString();

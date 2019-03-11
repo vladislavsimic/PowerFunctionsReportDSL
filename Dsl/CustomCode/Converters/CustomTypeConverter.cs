@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 {
-	public class MyTypeConverter : System.ComponentModel.TypeConverter
+	public class CustomTypeConverter : System.ComponentModel.TypeConverter
 	{
 		/// <summary>
 		/// Return true to indicate that we return a list of values to choose from
@@ -50,17 +50,24 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 			Store store = GetStore(context.Instance);
 
 			ColumnAttribute attr = (ColumnAttribute)context.Instance;
-			DataGrid dataGrid = attr.DataGrid;
+
+			ModelRoot root = attr.DataGrid.ModelRoot;
 
 			List<string> values = new List<string>();
 
+			values.AddRange(System.Enum.GetNames(typeof(Types)));
+
 			if (store != null)
 			{
-				foreach(ColumnAttribute attribute in dataGrid.Columns)
+				foreach (ModelType type in root.Types)
 				{
-					values.Add(attribute.Name);
+					if(type is Enum)
+					{
+						Enum typeEnum =  type as Enum;
+						values.Add(typeEnum.Name);
+					}
 				}
-					
+
 			}
 
 			values.Add("");

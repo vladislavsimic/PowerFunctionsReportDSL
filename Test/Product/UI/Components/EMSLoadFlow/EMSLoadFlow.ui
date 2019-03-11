@@ -1,44 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="555af364-2e97-4c35-a52a-252cd82cf017" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="8f8ff828-8f41-40c9-adbd-b43eb7bcbbe6" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="d650778c-b844-43c3-8949-0048c5aa09e6">
-      <tab Id="22885d12-49b0-4b6f-8d0b-a782f00170b5" name="Tab1" />
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="937539a4-e3b3-49a0-83b5-065fd588816b">
-      <tab Id="148917ea-c326-4a5c-9c7b-eefbb65f2cfd" name="Tab2">
+    <modelRootHasTypes Id="5886b7d5-c48a-4b2d-bafc-013a141771fc">
+      <tab Id="1eb21185-6efd-48f8-b3cd-551bf28f2356" name="Shunts" header="Shunts">
         <targetTabbed>
-          <tabReferencesTargetTabbed Id="864cf821-ef5a-4d64-929c-58cbabe55f30">
-            <tabMoniker Id="fd651da6-0c48-4f3e-88a3-17a0dc22725b" />
+          <tabReferencesTargetTabbed Id="69eac6e5-170b-4c03-9028-0f0f35e8beca">
+            <tabMoniker Id="2152fdd4-9b0b-49ec-a187-31b9d147defd" />
           </tabReferencesTargetTabbed>
-          <tabReferencesTargetTabbed Id="36ce154c-4ce6-4182-bdff-6337df27908a">
-            <tabMoniker Id="8dfdb30c-545c-4ad2-a39f-376563ef5aa0" />
+          <tabReferencesTargetTabbed Id="9619036d-1a72-41ba-9b86-edb561f8bc60">
+            <tabMoniker Id="194e28ba-e77c-4257-8980-3e31dbae0584" />
           </tabReferencesTargetTabbed>
         </targetTabbed>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="6fdc003e-4977-4026-b599-9a8ef9ab1ee0">
-      <tab Id="ddb121dc-79c6-47c5-9638-e27ea855c85d" name="Tab3" />
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="a81093ce-db67-4e55-866c-74eeebbfdae9">
-      <tab Id="fd651da6-0c48-4f3e-88a3-17a0dc22725b" name="Tab4" />
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="2ed8c5af-66d9-42e1-a496-05d45273bd14">
-      <tab Id="8dfdb30c-545c-4ad2-a39f-376563ef5aa0" name="Tab5">
-        <targetTabbed>
-          <tabReferencesTargetTabbed Id="818e377f-2012-42d5-88c8-6e600313adcc">
-            <tabMoniker Id="14fdc07e-2874-4b36-a143-e62ffba31839" />
-          </tabReferencesTargetTabbed>
-          <tabReferencesTargetTabbed Id="4675c6cf-5009-4184-aed8-ace12566a9fa">
-            <tabMoniker Id="c4d4641c-f34b-40d3-88f1-ff2f6fbe68c2" />
-          </tabReferencesTargetTabbed>
-        </targetTabbed>
+    <modelRootHasTypes Id="24ee7efe-e284-4b34-bcde-4d711fc5b273">
+      <tab Id="2152fdd4-9b0b-49ec-a187-31b9d147defd" name="Generator" header="Generators">
+        <dataGrid>
+          <tabReferencesDataGrid Id="9c848ade-3a5d-4a9f-b1bb-765db513b8d7">
+            <dataGridMoniker Id="696ddd98-70f4-455f-80f3-47ec8a7fb7e9" />
+          </tabReferencesDataGrid>
+        </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="940aad3c-da03-44d7-8161-f49dc795619d">
-      <tab Id="14fdc07e-2874-4b36-a143-e62ffba31839" name="Tab66666666666666" />
+    <modelRootHasTypes Id="9749c1b4-64d7-42ab-9650-28e0430efe57">
+      <tab Id="194e28ba-e77c-4257-8980-3e31dbae0584" name="Consumer" header="Loads">
+        <dataGrid>
+          <tabReferencesDataGrid Id="8995a904-7665-456f-8590-e652f92a6879">
+            <dataGridMoniker Id="2a25f435-5cf3-4337-a8e9-0ee859503600" />
+          </tabReferencesDataGrid>
+        </dataGrid>
+      </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="bb520084-98dd-425e-b196-6505d4a8f986">
-      <tab Id="c4d4641c-f34b-40d3-88f1-ff2f6fbe68c2" name="Tab7" />
+    <modelRootHasTypes Id="f1b56f7d-7e31-4c94-ac29-8a54cc856952">
+      <dataGrid Id="696ddd98-70f4-455f-80f3-47ec8a7fb7e9" name="EMSLoadFlowGenerator">
+        <columns>
+          <dataGridHasColumns Id="b7d61261-825d-4b07-9d5e-0a4808ead1b9">
+            <columnAttribute Id="50eefe90-b5b3-45b7-939c-b25dd216f339" name="P" header="P" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="991dec5a-cab5-42d3-860c-85309363194e">
+            <columnAttribute Id="3ee34d6d-0a81-4aac-8e72-7f2eeb0a51c0" name="Loading" header="Loading" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="308bae94-a224-45c2-aced-3e0a30f2d5d1">
+            <columnAttribute Id="f51e8ef0-01ed-4251-bae7-9b0467998ee2" name="Q" header="Q" />
+          </dataGridHasColumns>
+        </columns>
+      </dataGrid>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="73f09df9-e55c-4f3d-8529-3144b4c851f4">
+      <dataGrid Id="2a25f435-5cf3-4337-a8e9-0ee859503600" name="EMSLoadFlowConsumer">
+        <columns>
+          <dataGridHasColumns Id="be2e3b54-d7a0-45bd-be77-5707e5dbd063">
+            <columnAttribute Id="5445a4c4-9143-4363-b5c6-63818de8c5bc" name="P" header="P" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="b76c9af0-c4d2-46d0-adaa-09b843e8a04b">
+            <columnAttribute Id="dc8e5700-0f4d-4301-8aff-5276d3a1ab57" name="PowerFactor" header="Power Factor" />
+          </dataGridHasColumns>
+        </columns>
+      </dataGrid>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="d48d81ee-0c50-40fa-ba86-45fd15750fc1">
+      <enum Id="d6b2b5f1-45ef-46c8-a6e1-57b98ffb3406" name="ELimitViolation" />
     </modelRootHasTypes>
   </types>
 </modelRoot>

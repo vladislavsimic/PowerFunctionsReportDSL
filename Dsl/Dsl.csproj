@@ -78,6 +78,7 @@
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
     </None>
     <Compile Include="CustomCode\Converters\AccessModifierConverter.cs" />
+    <Compile Include="CustomCode\Converters\CustomTypeConverter.cs" />
     <Compile Include="CustomCode\Converters\HorizontalAlignmentConverter.cs" />
     <Compile Include="CustomCode\Converters\MyTypeConverter.cs" />
     <Compile Include="CustomCode\Converters\TypesToCSharpType.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="CustomCode\Model\JMSReportType.cs" />
     <Compile Include="CustomCode\Model\JMSResults.cs" />
     <Compile Include="CustomCode\Model\Strings.cs" />
-    <Compile Include="CustomCode\Model\UIViewModel.cs" />
+    <Compile Include="CustomCode\Model\UI\UIViewModel.cs" />
     <Compile Include="CustomCode\Model\UI\UIReportDataProvider.cs" />
     <Compile Include="CustomCode\Model\UI\UIReportViewModel.cs" />
     <Compile Include="CustomCode\Model\UI\UITab.cs" />

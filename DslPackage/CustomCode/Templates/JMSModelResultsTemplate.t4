@@ -11,10 +11,10 @@
   // Create a file segment for each element:
    foreach (ModelType type in this.ModelRoot.Types)
    { 
-	   if(type is JMSModel)
+	   if(type is DataGrid)
 	   {
-		    JMSModel jmsModel = type as JMSModel;
-            if (!jmsModel.ShouldGenerate) continue;
+		    DataGrid dg = type as DataGrid;
+            if (!dg.ShouldGenerate) continue;
 
     // First item is the delimiter:
 #>
@@ -28,7 +28,7 @@
 //###############################################################
 
 <#
-    JMSResults resultModel = new JMSResults(jmsModel);
+    JMSResults resultModel = new JMSResults(dg);
     resultModel.ObtainCode();
     Dictionary<string, string> code = resultModel.GeneratedCode;
 #>
@@ -38,7 +38,7 @@
 namespace <#=code["classNamespace"]#>
 {
     <#=code["dataContract"]#>
-    public partial class <#=jmsModel.Name#>Results : <#=this.ModelRoot.Name#>ReportResult
+    public partial class <#=dg.Name#>Results : <#=this.ModelRoot.Name#>ReportResult
     {
         #region Constructors
 

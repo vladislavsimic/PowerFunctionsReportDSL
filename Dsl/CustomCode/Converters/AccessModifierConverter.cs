@@ -8,7 +8,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 {
 	public static class AccessModifierConverter
 	{
-		public static string ConvertModifier(Association association)
+		/*public static string ConvertModifier(Association association)
 		{
 			TypeAccessModifier accModifier = (TypeAccessModifier)association.AccessModifier;
 
@@ -23,6 +23,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 				default:
 					return "unknown type";
 			}
-		}
+		}*/
 	}
 }

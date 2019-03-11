@@ -11,10 +11,10 @@
   // Create a file segment for each element:
    foreach (ModelType type in this.ModelRoot.Types)
    { 
-	   if(type is JMSModel)
+	   if(type is DataGrid)
 	   {
-		    JMSModel jmsModel = type as JMSModel;
-            if(!jmsModel.ShouldGenerate) continue;
+		    DataGrid dg = type as DataGrid;
+            if(!dg.ShouldGenerate) continue;
             string functionName = this.ModelRoot.Name;
     // First item is the delimiter:
 #>
@@ -27,7 +27,7 @@
 //														        #
 //###############################################################
 <#
-    JMSJobParam job = new JMSJobParam(jmsModel);
+    JMSJobParam job = new JMSJobParam(dg);
     job.ObtainCode();
     Dictionary<string, string> code = job.GeneratedCode;
 #>

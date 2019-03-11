@@ -52,7 +52,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 					continue;
 				}
 				Tab tab = type as Tab;
-				if (!tab.ShouldGenerate)
+				if (!tab.ShouldGenerate || tab.TargetTabbed.Count > 0)
 				{
 					continue;
 				}

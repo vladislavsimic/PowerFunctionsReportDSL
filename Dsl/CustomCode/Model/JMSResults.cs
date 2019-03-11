@@ -9,9 +9,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 	public class JMSResults : JMSModelBase, ICodeHandler
 	{
 
-		public JMSResults(JMSModel model) : base(model)
+		public JMSResults(DataGrid dg) : base(dg)
 		{
-				
 		}
 
 		public void ObtainCode()
@@ -26,16 +25,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + DataGrid.ModelRoot.Name + "Report";
 		}
 
 		protected override string GetDefaultConstructor()
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "public " + JmsModel.Name + "Results()");
+			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.Name + "Results()");
 			sb.AppendLine(Resources.Tab2 + "{");
-			sb.AppendLine(Resources.Tab3 + "ReportType = " + JmsModel.ModelRoot.Name + "ReportType." + JmsModel.Name + ";");
+			sb.AppendLine(Resources.Tab3 + "ReportType = " + DataGrid.ModelRoot.Name + "ReportType." + DataGrid.Name + ";");
 			sb.AppendLine(Resources.Tab2 + "}");
 
 			return sb.ToString();
@@ -46,14 +45,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			StringBuilder sb = new StringBuilder();
 
 			sb.AppendLine(Resources.Tab2 + "[DataMember]");
-			sb.AppendLine(Resources.Tab2 + "public List<" + JmsModel.Name + "Record> " + JmsModel.Name + "Records { get; set; }");
+			sb.AppendLine(Resources.Tab2 + "public List<" + DataGrid.Name + "Record> Records { get; set; }");
 
 			return sb.ToString();
 		}
 
 		protected override string GetSuperClass()
 		{
-			return JmsModel.Name + "ReportResult";
+			return DataGrid.Name + "ReportResult";
 		}
 
 		protected override string GetUsings()
@@ -71,14 +70,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string IsDataContractString()
 		{
-			string dataContract = string.Empty;
-
-			if (JmsModel.IsDataContract)
-			{
-				dataContract = "[DataContract]";
-			}
-
-			return dataContract;
+			return "[DataContract]";
 		}
 	}
 }

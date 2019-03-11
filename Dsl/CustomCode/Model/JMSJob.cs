@@ -9,7 +9,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
 	public class JMSJob : JMSModelBase, ICodeHandler
 	{
-		public JMSJob(JMSModel model) : base(model)
+		public JMSJob(DataGrid dg) : base(dg)
 		{
 
 		}
@@ -27,13 +27,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach (ModelType type in JmsModel.ModelRoot.Types)
+			foreach (ModelType type in DataGrid.ModelRoot.Types)
 			{
-				if (!(type is JMSModel))
+				if (!(type is DataGrid))
 				{
 					continue;
 				}
-				JMSModel model = type as JMSModel;
+				DataGrid model = type as DataGrid;
 				if (!model.ShouldGenerate)
 				{
 					continue;
@@ -59,7 +59,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 				sb.AppendLine(Resources.Tab6 + "throw new ArgumentNullException(\"busnodeGids\");");
 				sb.AppendLine(Resources.Tab5 + "}");
 				sb.AppendLine(FillRecordData(model));
-				sb.AppendLine(Resources.Tab4 + "}");
 				sb.AppendLine(Resources.Tab4 + "count -= rds.Count;");
 				sb.AppendLine(Resources.Tab3 + "}");
 				sb.AppendLine(Resources.Tab3 + "GdaQuery.IteratorClose(iteratorId);");
@@ -70,17 +69,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			return sb.ToString();
 		}
 
-		private string FillRecordData(JMSModel model)
+		private string FillRecordData(DataGrid model)
 		{
 			StringBuilder sb = new StringBuilder();
 
 			string data = "data.";
 
-			foreach (ClassAttribute attr in model.Attributes)
+			foreach (ColumnAttribute attr in model.Columns)
 			{
 				sb.AppendLine(Resources.Tab5 + data + attr.Name + " = rds[i].GetProperty(ModelCode." + attr.ModelCode + ")." + TypesToModelCodeCastConverter.Convert(attr) + ";");
 			}
-			foreach (Association association in Association.GetLinksToTargets(model))
+			/*foreach (Association association in Association.GetLinksToTargets(model))
 			{
 				if (association.Target is Enum)
 				{
@@ -124,30 +123,30 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 						sb.AppendLine(Resources.Tab5 + data + association.Target.Name + " = rds[i].GetProperty(ModelCode." + association.ModelCode + ").AsReferences();");
 					}
 				}
-			}
+			}*/
 
 			return sb.ToString();
 		}
 
-		private string GetAttributesModelCodes(JMSModel model)
+		private string GetAttributesModelCodes(DataGrid model)
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach (ClassAttribute attr in model.Attributes)
+			foreach (ColumnAttribute attr in model.Columns)
 			{
 				sb.AppendLine(Resources.Tab5 + "ModelCode." + attr.ModelCode + ",");
 			}
-			foreach (Association association in Association.GetLinksToTargets(model))
+			/*foreach (Association association in Association.GetLinksToTargets(model))
 			{
 				sb.AppendLine(Resources.Tab5 + "ModelCode." + association.ModelCode + ",");
-			}
+			}*/
 
 			return sb.ToString();
 		}
 
 		protected override string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + DataGrid.ModelRoot.Name + "Report";
 		}
 
 		protected override string GetDefaultConstructor()

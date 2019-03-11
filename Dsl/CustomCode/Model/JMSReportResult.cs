@@ -8,7 +8,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
 	public class JMSReportResult : JMSModelBase, ICodeHandler
 	{
-		public JMSReportResult(JMSModel model):base(model)
+		public JMSReportResult(DataGrid model):base(model)
 		{
 
 		}
@@ -29,18 +29,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach(ModelType type in JmsModel.ModelRoot.Types)
+			foreach(ModelType type in DataGrid.ModelRoot.Types)
 			{
-				if (!(type is JMSModel))
+				if (!(type is DataGrid))
 				{
 					continue;
 				}
-				JMSModel model = type as JMSModel;
-				if (!model.ShouldGenerate)
+				DataGrid dg = type as DataGrid;
+				if (!dg.ShouldGenerate)
 				{
 					continue;
 				}
-				sb.AppendLine(Resources.Tab1 + "[KnownType(typeof(" + model.Name + "Results))]");
+				sb.AppendLine(Resources.Tab1 + "[KnownType(typeof(" + dg.Name + "Results))]");
 			}
 
 			return sb.ToString();
@@ -50,7 +50,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			string modelRootName = JmsModel.ModelRoot.Name;
+			string modelRootName = DataGrid.ModelRoot.Name;
 
 			sb.AppendLine(Resources.Tab2 + "public " + modelRootName + "ReportResult(" + modelRootName + "ReportType reportType)");
 			sb.AppendLine(Resources.Tab2 + "{");
@@ -62,14 +62,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string GetClassNamespace()
 		{
-			return "TelventDMS.Services.JobManagerService." + JmsModel.ModelRoot.Name + "Report";
+			return "TelventDMS.Services.JobManagerService." + DataGrid.ModelRoot.Name + "Report";
 		}
 
 		protected override string GetDefaultConstructor()
 		{
 			StringBuilder sb = new StringBuilder();
 
-			sb.AppendLine(Resources.Tab2 + "public " + JmsModel.ModelRoot.Name + "ReportResult()");
+			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.ModelRoot.Name + "ReportResult()");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab2 + "}");
 
@@ -80,7 +80,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
-			string rootName = JmsModel.ModelRoot.Name;
+			string rootName = DataGrid.ModelRoot.Name;
 
 			sb.AppendLine(Resources.Tab2 + "[DataMember]");
 			sb.AppendLine(Resources.Tab2 + "public " + rootName + "ReportType " + rootName + "ReportType { get; set; }");

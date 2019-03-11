@@ -44,86 +44,39 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="3e7c72c4-2cc7-44ee-a947-e5f0baa15efe" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel" Name="JMSModel" DisplayName="JMSModel" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
-      <BaseClass>
-        <DomainClassMoniker Name="ModelClass" />
-      </BaseClass>
-      <Properties>
-        <DomainProperty Id="0548378e-ee6e-4b3a-98a4-2044dc1ee840" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Is Data Contract" Name="IsDataContract" DisplayName="Is Data Contract" DefaultValue="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Boolean" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="74902c3f-b848-4b69-868b-bff3729b552d" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Has Default Constructor" Name="HasDefaultConstructor" DisplayName="Has Default Constructor" DefaultValue="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Boolean" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="989a9706-3b2d-4409-bff0-87bfcd2d9d35" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Has Known Types" Name="HasKnownTypes" DisplayName="Has Known Types" DefaultValue="false">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Boolean" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="e7d5847a-2fea-4816-aa66-fc60b91d2cbe" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModel.Folder Name" Name="FolderName" DisplayName="Folder Name">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-      </Properties>
-      <ElementMergeDirectives>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="ClassAttribute" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>JMSModelHasAttributes.Attributes</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-      </ElementMergeDirectives>
-    </DomainClass>
-    <DomainClass Id="bf1070c6-59b9-4636-a65d-0ef5aa8713c4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassModelElement" Name="ClassModelElement" DisplayName="Class Model Element" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
+    <DomainClass Id="bf1070c6-59b9-4636-a65d-0ef5aa8713c4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelElement" Name="ModelElement" DisplayName="Model Element" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
       <BaseClass>
         <DomainClassMoniker Name="NamedElement" />
       </BaseClass>
       <Properties>
-        <DomainProperty Id="da967192-ef02-44c8-8c96-7e38fd4a43aa" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassModelElement.Description" Name="Description" DisplayName="Description">
+        <DomainProperty Id="da967192-ef02-44c8-8c96-7e38fd4a43aa" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelElement.Description" Name="Description" DisplayName="Description">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="829a8092-5e51-41f1-bff5-977ee88c66a4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute" Name="ClassAttribute" DisplayName="Class Attribute" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
+    <DomainClass Id="829a8092-5e51-41f1-bff5-977ee88c66a4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute" Name="ModelAttribute" DisplayName="Model Attribute" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
       <BaseClass>
-        <DomainClassMoniker Name="ClassModelElement" />
+        <DomainClassMoniker Name="ModelElement" />
       </BaseClass>
       <Properties>
-        <DomainProperty Id="d7772659-b67b-46e6-8e26-dcf405450964" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Initial Value" Name="InitialValue" DisplayName="Initial Value">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="2d411332-72ca-497e-9b2e-93bba3032d06" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Type" Name="Type" DisplayName="Type" DefaultValue="Float">
+        <DomainProperty Id="2d411332-72ca-497e-9b2e-93bba3032d06" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Type" Name="Type" DisplayName="Type" DefaultValue="Float">
           <Type>
             <DomainEnumerationMoniker Name="Types" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="19612026-e782-4521-8341-654acd1d33ff" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Access Modifier" Name="AccessModifier" DisplayName="Access Modifier" DefaultValue="Public">
-          <Type>
-            <DomainEnumerationMoniker Name="TypeAccessModifier" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="9a5402cf-296d-429d-b28b-d95981fc0472" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Is Data Member" Name="IsDataMember" DisplayName="Is Data Member" DefaultValue="true">
+        <DomainProperty Id="9a5402cf-296d-429d-b28b-d95981fc0472" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Is Data Member" Name="IsDataMember" DisplayName="Is Data Member" DefaultValue="true">
           <Type>
             <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="f6be6a7b-5e44-43f2-ab97-c56c95242d17" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Model Code" Name="ModelCode" DisplayName="Model Code">
+        <DomainProperty Id="f6be6a7b-5e44-43f2-ab97-c56c95242d17" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Model Code" Name="ModelCode" DisplayName="Model Code">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="386a150a-60f2-43dc-93ce-625a2f97e37e" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ClassAttribute.Measurement Type" Name="MeasurementType" DisplayName="Measurement Type" DefaultValue="None">
+        <DomainProperty Id="386a150a-60f2-43dc-93ce-625a2f97e37e" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Measurement Type" Name="MeasurementType" DisplayName="Measurement Type" DefaultValue="None">
           <Type>
             <DomainEnumerationMoniker Name="MeasurementType" />
           </Type>
@@ -159,7 +112,7 @@
     </DomainClass>
     <DomainClass Id="2cbf3442-ee61-4c37-b0c7-44b126765931" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute" Name="EnumAttribute" DisplayName="Enum Attribute" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
       <BaseClass>
-        <DomainClassMoniker Name="ClassModelElement" />
+        <DomainClassMoniker Name="ModelElement" />
       </BaseClass>
     </DomainClass>
     <DomainClass Id="66aabeac-09c2-4ce5-9322-96b3248a8383" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement" Name="UIElement" DisplayName="UIElement" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
@@ -229,7 +182,7 @@
         <DomainClassMoniker Name="UIElementAttribute" />
       </BaseClass>
       <Properties>
-        <DomainProperty Id="d48555ac-48a2-4fe7-baf0-b3ac93d9ccff" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Binding" Name="Binding" DisplayName="Binding">
+        <DomainProperty Id="d48555ac-48a2-4fe7-baf0-b3ac93d9ccff" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Binding Name" Name="BindingName" DisplayName="Binding Name">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -252,6 +205,31 @@
         <DomainProperty Id="2af382ef-1bf9-4cf9-a527-f696c56cab9e" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Header" Name="Header" DisplayName="Header">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="ae1f8fc3-944f-4a53-b4ba-2fa3d2ba2ef8" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Type" Name="Type" DisplayName="Type" DefaultValue="Float">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="0f447f47-e1d3-4182-a596-fb88c61ca2ea" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Is Data Member" Name="IsDataMember" DisplayName="Is Data Member" DefaultValue="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="2fa0e2a4-2d4b-4a7c-b054-659415262031" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Model Code" Name="ModelCode" DisplayName="Model Code">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="a883dc8f-4fd4-48e4-b484-cb12e35d0fd2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Measurement Type" Name="MeasurementType" DisplayName="Measurement Type" DefaultValue="None">
+          <Type>
+            <DomainEnumerationMoniker Name="MeasurementType" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="81b85424-b7f8-4d42-be67-08c9f46e7b05" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Should Generate" Name="ShouldGenerate" DisplayName="Should Generate" DefaultValue="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -312,115 +290,6 @@
         <DomainRole Id="7c256cee-4104-4ef5-93bf-db2c35e0a465" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelType" Name="ModelType" DisplayName="Model Type" PropertyName="ModelRoot" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Model Root">
           <RolePlayer>
             <DomainClassMoniker Name="ModelType" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="66860efb-33a0-47f2-b3e4-db5037eb307e" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes" Name="JMSModelHasAttributes" DisplayName="JMSModel Has Attributes" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="94717ec5-b798-4924-9606-acd1c3777baa" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.JMSModel" Name="JMSModel" DisplayName="JMSModel" PropertyName="Attributes" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Attributes">
-          <RolePlayer>
-            <DomainClassMoniker Name="JMSModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="ba6dca6a-b9a3-4498-a624-5ef2c7239c55" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelHasAttributes.ClassAttribute" Name="ClassAttribute" DisplayName="Class Attribute" PropertyName="JMSModel" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="JMSModel">
-          <RolePlayer>
-            <DomainClassMoniker Name="ClassAttribute" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="c5c2de26-3dfe-4142-a437-ac3d7b943cc9" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Generalization" Name="Generalization" DisplayName="Generalization" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
-      <Source>
-        <DomainRole Id="45d4cb8d-17c7-4e87-be5e-109d52bcc144" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Generalization.Superclass" Name="Superclass" DisplayName="Superclass" PropertyName="Subclasses" PropertyDisplayName="Subclasses">
-          <RolePlayer>
-            <DomainClassMoniker Name="JMSModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="6c56ddcf-4479-4a69-bfdf-96a1899fff66" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Generalization.Subclasses" Name="Subclasses" DisplayName="Subclasses" PropertyName="Superclass" Multiplicity="ZeroOne" PropertyDisplayName="Superclass">
-          <RolePlayer>
-            <DomainClassMoniker Name="JMSModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="57c335cd-3f14-4ef0-ae24-fbe7d2e033d5" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association" Name="Association" DisplayName="Association" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" AllowsDuplicates="true">
-      <Properties>
-        <DomainProperty Id="54f889b9-9aa0-4e16-9924-897cc3436e4f" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Source Multiplicity" Name="SourceMultiplicity" DisplayName="Source Multiplicity" DefaultValue="One">
-          <Type>
-            <DomainEnumerationMoniker Name="Multiplicity" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="14e315b7-eb1b-4ac0-bd7d-224e032508f9" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Source Role Name" Name="SourceRoleName" DisplayName="Source Role Name">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="626e99f1-35e9-4685-8486-1a1499962aca" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Target Multiplicity" Name="TargetMultiplicity" DisplayName="Target Multiplicity" DefaultValue="One">
-          <Type>
-            <DomainEnumerationMoniker Name="Multiplicity" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="e6a22dce-47d9-45ac-802d-12221dd88876" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Target Role Name" Name="TargetRoleName" DisplayName="Target Role Name">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="c8658a42-92e8-4b75-941e-6bc9b10bdd7d" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Access Modifier" Name="AccessModifier" DisplayName="Access Modifier" DefaultValue="Public">
-          <Type>
-            <DomainEnumerationMoniker Name="TypeAccessModifier" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="2f64272b-8bb2-4372-92b4-03eeeab8f29a" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Is Data Member" Name="IsDataMember" DisplayName="Is Data Member" DefaultValue="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Boolean" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="a6cbfb75-9b32-4369-913b-d0375219a757" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Description" Name="Description" DisplayName="Description">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="2b1cc60f-7173-476b-a920-8c111f9b04e1" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Model Code" Name="ModelCode" DisplayName="Model Code">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-      </Properties>
-      <Source>
-        <DomainRole Id="fed48ede-60f8-4569-94f2-11252da1c3d4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Source" Name="Source" DisplayName="Source" PropertyName="Targets" PropertyDisplayName="Targets">
-          <RolePlayer>
-            <DomainClassMoniker Name="JMSModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="b93aeaa7-9048-4e6d-8e36-740254a11e67" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Association.Target" Name="Target" DisplayName="Target" PropertyName="Sources" PropertyDisplayName="Sources">
-          <RolePlayer>
-            <DomainClassMoniker Name="ModelClass" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="959ee0a7-917f-4557-9086-fdc3709798e1" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation" Name="UndirectionalAssociation" DisplayName="Undirectional Association" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
-      <BaseRelationship>
-        <DomainRelationshipMoniker Name="Association" />
-      </BaseRelationship>
-      <Source>
-        <DomainRole Id="38be2565-7015-4c78-ad01-b3cb9e404102" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.JMSModel" Name="JMSModel" DisplayName="JMSModel" PropertyName="UndirectionalAssociationTargets" PropertyDisplayName="Undirectional Association Targets">
-          <RolePlayer>
-            <DomainClassMoniker Name="JMSModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="4a85f170-6e8e-412a-bb96-b8b2b5899ac2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalAssociation.ModelClass" Name="ModelClass" DisplayName="Model Class" PropertyName="UndirectionalAssociationSources" PropertyDisplayName="Undirectional Association Sources">
-          <RolePlayer>
-            <DomainClassMoniker Name="ModelClass" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -521,22 +390,6 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
-    <DomainRelationship Id="65ab45bd-1318-49bb-ae12-042d2aea3937" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel" Name="DataGridJMSViewModel" DisplayName="Data Grid JMSView Model" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
-      <Source>
-        <DomainRole Id="06ef3887-b487-45ca-9ffb-75bbe9fdccb6" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.DataGrid" Name="DataGrid" DisplayName="Data Grid" PropertyName="JMSModel" Multiplicity="ZeroOne" PropertyDisplayName="JMSModel">
-          <RolePlayer>
-            <DomainClassMoniker Name="DataGrid" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="45b0af11-ef66-4525-bb6d-2923963ce3b2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridJMSViewModel.JMSModel" Name="JMSModel" DisplayName="JMSModel" PropertyName="DataGrid" Multiplicity="ZeroOne" PropertyDisplayName="Data Grid">
-          <RolePlayer>
-            <DomainClassMoniker Name="JMSModel" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -571,7 +424,6 @@
         <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Types.Double" Name="Double" Value="" />
         <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Types.UShort" Name="UShort" Value="" />
         <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Types.ULong" Name="ULong" Value="" />
-        <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Types.ELimitViolation" Name="ELimitViolation" Value="" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="TypeAccessModifier" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TypeAccessModifier">
@@ -685,15 +537,6 @@
   </Types>
   <Shapes>
     <GeometryShape Id="feedcd67-3fec-445b-9525-554debbd5c43" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape" Name="CommentShape" DisplayName="Comment Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Comment Shape" InitialHeight="1" Geometry="Rectangle" />
-    <CompartmentShape Id="280acf15-f2f1-4974-b446-8cb3f9f1da37" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.JMSModelShape" Name="JMSModelShape" DisplayName="JMSModel Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="JMSModel Shape" FillColor="192, 255, 255" InitialHeight="1" OutlineThickness="0.01" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
-        <ExpandCollapseDecorator Name="ExpandCollapseDecorator" DisplayName="Expand Collapse Decorator" />
-      </ShapeHasDecorators>
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
-      </ShapeHasDecorators>
-      <Compartment Name="AttributesCompartment" Title="Attributes" />
-    </CompartmentShape>
     <CompartmentShape Id="66b09fe4-0a78-43b4-9f09-385e4e2dfb29" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape" Name="EnumShape" DisplayName="Enum Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Enum Shape" FillColor="LemonChiffon" InitialWidth="2" InitialHeight="0.5" OutlineThickness="0.01" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
@@ -734,26 +577,6 @@
   </Shapes>
   <Connectors>
     <Connector Id="1b439915-326b-456f-908a-103256c71915" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector" Name="CommentConnector" DisplayName="Comment Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Comment Connector" />
-    <Connector Id="b91f45a0-d2a1-45d2-b6ef-0a772fec5da0" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.GeneralizationConnector" Name="GeneralizationConnector" DisplayName="Generalization Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Generalization Connector" Color="Gray" SourceEndStyle="HollowArrow" Thickness="0.01" />
-    <Connector Id="7b6e4cfe-10af-45f0-a678-c32d07d5df4e" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.AssociationConnector" Name="AssociationConnector" DisplayName="Association Connector" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Association Connector" Color="113, 111, 110" Thickness="0.01">
-      <ConnectorHasDecorators Position="TargetBottom" OffsetFromShape="0" OffsetFromLine="0">
-        <TextDecorator Name="TargetMultiplicity" DisplayName="Target Multiplicity" DefaultText="TargetMultiplicity" />
-      </ConnectorHasDecorators>
-      <ConnectorHasDecorators Position="SourceBottom" OffsetFromShape="0" OffsetFromLine="0">
-        <TextDecorator Name="SourceMultiplicity" DisplayName="Source Multiplicity" DefaultText="SourceMultiplicity" />
-      </ConnectorHasDecorators>
-      <ConnectorHasDecorators Position="TargetTop" OffsetFromShape="0" OffsetFromLine="0">
-        <TextDecorator Name="TargetRoleName" DisplayName="Target Role Name" DefaultText="TargetRoleName" />
-      </ConnectorHasDecorators>
-      <ConnectorHasDecorators Position="SourceTop" OffsetFromShape="0" OffsetFromLine="0">
-        <TextDecorator Name="SourceRoleName" DisplayName="Source Role Name" DefaultText="SourceRoleName" />
-      </ConnectorHasDecorators>
-    </Connector>
-    <Connector Id="df4ce4b9-a7da-41ab-bed9-e546e3de2059" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UndirectionalConnector" Name="UndirectionalConnector" DisplayName="Undirectional Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Undirectional Connector" TargetEndStyle="EmptyArrow">
-      <BaseConnector>
-        <ConnectorMoniker Name="AssociationConnector" />
-      </BaseConnector>
-    </Connector>
     <Connector Id="1ef5e009-fe1d-4e67-ae4c-d1bfcc970771" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIConnector" Name="UIConnector" DisplayName="UIConnector" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="UIConnector" Thickness="0.01" />
     <Connector Id="033d3a33-4f8f-4648-b18d-3536fb95ffec" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabConnector" Name="TabConnector" DisplayName="Tab Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Tab Connector" Color="Gray" Thickness="0.02">
       <BaseConnector>
@@ -819,77 +642,30 @@
       <XmlClassData TypeName="CommentConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="commentConnectorMoniker" ElementName="commentConnector" MonikerTypeName="CommentConnectorMoniker">
         <ConnectorMoniker Name="CommentConnector" />
       </XmlClassData>
-      <XmlClassData TypeName="JMSModel" MonikerAttributeName="" SerializeId="true" MonikerElementName="jMSModelMoniker" ElementName="jMSModel" MonikerTypeName="JMSModelMoniker">
-        <DomainClassMoniker Name="JMSModel" />
-        <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="attributes">
-            <DomainRelationshipMoniker Name="JMSModelHasAttributes" />
-          </XmlRelationshipData>
-          <XmlPropertyData XmlName="isDataContract">
-            <DomainPropertyMoniker Name="JMSModel/IsDataContract" />
-          </XmlPropertyData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="subclasses">
-            <DomainRelationshipMoniker Name="Generalization" />
-          </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="targets">
-            <DomainRelationshipMoniker Name="Association" />
-          </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="undirectionalAssociationTargets">
-            <DomainRelationshipMoniker Name="UndirectionalAssociation" />
-          </XmlRelationshipData>
-          <XmlPropertyData XmlName="hasDefaultConstructor">
-            <DomainPropertyMoniker Name="JMSModel/HasDefaultConstructor" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="hasKnownTypes">
-            <DomainPropertyMoniker Name="JMSModel/HasKnownTypes" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="folderName">
-            <DomainPropertyMoniker Name="JMSModel/FolderName" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="JMSModelShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="jMSModelShapeMoniker" ElementName="jMSModelShape" MonikerTypeName="JMSModelShapeMoniker">
-        <CompartmentShapeMoniker Name="JMSModelShape" />
-      </XmlClassData>
-      <XmlClassData TypeName="ClassModelElement" MonikerAttributeName="" SerializeId="true" MonikerElementName="classModelElementMoniker" ElementName="classModelElement" MonikerTypeName="ClassModelElementMoniker">
-        <DomainClassMoniker Name="ClassModelElement" />
+      <XmlClassData TypeName="ModelElement" MonikerAttributeName="" SerializeId="true" MonikerElementName="modelElementMoniker" ElementName="modelElement" MonikerTypeName="ModelElementMoniker">
+        <DomainClassMoniker Name="ModelElement" />
         <ElementData>
           <XmlPropertyData XmlName="description">
-            <DomainPropertyMoniker Name="ClassModelElement/Description" />
+            <DomainPropertyMoniker Name="ModelElement/Description" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ClassAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="classAttributeMoniker" ElementName="classAttribute" MonikerTypeName="ClassAttributeMoniker">
-        <DomainClassMoniker Name="ClassAttribute" />
+      <XmlClassData TypeName="ModelAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="modelAttributeMoniker" ElementName="modelAttribute" MonikerTypeName="ModelAttributeMoniker">
+        <DomainClassMoniker Name="ModelAttribute" />
         <ElementData>
-          <XmlPropertyData XmlName="initialValue">
-            <DomainPropertyMoniker Name="ClassAttribute/InitialValue" />
-          </XmlPropertyData>
           <XmlPropertyData XmlName="type">
-            <DomainPropertyMoniker Name="ClassAttribute/Type" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="accessModifier">
-            <DomainPropertyMoniker Name="ClassAttribute/AccessModifier" />
+            <DomainPropertyMoniker Name="ModelAttribute/Type" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="isDataMember">
-            <DomainPropertyMoniker Name="ClassAttribute/IsDataMember" />
+            <DomainPropertyMoniker Name="ModelAttribute/IsDataMember" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="modelCode">
-            <DomainPropertyMoniker Name="ClassAttribute/ModelCode" />
+            <DomainPropertyMoniker Name="ModelAttribute/ModelCode" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="measurementType">
-            <DomainPropertyMoniker Name="ClassAttribute/MeasurementType" />
+            <DomainPropertyMoniker Name="ModelAttribute/MeasurementType" />
           </XmlPropertyData>
         </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="JMSModelHasAttributes" MonikerAttributeName="" SerializeId="true" MonikerElementName="jMSModelHasAttributesMoniker" ElementName="jMSModelHasAttributes" MonikerTypeName="JMSModelHasAttributesMoniker">
-        <DomainRelationshipMoniker Name="JMSModelHasAttributes" />
-      </XmlClassData>
-      <XmlClassData TypeName="Generalization" MonikerAttributeName="" SerializeId="true" MonikerElementName="generalizationMoniker" ElementName="generalization" MonikerTypeName="GeneralizationMoniker">
-        <DomainRelationshipMoniker Name="Generalization" />
-      </XmlClassData>
-      <XmlClassData TypeName="GeneralizationConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="generalizationConnectorMoniker" ElementName="generalizationConnector" MonikerTypeName="GeneralizationConnectorMoniker">
-        <ConnectorMoniker Name="GeneralizationConnector" />
       </XmlClassData>
       <XmlClassData TypeName="ModelClass" MonikerAttributeName="" SerializeId="true" MonikerElementName="modelClassMoniker" ElementName="modelClass" MonikerTypeName="ModelClassMoniker">
         <DomainClassMoniker Name="ModelClass" />
@@ -898,44 +674,6 @@
             <DomainPropertyMoniker Name="ModelClass/ShouldGenerate" />
           </XmlPropertyData>
         </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="Association" MonikerAttributeName="" SerializeId="true" MonikerElementName="associationMoniker" ElementName="association" MonikerTypeName="AssociationMoniker">
-        <DomainRelationshipMoniker Name="Association" />
-        <ElementData>
-          <XmlPropertyData XmlName="sourceMultiplicity">
-            <DomainPropertyMoniker Name="Association/SourceMultiplicity" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="sourceRoleName">
-            <DomainPropertyMoniker Name="Association/SourceRoleName" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="targetMultiplicity">
-            <DomainPropertyMoniker Name="Association/TargetMultiplicity" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="targetRoleName">
-            <DomainPropertyMoniker Name="Association/TargetRoleName" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="accessModifier">
-            <DomainPropertyMoniker Name="Association/AccessModifier" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="isDataMember">
-            <DomainPropertyMoniker Name="Association/IsDataMember" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="description">
-            <DomainPropertyMoniker Name="Association/Description" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="modelCode">
-            <DomainPropertyMoniker Name="Association/ModelCode" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="AssociationConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="associationConnectorMoniker" ElementName="associationConnector" MonikerTypeName="AssociationConnectorMoniker">
-        <ConnectorMoniker Name="AssociationConnector" />
-      </XmlClassData>
-      <XmlClassData TypeName="UndirectionalConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="undirectionalConnectorMoniker" ElementName="undirectionalConnector" MonikerTypeName="UndirectionalConnectorMoniker">
-        <ConnectorMoniker Name="UndirectionalConnector" />
-      </XmlClassData>
-      <XmlClassData TypeName="UndirectionalAssociation" MonikerAttributeName="" SerializeId="true" MonikerElementName="undirectionalAssociationMoniker" ElementName="undirectionalAssociation" MonikerTypeName="UndirectionalAssociationMoniker">
-        <DomainRelationshipMoniker Name="UndirectionalAssociation" />
       </XmlClassData>
       <XmlClassData TypeName="Enum" MonikerAttributeName="" SerializeId="true" MonikerElementName="enumMoniker" ElementName="enum" MonikerTypeName="EnumMoniker">
         <DomainClassMoniker Name="Enum" />
@@ -994,9 +732,6 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="columns">
             <DomainRelationshipMoniker Name="DataGridHasColumns" />
           </XmlRelationshipData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="jMSModel">
-            <DomainRelationshipMoniker Name="DataGridJMSViewModel" />
-          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="UIElementShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIElementShapeMoniker" ElementName="uIElementShape" MonikerTypeName="UIElementShapeMoniker">
@@ -1017,8 +752,8 @@
       <XmlClassData TypeName="ColumnAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="columnAttributeMoniker" ElementName="columnAttribute" MonikerTypeName="ColumnAttributeMoniker">
         <DomainClassMoniker Name="ColumnAttribute" />
         <ElementData>
-          <XmlPropertyData XmlName="binding">
-            <DomainPropertyMoniker Name="ColumnAttribute/Binding" />
+          <XmlPropertyData XmlName="bindingName">
+            <DomainPropertyMoniker Name="ColumnAttribute/BindingName" />
           </XmlPropertyData>
           <XmlPropertyData XmlName="width">
             <DomainPropertyMoniker Name="ColumnAttribute/Width" />
@@ -1031,6 +766,21 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="header">
             <DomainPropertyMoniker Name="ColumnAttribute/Header" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="ColumnAttribute/Type" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="isDataMember">
+            <DomainPropertyMoniker Name="ColumnAttribute/IsDataMember" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="modelCode">
+            <DomainPropertyMoniker Name="ColumnAttribute/ModelCode" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="measurementType">
+            <DomainPropertyMoniker Name="ColumnAttribute/MeasurementType" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="shouldGenerate">
+            <DomainPropertyMoniker Name="ColumnAttribute/ShouldGenerate" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -1055,9 +805,6 @@
       <XmlClassData TypeName="ViewModelConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="viewModelConnectorMoniker" ElementName="viewModelConnector" MonikerTypeName="ViewModelConnectorMoniker">
         <ConnectorMoniker Name="ViewModelConnector" />
       </XmlClassData>
-      <XmlClassData TypeName="DataGridJMSViewModel" MonikerAttributeName="" SerializeId="true" MonikerElementName="dataGridJMSViewModelMoniker" ElementName="dataGridJMSViewModel" MonikerTypeName="DataGridJMSViewModelMoniker">
-        <DomainRelationshipMoniker Name="DataGridJMSViewModel" />
-      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="PowerFunctionsReportDSLExplorer" />
@@ -1076,63 +823,6 @@
           <RolePlayerConnectDirective>
             <AcceptingClass>
               <DomainClassMoniker Name="ModelType" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </TargetDirectives>
-      </LinkConnectDirective>
-    </ConnectionBuilder>
-    <ConnectionBuilder Name="GeneralizationBuilder">
-      <LinkConnectDirective>
-        <DomainRelationshipMoniker Name="Generalization" />
-        <SourceDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="JMSModel" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </SourceDirectives>
-        <TargetDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="JMSModel" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </TargetDirectives>
-      </LinkConnectDirective>
-    </ConnectionBuilder>
-    <ConnectionBuilder Name="AssociationBuilder">
-      <LinkConnectDirective>
-        <DomainRelationshipMoniker Name="Association" />
-        <SourceDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="JMSModel" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </SourceDirectives>
-        <TargetDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="ModelClass" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </TargetDirectives>
-      </LinkConnectDirective>
-    </ConnectionBuilder>
-    <ConnectionBuilder Name="UndirectionalAssociationBuilder">
-      <LinkConnectDirective>
-        <DomainRelationshipMoniker Name="UndirectionalAssociation" />
-        <SourceDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="JMSModel" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </SourceDirectives>
-        <TargetDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="ModelClass" />
             </AcceptingClass>
           </RolePlayerConnectDirective>
         </TargetDirectives>
@@ -1176,25 +866,6 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
-    <ConnectionBuilder Name="DataGridJMSViewModelBuilder">
-      <LinkConnectDirective>
-        <DomainRelationshipMoniker Name="DataGridJMSViewModel" />
-        <SourceDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="DataGrid" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </SourceDirectives>
-        <TargetDirectives>
-          <RolePlayerConnectDirective>
-            <AcceptingClass>
-              <DomainClassMoniker Name="JMSModel" />
-            </AcceptingClass>
-          </RolePlayerConnectDirective>
-        </TargetDirectives>
-      </LinkConnectDirective>
-    </ConnectionBuilder>
   </ConnectionBuilders>
   <Diagram Id="9225a9df-bf9c-406d-a0e6-9bdd6dfde487" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDiagram" Name="PowerFunctionsReportDSLDiagram" DisplayName="Minimal Language Diagram" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
     <Class>
@@ -1208,32 +879,6 @@
         </ParentElementPath>
         <GeometryShapeMoniker Name="CommentShape" />
       </ShapeMap>
-      <CompartmentShapeMap>
-        <DomainClassMoniker Name="JMSModel" />
-        <ParentElementPath>
-          <DomainPath>ModelRootHasTypes.ModelRoot/!ModelRoot</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="JMSModelShape/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <CompartmentShapeMoniker Name="JMSModelShape" />
-        <CompartmentMap>
-          <CompartmentMoniker Name="JMSModelShape/AttributesCompartment" />
-          <ElementsDisplayed>
-            <DomainPath>JMSModelHasAttributes.Attributes/!ClassAttribute</DomainPath>
-          </ElementsDisplayed>
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </CompartmentMap>
-      </CompartmentShapeMap>
       <CompartmentShapeMap>
         <DomainClassMoniker Name="Enum" />
         <ParentElementPath>
@@ -1339,56 +984,12 @@
         <DomainRelationshipMoniker Name="CommentReferencesModelTyped" />
       </ConnectorMap>
       <ConnectorMap>
-        <ConnectorMoniker Name="GeneralizationConnector" />
-        <DomainRelationshipMoniker Name="Generalization" />
-      </ConnectorMap>
-      <ConnectorMap>
-        <ConnectorMoniker Name="UndirectionalConnector" />
-        <DomainRelationshipMoniker Name="UndirectionalAssociation" />
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssociationConnector/SourceMultiplicity" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Association/SourceMultiplicity" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssociationConnector/SourceRoleName" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Association/SourceRoleName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssociationConnector/TargetMultiplicity" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Association/TargetMultiplicity" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="AssociationConnector/TargetRoleName" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="Association/TargetRoleName" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-      </ConnectorMap>
-      <ConnectorMap>
         <ConnectorMoniker Name="TabConnector" />
         <DomainRelationshipMoniker Name="TabReferencesTargetTabbed" />
       </ConnectorMap>
       <ConnectorMap>
         <ConnectorMoniker Name="TabConnector" />
         <DomainRelationshipMoniker Name="TabReferencesDataGrid" />
-      </ConnectorMap>
-      <ConnectorMap>
-        <ConnectorMoniker Name="ViewModelConnector" />
-        <DomainRelationshipMoniker Name="DataGridJMSViewModel" />
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
@@ -1403,15 +1004,6 @@
       <ElementTool Name="Enum" ToolboxIcon="Resources\ClassTool.bmp" Caption="Enum" Tooltip="Enum" HelpKeyword="Enum">
         <DomainClassMoniker Name="Enum" />
       </ElementTool>
-      <ElementTool Name="JMSModel" ToolboxIcon="Resources\ClassTool.bmp" Caption="JMS Model" Tooltip="JMSModel" HelpKeyword="JMSModel">
-        <DomainClassMoniker Name="JMSModel" />
-      </ElementTool>
-      <ConnectionTool Name="Generalization" ToolboxIcon="Resources\GeneralizationTool.bmp" Caption="Inheritance" Tooltip="Generalization" HelpKeyword="Generalization" ReversesDirection="true">
-        <ConnectionBuilderMoniker Name="PowerFunctionsReportDSL/GeneralizationBuilder" />
-      </ConnectionTool>
-      <ConnectionTool Name="UndirectionalAssociation" ToolboxIcon="Resources\UnidirectionTool.bmp" Caption="Association" Tooltip="Undirectional Association" HelpKeyword="UndirectionalAssociation">
-        <ConnectionBuilderMoniker Name="PowerFunctionsReportDSL/UndirectionalAssociationBuilder" />
-      </ConnectionTool>
       <ElementTool Name="Comment" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Comment" Tooltip="Comment" HelpKeyword="Comment">
         <DomainClassMoniker Name="Comment" />
       </ElementTool>
@@ -1429,9 +1021,6 @@
       </ConnectionTool>
       <ConnectionTool Name="TabDataGridReference" ToolboxIcon="Resources\AssociationTool.bmp" Caption="Tab-&gt;DataGrid" Tooltip="Tab Data Grid Reference" HelpKeyword="TabDataGridReference">
         <ConnectionBuilderMoniker Name="PowerFunctionsReportDSL/TabReferencesDataGridBuilder" />
-      </ConnectionTool>
-      <ConnectionTool Name="DataGridViewModel" ToolboxIcon="Resources\AssociationTool.bmp" Caption="DataGrid-&gt;ViewModel" Tooltip="Data Grid View Model" HelpKeyword="DataGridViewModel">
-        <ConnectionBuilderMoniker Name="PowerFunctionsReportDSL/DataGridJMSViewModelBuilder" />
       </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

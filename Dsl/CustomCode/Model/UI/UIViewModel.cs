@@ -9,7 +9,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 {
 	public class UIViewModel : ICodeHandler
 	{
-		private JMSModel jmsModel;
+		private DataGrid dg;
 
 		private Dictionary<string, string> properties = new Dictionary<string, string>();
 
@@ -18,20 +18,20 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		}
 
-		public UIViewModel(JMSModel jmsModel)
+		public UIViewModel(DataGrid dg)
 		{
-			this.jmsModel = jmsModel;
+			this.dg = dg;
 		}
 
-		public JMSModel JmsModel
+		public DataGrid DataGrid
 		{
 			get
 			{
-				return this.jmsModel;
+				return this.dg;
 			}
 			set
 			{
-				jmsModel = value;
+				dg = value;
 			}
 		}
 
@@ -49,12 +49,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		public void ObtainCode()
 		{
-			Properties.Add("usings", UIHelper.GetUsings(jmsModel));
-			Properties.Add("classNamespace", UIHelper.GetNamespace(jmsModel));
-			Properties.Add("fields", UIHelper.GetViewModelFields(jmsModel));
-			Properties.Add("defaultConstructor", UIHelper.GetDefaultViewModelConstructor(jmsModel));
-			Properties.Add("constructor", UIHelper.GetViewModelConstructor(jmsModel));
-			Properties.Add("properties", UIHelper.GetViewModelProperties(jmsModel));
+			Properties.Add("usings", UIHelper.GetUsings(dg));
+			Properties.Add("classNamespace", UIHelper.GetNamespace(dg));
+			Properties.Add("fields", UIHelper.GetViewModelFields(dg));
+			Properties.Add("defaultConstructor", UIHelper.GetDefaultViewModelConstructor(dg));
+			Properties.Add("constructor", UIHelper.GetViewModelConstructor(dg));
+			Properties.Add("properties", UIHelper.GetViewModelProperties(dg));
 		}
 	}
 }
