@@ -309,6 +309,22 @@
     <value>Data Grid</value>
     <comment>DisplayName for DomainClass &apos;DataGrid&apos;</comment>
   </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/ModelCodeResultsType.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Model Code Results Type</value>
+    <comment>Description for DomainProperty &apos;ModelCodeResultsType&apos; on DomainClass &apos;DataGrid&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/ModelCodeResultsType.DisplayName" xml:space="preserve">
+    <value>Model Code Results Type</value>
+    <comment>DisplayName for DomainProperty &apos;ModelCodeResultsType&apos; on DomainClass &apos;DataGrid&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/DMSType.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.DMS Type</value>
+    <comment>Description for DomainProperty &apos;DMSType&apos; on DomainClass &apos;DataGrid&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/DMSType.DisplayName" xml:space="preserve">
+    <value>DMS Type</value>
+    <comment>DisplayName for DomainProperty &apos;DMSType&apos; on DomainClass &apos;DataGrid&apos;</comment>
+  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute</value>
     <comment>Description for DomainClass &apos;ColumnAttribute&apos;</comment>
@@ -412,6 +428,38 @@
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute.DisplayName" xml:space="preserve">
     <value>Data Grid Attribute</value>
     <comment>DisplayName for DomainClass &apos;DataGridAttribute&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader</value>
+    <comment>Description for DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.DisplayName" xml:space="preserve">
+    <value>SuperHeader</value>
+    <comment>DisplayName for DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Column.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Column</value>
+    <comment>Description for DomainProperty &apos;Column&apos; on DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Column.DisplayName" xml:space="preserve">
+    <value>Column</value>
+    <comment>DisplayName for DomainProperty &apos;Column&apos; on DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/ColumnSpan.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Column Span</value>
+    <comment>Description for DomainProperty &apos;ColumnSpan&apos; on DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/ColumnSpan.DisplayName" xml:space="preserve">
+    <value>Column Span</value>
+    <comment>DisplayName for DomainProperty &apos;ColumnSpan&apos; on DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Text.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Text</value>
+    <comment>Description for DomainProperty &apos;Text&apos; on DomainClass &apos;DataGridSuperHeader&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Text.DisplayName" xml:space="preserve">
+    <value>Text</value>
+    <comment>DisplayName for DomainProperty &apos;Text&apos; on DomainClass &apos;DataGridSuperHeader&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasComments</value>
@@ -700,6 +748,38 @@
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns/ColumnAttribute.PropertyDisplayName" xml:space="preserve">
     <value>Data Grid</value>
     <comment>PropertyDisplayName for DomainRole &apos;ColumnAttribute&apos; on DomainRelationship &apos;DataGridHasColumns&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders</value>
+    <comment>Description for DomainClass &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DisplayName" xml:space="preserve">
+    <value>Data Grid Has Super Headers</value>
+    <comment>DisplayName for DomainClass &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGrid.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGrid</value>
+    <comment>Description for DomainRole &apos;DataGrid&apos; on DomainRelationship &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGrid.DisplayName" xml:space="preserve">
+    <value>Data Grid</value>
+    <comment>DisplayName for DomainRole &apos;DataGrid&apos; on DomainRelationship &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGrid.PropertyDisplayName" xml:space="preserve">
+    <value>Super Headers</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataGrid&apos; on DomainRelationship &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGridSuperHeader.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeader</value>
+    <comment>Description for DomainRole &apos;DataGridSuperHeader&apos; on DomainRelationship &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGridSuperHeader.DisplayName" xml:space="preserve">
+    <value>Data Grid Super Header</value>
+    <comment>DisplayName for DomainRole &apos;DataGridSuperHeader&apos; on DomainRelationship &apos;DataGridHasSuperHeaders&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGridSuperHeader.PropertyDisplayName" xml:space="preserve">
+    <value>Data Grid</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataGridSuperHeader&apos; on DomainRelationship &apos;DataGridHasSuperHeaders&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Types/Bool.DisplayName" xml:space="preserve">
     <value>Bool</value>
@@ -1531,6 +1611,10 @@
   </data>
   <data name="DataGridShapeColumnsTitle" xml:space="preserve">
     <value>Columns</value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="DataGridShapeSuperHeadersTitle" xml:space="preserve">
+    <value>SuperHeaders</value>
     <comment>Compartment title</comment>
   </data>
   <data name="DataGridShapeNameDefaultText" xml:space="preserve">

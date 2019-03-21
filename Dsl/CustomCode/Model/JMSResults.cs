@@ -32,9 +32,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
+			string rootName = DataGrid.ModelRoot.Name;
+
 			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.Name + "Results()");
 			sb.AppendLine(Resources.Tab2 + "{");
-			sb.AppendLine(Resources.Tab3 + "ReportType = " + DataGrid.ModelRoot.Name + "ReportType." + DataGrid.Name + ";");
+			if (DataGrid.Tab != null)
+			{
+				sb.AppendLine(Resources.Tab3 + rootName + "ReportType = " + rootName + "ReportType." + DataGrid.Tab.Name + ";");
+			}
 			sb.AppendLine(Resources.Tab2 + "}");
 
 			return sb.ToString();

@@ -2163,3 +2163,245 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		#endregion
 	}
 }
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainRelationship DataGridHasSuperHeaders
+	/// Description for
+	/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("e7718c21-bd28-4d1a-a6db-b73b0a850409")]
+	public partial class DataGridHasSuperHeaders : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DataGridHasSuperHeaders domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe7718c21, 0xbd28, 0x4d1a, 0xa6, 0xdb, 0xb7, 0x3b, 0x0a, 0x85, 0x04, 0x09);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DataGridHasSuperHeaders link in the same Partition as the given DataGrid
+		/// </summary>
+		/// <param name="source">DataGrid to use as the source of the relationship.</param>
+		/// <param name="target">DataGridSuperHeader to use as the target of the relationship.</param>
+		public DataGridHasSuperHeaders(DataGrid source, DataGridSuperHeader target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DataGridHasSuperHeaders.DataGridDomainRoleId, source), new DslModeling::RoleAssignment(DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridHasSuperHeaders(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridHasSuperHeaders(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataGridHasSuperHeaders(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataGridHasSuperHeaders(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataGrid domain role code
+		
+		/// <summary>
+		/// DataGrid domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridDomainRoleId = new global::System.Guid(0x5a45a2bf, 0x92d5, 0x496d, 0xba, 0x70, 0xa6, 0x62, 0x0b, 0xcb, 0x6e, 0x6b);
+		
+		/// <summary>
+		/// DomainRole DataGrid
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGrid
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGrid.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGrid.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "SuperHeaders", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGrid.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("5a45a2bf-92d5-496d-ba70-a6620bcb6e6b")]
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGrid)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataGrid of a DataGridSuperHeader
+		/// <summary>
+		/// Gets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DataGrid GetDataGrid(DataGridSuperHeader element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DataGridSuperHeaderDomainRoleId) as DataGrid;
+		}
+		
+		/// <summary>
+		/// Sets DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetDataGrid(DataGridSuperHeader element, DataGrid newDataGrid)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, DataGridSuperHeaderDomainRoleId, newDataGrid);
+		}
+		#endregion
+		#region DataGridSuperHeader domain role code
+		
+		/// <summary>
+		/// DataGridSuperHeader domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataGridSuperHeaderDomainRoleId = new global::System.Guid(0x83228b35, 0x7942, 0x4ab4, 0xa2, 0x86, 0x2f, 0x21, 0x7d, 0x19, 0xd2, 0x58);
+		
+		/// <summary>
+		/// DomainRole DataGridSuperHeader
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeader
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGridSuperHeader.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGridSuperHeader.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataGrid", PropertyDisplayNameKey="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders/DataGridSuperHeader.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("83228b35-7942-4ab4-a286-2f217d19d258")]
+		public virtual DataGridSuperHeader DataGridSuperHeader
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataGridSuperHeader)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataGridSuperHeaderDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataGridSuperHeaderDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access SuperHeaders of a DataGrid
+		/// <summary>
+		/// Gets a list of SuperHeaders.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<DataGridSuperHeader> GetSuperHeaders(DataGrid element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<DataGridSuperHeader>, DataGridSuperHeader>(element, DataGridDomainRoleId);
+		}
+		#endregion
+		#region DataGrid link accessor
+		/// <summary>
+		/// Get the list of DataGridHasSuperHeaders links to a DataGrid.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders> GetLinksToSuperHeaders ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid dataGridInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders>(dataGridInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridDomainRoleId);
+		}
+		#endregion
+		#region DataGridSuperHeader link accessor
+		/// <summary>
+		/// Get the DataGridHasSuperHeaders link to a DataGridSuperHeader.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders GetLinkToDataGrid (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader dataGridSuperHeaderInstance)
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders>(dataGridSuperHeaderInstance, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DataGridSuperHeader not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region DataGridHasSuperHeaders instance accessors
+		
+		/// <summary>
+		/// Get any DataGridHasSuperHeaders links between a given DataGrid and a DataGridSuperHeader.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders> GetLinks( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader target )
+		{
+			global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders> outLinks = new global::System.Collections.Generic.List<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders>();
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders link in links )
+			{
+				if ( target.Equals(link.DataGridSuperHeader) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DataGridHasSuperHeaders link between a given DataGridand a DataGridSuperHeader.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders GetLink( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader target )
+		{
+			global::System.Collections.Generic.IList<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders> links = DslModeling::DomainRoleInfo.GetElementLinks<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders>(source, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridDomainRoleId);
+			foreach ( global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders link in links )
+			{
+				if ( target.Equals(link.DataGridSuperHeader) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

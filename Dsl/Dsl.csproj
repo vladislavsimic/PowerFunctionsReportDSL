@@ -15,11 +15,12 @@
     <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <SignAssembly>true</SignAssembly>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <GacTargetOutput>false</GacTargetOutput>
     <StartupObject>
     </StartupObject>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +42,24 @@
   <!-- Project specific properties to control T4/DSL targets -->
   <PropertyGroup>
     <TransformOnBuild>True</TransformOnBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(DslTargetsPath)\Microsoft.DSLTools.targets" />
@@ -79,8 +98,8 @@
     </None>
     <Compile Include="CustomCode\Converters\AccessModifierConverter.cs" />
     <Compile Include="CustomCode\Converters\CustomTypeConverter.cs" />
+    <Compile Include="CustomCode\Converters\DataGridSuperHeaderColumnConverter.cs" />
     <Compile Include="CustomCode\Converters\HorizontalAlignmentConverter.cs" />
-    <Compile Include="CustomCode\Converters\MyTypeConverter.cs" />
     <Compile Include="CustomCode\Converters\TypesToCSharpType.cs" />
     <Compile Include="CustomCode\Converters\TypesToModelCodeCastConverter.cs" />
     <Compile Include="CustomCode\Converters\VerticalAlignmentConverter.cs" />

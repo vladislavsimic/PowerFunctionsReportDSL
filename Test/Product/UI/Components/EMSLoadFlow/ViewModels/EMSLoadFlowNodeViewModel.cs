@@ -21,11 +21,11 @@ using TelventDMS.Common.DMS.Common.Converters;
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 {
-    public partial class EMSLoadFlowConsumerViewModel : ViewModelBase, ILocatable
+    public partial class EMSLoadFlowNodeViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         
-		private EMSLoadFlowConsumerRecord reportRecord;
+		private EMSLoadFlowNodeRecord reportRecord;
 
 		private DMSType recordType;
 
@@ -38,16 +38,16 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Constructors
 
-		public EMSLoadFlowConsumerViewModel()
+		public EMSLoadFlowNodeViewModel()
 		{
 		}
  
 
-		public EMSLoadFlowConsumerViewModel(EMSLoadFlowConsumerRecord reportRecord, bool tabularViewActive)
+		public EMSLoadFlowNodeViewModel(EMSLoadFlowNodeRecord reportRecord, bool tabularViewActive)
 		{
 			if (reportRecord == null)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowConsumerViewModel(), should not be null.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowNodeViewModel(), should not be null.");
 				return;
 			}
 			this.reportRecord = reportRecord;
@@ -107,7 +107,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public EMSLoadFlowConsumerRecord ReportRecord
+		public EMSLoadFlowNodeRecord ReportRecord
 		{
 			get
 			{
@@ -145,19 +145,27 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public float P
+		public float VoltageLevel
 		{
 			get
 			{
-				return reportRecord.P;
+				return reportRecord.VoltageLevel;
 			}
 		}
 
-		public float PowerFactor
+		public float Voltage
 		{
 			get
 			{
-				return reportRecord.PowerFactor;
+				return reportRecord.Voltage;
+			}
+		}
+
+		public float Pinj
+		{
+			get
+			{
+				return reportRecord.Pinj;
 			}
 		}
 

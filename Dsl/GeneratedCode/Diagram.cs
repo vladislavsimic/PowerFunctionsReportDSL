@@ -766,6 +766,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemAddRule : DslModeling::AddRule
 		{
 			/// <summary>
@@ -801,6 +802,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					global::System.Collections.IEnumerable elements = GetDataGridForDataGridShapeColumnsFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns)e.ModelElement);
 					UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
+				}
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders)
+				{
+					global::System.Collections.IEnumerable elements = GetDataGridForDataGridShapeSuperHeadersFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders)e.ModelElement);
+					UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "SuperHeaders", repaintOnly);
 				}
 			}
 			
@@ -861,6 +867,20 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if ( result == null ) return new DslModeling::ModelElement[0];
 				return new DslModeling::ModelElement[] {result};
 			}
+			internal static global::System.Collections.ICollection GetDataGridForDataGridShapeSuperHeadersFromLastLink(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders root)
+			{
+				// Segment 0
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid result = root.DataGrid;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
+			internal static global::System.Collections.ICollection GetDataGridForDataGridShapeSuperHeaders(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader root)
+			{
+				// Segments 1 and 0
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid result = root.DataGrid;
+				if ( result == null ) return new DslModeling::ModelElement[0];
+				return new DslModeling::ModelElement[] {result};
+			}
 			#endregion
 	
 			#region helper method to update compartments 
@@ -910,6 +930,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemDeleteRule : DslModeling::DeleteRule
 		{
 			/// <summary>
@@ -944,6 +965,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumnsFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
 				}
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders)
+				{
+					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetDataGridForDataGridShapeSuperHeadersFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "SuperHeaders", repaintOnly);
+				}
 			}
 		}
 		
@@ -954,6 +980,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemChangeRule : DslModeling::ChangeRule 
 		{
 			/// <summary>
@@ -988,6 +1015,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute)e.ModelElement);
 					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
 				}
+				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.NameDomainPropertyId)
+				{
+					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeSuperHeaders((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader)e.ModelElement);
+					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "SuperHeaders", repaintOnly);
+				}
 			}
 		}
 		
@@ -998,6 +1030,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerChangeRule : DslModeling::RolePlayerChangeRule 
 		{
 			/// <summary>
@@ -1120,6 +1153,33 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
 					}
 				}
+				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(e.DomainRole.IsSource)
+					{
+						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetDataGridForDataGridShapeSuperHeadersFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader)e.OldRolePlayer);
+						//foreach(DslModeling::ModelElement element in oldElements)
+						//{
+						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
+						//	foreach(DslDiagrams::PresentationElement pel in pels)
+						//	{
+						//		global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape compartmentShape = pel as global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape;
+						//		if(compartmentShape != null)
+						//		{
+						//			compartmentShape.GetCompartmentMappings()[2].InitializeCompartmentShape(compartmentShape);
+						//		}
+						//	}
+						//}
+						
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeSuperHeadersFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders)e.ElementLink);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "SuperHeaders", repaintOnly);
+					}
+					else 
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeSuperHeaders((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader)e.NewRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "SuperHeaders", repaintOnly);
+					}
+				}
 			}
 		}
 	
@@ -1130,6 +1190,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		internal sealed class CompartmentItemRolePlayerPositionChangeRule : DslModeling::RolePlayerPositionChangeRule 
 		{
 			/// <summary>
@@ -1174,6 +1235,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					{
 						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeColumns((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute)e.CounterpartRolePlayer);
 						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "Columns", repaintOnly);
+					}
+				}
+				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
+				{
+					if(!e.CounterpartDomainRole.IsSource)
+					{
+						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetDataGridForDataGridShapeSuperHeaders((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader)e.CounterpartRolePlayer);
+						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape), "SuperHeaders", repaintOnly);
 					}
 				}
 			}

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TextTemplating.VSHost;
+using SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.DTOGeneration;
 using SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 {
@@ -31,7 +33,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			genCode = GenerateCode(JMSModelResultsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			SCGTemplate JMSJobTemplate = new SCGTemplate(CodeGenerationResource.JMSJobTemplate, folderRelativePath, ".cs", "Job");
+			SCGTemplate JMSJobTemplate = new SCGTemplate(CodeGenerationResource.JMSJobTemplate, folderRelativePath, ".cs", "ReportJob");
 			genCode = GenerateCode(JMSJobTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
@@ -95,6 +97,31 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			genCode = GenerateCode(UIViewCsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
+			/*MessageBox.Show("JMS i UI kod generisan! Za generisanje DTO klasa pokrenuti build JMS-a i pokrenuti generisanje ponovo!");
+
+			try
+			{
+				string assemblyPath = Path.GetFullPath(Path.GetDirectoryName(this.InputFilePath) + "..\\..\\..\\..\\..\\bin64\\DMS_JobManagerService.exe");
+				if (System.IO.Directory.Exists(assemblyPath))
+				{
+					string outputFolder = Path.GetFullPath(Path.GetDirectoryName(this.InputFilePath) + "..\\..\\ServiceProxies\\ServiceProxies\\JobManagerServiceProxy");
+					string contractNamespace = "TelventDMS.UI.ServiceProxies";
+					List<string> incomingContracts = new List<string>();
+					List<string> outgoingContracts = new List<string>();
+
+					DTOGeneratorParam param = new DTOGeneratorParam(assemblyPath, contractNamespace, outputFolder, incomingContracts, outgoingContracts);
+					DTOGenerator generator = new DTOGenerator(param);
+				}
+				else
+				{
+					MessageBox.Show("JobManagerService.exe ne postoji!");
+				}
+				
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}*/
 
 			return Encoding.ASCII.GetBytes(sb.ToString());
 		}

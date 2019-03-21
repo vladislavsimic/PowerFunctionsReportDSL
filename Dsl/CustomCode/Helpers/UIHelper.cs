@@ -133,7 +133,57 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 					DataGrid dg = tab.DataGrid;
 
 					sb.AppendLine(Resources.Tab5 + "<Grid Margin=\"0 5 0 0 \" Name=\"" + tab.Name + "DataGridHeader\">");
-					sb.AppendLine(Resources.Tab6 + "<DataGrid Name=\"" + dg.Name + "DataGrid\"  HorizontalScrollBarVisibility=\"Auto\" SelectionMode=\"Single\" SelectionUnit=\"FullRow\" IsSynchronizedWithCurrentItem=\"True\"");
+
+					if (dg.SuperHeaders.Count > 0)
+					{
+						sb.AppendLine(Resources.Tab6 + "<Grid.RowDefinitions>");
+						sb.AppendLine(Resources.Tab7 + "<RowDefinition Height=\"Auto\"/>");
+						sb.AppendLine(Resources.Tab7 + "<RowDefinition Height=\"*\"/>");
+						sb.AppendLine(Resources.Tab6 + "</Grid.RowDefinitions>");
+
+						sb.AppendLine(Resources.Tab6 + "<ScrollViewer x:Name=\"Header" + dg.Name +"\" Grid.Row=\"0\" HorizontalScrollBarVisibility=\"Hidden\" VerticalScrollBarVisibility=\"Disabled\" HorizontalAlignment=\"Left\" HorizontalContentAlignment=\"Left\">");
+						sb.AppendLine(Resources.Tab7 + "<Grid Name=\"Button" + dg.Name +"Grid\" Margin=\"-2,0,0,0\">");
+						sb.AppendLine(Resources.Tab8 + "<Grid.ColumnDefinitions>");
+						sb.AppendLine(Resources.Tab9 + "<ColumnDefinition Width=\"{ Binding ElementName = EMSLoadFlowNodeDataGrid, Path = RowHeaderWidth}\" />");
+						sb.AppendLine(Resources.Tab9 + "<ColumnDefinition Width=\"{ Binding ElementName = EMSLoadFlowNodeTree, Path = ActualWidth}\" />");
+						foreach(ColumnAttribute column in dg.Columns)
+						{
+							sb.AppendLine(Resources.Tab9 + "<ColumnDefinition Width=\"{ Binding ElementName = Col" + dg.Name + column.Name + ", Path = ActualWidth}\"/>");
+						}
+						sb.AppendLine(Resources.Tab9 + "<ColumnDefinition Width=\"100\"/>");
+						sb.AppendLine(Resources.Tab8 + "</Grid.ColumnDefinitions>");
+
+						foreach(DataGridSuperHeader sh in dg.SuperHeaders)
+						{
+							string shColumn = "0";
+							for (int i = 0; i < dg.Columns.Count; i++)
+							{
+								if(dg.Columns[i].Name == sh.Column)
+								{
+									shColumn = (i + 2).ToString(); 
+								}
+							}
+
+							sb.AppendLine(Resources.Tab8 + "<Button x:Name=\"" + sh.Name +"\" Grid.Column=\"" + shColumn + "\" Grid.ColumnSpan=\"" + sh.ColumnSpan +"\" Style=\"{ StaticResource SuperHeaderStyle}\">");
+							sb.AppendLine(Resources.Tab9 + "<Button.Content>");
+							sb.AppendLine(Resources.Tab10 + "<StackPanel Orientation=\"Horizontal\">");
+							sb.AppendLine(Resources.Tab11 + "<TextBlock VerticalAlignment=\"Center\" Text=\"" + sh.Text + "\" />");
+							sb.AppendLine(Resources.Tab10 + "</StackPanel>");
+							sb.AppendLine(Resources.Tab9 + "</Button.Content>");
+							sb.AppendLine(Resources.Tab8 + "</Button>");
+						}
+
+						sb.AppendLine(Resources.Tab7 + "</Grid>");
+						sb.AppendLine(Resources.Tab6 + "</ScrollViewer>");
+					}
+
+					string dgGridRow = string.Empty;
+					if (dg.SuperHeaders.Count > 0)
+					{
+						dgGridRow = "Grid.Row=\"1\"";
+					}
+
+					sb.AppendLine(Resources.Tab6 + "<DataGrid Name=\"" + dg.Name + "DataGrid\" " + dgGridRow + " HorizontalScrollBarVisibility=\"Auto\" SelectionMode=\"Single\" SelectionUnit=\"FullRow\" IsSynchronizedWithCurrentItem=\"True\"");
 					sb.AppendLine(Resources.Tab7 + "CanUserAddRows=\"False\" CanUserDeleteRows=\"False\" CanUserResizeRows=\"False\" CanUserSortColumns=\"False\" AutoGenerateColumns=\"False\" IsReadOnly=\"True\">");
 
 					if (dg.Columns.Count > 0)

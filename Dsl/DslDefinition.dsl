@@ -158,6 +158,18 @@
       <BaseClass>
         <DomainClassMoniker Name="UIElement" />
       </BaseClass>
+      <Properties>
+        <DomainProperty Id="6e159ea2-1ae9-4823-bced-690a9060e4a6" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Model Code Results Type" Name="ModelCodeResultsType" DisplayName="Model Code Results Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="55de2092-8e08-4e3f-a1cc-490b792456f9" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.DMS Type" Name="DMSType" DisplayName="DMS Type">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -173,6 +185,14 @@
           </Index>
           <LinkCreationPaths>
             <DomainPath>DataGridHasColumns.Columns</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="DataGridSuperHeader" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>DataGridHasSuperHeaders.SuperHeaders</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
       </ElementMergeDirectives>
@@ -243,6 +263,28 @@
       <BaseClass>
         <DomainClassMoniker Name="UIElementAttribute" />
       </BaseClass>
+    </DomainClass>
+    <DomainClass Id="0223f388-4897-4077-a19d-b0a577a4aa5f" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader" Name="DataGridSuperHeader" DisplayName="SuperHeader" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
+      <BaseClass>
+        <DomainClassMoniker Name="UIElementAttribute" />
+      </BaseClass>
+      <Properties>
+        <DomainProperty Id="006a2db1-cfb1-424f-9d95-a2821a756a9b" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Column" Name="Column" DisplayName="Column">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="99516692-0f9d-438a-94ec-509871a3f99d" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Column Span" Name="ColumnSpan" DisplayName="Column Span">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="c6ddd689-69ab-43f5-ba3d-d0cdc980ede2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Text" Name="Text" DisplayName="Text">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
     </DomainClass>
   </Classes>
   <Relationships>
@@ -386,6 +428,22 @@
         <DomainRole Id="194c9b48-c6fa-464d-bca4-d5d48c2cc506" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttribute" Name="ColumnAttribute" DisplayName="Column Attribute" PropertyName="DataGrid" Multiplicity="ZeroOne" PropagatesDelete="true" PropertyDisplayName="Data Grid">
           <RolePlayer>
             <DomainClassMoniker Name="ColumnAttribute" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="e7718c21-bd28-4d1a-a6db-b73b0a850409" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders" Name="DataGridHasSuperHeaders" DisplayName="Data Grid Has Super Headers" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="5a45a2bf-92d5-496d-ba70-a6620bcb6e6b" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGrid" Name="DataGrid" DisplayName="Data Grid" PropertyName="SuperHeaders" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Super Headers">
+          <RolePlayer>
+            <DomainClassMoniker Name="DataGrid" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="83228b35-7942-4ab4-a286-2f217d19d258" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeader" Name="DataGridSuperHeader" DisplayName="Data Grid Super Header" PropertyName="DataGrid" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Data Grid">
+          <RolePlayer>
+            <DomainClassMoniker Name="DataGridSuperHeader" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -573,6 +631,7 @@
       </ShapeHasDecorators>
       <Compartment Name="Attributes" Title="Attributes" />
       <Compartment Name="Columns" Title="Columns" />
+      <Compartment Name="SuperHeaders" Title="SuperHeaders" />
     </CompartmentShape>
   </Shapes>
   <Connectors>
@@ -732,6 +791,15 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="columns">
             <DomainRelationshipMoniker Name="DataGridHasColumns" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="modelCodeResultsType">
+            <DomainPropertyMoniker Name="DataGrid/ModelCodeResultsType" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="dMSType">
+            <DomainPropertyMoniker Name="DataGrid/DMSType" />
+          </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="superHeaders">
+            <DomainRelationshipMoniker Name="DataGridHasSuperHeaders" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="UIElementShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIElementShapeMoniker" ElementName="uIElementShape" MonikerTypeName="UIElementShapeMoniker">
@@ -804,6 +872,23 @@
       </XmlClassData>
       <XmlClassData TypeName="ViewModelConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="viewModelConnectorMoniker" ElementName="viewModelConnector" MonikerTypeName="ViewModelConnectorMoniker">
         <ConnectorMoniker Name="ViewModelConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="DataGridSuperHeader" MonikerAttributeName="" SerializeId="true" MonikerElementName="dataGridSuperHeaderMoniker" ElementName="dataGridSuperHeader" MonikerTypeName="DataGridSuperHeaderMoniker">
+        <DomainClassMoniker Name="DataGridSuperHeader" />
+        <ElementData>
+          <XmlPropertyData XmlName="column">
+            <DomainPropertyMoniker Name="DataGridSuperHeader/Column" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="columnSpan">
+            <DomainPropertyMoniker Name="DataGridSuperHeader/ColumnSpan" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="text">
+            <DomainPropertyMoniker Name="DataGridSuperHeader/Text" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="DataGridHasSuperHeaders" MonikerAttributeName="" SerializeId="true" MonikerElementName="dataGridHasSuperHeadersMoniker" ElementName="dataGridHasSuperHeaders" MonikerTypeName="DataGridHasSuperHeadersMoniker">
+        <DomainRelationshipMoniker Name="DataGridHasSuperHeaders" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -976,6 +1061,17 @@
             </PropertyPath>
           </PropertyDisplayed>
         </CompartmentMap>
+        <CompartmentMap>
+          <CompartmentMoniker Name="DataGridShape/SuperHeaders" />
+          <ElementsDisplayed>
+            <DomainPath>DataGridHasSuperHeaders.SuperHeaders/!DataGridSuperHeader</DomainPath>
+          </ElementsDisplayed>
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="NamedElement/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </CompartmentMap>
       </CompartmentShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
@@ -993,7 +1089,7 @@
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
-  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="E:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
+  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="D:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
     <RootClass>
       <DomainClassMoniker Name="ModelRoot" />
     </RootClass>

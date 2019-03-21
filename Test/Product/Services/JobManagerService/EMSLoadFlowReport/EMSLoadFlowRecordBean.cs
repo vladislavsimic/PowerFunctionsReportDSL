@@ -16,7 +16,7 @@ using System.Runtime.Serialization;
 
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
-    public partial class EMSLoadFlowRecordBean : HierarchicalReportRecord
+    public partial class EMSLoadFlowRecordBean : HierarchicalRecordData
     {
         #region Constructor
 
@@ -29,15 +29,16 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
         #region Properties
 
-		public float P { get; set; }
+		public MeasurementValueQuality Quality { get; set; }
+		public float VoltageLevel { get; set; }
+
+		public float Voltage { get; set; }
+
+		public float Pinj { get; set; }
 
 		public float Loading { get; set; }
 
-		public float Q { get; set; }
-
-		public float P { get; set; }
-
-		public float PowerFactor { get; set; }
+		public float PEnd1 { get; set; }
 
 
 

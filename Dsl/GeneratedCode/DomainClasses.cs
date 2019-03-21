@@ -1901,6 +1901,181 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 		}
 		#endregion
+		#region ModelCodeResultsType domain property code
+		
+		/// <summary>
+		/// ModelCodeResultsType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ModelCodeResultsTypeDomainPropertyId = new global::System.Guid(0x6e159ea2, 0x1ae9, 0x4823, 0xbc, 0xed, 0x69, 0x0a, 0x90, 0x60, 0xe4, 0xa6);
+		
+		/// <summary>
+		/// Storage for ModelCodeResultsType
+		/// </summary>
+		private global::System.String modelCodeResultsTypePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ModelCodeResultsType domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Model Code
+		/// Results Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/ModelCodeResultsType.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/ModelCodeResultsType.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("6e159ea2-1ae9-4823-bced-690a9060e4a6")]
+		public global::System.String ModelCodeResultsType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return modelCodeResultsTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ModelCodeResultsTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DataGrid.ModelCodeResultsType domain property.
+		/// </summary>
+		internal sealed partial class ModelCodeResultsTypePropertyHandler : DslModeling::DomainPropertyValueHandler<DataGrid, global::System.String>
+		{
+			private ModelCodeResultsTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DataGrid.ModelCodeResultsType domain property value handler.
+			/// </summary>
+			public static readonly ModelCodeResultsTypePropertyHandler Instance = new ModelCodeResultsTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DataGrid.ModelCodeResultsType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ModelCodeResultsTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(DataGrid element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.modelCodeResultsTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DataGrid element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.modelCodeResultsTypePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region DMSType domain property code
+		
+		/// <summary>
+		/// DMSType domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DMSTypeDomainPropertyId = new global::System.Guid(0x55de2092, 0x8e08, 0x4e3f, 0xa1, 0xcc, 0x49, 0x0b, 0x79, 0x24, 0x56, 0xf9);
+		
+		/// <summary>
+		/// Storage for DMSType
+		/// </summary>
+		private global::System.String dMSTypePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of DMSType domain property.
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.DMS Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/DMSType.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/DMSType.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("55de2092-8e08-4e3f-a1cc-490b792456f9")]
+		public global::System.String DMSType
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return dMSTypePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DMSTypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DataGrid.DMSType domain property.
+		/// </summary>
+		internal sealed partial class DMSTypePropertyHandler : DslModeling::DomainPropertyValueHandler<DataGrid, global::System.String>
+		{
+			private DMSTypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DataGrid.DMSType domain property value handler.
+			/// </summary>
+			public static readonly DMSTypePropertyHandler Instance = new DMSTypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DataGrid.DMSType domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DMSTypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(DataGrid element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.dMSTypePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DataGrid element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.dMSTypePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Tab opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Tab.
@@ -1953,6 +2128,22 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 		}
 		#endregion
+		#region SuperHeaders opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of SuperHeaders.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGrid
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<DataGridSuperHeader> SuperHeaders
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<DataGridSuperHeader>, DataGridSuperHeader>(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -1979,6 +2170,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				}
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.DomainClassId)) 
 				{
 					return true;
 				}
@@ -2021,6 +2217,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			{
 				// Create link for path DataGridHasColumns.Columns
 				this.Columns.Add(sourceColumnAttribute2);
+
+				return;
+			}
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader sourceDataGridSuperHeader3 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader;
+			if (sourceDataGridSuperHeader3 != null)
+			{
+				// Create link for path DataGridHasSuperHeaders.SuperHeaders
+				this.SuperHeaders.Add(sourceDataGridSuperHeader3);
 
 				return;
 			}
@@ -2070,6 +2275,20 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.DataGridDomainRoleId, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributeDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader sourceDataGridSuperHeader3 = sourceElement as global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader;
+			if (sourceDataGridSuperHeader3 != null)
+			{
+				// Delete link for path DataGridHasSuperHeaders.SuperHeaders
+				
+				foreach (DslModeling::ElementLink link in global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.GetLinks((global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)this, sourceDataGridSuperHeader3))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridDomainRoleId, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId);
 				}
 
 				return;
@@ -3147,6 +3366,333 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributeDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainClass DataGridSuperHeader
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader
+	/// </summary>
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("0223f388-4897-4077-a19d-b0a577a4aa5f")]
+	public partial class DataGridSuperHeader : UIElementAttribute
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// DataGridSuperHeader domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x0223f388, 0x4897, 0x4077, 0xa1, 0x9d, 0xb0, 0xa5, 0x77, 0xa4, 0xaa, 0x5f);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DataGridSuperHeader(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DataGridSuperHeader(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Column domain property code
+		
+		/// <summary>
+		/// Column domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ColumnDomainPropertyId = new global::System.Guid(0x006a2db1, 0xcfb1, 0x424f, 0x9d, 0x95, 0xa2, 0x82, 0x1a, 0x75, 0x6a, 0x9b);
+		
+		/// <summary>
+		/// Storage for Column
+		/// </summary>
+		private global::System.String columnPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Column domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Column
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Column.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Column.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("006a2db1-cfb1-424f-9d95-a2821a756a9b")]
+		[System.ComponentModel.TypeConverter(typeof(DataGridSuperHeaderColumnConverter))]
+
+		public global::System.String Column
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return columnPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ColumnPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DataGridSuperHeader.Column domain property.
+		/// </summary>
+		internal sealed partial class ColumnPropertyHandler : DslModeling::DomainPropertyValueHandler<DataGridSuperHeader, global::System.String>
+		{
+			private ColumnPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DataGridSuperHeader.Column domain property value handler.
+			/// </summary>
+			public static readonly ColumnPropertyHandler Instance = new ColumnPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DataGridSuperHeader.Column domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ColumnDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(DataGridSuperHeader element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.columnPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DataGridSuperHeader element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.columnPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ColumnSpan domain property code
+		
+		/// <summary>
+		/// ColumnSpan domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ColumnSpanDomainPropertyId = new global::System.Guid(0x99516692, 0x0f9d, 0x438a, 0x94, 0xec, 0x50, 0x98, 0x71, 0xa3, 0xf9, 0x9d);
+		
+		/// <summary>
+		/// Storage for ColumnSpan
+		/// </summary>
+		private global::System.String columnSpanPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of ColumnSpan domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Column Span
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/ColumnSpan.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/ColumnSpan.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("99516692-0f9d-438a-94ec-509871a3f99d")]
+		public global::System.String ColumnSpan
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return columnSpanPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ColumnSpanPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DataGridSuperHeader.ColumnSpan domain property.
+		/// </summary>
+		internal sealed partial class ColumnSpanPropertyHandler : DslModeling::DomainPropertyValueHandler<DataGridSuperHeader, global::System.String>
+		{
+			private ColumnSpanPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DataGridSuperHeader.ColumnSpan domain property value handler.
+			/// </summary>
+			public static readonly ColumnSpanPropertyHandler Instance = new ColumnSpanPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DataGridSuperHeader.ColumnSpan domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ColumnSpanDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(DataGridSuperHeader element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.columnSpanPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DataGridSuperHeader element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.columnSpanPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Text domain property code
+		
+		/// <summary>
+		/// Text domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TextDomainPropertyId = new global::System.Guid(0xc6ddd689, 0x69ab, 0x43f5, 0xba, 0x3d, 0xd0, 0xcd, 0xc9, 0x80, 0xed, 0xe2);
+		
+		/// <summary>
+		/// Storage for Text
+		/// </summary>
+		private global::System.String textPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Text domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.Text
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Text.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Text.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("c6ddd689-69ab-43f5-ba3d-d0cdc980ede2")]
+		public global::System.String Text
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return textPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TextPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DataGridSuperHeader.Text domain property.
+		/// </summary>
+		internal sealed partial class TextPropertyHandler : DslModeling::DomainPropertyValueHandler<DataGridSuperHeader, global::System.String>
+		{
+			private TextPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DataGridSuperHeader.Text domain property value handler.
+			/// </summary>
+			public static readonly TextPropertyHandler Instance = new TextPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DataGridSuperHeader.Text domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TextDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(DataGridSuperHeader element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.textPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DataGridSuperHeader element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.textPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region DataGrid opposite domain role accessor
+		/// <summary>
+		/// Gets or sets DataGrid.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeader
+		/// </summary>
+		public virtual DataGrid DataGrid
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId) as DataGrid;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId, value);
 			}
 		}
 		#endregion

@@ -513,6 +513,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: DataGridHasSuperHeaders -->
+          <xsd:element name="superHeaders" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of DataGridHasSuperHeaders</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="dataGridHasSuperHeaders" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of DataGridHasSuperHeaders needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -520,6 +535,10 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: ModelCodeResultsType -->
+        <xsd:attribute name="modelCodeResultsType" type="xsd:string" />
+        <!-- Property: DMSType -->
+        <xsd:attribute name="dMSType" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -630,6 +649,39 @@
   <xsd:complexType name="DataGridAttributeMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for DataGridAttribute instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttributeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridSuperHeader -->
+  <xsd:element name="dataGridSuperHeader" type="DataGridSuperHeader" substitutionGroup="uIElementAttribute" />
+  <xsd:complexType name="DataGridSuperHeader">
+    <xsd:complexContent>
+      <xsd:extension base="UIElementAttribute">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Column -->
+        <xsd:attribute name="column" type="xsd:string" />
+        <!-- Property: ColumnSpan -->
+        <xsd:attribute name="columnSpan" type="xsd:string" />
+        <!-- Property: Text -->
+        <xsd:attribute name="text" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridSuperHeader Moniker -->
+  <xsd:element name="dataGridSuperHeaderMoniker" type="DataGridSuperHeaderMoniker" substitutionGroup="uIElementAttributeMoniker" />
+  <xsd:complexType name="DataGridSuperHeaderMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGridSuperHeader instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="UIElementAttributeMoniker">
@@ -985,6 +1037,46 @@
   <xsd:complexType name="DataGridHasColumnsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for DataGridHasColumns instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridHasSuperHeaders -->
+  <xsd:element name="dataGridHasSuperHeaders" type="DataGridHasSuperHeaders" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DataGridHasSuperHeaders">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end DataGridSuperHeader -->
+          <xsd:element ref="dataGridSuperHeader" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- DataGridHasSuperHeaders Moniker -->
+  <xsd:element name="dataGridHasSuperHeadersMoniker" type="DataGridHasSuperHeadersMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="DataGridHasSuperHeadersMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for DataGridHasSuperHeaders instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

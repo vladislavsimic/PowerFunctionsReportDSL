@@ -21,11 +21,11 @@ using TelventDMS.Common.DMS.Common.Converters;
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 {
-    public partial class EMSLoadFlowGeneratorViewModel : ViewModelBase, ILocatable
+    public partial class EMSLoadFlowSectionViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         
-		private EMSLoadFlowGeneratorRecord reportRecord;
+		private EMSLoadFlowSectionRecord reportRecord;
 
 		private DMSType recordType;
 
@@ -38,16 +38,16 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Constructors
 
-		public EMSLoadFlowGeneratorViewModel()
+		public EMSLoadFlowSectionViewModel()
 		{
 		}
  
 
-		public EMSLoadFlowGeneratorViewModel(EMSLoadFlowGeneratorRecord reportRecord, bool tabularViewActive)
+		public EMSLoadFlowSectionViewModel(EMSLoadFlowSectionRecord reportRecord, bool tabularViewActive)
 		{
 			if (reportRecord == null)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowGeneratorViewModel(), should not be null.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowSectionViewModel(), should not be null.");
 				return;
 			}
 			this.reportRecord = reportRecord;
@@ -107,7 +107,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public EMSLoadFlowGeneratorRecord ReportRecord
+		public EMSLoadFlowSectionRecord ReportRecord
 		{
 			get
 			{
@@ -145,14 +145,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public float P
-		{
-			get
-			{
-				return reportRecord.P;
-			}
-		}
-
 		public float Loading
 		{
 			get
@@ -161,11 +153,11 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public float Q
+		public float PEnd1
 		{
 			get
 			{
-				return reportRecord.Q;
+				return reportRecord.PEnd1;
 			}
 		}
 

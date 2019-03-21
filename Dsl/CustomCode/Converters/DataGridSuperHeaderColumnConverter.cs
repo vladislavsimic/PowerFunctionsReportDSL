@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 {
-	public class MyTypeConverter : System.ComponentModel.TypeConverter
+	public class DataGridSuperHeaderColumnConverter : System.ComponentModel.TypeConverter
 	{
 		/// <summary>
 		/// Return true to indicate that we return a list of values to choose from
@@ -49,18 +49,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 			// in which case context.Instance will be an array.
 			Store store = GetStore(context.Instance);
 
-			ColumnAttribute attr = (ColumnAttribute)context.Instance;
-			DataGrid dataGrid = attr.DataGrid;
+			DataGridSuperHeader sh = (DataGridSuperHeader)context.Instance;
+			DataGrid dg = sh.DataGrid;
 
 			List<string> values = new List<string>();
 
 			if (store != null)
 			{
-				foreach(ColumnAttribute attribute in dataGrid.Columns)
+				foreach(ColumnAttribute col in dg.Columns)
 				{
-					values.Add(attribute.Name);
+					values.Add(col.Name);
 				}
-					
 			}
 
 			values.Add("");
@@ -76,16 +75,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 			// We assume that "instance" will either be a single model element, or
 			// an array of model elements (if multiple items are selected).
 
-			ColumnAttribute currentElement = null;
+			DataGridSuperHeader currentElement = null;
 
 			object[] objects = gridSelection as object[];
 			if (objects != null && objects.Length > 0)
 			{
-				currentElement = objects[0] as ColumnAttribute;
+				currentElement = objects[0] as DataGridSuperHeader;
 			}
 			else
 			{
-				currentElement = gridSelection as ColumnAttribute;
+				currentElement = gridSelection as DataGridSuperHeader;
 			}
 
 			return (currentElement == null) ? null : currentElement.Store;

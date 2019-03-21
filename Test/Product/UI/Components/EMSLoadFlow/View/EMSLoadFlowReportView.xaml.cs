@@ -57,7 +57,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 			moduleEnvironment = ServiceLocator.Current.GetInstance<IModuleEnvironment>();
 			DataContext = reportViewModel;
 			tabControl.SelectionChanged += TabControl_SelectionChanged;
-			ShuntsTabControl.SelectionChanged += ShuntsTabControl_SelectionChanged;
 
 			CommonHtv.SelectedItemChanged += HTV_SelectedItemChanged;
 			CommonHtv.ExpandedCollapsed += HTV_SelectedItemChanged;
@@ -94,37 +93,22 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 				{
 					return;
 				}
-				if (Equals(selectedTabItem, Shunts))
+				if (Equals(selectedTabItem, Node) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Node)
 				{
-					ShuntsTabControlUpdate(ShuntsTabControl);
+					reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Node;
+					reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
+					reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
+				}
+				else if (Equals(selectedTabItem, Section) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Section)
+				{
+					reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Section;
+					reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
+					reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
 				}
 			}
 		}
 
-		private void ShuntsTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			if (!(e.Source is TabControl) || e.Source != sender) return;
-			TabControl tc = sender as TabControl;
-			ShuntsTabControlUpdate(tc);
-		}
 
-		protected internal void ShuntsTabControlUpdate(TabControl tc)
-		{
-			if (tc == null || tc.SelectedItem == null || reportViewModel.DataProvider == null) return;
-			TabItem selectedTabItem = tc.SelectedItem as TabItem;
-			if (Equals(selectedTabItem, Generator) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Generator)
-			{
-				reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Generator;
-				reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
-				reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
-			}
-			else if (Equals(selectedTabItem, Consumer) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Consumer)
-			{
-				reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Consumer;
-				reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
-				reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
-			}
-		}
 
 
 		public void Dispose()

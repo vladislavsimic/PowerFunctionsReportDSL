@@ -84,6 +84,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				typeof(ColumnAttribute),
 				typeof(TabAttribute),
 				typeof(DataGridAttribute),
+				typeof(DataGridSuperHeader),
 				typeof(ModelRootHasComments),
 				typeof(CommentReferencesModelTyped),
 				typeof(ModelRootHasTypes),
@@ -93,6 +94,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				typeof(TabHasAttributes),
 				typeof(DataGridHasAttributes),
 				typeof(DataGridHasColumns),
+				typeof(DataGridHasSuperHeaders),
 				typeof(PowerFunctionsReportDSLDiagram),
 				typeof(CommentConnector),
 				typeof(UIConnector),
@@ -131,6 +133,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(ModelClass), "ShouldGenerate", ModelClass.ShouldGenerateDomainPropertyId, typeof(ModelClass.ShouldGeneratePropertyHandler)),
 				new DomainMemberInfo(typeof(UIElement), "ShouldGenerate", UIElement.ShouldGenerateDomainPropertyId, typeof(UIElement.ShouldGeneratePropertyHandler)),
 				new DomainMemberInfo(typeof(Tab), "Header", Tab.HeaderDomainPropertyId, typeof(Tab.HeaderPropertyHandler)),
+				new DomainMemberInfo(typeof(DataGrid), "ModelCodeResultsType", DataGrid.ModelCodeResultsTypeDomainPropertyId, typeof(DataGrid.ModelCodeResultsTypePropertyHandler)),
+				new DomainMemberInfo(typeof(DataGrid), "DMSType", DataGrid.DMSTypeDomainPropertyId, typeof(DataGrid.DMSTypePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "BindingName", ColumnAttribute.BindingNameDomainPropertyId, typeof(ColumnAttribute.BindingNamePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "Width", ColumnAttribute.WidthDomainPropertyId, typeof(ColumnAttribute.WidthPropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "VerticalAlignment", ColumnAttribute.VerticalAlignmentDomainPropertyId, typeof(ColumnAttribute.VerticalAlignmentPropertyHandler)),
@@ -141,6 +145,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(ColumnAttribute), "ModelCode", ColumnAttribute.ModelCodeDomainPropertyId, typeof(ColumnAttribute.ModelCodePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "MeasurementType", ColumnAttribute.MeasurementTypeDomainPropertyId, typeof(ColumnAttribute.MeasurementTypePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "ShouldGenerate", ColumnAttribute.ShouldGenerateDomainPropertyId, typeof(ColumnAttribute.ShouldGeneratePropertyHandler)),
+				new DomainMemberInfo(typeof(DataGridSuperHeader), "Column", DataGridSuperHeader.ColumnDomainPropertyId, typeof(DataGridSuperHeader.ColumnPropertyHandler)),
+				new DomainMemberInfo(typeof(DataGridSuperHeader), "ColumnSpan", DataGridSuperHeader.ColumnSpanDomainPropertyId, typeof(DataGridSuperHeader.ColumnSpanPropertyHandler)),
+				new DomainMemberInfo(typeof(DataGridSuperHeader), "Text", DataGridSuperHeader.TextDomainPropertyId, typeof(DataGridSuperHeader.TextPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -169,6 +176,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainRolePlayerInfo(typeof(DataGridHasAttributes), "DataGridAttribute", DataGridHasAttributes.DataGridAttributeDomainRoleId),
 				new DomainRolePlayerInfo(typeof(DataGridHasColumns), "DataGrid", DataGridHasColumns.DataGridDomainRoleId),
 				new DomainRolePlayerInfo(typeof(DataGridHasColumns), "ColumnAttribute", DataGridHasColumns.ColumnAttributeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridHasSuperHeaders), "DataGrid", DataGridHasSuperHeaders.DataGridDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataGridHasSuperHeaders), "DataGridSuperHeader", DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId),
 			};
 		}
 		#endregion
@@ -190,7 +199,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(26);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(27);
 				createElementMap.Add(typeof(ModelRoot), 0);
 				createElementMap.Add(typeof(Comment), 1);
 				createElementMap.Add(typeof(NamedElement), 2);
@@ -202,14 +211,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				createElementMap.Add(typeof(ColumnAttribute), 8);
 				createElementMap.Add(typeof(TabAttribute), 9);
 				createElementMap.Add(typeof(DataGridAttribute), 10);
-				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 11);
-				createElementMap.Add(typeof(CommentConnector), 12);
-				createElementMap.Add(typeof(TabConnector), 13);
-				createElementMap.Add(typeof(ViewModelConnector), 14);
-				createElementMap.Add(typeof(CommentShape), 15);
-				createElementMap.Add(typeof(EnumShape), 16);
-				createElementMap.Add(typeof(TabShape), 17);
-				createElementMap.Add(typeof(DataGridShape), 18);
+				createElementMap.Add(typeof(DataGridSuperHeader), 11);
+				createElementMap.Add(typeof(PowerFunctionsReportDSLDiagram), 12);
+				createElementMap.Add(typeof(CommentConnector), 13);
+				createElementMap.Add(typeof(TabConnector), 14);
+				createElementMap.Add(typeof(ViewModelConnector), 15);
+				createElementMap.Add(typeof(CommentShape), 16);
+				createElementMap.Add(typeof(EnumShape), 17);
+				createElementMap.Add(typeof(TabShape), 18);
+				createElementMap.Add(typeof(DataGridShape), 19);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -234,14 +244,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				case 8: return new ColumnAttribute(partition, propertyAssignments);
 				case 9: return new TabAttribute(partition, propertyAssignments);
 				case 10: return new DataGridAttribute(partition, propertyAssignments);
-				case 11: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
-				case 12: return new CommentConnector(partition, propertyAssignments);
-				case 13: return new TabConnector(partition, propertyAssignments);
-				case 14: return new ViewModelConnector(partition, propertyAssignments);
-				case 15: return new CommentShape(partition, propertyAssignments);
-				case 16: return new EnumShape(partition, propertyAssignments);
-				case 17: return new TabShape(partition, propertyAssignments);
-				case 18: return new DataGridShape(partition, propertyAssignments);
+				case 11: return new DataGridSuperHeader(partition, propertyAssignments);
+				case 12: return new PowerFunctionsReportDSLDiagram(partition, propertyAssignments);
+				case 13: return new CommentConnector(partition, propertyAssignments);
+				case 14: return new TabConnector(partition, propertyAssignments);
+				case 15: return new ViewModelConnector(partition, propertyAssignments);
+				case 16: return new CommentShape(partition, propertyAssignments);
+				case 17: return new EnumShape(partition, propertyAssignments);
+				case 18: return new TabShape(partition, propertyAssignments);
+				case 19: return new DataGridShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -264,7 +275,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
 				createElementLinkMap.Add(typeof(ModelRootHasComments), 0);
 				createElementLinkMap.Add(typeof(CommentReferencesModelTyped), 1);
 				createElementLinkMap.Add(typeof(ModelRootHasTypes), 2);
@@ -274,6 +285,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				createElementLinkMap.Add(typeof(TabHasAttributes), 6);
 				createElementLinkMap.Add(typeof(DataGridHasAttributes), 7);
 				createElementLinkMap.Add(typeof(DataGridHasColumns), 8);
+				createElementLinkMap.Add(typeof(DataGridHasSuperHeaders), 9);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -297,6 +309,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				case 6: return new TabHasAttributes(partition, roleAssignments, propertyAssignments);
 				case 7: return new DataGridHasAttributes(partition, roleAssignments, propertyAssignments);
 				case 8: return new DataGridHasColumns(partition, roleAssignments, propertyAssignments);
+				case 9: return new DataGridHasSuperHeaders(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -481,6 +494,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes.TabAttributeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes.DataGridAttributeDomainRoleId, true);
 			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns.ColumnAttributeDomainRoleId, true);
+			DomainRoles.Add(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasSuperHeaders.DataGridSuperHeaderDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

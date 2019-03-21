@@ -14,8 +14,8 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
 
 	[DataContract]
-	[KnownType(typeof(EMSLoadFlowGeneratorResults))]
-	[KnownType(typeof(EMSLoadFlowConsumerResults))]
+	[KnownType(typeof(EMSLoadFlowNodeResults))]
+	[KnownType(typeof(EMSLoadFlowSectionResults))]
 
     public partial class EMSLoadFlowReportResult : JobResult
     {

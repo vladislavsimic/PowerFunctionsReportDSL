@@ -46,6 +46,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			string assName = string.Empty;
 			string accModifier = string.Empty;
 
+			sb.AppendLine(Resources.Tab2 + "public MeasurementValueQuality Quality { get; set; }");
+
 			foreach (ModelType type in DataGrid.ModelRoot.Types)
 			{
 				if (!(type is DataGrid))
@@ -57,6 +59,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 				{
 					continue;
 				}
+
 				foreach (ColumnAttribute attr in model.Columns)
 				{
 					string customType = TypesToCSharpType.Convert(attr);
@@ -96,7 +99,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 		protected override string GetSuperClass()
 		{
-			return " : HierarchicalReportRecord";
+			return " : HierarchicalRecordData";
 		}
 
 		protected override string GetUsings()

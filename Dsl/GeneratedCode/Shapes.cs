@@ -1393,7 +1393,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					localCompartmentsOffset = baseCompartmentDescriptions.Length;
 				}
-				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[2+localCompartmentsOffset];
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[3+localCompartmentsOffset];
 				
 				if(baseCompartmentDescriptions!=null)
 				{
@@ -1416,6 +1416,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 						null, null,
 						false);
 					compartmentDescriptions[localCompartmentsOffset+1] = descriptor;
+				}
+				{
+					string title = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("DataGridShapeSuperHeadersTitle");
+					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("SuperHeaders", title, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
+						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
+						null, null,
+						false);
+					compartmentDescriptions[localCompartmentsOffset+2] = descriptor;
 				}
 			}
 			
@@ -1449,7 +1458,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					{
 						localCompartmentMappingsOffset = baseMappings.Length;
 					}
-					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[2+localCompartmentMappingsOffset];
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[3+localCompartmentMappingsOffset];
 					
 					if(baseMappings!=null)
 					{
@@ -1468,6 +1477,14 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId, 
 																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.DomainClassId, 
 																				GetElementsFromDataGridForColumns,
+																				null,
+																				null,
+																				null);
+					mappings[localCompartmentMappingsOffset+2] = new DslDiagrams::ElementListCompartmentMapping(
+																				"SuperHeaders", 
+																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId, 
+																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader.DomainClassId, 
+																				GetElementsFromDataGridForSuperHeaders,
 																				null,
 																				null,
 																				null);
@@ -1512,6 +1529,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid root = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)rootElement;
 					// Segments 0 and 1
 					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute> result = root.Columns;
+				return result;
+			}
+			internal static global::System.Collections.IList GetElementsFromDataGridForSuperHeaders(DslModeling::ModelElement rootElement)
+			{
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid root = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid)rootElement;
+					// Segments 0 and 1
+					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader> result = root.SuperHeaders;
 				return result;
 			}
 			#endregion

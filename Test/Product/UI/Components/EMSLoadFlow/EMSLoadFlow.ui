@@ -1,65 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="8f8ff828-8f41-40c9-adbd-b43eb7bcbbe6" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="97fbb570-7444-49bf-b5be-9a0b78e1ed33" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="5886b7d5-c48a-4b2d-bafc-013a141771fc">
-      <tab Id="1eb21185-6efd-48f8-b3cd-551bf28f2356" name="Shunts" header="Shunts">
-        <targetTabbed>
-          <tabReferencesTargetTabbed Id="69eac6e5-170b-4c03-9028-0f0f35e8beca">
-            <tabMoniker Id="2152fdd4-9b0b-49ec-a187-31b9d147defd" />
-          </tabReferencesTargetTabbed>
-          <tabReferencesTargetTabbed Id="9619036d-1a72-41ba-9b86-edb561f8bc60">
-            <tabMoniker Id="194e28ba-e77c-4257-8980-3e31dbae0584" />
-          </tabReferencesTargetTabbed>
-        </targetTabbed>
-      </tab>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="24ee7efe-e284-4b34-bcde-4d711fc5b273">
-      <tab Id="2152fdd4-9b0b-49ec-a187-31b9d147defd" name="Generator" header="Generators">
+    <modelRootHasTypes Id="2aeffc78-0da6-491e-a38c-72df676f571e">
+      <tab Id="4a23048e-bd71-4ebf-a48c-95dd95061838" name="Node" header="Nodes">
         <dataGrid>
-          <tabReferencesDataGrid Id="9c848ade-3a5d-4a9f-b1bb-765db513b8d7">
-            <dataGridMoniker Id="696ddd98-70f4-455f-80f3-47ec8a7fb7e9" />
+          <tabReferencesDataGrid Id="0c699d3c-afe0-48a7-97c2-8c374b187158">
+            <dataGridMoniker Id="68872d87-535a-429a-9c61-80fda0298c7e" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="9749c1b4-64d7-42ab-9650-28e0430efe57">
-      <tab Id="194e28ba-e77c-4257-8980-3e31dbae0584" name="Consumer" header="Loads">
+    <modelRootHasTypes Id="02ba411b-a6db-48f1-977d-9ed3590004df">
+      <dataGrid Id="68872d87-535a-429a-9c61-80fda0298c7e" name="EMSLoadFlowNode" modelCodeResultsType="BUSNODERESTA" dMSType="BUSNODE">
+        <columns>
+          <dataGridHasColumns Id="de2f23ee-ecc6-4244-a850-a98cf1923372">
+            <columnAttribute Id="8cd3e9f2-06ff-41e7-ba11-5200870321d4" name="VoltageLevel" header="Voltage level" modelCode="BUSNODERESLF_NOMINALVOLTAGE" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="ad3bbf85-3ae1-4a7d-9339-c99c874feb27">
+            <columnAttribute Id="ee26bc94-7ee3-42ad-9277-6268d5990e20" name="Voltage" header="Voltage" modelCode="BUSNODERESLF_LINETOLINE_VMIN" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="8fdafe5a-513f-4cc2-a30e-b4c24689db02">
+            <columnAttribute Id="a85036ac-69e7-4e10-ba55-3df4c35845e8" name="Pinj" header="P Inj" modelCode="CONDUCTINGEQRESLF_P" />
+          </dataGridHasColumns>
+        </columns>
+        <superHeaders>
+          <dataGridHasSuperHeaders Id="c2808978-5cf5-47bf-bcea-38da7d8298a0">
+            <dataGridSuperHeader Id="82e65195-b989-4f55-9536-738018aa2770" name="shNodes" column="VoltageLevel" columnSpan="2" text="Power" />
+          </dataGridHasSuperHeaders>
+        </superHeaders>
+      </dataGrid>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="78add6dc-9f33-4f53-829c-39a4d38e10c1">
+      <tab Id="0747cdac-e213-418b-bef9-752db1edb586" name="Section" header="Sections">
         <dataGrid>
-          <tabReferencesDataGrid Id="8995a904-7665-456f-8590-e652f92a6879">
-            <dataGridMoniker Id="2a25f435-5cf3-4337-a8e9-0ee859503600" />
+          <tabReferencesDataGrid Id="749b70c8-b3ce-4be3-b5bc-61ac240bd90d">
+            <dataGridMoniker Id="b12f899d-992a-47f9-9a12-a62c9583b3b7" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="f1b56f7d-7e31-4c94-ac29-8a54cc856952">
-      <dataGrid Id="696ddd98-70f4-455f-80f3-47ec8a7fb7e9" name="EMSLoadFlowGenerator">
+    <modelRootHasTypes Id="6bdda84d-0953-4775-b529-4936acaf44ed">
+      <dataGrid Id="b12f899d-992a-47f9-9a12-a62c9583b3b7" name="EMSLoadFlowSection" modelCodeResultsType="SECTIONRESULTSTA" dMSType="SECTION">
         <columns>
-          <dataGridHasColumns Id="b7d61261-825d-4b07-9d5e-0a4808ead1b9">
-            <columnAttribute Id="50eefe90-b5b3-45b7-939c-b25dd216f339" name="P" header="P" />
+          <dataGridHasColumns Id="df118399-a036-4a42-ac17-131ed53bc2fa">
+            <columnAttribute Id="c7cc545e-c4e8-4c4b-a854-7050d07f58f2" name="Loading" header="Loading" modelCode="BRANCHRESLF_RELATIVELOAD" />
           </dataGridHasColumns>
-          <dataGridHasColumns Id="991dec5a-cab5-42d3-860c-85309363194e">
-            <columnAttribute Id="3ee34d6d-0a81-4aac-8e72-7f2eeb0a51c0" name="Loading" header="Loading" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="308bae94-a224-45c2-aced-3e0a30f2d5d1">
-            <columnAttribute Id="f51e8ef0-01ed-4251-bae7-9b0467998ee2" name="Q" header="Q" />
+          <dataGridHasColumns Id="4e20d5fa-3932-4851-82f6-597b086cd445">
+            <columnAttribute Id="7a555298-b368-4240-8735-edcde9f7c8de" name="PEnd1" header="P End 1" modelCode="CONDUCTINGEQRESLF_P" />
           </dataGridHasColumns>
         </columns>
       </dataGrid>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="73f09df9-e55c-4f3d-8529-3144b4c851f4">
-      <dataGrid Id="2a25f435-5cf3-4337-a8e9-0ee859503600" name="EMSLoadFlowConsumer">
-        <columns>
-          <dataGridHasColumns Id="be2e3b54-d7a0-45bd-be77-5707e5dbd063">
-            <columnAttribute Id="5445a4c4-9143-4363-b5c6-63818de8c5bc" name="P" header="P" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="b76c9af0-c4d2-46d0-adaa-09b843e8a04b">
-            <columnAttribute Id="dc8e5700-0f4d-4301-8aff-5276d3a1ab57" name="PowerFactor" header="Power Factor" />
-          </dataGridHasColumns>
-        </columns>
-      </dataGrid>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="d48d81ee-0c50-40fa-ba86-45fd15750fc1">
-      <enum Id="d6b2b5f1-45ef-46c8-a6e1-57b98ffb3406" name="ELimitViolation" />
     </modelRootHasTypes>
   </types>
 </modelRoot>
