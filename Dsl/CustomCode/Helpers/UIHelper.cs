@@ -106,10 +106,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		{
 			StringBuilder sb = new StringBuilder();
 
+            ModelRoot root = tab.ModelRoot;
+
 			string tabHeader = string.Empty;
 			if (tab.Header != null)
 			{
-				tabHeader = tab.Header;
+                
+                tabHeader = "Header=\"{ Binding Path = ResourcesGenerated." + root.Name + "_" + tab.Header + ", Source ={ StaticResource LocalizedStrings} }\"";
 			}
 			else
 			{
@@ -206,11 +209,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 							string header = string.Empty;
 							if (attr.Header != null)
 							{
-								header = " Header=\"" + attr.Header + "\"";
+                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Header + ", Source={StaticResource LocalizedStrings} }\"";
+                                ResxManager.Manager.AddResource(attr.Header);
 							}
 							else
 							{
-								header = " Header=\"" + attr.Name + "\"";
+                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Name + ", Source={StaticResource LocalizedStrings} }\"";
+                                ResxManager.Manager.AddResource(attr.Name);
 							}
 							string binding = string.Empty;
 							if (string.IsNullOrEmpty(attr.BindingName))

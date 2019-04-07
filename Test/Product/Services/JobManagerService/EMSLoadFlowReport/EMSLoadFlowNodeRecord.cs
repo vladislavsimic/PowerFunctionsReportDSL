@@ -31,13 +31,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
         #region Properties
         
 		[DataMember]
-		public float VoltageLevel { get; set; }
-
-		[DataMember]
-		public float Voltage { get; set; }
-
-		[DataMember]
-		public float Pinj { get; set; }
+		public float P { get; set; }
 
 
 

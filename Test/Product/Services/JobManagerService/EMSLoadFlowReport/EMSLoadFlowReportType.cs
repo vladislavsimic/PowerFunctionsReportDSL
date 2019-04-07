@@ -13,7 +13,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
     {
 
 		Node,
-		Section,
 		NoResults,
 
 

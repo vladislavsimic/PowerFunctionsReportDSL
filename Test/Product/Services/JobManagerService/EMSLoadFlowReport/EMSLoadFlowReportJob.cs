@@ -264,12 +264,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 						EMSLoadFlowNodeResults results = new EMSLoadFlowNodeResults { Records = records };
 						return results;
 					}
-				case EMSLoadFlowReportType.Section:
-					{
-						List<EMSLoadFlowSectionRecord> records = CreateEMSLoadFlowSectionRecords();
-						EMSLoadFlowSectionResults results = new EMSLoadFlowSectionResults { Records = records };
-						return results;
-					}
 				default:
 					{
 						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error while creating results for EMSLoadFlow Report.EMSLoadFlowReportType {0} is unsupported.", reportType);
@@ -336,9 +330,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			EMSLoadFlowRecordBean data = recordData as EMSLoadFlowRecordBean;
 			if (data != null && (DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(id) == DMSType.BUSNODE)
 			{
-				rec.VoltageLevel = data.VoltageLevel;
-				rec.Voltage = data.Voltage;
-				rec.Pinj = data.Pinj;
+				rec.P = data.P;
 			}
 			return rec;
 		}
@@ -349,9 +341,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			if (gids.Count <= 0) return;
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
-					ModelCode.BUSNODERESLF_NOMINALVOLTAGE,
-					ModelCode.BUSNODERESLF_LINETOLINE_VMIN,
-					ModelCode.CONDUCTINGEQRESLF_P,
+					ModelCode.LFRES_P,
 
 				}, new List<Association>(), gids, new List<Association>(), ref mdc);
 			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
@@ -366,9 +356,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting EMSLoadFlowNode. Record data is null!");
 						throw new ArgumentNullException("gids");
 					}
-					data.VoltageLevel = rds[i].GetProperty(ModelCode.BUSNODERESLF_NOMINALVOLTAGE).AsFloat();
-					data.Voltage = rds[i].GetProperty(ModelCode.BUSNODERESLF_LINETOLINE_VMIN).AsFloat();
-					data.Pinj = rds[i].GetProperty(ModelCode.CONDUCTINGEQRESLF_P).AsFloat();
+					data.P = rds[i].GetProperty(ModelCode.LFRES_P).AsFloat();
 
 				}
 				count -= rds.Count;
@@ -377,103 +365,6 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 		}
 
 		#endregion EMSLoadFlowNodeRecord
-
-
-		#region EMSLoadFlowSectionRecord
-
-		private List<EMSLoadFlowSectionRecord> CreateEMSLoadFlowSectionRecords()
-		{
-			List<EMSLoadFlowSectionRecord> records = new List<EMSLoadFlowSectionRecord>();
-			try
-			{
-				List<long> gids = GetElementsForSelectedCircuits(selectedRecords, ModelCode.SECTIONRESULTSTA, ModelCode.TARESVAL_PARENTCIRCUIT);
-				FillEMSLoadFlowSectionProperties(gids);
-				GetElementsNames(gids);
-				foreach (long id in selectedRecords)
-				{
-					EMSLoadFlowSectionRecord circuitRecord = CreateEMSLoadFlowSectionRecord(hierarchyTreeFilter, id);
-					records.Add(circuitRecord);
-					if (hierarchyTreeFilter.GetNodeByLid(id).Children == null) continue;
-					foreach (HierarchicalFilterNode childNode in hierarchyTreeFilter.GetNodeByLid(id).Children)
-					{
-						if ((DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(childNode.Lid) != DMSType.SECTION) continue;
-						MeasurementValueQuality lfQuality;
-						if (!lfMeasureQuality.TryGetValue(id, out lfQuality) || CheckIsLFStatusDisabled(lfQuality))
-						{
-							continue;
-						}
-						records.Add(CreateEMSLoadFlowSectionRecord(hierarchyTreeFilter, childNode.Lid));
-					}
-				}
-			}
-			catch (Exception)
-			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while creating EMSLoadFlowSection records.");
-				throw;
-			}
-			return records;
-		}
-
-		private EMSLoadFlowSectionRecord CreateEMSLoadFlowSectionRecord(HierarchicalFilter hierarchyTree, long id)
-		{
-			EMSLoadFlowSectionRecord rec = new EMSLoadFlowSectionRecord();
-			HierarchicalRecordData recordData;
-			if (!hierarchicalRecordData.TryGetValue(id, out recordData))
-			{
-				DMSLogger.Log(DMSLogger.LogLevel.DebugLog, "[EMSLoadFlow]: Record { 0:X} does not exists in hierarchical record data dictionary.", id);
-				return rec;
-			}
-			if (recordData.Name != null && !recordData.Name.Equals(string.Empty))
-			{
-				rec.Title = string.Format("{0}", recordData.Name);
-			}
-			else
-			{
-				rec.Title = string.Empty;
-			}
-			rec.Lid = id;
-			rec.Level = (byte)hierarchyTreeFilter.GetNodeByLid(id).Level;
-			EMSLoadFlowRecordBean data = recordData as EMSLoadFlowRecordBean;
-			if (data != null && (DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(id) == DMSType.SECTION)
-			{
-				rec.Loading = data.Loading;
-				rec.PEnd1 = data.PEnd1;
-			}
-			return rec;
-		}
-
-		private void FillEMSLoadFlowSectionProperties(List<long> gids)
-		{
-			long mdc = 0;
-			if (gids.Count <= 0) return;
-			var iteratorId = GdaQuery.GetDescendentValues(0,
-				new List<ModelCode> {
-					ModelCode.BRANCHRESLF_RELATIVELOAD,
-					ModelCode.CONDUCTINGEQRESLF_P,
-
-				}, new List<Association>(), gids, new List<Association>(), ref mdc);
-			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
-			while (count > 0)
-			{
-				List<ResourceDescription> rds = GdaQuery.IteratorNext(50000, iteratorId);
-				for (int i = 0; i < rds.Count; i++)
-				{
-					EMSLoadFlowRecordBean data = (hierarchicalRecordData[rds[i].Id] as EMSLoadFlowRecordBean);
-					if (data == null)
-					{
-						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting EMSLoadFlowSection. Record data is null!");
-						throw new ArgumentNullException("gids");
-					}
-					data.Loading = rds[i].GetProperty(ModelCode.BRANCHRESLF_RELATIVELOAD).AsFloat();
-					data.PEnd1 = rds[i].GetProperty(ModelCode.CONDUCTINGEQRESLF_P).AsFloat();
-
-				}
-				count -= rds.Count;
-			}
-			GdaQuery.IteratorClose(iteratorId);
-		}
-
-		#endregion EMSLoadFlowSectionRecord
 
 
 

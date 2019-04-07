@@ -15,7 +15,7 @@
     <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
     <SignAssembly>true</SignAssembly>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <GacTargetOutput>false</GacTargetOutput>
     <StartupObject>
     </StartupObject>
@@ -104,6 +104,7 @@
     <Compile Include="CustomCode\Converters\TypesToModelCodeCastConverter.cs" />
     <Compile Include="CustomCode\Converters\VerticalAlignmentConverter.cs" />
     <Compile Include="CustomCode\Helpers\JMSHelper.cs" />
+    <Compile Include="CustomCode\Helpers\ResxManager.cs" />
     <Compile Include="CustomCode\Helpers\UIHelper.cs" />
     <Compile Include="CustomCode\Model\ICodeHandler.cs" />
     <Compile Include="CustomCode\Model\JMSBean.cs" />

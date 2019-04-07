@@ -99,12 +99,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 					reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
 					reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
 				}
-				else if (Equals(selectedTabItem, Section) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Section)
-				{
-					reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Section;
-					reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
-					reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
-				}
 			}
 		}
 

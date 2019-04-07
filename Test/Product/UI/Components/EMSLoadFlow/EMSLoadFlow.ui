@@ -1,52 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="97fbb570-7444-49bf-b5be-9a0b78e1ed33" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="013a1134-6657-4756-8643-df5e2c0695ae" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="2aeffc78-0da6-491e-a38c-72df676f571e">
-      <tab Id="4a23048e-bd71-4ebf-a48c-95dd95061838" name="Node" header="Nodes">
+    <modelRootHasTypes Id="bd9054d1-5237-47c1-b052-8830a4354808">
+      <tab Id="3c376dbb-8b63-474a-9844-37a3c1c3c5ad" name="Node" header="Nodes">
         <dataGrid>
-          <tabReferencesDataGrid Id="0c699d3c-afe0-48a7-97c2-8c374b187158">
-            <dataGridMoniker Id="68872d87-535a-429a-9c61-80fda0298c7e" />
+          <tabReferencesDataGrid Id="fa23e3fa-f2c8-4dcd-a404-1f7acc2ac266">
+            <dataGridMoniker Id="221a99f9-58d5-44cb-a74a-ce266b1e5e4b" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="02ba411b-a6db-48f1-977d-9ed3590004df">
-      <dataGrid Id="68872d87-535a-429a-9c61-80fda0298c7e" name="EMSLoadFlowNode" modelCodeResultsType="BUSNODERESTA" dMSType="BUSNODE">
+    <modelRootHasTypes Id="6e56eb82-601e-4591-b190-6214618df96b">
+      <dataGrid Id="221a99f9-58d5-44cb-a74a-ce266b1e5e4b" name="EMSLoadFlowNode" modelCodeResultsType="BUSNODERESTA" dMSType="BUSNODE">
         <columns>
-          <dataGridHasColumns Id="de2f23ee-ecc6-4244-a850-a98cf1923372">
-            <columnAttribute Id="8cd3e9f2-06ff-41e7-ba11-5200870321d4" name="VoltageLevel" header="Voltage level" modelCode="BUSNODERESLF_NOMINALVOLTAGE" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="ad3bbf85-3ae1-4a7d-9339-c99c874feb27">
-            <columnAttribute Id="ee26bc94-7ee3-42ad-9277-6268d5990e20" name="Voltage" header="Voltage" modelCode="BUSNODERESLF_LINETOLINE_VMIN" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="8fdafe5a-513f-4cc2-a30e-b4c24689db02">
-            <columnAttribute Id="a85036ac-69e7-4e10-ba55-3df4c35845e8" name="Pinj" header="P Inj" modelCode="CONDUCTINGEQRESLF_P" />
-          </dataGridHasColumns>
-        </columns>
-        <superHeaders>
-          <dataGridHasSuperHeaders Id="c2808978-5cf5-47bf-bcea-38da7d8298a0">
-            <dataGridSuperHeader Id="82e65195-b989-4f55-9536-738018aa2770" name="shNodes" column="VoltageLevel" columnSpan="2" text="Power" />
-          </dataGridHasSuperHeaders>
-        </superHeaders>
-      </dataGrid>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="78add6dc-9f33-4f53-829c-39a4d38e10c1">
-      <tab Id="0747cdac-e213-418b-bef9-752db1edb586" name="Section" header="Sections">
-        <dataGrid>
-          <tabReferencesDataGrid Id="749b70c8-b3ce-4be3-b5bc-61ac240bd90d">
-            <dataGridMoniker Id="b12f899d-992a-47f9-9a12-a62c9583b3b7" />
-          </tabReferencesDataGrid>
-        </dataGrid>
-      </tab>
-    </modelRootHasTypes>
-    <modelRootHasTypes Id="6bdda84d-0953-4775-b529-4936acaf44ed">
-      <dataGrid Id="b12f899d-992a-47f9-9a12-a62c9583b3b7" name="EMSLoadFlowSection" modelCodeResultsType="SECTIONRESULTSTA" dMSType="SECTION">
-        <columns>
-          <dataGridHasColumns Id="df118399-a036-4a42-ac17-131ed53bc2fa">
-            <columnAttribute Id="c7cc545e-c4e8-4c4b-a854-7050d07f58f2" name="Loading" header="Loading" modelCode="BRANCHRESLF_RELATIVELOAD" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="4e20d5fa-3932-4851-82f6-597b086cd445">
-            <columnAttribute Id="7a555298-b368-4240-8735-edcde9f7c8de" name="PEnd1" header="P End 1" modelCode="CONDUCTINGEQRESLF_P" />
+          <dataGridHasColumns Id="80ff784b-fb9c-4996-a975-ef7493e514ea">
+            <columnAttribute Id="5f575a39-e03e-4e6c-8d52-aa4717786f75" name="P" header="P" modelCode="LFRES_P" measurementType="EMSActivePowerM" />
           </dataGridHasColumns>
         </columns>
       </dataGrid>

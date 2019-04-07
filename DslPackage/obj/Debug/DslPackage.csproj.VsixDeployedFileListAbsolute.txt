@@ -10,3 +10,15 @@ C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Schneider
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\Resources\\Ikonica.ico
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pdb
 C:\Users\admin\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.pdb
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\ItemTemplates\CSharp\1033\\PowerFunctionsReportDSL.zip
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\ItemTemplates\VisualBasic\1033\\PowerFunctionsReportDSL.zip
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.dll
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\Microsoft.VisualStudio.Modeling.Sdk.14.0.dll
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\Microsoft.VisualStudio.Modeling.Sdk.Diagrams.14.0.dll
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\Microsoft.VisualStudio.Modeling.Sdk.Shell.14.0.dll
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\extension.vsixmanifest
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\Resources\\Ikonica.ico
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pdb
+C:\Users\dovla\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\SchneiderElectricDMS\PowerFunctionsReportDSL\1.0.0.0\\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.pdb

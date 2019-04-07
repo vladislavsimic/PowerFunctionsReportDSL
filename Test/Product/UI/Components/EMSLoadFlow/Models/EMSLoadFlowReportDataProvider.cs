@@ -177,15 +177,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.Models
 							}
 							break;
 						}
-					case EMSLoadFlowReportType.Section:
-						{
-							EMSLoadFlowSectionResults results = reportResult as EMSLoadFlowSectionResults;
-							if (results != null && results.Records.Count != 0)
-							{
-								FillEMSLoadFlowSectionResults(results);
-							}
-							break;
-						}
 					case EMSLoadFlowReportType.NoResults:
 						break;
 					default:
@@ -213,27 +204,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.Models
 				}
 			}
 			reportView.EMSLoadFlowNodeDataGrid.ItemsSource = records;
-		}
-
-		internal void FillEMSLoadFlowSectionResults(EMSLoadFlowSectionResults result)
-		{
-			List<EMSLoadFlowSectionViewModel> records = new List<EMSLoadFlowSectionViewModel>();
-			foreach (EMSLoadFlowSectionRecord record in result.Records)
-			{
-				records.Add(new EMSLoadFlowSectionViewModel(record, isTabularViewActive));
-			}
-			if (records.Count > 0)
-			{
-				byte minLevel = records.Min(rec => rec.DataGridTreeViewItemInfo.Level);
-				if (minLevel > 0)
-				{
-					foreach (EMSLoadFlowSectionViewModel record in records)
-					{
-						record.DataGridTreeViewItemInfo.Level = (byte)(record.DataGridTreeViewItemInfo.Level - minLevel);
-					}
-				}
-			}
-			reportView.EMSLoadFlowSectionDataGrid.ItemsSource = records;
 		}
 
 

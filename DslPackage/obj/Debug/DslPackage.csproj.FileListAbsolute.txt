@@ -145,7 +145,6 @@ E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\EnvDTE80.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.MSXML.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\stdole.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Newtonsoft.Json.dll
-E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\System.Threading.Tasks.Dataflow.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.VisualStudio.CoreUtility.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\EnvDTE90.dll
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.pdb
@@ -181,7 +180,6 @@ E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.VisualStudio.De
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\EnvDTE80.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Newtonsoft.Json.pdb
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Newtonsoft.Json.xml
-E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\System.Threading.Tasks.Dataflow.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.VisualStudio.CoreUtility.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\EnvDTE90.xml
 E:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\DslPackage.csprojResolveAssemblyReference.cache
@@ -305,3 +303,9 @@ D:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.Powe
 D:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.pkgdef
 D:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\SchneiderElectricDMS.PowerFunctionsReportDSL.DslPackage.latest.pkgdef
 D:\Master\PowerFunctionsReportDSL\DslPackage\obj\Debug\extension.vsixmanifest
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.Build.dll
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.Build.Framework.dll
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.Build.Conversion.Core.dll
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.Build.Tasks.Core.dll
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\Master\PowerFunctionsReportDSL\DslPackage\bin\Debug\Microsoft.Build.Engine.dll

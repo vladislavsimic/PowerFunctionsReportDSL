@@ -145,27 +145,11 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public float VoltageLevel
+		public float P
 		{
 			get
 			{
-				return reportRecord.VoltageLevel;
-			}
-		}
-
-		public float Voltage
-		{
-			get
-			{
-				return reportRecord.Voltage;
-			}
-		}
-
-		public float Pinj
-		{
-			get
-			{
-				return reportRecord.Pinj;
+				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSActivePowerM, reportRecord.P);
 			}
 		}
 
