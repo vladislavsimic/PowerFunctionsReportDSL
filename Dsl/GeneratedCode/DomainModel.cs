@@ -145,6 +145,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				new DomainMemberInfo(typeof(ColumnAttribute), "ModelCode", ColumnAttribute.ModelCodeDomainPropertyId, typeof(ColumnAttribute.ModelCodePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "MeasurementType", ColumnAttribute.MeasurementTypeDomainPropertyId, typeof(ColumnAttribute.MeasurementTypePropertyHandler)),
 				new DomainMemberInfo(typeof(ColumnAttribute), "ShouldGenerate", ColumnAttribute.ShouldGenerateDomainPropertyId, typeof(ColumnAttribute.ShouldGeneratePropertyHandler)),
+				new DomainMemberInfo(typeof(ColumnAttribute), "UnitSymbol", ColumnAttribute.UnitSymbolDomainPropertyId, typeof(ColumnAttribute.UnitSymbolPropertyHandler)),
 				new DomainMemberInfo(typeof(DataGridSuperHeader), "Column", DataGridSuperHeader.ColumnDomainPropertyId, typeof(DataGridSuperHeader.ColumnPropertyHandler)),
 				new DomainMemberInfo(typeof(DataGridSuperHeader), "ColumnSpan", DataGridSuperHeader.ColumnSpanDomainPropertyId, typeof(DataGridSuperHeader.ColumnSpanPropertyHandler)),
 				new DomainMemberInfo(typeof(DataGridSuperHeader), "Text", DataGridSuperHeader.TextDomainPropertyId, typeof(DataGridSuperHeader.TextPropertyHandler)),
@@ -1299,6 +1300,29 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.VerticalAlignment/Top.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		Top = 3,
+	}
+}
+namespace SchneiderElectricDMS.PowerFunctionsReportDSL
+{
+	/// <summary>
+	/// DomainEnumeration: UnitSymbol
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum UnitSymbol
+	{
+		/// <summary>
+		/// None
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol.None
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol/None.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		None = 0,
+		/// <summary>
+		/// A
+		/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol.A
+		/// </summary>
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol/A.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		A = 1,
 	}
 }
 

@@ -360,7 +360,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 				{
 					sb.AppendLine(Resources.Tab4 + "return reportRecord." + attribute.Name[0].ToString().ToUpper() + attribute.Name.Substring(1) + ";");
 				}
-				sb.AppendLine(Resources.Tab3 + "}");
+                sb.AppendLine(Resources.Tab3 + "}");
 				sb.AppendLine(Resources.Tab2 + "}");
 				sb.AppendLine();
 			}

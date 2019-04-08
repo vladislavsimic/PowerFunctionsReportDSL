@@ -8778,6 +8778,23 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					}
 				}
 			}
+			// UnitSymbol
+			if (!serializationContext.Result.Failed)
+			{
+				string attribUnitSymbol = PowerFunctionsReportDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "unitSymbol");
+				if (attribUnitSymbol != null)
+				{
+					UnitSymbol valueOfUnitSymbol;
+					if (DslModeling::SerializationUtilities.TryGetValue<UnitSymbol>(serializationContext, attribUnitSymbol, out valueOfUnitSymbol))
+					{
+						instanceOfColumnAttribute.UnitSymbol = valueOfUnitSymbol;
+					}
+					else
+					{	// Invalid property value, ignored.
+						PowerFunctionsReportDSLSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "unitSymbol", typeof(UnitSymbol), attribUnitSymbol);
+					}
+				}
+			}
 		}
 	
 		#region TryCreateInstance
@@ -9299,6 +9316,19 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "true") != 0)
 					{	// No need to write the value out if it's the same as default value.
 						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "shouldGenerate", serializedPropValue);
+					}
+				}
+			}
+			// UnitSymbol
+			if (!serializationContext.Result.Failed)
+			{
+				UnitSymbol propValue = instanceOfColumnAttribute.UnitSymbol;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<UnitSymbol>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "None") != 0)
+					{	// No need to write the value out if it's the same as default value.
+						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "unitSymbol", serializedPropValue);
 					}
 				}
 			}

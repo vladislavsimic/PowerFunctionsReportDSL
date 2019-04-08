@@ -252,6 +252,11 @@
             <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="9503bf85-6165-450c-8552-aa9288e652c0" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Unit Symbol" Name="UnitSymbol" DisplayName="Unit Symbol" DefaultValue="None">
+          <Type>
+            <DomainEnumerationMoniker Name="UnitSymbol" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="370bf9b5-4a84-4deb-8eab-9267ce36c6d2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute" Name="TabAttribute" DisplayName="Tab Attribute" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
@@ -592,6 +597,12 @@
         <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.VerticalAlignment.Top" Name="Top" Value="3" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="UnitSymbol" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol">
+      <Literals>
+        <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol.None" Name="None" Value="0" />
+        <EnumerationLiteral Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol.A" Name="A" Value="1" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="feedcd67-3fec-445b-9525-554debbd5c43" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape" Name="CommentShape" DisplayName="Comment Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Comment Shape" InitialHeight="1" Geometry="Rectangle" />
@@ -850,6 +861,9 @@
           <XmlPropertyData XmlName="shouldGenerate">
             <DomainPropertyMoniker Name="ColumnAttribute/ShouldGenerate" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="unitSymbol">
+            <DomainPropertyMoniker Name="ColumnAttribute/UnitSymbol" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="TabAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="tabAttributeMoniker" ElementName="tabAttribute" MonikerTypeName="TabAttributeMoniker">
@@ -1089,7 +1103,7 @@
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
-  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="D:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
+  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="E:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
     <RootClass>
       <DomainClassMoniker Name="ModelRoot" />
     </RootClass>

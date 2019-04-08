@@ -413,6 +413,14 @@
     <value>Should Generate</value>
     <comment>DisplayName for DomainProperty &apos;ShouldGenerate&apos; on DomainClass &apos;ColumnAttribute&apos;</comment>
   </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/UnitSymbol.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Unit Symbol</value>
+    <comment>Description for DomainProperty &apos;UnitSymbol&apos; on DomainClass &apos;ColumnAttribute&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/UnitSymbol.DisplayName" xml:space="preserve">
+    <value>Unit Symbol</value>
+    <comment>DisplayName for DomainProperty &apos;UnitSymbol&apos; on DomainClass &apos;ColumnAttribute&apos;</comment>
+  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute</value>
     <comment>Description for DomainClass &apos;TabAttribute&apos;</comment>
@@ -1540,6 +1548,22 @@
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.VerticalAlignment/Top.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.VerticalAlignment.Top</value>
     <comment>Description for EnumerationLiteral &apos;Top&apos; on DomainEnumeration &apos;VerticalAlignment&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol/None.DisplayName" xml:space="preserve">
+    <value>None</value>
+    <comment>Display name for EnumerationLiteral &apos;None&apos; on DomainEnumeration &apos;UnitSymbol&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol/None.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol.None</value>
+    <comment>Description for EnumerationLiteral &apos;None&apos; on DomainEnumeration &apos;UnitSymbol&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol/A.DisplayName" xml:space="preserve">
+    <value>A</value>
+    <comment>Display name for EnumerationLiteral &apos;A&apos; on DomainEnumeration &apos;UnitSymbol&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol/A.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UnitSymbol.A</value>
+    <comment>Description for EnumerationLiteral &apos;A&apos; on DomainEnumeration &apos;UnitSymbol&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape</value>

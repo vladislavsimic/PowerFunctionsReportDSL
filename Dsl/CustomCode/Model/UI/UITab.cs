@@ -51,6 +51,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 			sb.AppendLine(GetHierarhyTreeViewMethod());
 			sb.AppendLine();
+            sb.AppendLine(GetSetHeaderNameMethod());
 			sb.AppendLine(GetMainTabControlSelectionChanged());
 			sb.AppendLine(GetTabControlsSelectionChangedMethods());
 			sb.AppendLine(GetTabControlUpdateMethods());
@@ -61,7 +62,34 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			return sb.ToString();
 		}
 
-		private string GetTabControlUpdateMethods()
+        private string GetSetHeaderNameMethod()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(Resources.Tab2 + "private void SetHeader()");
+            sb.AppendLine(Resources.Tab2 + "{");
+            List<DataGrid> dataGrids = new List<DataGrid>();
+            foreach(ModelType type in this.tab.ModelRoot.Types)
+            {
+                if(!(type is DataGrid))
+                {
+                    continue;
+                }
+                dataGrids.Add(type as DataGrid);
+            }
+            foreach(DataGrid dg in dataGrids)
+            {
+                foreach(ColumnAttribute column in dg.Columns)
+                {
+                    sb.AppendLine(Resources.Tab3 + column.Name + ".Header += String.Format(Properties." + tab.ModelRoot.Name + "ResourcesGenerated." + tab.ModelRoot.Name + "_" + column.Header != null ? column.Header : column.Name + ", UnitConverterHelper.GetUnitSymbol(MeasurementType." + column.MeasurementType + "))");
+                }
+            }
+            sb.AppendLine(Resources.Tab2 + "}");
+
+            return sb.ToString();
+        }
+
+        private string GetTabControlUpdateMethods()
 		{
 			StringBuilder sb = new StringBuilder();
 
@@ -243,7 +271,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(Resources.Tab2 + "public " + root.Name + "ReportView(IShellView shellView)");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab3 + "InitializeComponent();");
-			sb.AppendLine(Resources.Tab3 + "CanSaveLayout = true;");
+            sb.AppendLine(Resources.Tab3 + "SetHeader();");
+            sb.AppendLine(Resources.Tab3 + "CanSaveLayout = true;");
 			sb.AppendLine(Resources.Tab3 + "ShouldPersistFilter = true;");
 			sb.AppendLine(Resources.Tab3 + "HelpProvider.SetContextHelpId(this, \"" + root.Name + " Report\");");
 			sb.AppendLine(Resources.Tab3 + "this.shellView = shellView;");

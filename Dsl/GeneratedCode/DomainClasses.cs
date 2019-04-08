@@ -3224,6 +3224,95 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 		#endregion
+		#region UnitSymbol domain property code
+		
+		/// <summary>
+		/// UnitSymbol domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid UnitSymbolDomainPropertyId = new global::System.Guid(0x9503bf85, 0x6165, 0x450c, 0x85, 0x52, 0xaa, 0x92, 0x88, 0xe6, 0x52, 0xc0);
+		
+		/// <summary>
+		/// Storage for UnitSymbol
+		/// </summary>
+		private UnitSymbol unitSymbolPropertyStorage = UnitSymbol.None;
+		
+		/// <summary>
+		/// Gets or sets the value of UnitSymbol domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Unit Symbol
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/UnitSymbol.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/UnitSymbol.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[global::System.ComponentModel.DefaultValue(UnitSymbol.None)]
+		[DslModeling::DomainObjectId("9503bf85-6165-450c-8552-aa9288e652c0")]
+		public UnitSymbol UnitSymbol
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return unitSymbolPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				UnitSymbolPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ColumnAttribute.UnitSymbol domain property.
+		/// </summary>
+		internal sealed partial class UnitSymbolPropertyHandler : DslModeling::DomainPropertyValueHandler<ColumnAttribute, UnitSymbol>
+		{
+			private UnitSymbolPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ColumnAttribute.UnitSymbol domain property value handler.
+			/// </summary>
+			public static readonly UnitSymbolPropertyHandler Instance = new UnitSymbolPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ColumnAttribute.UnitSymbol domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return UnitSymbolDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed UnitSymbol GetValue(ColumnAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.unitSymbolPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ColumnAttribute element, UnitSymbol newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				UnitSymbol oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.unitSymbolPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region DataGrid opposite domain role accessor
 		/// <summary>
 		/// Gets or sets DataGrid.
