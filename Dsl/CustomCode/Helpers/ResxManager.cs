@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Resources;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 {
-    public sealed class ResxManager
+	public class ResxManager
     {
         private static ResxManager manager;
 
-        private HashSet<string> resources;
+        private static HashSet<string> resources = new HashSet<string>();
 
         public ResxManager()
         {
-            this.resources = new HashSet<string>();
         }
 
-        public static ResxManager Manager
+		
+		public static ResxManager Manager
         {
-            get
+			get
             {
                 if (manager == null)
                 {
@@ -32,20 +28,24 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 
         public void AddResource(string value)
         {
-            this.resources.Add(value);
+            resources.Add(value);
         }
 
-        public void GenerateResxFile(string filePath, string fileName)
+        public void GenerateResxFile(string projectPath, string rootName)
         {
-            if (System.IO.Directory.Exists(filePath))
+			string resxPath = projectPath + "\\Properties";
+			if (!System.IO.Directory.Exists(resxPath))
+			{
+				System.IO.Directory.CreateDirectory(resxPath);
+			}
+
+            string fullPath = resxPath + "\\" + rootName + "ResourcesGenerated.resx";
+            using (ResXResourceWriter resx = new ResXResourceWriter(fullPath))
             {
-                string fullPath = filePath + "\\" + fileName + ".resx";
-                using (ResXResourceWriter resx = new ResXResourceWriter(fullPath))
+                foreach (string str in resources)
                 {
-                    foreach (string str in resources)
-                    {
-                        resx.AddResource("EMSLoadFlow_" + str, str);
-                    }
+					string newString = str.Trim().Replace(" ", "_");
+                    resx.AddResource("EMSLoadFlow_" + newString, str);
                 }
             }
         }

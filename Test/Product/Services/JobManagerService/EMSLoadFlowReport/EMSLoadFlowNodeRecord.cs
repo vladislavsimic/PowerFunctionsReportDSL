@@ -33,6 +33,9 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 		[DataMember]
 		public float P { get; set; }
 
+		[DataMember]
+		public float Q { get; set; }
+
 
 
 

@@ -32,6 +32,8 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 		public MeasurementValueQuality Quality { get; set; }
 		public float P { get; set; }
 
+		public float Q { get; set; }
+
 
 
         #endregion Properties

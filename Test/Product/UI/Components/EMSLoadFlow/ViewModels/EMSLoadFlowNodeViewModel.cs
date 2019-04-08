@@ -153,6 +153,14 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
+		public float Q
+		{
+			get
+			{
+				return reportRecord.Q;
+			}
+		}
+
 
 
         #endregion Properties

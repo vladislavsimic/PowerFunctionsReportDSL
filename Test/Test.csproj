@@ -49,10 +49,20 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Product\UI\Components\EMSLoadFlow\EMSLoadFlow.ui" />
+    <None Include="Product\UI\Components\EMSLoadFlow\EMSLoadFlow.ui">
+      <Generator>UIGenerator</Generator>
+      <LastGenOutput>EMSLoadFlow.txt</LastGenOutput>
+    </None>
     <None Include="Product\UI\Components\EMSLoadFlow\EMSLoadFlow.ui.diagram">
       <DependentUpon>EMSLoadFlow.ui</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Product\UI\Components\EMSLoadFlow\EMSLoadFlow.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EMSLoadFlow.ui</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

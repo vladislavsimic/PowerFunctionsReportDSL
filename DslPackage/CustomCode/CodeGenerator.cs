@@ -98,8 +98,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			genCode = GenerateCode(UIViewCsTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-            ResxManager.Manager.GenerateResxFile(Path.GetFullPath(Path.GetDirectoryName(this.InputFilePath) + "\\Properties"), fileName + "Generated");
-
 			return Encoding.ASCII.GetBytes(sb.ToString());
 		}
 
@@ -121,6 +119,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			string delimiterGuid = Guid.NewGuid().ToString();
 			string delimiter = "::::" + delimiterGuid + ":::";
 			CallContext.LogicalSetData("delimiter", delimiter + "{0}:::");
+			CallContext.LogicalSetData("inputFilePath", Path.GetFullPath(Path.GetDirectoryName(this.InputFilePath)));
 
 			// Now just delegate the rest of the work to the base class 
 			byte[] data;

@@ -331,6 +331,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			if (data != null && (DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(id) == DMSType.BUSNODE)
 			{
 				rec.P = data.P;
+				rec.Q = data.Q;
 			}
 			return rec;
 		}
@@ -342,6 +343,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
 					ModelCode.LFRES_P,
+					ModelCode.LFRES_Q,
 
 				}, new List<Association>(), gids, new List<Association>(), ref mdc);
 			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
@@ -357,6 +359,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 						throw new ArgumentNullException("gids");
 					}
 					data.P = rds[i].GetProperty(ModelCode.LFRES_P).AsFloat();
+					data.Q = rds[i].GetProperty(ModelCode.LFRES_Q).AsFloat();
 
 				}
 				count -= rds.Count;

@@ -1089,7 +1089,7 @@
       </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
-  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="E:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
+  <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="ui" Icon="D:\Master\PowerFunctionsReportDSL\DslPackage\Resources\Ikonica.ico" EditorGuid="0f86ccf2-8107-445a-97dc-c2958521b825">
     <RootClass>
       <DomainClassMoniker Name="ModelRoot" />
     </RootClass>

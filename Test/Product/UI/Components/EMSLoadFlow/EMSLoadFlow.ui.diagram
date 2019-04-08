@@ -8,15 +8,15 @@
         <elementListCompartment Id="2347e16a-1877-4899-9ca6-2e0b3db851fb" absoluteBounds="1.0149999999999997, 1.5099999999999998, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </tabShape>
-    <dataGridShape Id="0deada09-007e-41a3-808b-4d76c7da77d9" absoluteBounds="1, 2.25, 1.5, 2.070470377604166">
+    <dataGridShape Id="0deada09-007e-41a3-808b-4d76c7da77d9" absoluteBounds="1, 2.25, 1.5, 2.2627718098958329">
       <dataGridMoniker Id="221a99f9-58d5-44cb-a74a-ce266b1e5e4b" />
       <nestedChildShapes>
         <elementListCompartment Id="68f4d5a5-f117-49fc-8775-3268f19e02f4" absoluteBounds="1.0149999999999997, 3.26, 1.4700000000000002, 0.2493896484375" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="96cc81ad-9f68-4b0f-93a6-7098472b8c62" absoluteBounds="1.0149999999999997, 3.5193896484374996, 1.4700000000000002, 0.44169108072916663" name="Columns" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="36135227-0003-4f33-a5d0-f6792c732390" absoluteBounds="1.015, 3.9710807291666663, 1.4700000000000002, 0.2493896484375" name="SuperHeaders" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="96cc81ad-9f68-4b0f-93a6-7098472b8c62" absoluteBounds="1.0149999999999997, 3.5193896484374996, 1.4700000000000002, 0.63399251302083326" name="Columns" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="36135227-0003-4f33-a5d0-f6792c732390" absoluteBounds="1.015, 4.1633821614583333, 1.4700000000000002, 0.2493896484375" name="SuperHeaders" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </dataGridShape>
-    <tabConnector Id="2ddb8e8f-b154-48da-863e-96e149575d66" edgePoints="[(1.75 : 1.8593896484375); (1.75 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <tabConnector Id="2ddb8e8f-b154-48da-863e-96e149575d66" edgePoints="[(1.75 : 1.8593896484375); (1.75 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <tabReferencesDataGridMoniker Id="fa23e3fa-f2c8-4dcd-a404-1f7acc2ac266" />
       <nodes>
         <tabShapeMoniker Id="6be5f9db-6ec7-49df-8171-c35dd04c6c98" />

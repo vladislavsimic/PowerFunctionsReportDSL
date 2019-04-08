@@ -84,7 +84,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			sb.AppendLine(Resources.Tab3 + "</Grid>");
 
 			sb.AppendLine(Resources.Tab3 + "<GridSplitter x:Name=\"GridSplitter\" ResizeDirection=\"Columns\" ResizeBehavior=\"PreviousAndNext\" Grid.Column=\"1\"");
-			sb.AppendLine(Resources.Tab4 + "custCtrl:GridExpander.Direction=\"Previous\" custCtrl:GridExpander.Header=\"{ Binding Path = Resources.EMSLoadFlow_NETWORK_TREE, Source = { StaticResource LocalizedStrings }}\" />");
+			sb.AppendLine(Resources.Tab4 + "custCtrl:GridExpander.Direction=\"Previous\" custCtrl:GridExpander.Header=\"{ Binding Path = ResourcesGenerated.EMSLoadFlow_NETWORK_TREE, Source = { StaticResource LocalizedStrings }}\" />");
+			ResxManager.Manager.AddResource("NETWORK_TREE");
+
 
 			sb.AppendLine(Resources.Tab2 + "<TabControl Name=\"tabControl\" Grid.Column=\"2\">");
 
@@ -112,11 +114,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			if (tab.Header != null)
 			{
                 
-                tabHeader = "Header=\"{ Binding Path = ResourcesGenerated." + root.Name + "_" + tab.Header + ", Source ={ StaticResource LocalizedStrings} }\"";
+                tabHeader = "{Binding Path=ResourcesGenerated." + root.Name + "_" + tab.Header.Trim().Replace(" ", "_") + ", Source={ StaticResource LocalizedStrings} }";
+				ResxManager.Manager.AddResource(tab.Header);
 			}
 			else
 			{
-				tabHeader = tab.Name;
+				tabHeader = "{Binding Path=ResourcesGenerated." + root.Name + "_" + tab.Name.Trim().Replace(" ", "_") + ", Source={ StaticResource LocalizedStrings} }";
+				ResxManager.Manager.AddResource(tab.Name);
 			}
 
 			sb.AppendLine(Resources.Tab3 + "<TabItem Name=\"" + tab.Name + "\" Header=\"" + tabHeader + "\">");
@@ -127,7 +131,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			{
 				sb.AppendLine(Resources.Tab5 + "<Grid x:Name=\"NoResults" + tab.Name + "\" Visibility=\"Collapsed\">");
 				sb.AppendLine(Resources.Tab6 + "<ScrollViewer VerticalScrollBarVisibility=\"Auto\" HorizontalScrollBarVisibility=\"Auto\">");
-				sb.AppendLine(Resources.Tab7 + "<TextBlock Style=\"{DynamicResource HeaderTextBlockStyle}\" Opacity=\"0.3\" Text=\"{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }\" VerticalAlignment=\"Center\" HorizontalAlignment=\"Center\" />");
+				sb.AppendLine(Resources.Tab7 + "<TextBlock Style=\"{DynamicResource HeaderTextBlockStyle}\" Opacity=\"0.3\" Text=\"{Binding Path=ResourcesGenerated.NO_RESULTS, Source={StaticResource LocalizedStrings} }\" VerticalAlignment=\"Center\" HorizontalAlignment=\"Center\" />");
+				ResxManager.Manager.AddResource("NO_RESULTS");
 				sb.AppendLine(Resources.Tab6 + "</ScrollViewer>");
 				sb.AppendLine(Resources.Tab5 + "</Grid>");
 
@@ -192,8 +197,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 					if (dg.Columns.Count > 0)
 					{
 						sb.AppendLine(Resources.Tab7 + "<DataGrid.Columns>");
-
-						sb.AppendLine(Resources.Tab8 + "<DataGridTemplateColumn Header=\"{ Binding Path = Resources.ELEMENT, Source = { StaticResource LocalizedStrings } }\" Width=\"Auto\" MinWidth=\"200\"  x:Name=\"" + dg.Name + "Tree\" SortMemberPath=\"Title\">");
+						sb.AppendLine(Resources.Tab8 + "<DataGridTemplateColumn Header=\"{ Binding Path = ResourcesGenerated.ELEMENT, Source = { StaticResource LocalizedStrings } }\" Width=\"Auto\" MinWidth=\"200\"  x:Name=\"" + dg.Name + "Tree\" SortMemberPath=\"Title\">");
+						ResxManager.Manager.AddResource("ELEMENT");
 						sb.AppendLine(Resources.Tab9 + "<DataGridTemplateColumn.CellTemplate>");
 						sb.AppendLine(Resources.Tab10 + "<DataTemplate>");
 						sb.AppendLine(Resources.Tab11 + "<dgtvi:DataGridTreeViewItem DataContext=\"{ Binding DataGridTreeViewItemInfo}\" VerticalAlignment=\"Center\" NoLevel=\"{ Binding DataContext.TabularViewIsActive, RelativeSource ={ RelativeSource AncestorType = Grid} }\">");
@@ -209,12 +214,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 							string header = string.Empty;
 							if (attr.Header != null)
 							{
-                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Header + ", Source={StaticResource LocalizedStrings} }\"";
+                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Header.Trim().Replace(" ", "_") + ", Source={StaticResource LocalizedStrings} }\"";
                                 ResxManager.Manager.AddResource(attr.Header);
 							}
 							else
 							{
-                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Name + ", Source={StaticResource LocalizedStrings} }\"";
+                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Name.Trim().Replace(" ", "_") + ", Source={StaticResource LocalizedStrings} }\"";
                                 ResxManager.Manager.AddResource(attr.Name);
 							}
 							string binding = string.Empty;

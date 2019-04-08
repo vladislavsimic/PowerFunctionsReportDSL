@@ -14,7 +14,10 @@
       <dataGrid Id="221a99f9-58d5-44cb-a74a-ce266b1e5e4b" name="EMSLoadFlowNode" modelCodeResultsType="BUSNODERESTA" dMSType="BUSNODE">
         <columns>
           <dataGridHasColumns Id="80ff784b-fb9c-4996-a975-ef7493e514ea">
-            <columnAttribute Id="5f575a39-e03e-4e6c-8d52-aa4717786f75" name="P" header="P" modelCode="LFRES_P" measurementType="EMSActivePowerM" />
+            <columnAttribute Id="5f575a39-e03e-4e6c-8d52-aa4717786f75" name="P" header="P End 1" modelCode="LFRES_P" measurementType="EMSActivePowerM" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="6fafece8-3ac1-4229-8e7d-6e78cd248b36">
+            <columnAttribute Id="962ded0b-8558-4df9-8b01-023aab8e32a6" name="Q" header="Q" modelCode="LFRES_Q" />
           </dataGridHasColumns>
         </columns>
       </dataGrid>

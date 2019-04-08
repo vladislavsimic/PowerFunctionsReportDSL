@@ -24,8 +24,12 @@ namespace TelventDMS.UI.Components.<#=this.ModelRoot.Name#>
 {
 	public class LocalizedStrings
 	{
-		private static <#=this.ModelRoot.Name#>Resources resource = new <#=this.ModelRoot.Name#>Resources();
+		private static <#=this.ModelRoot.Name#>Resources resources = new <#=this.ModelRoot.Name#>Resources();
 
-		public <#=this.ModelRoot.Name#>Resources Resources { get { return resource; } }
+		private static <#=this.ModelRoot.Name#>ResourcesGenerated resourceGenerated = new <#=this.ModelRoot.Name#>ResourcesGenerated();
+		
+		public <#=this.ModelRoot.Name#>Resources Resources { get { return resources; } }
+
+		public <#=this.ModelRoot.Name#>ResourcesGenerated ResourcesGenerated { get { return resourceGenerated; } }
 	}
 }

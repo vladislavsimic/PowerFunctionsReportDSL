@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EMSLoadFlowGenerated_test1" xml:space="preserve">
-    <value>test1</value>
+  <data name="EMSLoadFlow_Nodes" xml:space="preserve">
+    <value>Nodes</value>
   </data>
-  <data name="EMSLoadFlowGenerated_test2" xml:space="preserve">
-    <value>test2</value>
+  <data name="EMSLoadFlow_P_End_1" xml:space="preserve">
+    <value>P End 1</value>
+  </data>
+  <data name="EMSLoadFlow_Q" xml:space="preserve">
+    <value>Q</value>
   </data>
 </root>

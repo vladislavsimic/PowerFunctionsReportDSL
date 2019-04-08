@@ -2,9 +2,11 @@
 <#@ output extension=".txt" #>
 <#@ PowerFunctionsReportDSL processor="PowerFunctionsReportDSLDirectiveProcessor" requires="fileName='Sample.ui'"  #>
 <#@ parameter name="delimiter" type="System.String" #>
+<#@ parameter name="inputFilePath" type="System.String" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model" #>
+<#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
   // Create a file segment for each element:
@@ -21,6 +23,7 @@
 <#
     UITab uiTab = new UITab(tab);
     string xamlCode = uiTab.GetXaml();
+	ResxManager.Manager.GenerateResxFile(inputFilePath, this.ModelRoot.Name);
 #>
 <#=xamlCode#>
 <#
