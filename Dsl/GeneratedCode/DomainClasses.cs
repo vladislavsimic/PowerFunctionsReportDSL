@@ -9,6 +9,8 @@
 
 using DslModeling = global::Microsoft.VisualStudio.Modeling;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
+using SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters;
+
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 {
 	/// <summary>
@@ -2801,6 +2803,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/Type.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[global::System.ComponentModel.DefaultValue("Float")]
 		[DslModeling::DomainObjectId("ae1f8fc3-944f-4a53-b4ba-2fa3d2ba2ef8")]
+		[System.ComponentModel.TypeConverter(typeof(CustomTypeConverter))]
 		public global::System.String Type
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
@@ -3516,6 +3519,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Column.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridSuperHeader/Column.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("006a2db1-cfb1-424f-9d95-a2821a756a9b")]
+		[System.ComponentModel.TypeConverter(typeof(DataGridSuperHeaderColumnConverter))]
 		public global::System.String Column
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]

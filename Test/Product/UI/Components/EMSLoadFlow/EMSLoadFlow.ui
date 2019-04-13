@@ -17,7 +17,7 @@
             <columnAttribute Id="5f575a39-e03e-4e6c-8d52-aa4717786f75" name="P" header="P End 1" modelCode="LFRES_P" measurementType="EMSActivePowerM" />
           </dataGridHasColumns>
           <dataGridHasColumns Id="6fafece8-3ac1-4229-8e7d-6e78cd248b36">
-            <columnAttribute Id="962ded0b-8558-4df9-8b01-023aab8e32a6" name="Q" header="Q" modelCode="LFRES_Q" />
+            <columnAttribute Id="962ded0b-8558-4df9-8b01-023aab8e32a6" name="Q" header="Q" modelCode="LFRES_Q" measurementType="EMSReactivePowerM" />
           </dataGridHasColumns>
         </columns>
       </dataGrid>

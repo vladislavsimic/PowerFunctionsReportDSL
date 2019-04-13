@@ -49,6 +49,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 		public EMSLoadFlowReportView(IShellView shellView)
 		{
 			InitializeComponent();
+			SetHeader();
 			CanSaveLayout = true;
 			ShouldPersistFilter = true;
 			HelpProvider.SetContextHelpId(this, "EMSLoadFlow Report");
@@ -82,6 +83,12 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 			}
 		}
 
+
+		private void SetHeader()
+		{
+			P.Header += String.Format(Properties.EMSLoadFlowResourcesGenerated.EMSLoadFlow_P_End_1, UnitConverterHelper.GetUnitSymbol(MeasurementType.EMSActivePowerM));
+			Q.Header += String.Format(Properties.EMSLoadFlowResourcesGenerated.EMSLoadFlow_Q, UnitConverterHelper.GetUnitSymbol(MeasurementType.EMSReactivePowerM));
+		}
 
 		private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{

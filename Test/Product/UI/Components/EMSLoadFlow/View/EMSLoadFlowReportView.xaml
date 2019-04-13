@@ -47,20 +47,20 @@
 				<htv:HierarchyTreeView Grid.Row="0" Name="CommonHtv" HierarchyTreeDataProvider="{ Binding Path = TreeDataProvider}"/>
 			</Grid>
 			<GridSplitter x:Name="GridSplitter" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext" Grid.Column="1"
-				custCtrl:GridExpander.Direction="Previous" custCtrl:GridExpander.Header="{ Binding Path = Resources.EMSLoadFlow_NETWORK_TREE, Source = { StaticResource LocalizedStrings }}" />
+				custCtrl:GridExpander.Direction="Previous" custCtrl:GridExpander.Header="{ Binding Path = ResourcesGenerated.EMSLoadFlow_NETWORK_TREE, Source = { StaticResource LocalizedStrings }}" />
 		<TabControl Name="tabControl" Grid.Column="2">
 			<TabItem Name="Node" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_Nodes, Source={ StaticResource LocalizedStrings} }">
 				<Grid>
 					<Grid x:Name="NoResultsNode" Visibility="Collapsed">
 						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-							<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=Resources.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
+							<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=ResourcesGenerated.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
 						</ScrollViewer>
 					</Grid>
 					<Grid Margin="0 5 0 0 " Name="NodeDataGridHeader">
 						<DataGrid Name="EMSLoadFlowNodeDataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True"
 							CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
 							<DataGrid.Columns>
-								<DataGridTemplateColumn Header="{ Binding Path = Resources.ELEMENT, Source = { StaticResource LocalizedStrings } }" Width="Auto" MinWidth="200"  x:Name="EMSLoadFlowNodeTree" SortMemberPath="Title">
+								<DataGridTemplateColumn Header="{ Binding Path = ResourcesGenerated.ELEMENT, Source = { StaticResource LocalizedStrings } }" Width="Auto" MinWidth="200"  x:Name="EMSLoadFlowNodeTree" SortMemberPath="Title">
 									<DataGridTemplateColumn.CellTemplate>
 									<DataTemplate>
 										<dgtvi:DataGridTreeViewItem DataContext="{ Binding DataGridTreeViewItemInfo}" VerticalAlignment="Center" NoLevel="{ Binding DataContext.TabularViewIsActive, RelativeSource ={ RelativeSource AncestorType = Grid} }">
@@ -68,7 +68,7 @@
 									</DataTemplate>
 									</DataGridTemplateColumn.CellTemplate>
 								</DataGridTemplateColumn>
-								<cc:ExtendedDataGridTextColumn x:Name="ColEMSLoadFlowNodeP" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_P End 1, Source={StaticResource LocalizedStrings} }" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=P}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColEMSLoadFlowNodeP" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_P_End_1, Source={StaticResource LocalizedStrings} }" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=P}" />
 								<cc:ExtendedDataGridTextColumn x:Name="ColEMSLoadFlowNodeQ" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_Q, Source={StaticResource LocalizedStrings} }" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=Q}" />
 							</DataGrid.Columns>
 						</DataGrid>

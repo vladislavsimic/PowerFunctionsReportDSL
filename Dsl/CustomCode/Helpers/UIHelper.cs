@@ -215,12 +215,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 							if (attr.Header != null)
 							{
                                 header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Header.Trim().Replace(" ", "_") + ", Source={StaticResource LocalizedStrings} }\"";
-                                ResxManager.Manager.AddResource(attr.Header);
+                                ResxManager.Manager.AddResource(attr.Header.Trim().Replace(" ", "_"));
 							}
 							else
 							{
                                 header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Name.Trim().Replace(" ", "_") + ", Source={StaticResource LocalizedStrings} }\"";
-                                ResxManager.Manager.AddResource(attr.Name);
+                                ResxManager.Manager.AddResource(attr.Name.Trim().Replace(" ", "_"));
 							}
 							string binding = string.Empty;
 							if (string.IsNullOrEmpty(attr.BindingName))

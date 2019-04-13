@@ -157,7 +157,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 		{
 			get
 			{
-				return reportRecord.Q;
+				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSReactivePowerM, reportRecord.Q);
 			}
 		}
 

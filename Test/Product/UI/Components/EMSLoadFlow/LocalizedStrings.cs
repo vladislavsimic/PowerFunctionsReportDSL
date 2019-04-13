@@ -14,8 +14,12 @@ namespace TelventDMS.UI.Components.EMSLoadFlow
 {
 	public class LocalizedStrings
 	{
-		private static EMSLoadFlowResources resource = new EMSLoadFlowResources();
+		private static EMSLoadFlowResources resources = new EMSLoadFlowResources();
 
-		public EMSLoadFlowResources Resources { get { return resource; } }
+		private static EMSLoadFlowResourcesGenerated resourceGenerated = new EMSLoadFlowResourcesGenerated();
+		
+		public EMSLoadFlowResources Resources { get { return resources; } }
+
+		public EMSLoadFlowResourcesGenerated ResourcesGenerated { get { return resourceGenerated; } }
 	}
 }

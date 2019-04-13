@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EMSLoadFlow_NETWORK_TREE" xml:space="preserve">
+    <value>NETWORK_TREE</value>
+  </data>
   <data name="EMSLoadFlow_Nodes" xml:space="preserve">
     <value>Nodes</value>
+  </data>
+  <data name="EMSLoadFlow_NO_RESULTS" xml:space="preserve">
+    <value>NO_RESULTS</value>
+  </data>
+  <data name="EMSLoadFlow_ELEMENT" xml:space="preserve">
+    <value>ELEMENT</value>
   </data>
   <data name="EMSLoadFlow_P_End_1" xml:space="preserve">
     <value>P End 1</value>

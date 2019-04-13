@@ -62,34 +62,53 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			return sb.ToString();
 		}
 
-        private string GetSetHeaderNameMethod()
-        {
-            StringBuilder sb = new StringBuilder();
+		private string GetSetHeaderNameMethod()
+		{
+			StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(Resources.Tab2 + "private void SetHeader()");
-            sb.AppendLine(Resources.Tab2 + "{");
-            List<DataGrid> dataGrids = new List<DataGrid>();
-            foreach(ModelType type in this.tab.ModelRoot.Types)
-            {
-                if(!(type is DataGrid))
-                {
-                    continue;
-                }
-                dataGrids.Add(type as DataGrid);
-            }
-            foreach(DataGrid dg in dataGrids)
-            {
-                foreach(ColumnAttribute column in dg.Columns)
-                {
-                    sb.AppendLine(Resources.Tab3 + column.Name + ".Header += String.Format(Properties." + tab.ModelRoot.Name + "ResourcesGenerated." + tab.ModelRoot.Name + "_" + column.Header != null ? column.Header : column.Name + ", UnitConverterHelper.GetUnitSymbol(MeasurementType." + column.MeasurementType + "))");
-                }
-            }
-            sb.AppendLine(Resources.Tab2 + "}");
+			sb.AppendLine(Resources.Tab2 + "private void SetHeader()");
+			sb.AppendLine(Resources.Tab2 + "{");
+			List<DataGrid> dataGrids = new List<DataGrid>();
+			foreach (ModelType type in this.tab.ModelRoot.Types)
+			{
+				if (!(type is DataGrid))
+				{
+					continue;
+				}
+				dataGrids.Add(type as DataGrid);
+			}
+			foreach (DataGrid dg in dataGrids)
+			{
+				if (dg.Tab == null)
+				{
+					continue;
+				}
+				foreach (ColumnAttribute column in dg.Columns)
+				{
+					if (column.MeasurementType == MeasurementType.None)
+					{
+						continue;
+					}
 
-            return sb.ToString();
-        }
+					string columnHeader = string.Empty;
+					if (!string.IsNullOrEmpty(column.Header))
+					{
+						columnHeader = column.Header;
+					}
+					else
+					{
+						columnHeader = column.Name;
+					}
+					columnHeader = columnHeader.Trim().Replace(" ", "_");
+					sb.AppendLine(Resources.Tab3 + "Col" + dg.Name + column.Name + ".Header += String.Format(Properties." + tab.ModelRoot.Name + "ResourcesGenerated." + tab.ModelRoot.Name + "_" + columnHeader + ", UnitConverterHelper.GetUnitSymbol(MeasurementType." + column.MeasurementType + "));");
+				}
+			}
+			sb.AppendLine(Resources.Tab2 + "}");
 
-        private string GetTabControlUpdateMethods()
+			return sb.ToString();
+		}
+
+		private string GetTabControlUpdateMethods()
 		{
 			StringBuilder sb = new StringBuilder();
 
@@ -333,7 +352,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(Resources.Tab2 + "private IWorkspaceManager workspaceManager;");
 			sb.AppendLine(Resources.Tab2 + "private IModuleEnvironment moduleEnvironment;");
 
-			/*foreach(ModelType type in root.Types)
+			foreach(ModelType type in root.Types)
 			{
 				if(type is DataGrid)
 				{
@@ -341,7 +360,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 					string propertyName = string.Format("{0}ReportGridVisibilityControl{1}", root.Name, dg.Name);
 					sb.AppendLine(Resources.Tab2 + "private DataGridColumnVisibilityControl " + propertyName + ";");
 				}
-			}*/
+			}
 
 			return sb.ToString();
 		}
@@ -375,6 +394,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine("using TelventDMS.UI.Components.CompositeCommon.Interfaces;");
 			sb.AppendLine("using TelventDMS.UI.Components.CustomControls.HierarchyTreeViewControl;");
 			sb.AppendLine("using TelventDMS.UI.Components.EMSLoadFlow.ViewModels;");
+			sb.AppendLine("using TelventDMS.Common.DMS.Common;");
+			sb.AppendLine("using TelventDMS.UI.Model.Electrical;");
 
 			return sb.ToString();
 		}

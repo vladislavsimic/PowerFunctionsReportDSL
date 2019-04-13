@@ -586,6 +586,8 @@
         <xsd:attribute name="measurementType" type="MeasurementType" />
         <!-- Property: ShouldGenerate -->
         <xsd:attribute name="shouldGenerate" type="xsd:boolean" />
+        <!-- Property: UnitSymbol -->
+        <xsd:attribute name="unitSymbol" type="UnitSymbol" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1229,6 +1231,14 @@
       <xsd:enumeration value="Center"/>
       <xsd:enumeration value="Stretch"/>
       <xsd:enumeration value="Top"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum UnitSymbol -->
+  <xsd:simpleType name="UnitSymbol">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="None"/>
+      <xsd:enumeration value="A"/>
     </xsd:restriction>
   </xsd:simpleType>
   
