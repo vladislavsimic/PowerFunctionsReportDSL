@@ -325,6 +325,14 @@
     <value>DMS Type</value>
     <comment>DisplayName for DomainProperty &apos;DMSType&apos; on DomainClass &apos;DataGrid&apos;</comment>
   </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/Description.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Description</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;DataGrid&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;DataGrid&apos;</comment>
+  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute</value>
     <comment>Description for DomainClass &apos;ColumnAttribute&apos;</comment>
@@ -420,6 +428,14 @@
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/UnitSymbol.DisplayName" xml:space="preserve">
     <value>Unit Symbol</value>
     <comment>DisplayName for DomainProperty &apos;UnitSymbol&apos; on DomainClass &apos;ColumnAttribute&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/Description.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Description</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;ColumnAttribute&apos;</comment>
+  </data>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;ColumnAttribute&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute</value>

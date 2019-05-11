@@ -1,9 +1,11 @@
 JMS ::::
 
 
-Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowNodeRecord.cs]  [EMSLoadFlowNode]
+Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\DataGrid1Record.cs]  [DataGrid1]
+Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\DataGrid2Record.cs]  [DataGrid2]
 
-Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowNodeResults.cs]  [EMSLoadFlowNode]
+Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\DataGrid1Results.cs]  [DataGrid1]
+Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\DataGrid2Results.cs]  [DataGrid2]
 
 Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\Services\JobManagerService\EMSLoadFlowReport\EMSLoadFlowReportJob.cs]  [EMSLoadFlow]
 
@@ -31,7 +33,8 @@ Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadF
 UI View Model ::::
 
 
-Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowNodeViewModel.cs]  [EMSLoadFlowNode]
+Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\DataGrid1ViewModel.cs]  [DataGrid1]
+Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\DataGrid2ViewModel.cs]  [DataGrid2]
 
 Generate: [D:\Master\PowerFunctionsReportDSL\Test\Product\UI\Components\EMSLoadFlow\ViewModels\EMSLoadFlowReportViewModel.cs]  [EMSLoadFlow]
 

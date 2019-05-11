@@ -27,6 +27,8 @@ using TelventDMS.UI.Components.CompositeCommon.Help;
 using TelventDMS.UI.Components.CompositeCommon.Interfaces;
 using TelventDMS.UI.Components.CustomControls.HierarchyTreeViewControl;
 using TelventDMS.UI.Components.EMSLoadFlow.ViewModels;
+using TelventDMS.Common.DMS.Common;
+using TelventDMS.UI.Model.Electrical;
 
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.View
@@ -40,6 +42,8 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 		private List<long> visibleItemsIds = new List<long>();
 		private IWorkspaceManager workspaceManager;
 		private IModuleEnvironment moduleEnvironment;
+		private DataGridColumnVisibilityControl EMSLoadFlowReportGridVisibilityControlDataGrid1;
+		private DataGridColumnVisibilityControl EMSLoadFlowReportGridVisibilityControlDataGrid2;
 
 
         #endregion Fields
@@ -50,8 +54,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 		{
 			InitializeComponent();
 			SetHeader();
-			CanSaveLayout = true;
-			ShouldPersistFilter = true;
+			InitSummaryConfig(null, new ReportDocumentConfig(SummaryType.BaseSummary, PersistFilterMode.PersistFilters, null, true, true));
 			HelpProvider.SetContextHelpId(this, "EMSLoadFlow Report");
 			this.shellView = shellView;
 			this.reportViewModel = new EMSLoadFlowReportViewModel(this);
@@ -86,8 +89,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 
 		private void SetHeader()
 		{
-			P.Header += String.Format(Properties.EMSLoadFlowResourcesGenerated.EMSLoadFlow_P_End_1, UnitConverterHelper.GetUnitSymbol(MeasurementType.EMSActivePowerM));
-			Q.Header += String.Format(Properties.EMSLoadFlowResourcesGenerated.EMSLoadFlow_Q, UnitConverterHelper.GetUnitSymbol(MeasurementType.EMSReactivePowerM));
 		}
 
 		private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -100,9 +101,15 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.View
 				{
 					return;
 				}
-				if (Equals(selectedTabItem, Node) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Node)
+				if (Equals(selectedTabItem, Tab1) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Tab1)
 				{
-					reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Node;
+					reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Tab1;
+					reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
+					reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
+				}
+				else if (Equals(selectedTabItem, Tab2) && reportViewModel.DataProvider.ReportParameter.ReportType != ServiceProxies.EMSLoadFlowReportType.Tab2)
+				{
+					reportViewModel.DataProvider.ReportParameter.ReportType = ServiceProxies.EMSLoadFlowReportType.Tab2;
 					reportViewModel.DataProvider.ReportParameter.HierarchyType = reportViewModel.HierarchyType;
 					reportViewModel.DataProvider.ProvideRecords(visibleItemsIds);
 				}

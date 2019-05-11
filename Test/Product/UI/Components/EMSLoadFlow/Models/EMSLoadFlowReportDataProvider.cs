@@ -168,12 +168,21 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.Models
 				EMSLoadFlowReportResult reportResult = (EMSLoadFlowReportResult)result;
 				switch (reportResult.EMSLoadFlowReportType)
 				{
-					case EMSLoadFlowReportType.Node:
+					case EMSLoadFlowReportType.Tab1:
 						{
-							EMSLoadFlowNodeResults results = reportResult as EMSLoadFlowNodeResults;
+							DataGrid1Results results = reportResult as DataGrid1Results;
 							if (results != null && results.Records.Count != 0)
 							{
-								FillEMSLoadFlowNodeResults(results);
+								FillDataGrid1Results(results);
+							}
+							break;
+						}
+					case EMSLoadFlowReportType.Tab2:
+						{
+							DataGrid2Results results = reportResult as DataGrid2Results;
+							if (results != null && results.Records.Count != 0)
+							{
+								FillDataGrid2Results(results);
 							}
 							break;
 						}
@@ -185,25 +194,46 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.Models
 			}
 		}
 
-		internal void FillEMSLoadFlowNodeResults(EMSLoadFlowNodeResults result)
+		internal void FillDataGrid1Results(DataGrid1Results result)
 		{
-			List<EMSLoadFlowNodeViewModel> records = new List<EMSLoadFlowNodeViewModel>();
-			foreach (EMSLoadFlowNodeRecord record in result.Records)
+			List<DataGrid1ViewModel> records = new List<DataGrid1ViewModel>();
+			foreach (DataGrid1Record record in result.Records)
 			{
-				records.Add(new EMSLoadFlowNodeViewModel(record, isTabularViewActive));
+				records.Add(new DataGrid1ViewModel(record, isTabularViewActive));
 			}
 			if (records.Count > 0)
 			{
 				byte minLevel = records.Min(rec => rec.DataGridTreeViewItemInfo.Level);
 				if (minLevel > 0)
 				{
-					foreach (EMSLoadFlowNodeViewModel record in records)
+					foreach (DataGrid1ViewModel record in records)
 					{
 						record.DataGridTreeViewItemInfo.Level = (byte)(record.DataGridTreeViewItemInfo.Level - minLevel);
 					}
 				}
 			}
-			reportView.EMSLoadFlowNodeDataGrid.ItemsSource = records;
+			reportView.DataGrid1DataGrid.ItemsSource = records;
+		}
+
+		internal void FillDataGrid2Results(DataGrid2Results result)
+		{
+			List<DataGrid2ViewModel> records = new List<DataGrid2ViewModel>();
+			foreach (DataGrid2Record record in result.Records)
+			{
+				records.Add(new DataGrid2ViewModel(record, isTabularViewActive));
+			}
+			if (records.Count > 0)
+			{
+				byte minLevel = records.Min(rec => rec.DataGridTreeViewItemInfo.Level);
+				if (minLevel > 0)
+				{
+					foreach (DataGrid2ViewModel record in records)
+					{
+						record.DataGridTreeViewItemInfo.Level = (byte)(record.DataGridTreeViewItemInfo.Level - minLevel);
+					}
+				}
+			}
+			reportView.DataGrid2DataGrid.ItemsSource = records;
 		}
 
 

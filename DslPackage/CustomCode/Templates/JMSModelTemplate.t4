@@ -5,6 +5,7 @@
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters" #>
 <#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model" #>
+<#@ import namespace="SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers" #>
 <#@ import namespace="System.Collections.Generic" #>
 
 <#
@@ -30,12 +31,14 @@
     JMSRecord record = new JMSRecord(dg);
     record.ObtainCode();
     Dictionary<string, string> code = record.GeneratedCode;
+	ResxManager.Manager.ClearResources();
 #>
 
 <#=code["usings"]#>
 
 namespace <#=code["classNamespace"]#>
 {
+<#=code["description"]#>
     <#=code["dataContract"]#>
     public partial class <#=dg.Name#>Record<#=code["superclass"]#>
     {

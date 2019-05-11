@@ -49,18 +49,18 @@
 			<GridSplitter x:Name="GridSplitter" ResizeDirection="Columns" ResizeBehavior="PreviousAndNext" Grid.Column="1"
 				custCtrl:GridExpander.Direction="Previous" custCtrl:GridExpander.Header="{ Binding Path = ResourcesGenerated.EMSLoadFlow_NETWORK_TREE, Source = { StaticResource LocalizedStrings }}" />
 		<TabControl Name="tabControl" Grid.Column="2">
-			<TabItem Name="Node" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_Nodes, Source={ StaticResource LocalizedStrings} }">
+			<TabItem Name="Tab1" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_Tab1, Source={ StaticResource LocalizedStrings} }">
 				<Grid>
-					<Grid x:Name="NoResultsNode" Visibility="Collapsed">
+					<Grid x:Name="NoResultsTab1" Visibility="Collapsed">
 						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
 							<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=ResourcesGenerated.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
 						</ScrollViewer>
 					</Grid>
-					<Grid Margin="0 5 0 0 " Name="NodeDataGridHeader">
-						<DataGrid Name="EMSLoadFlowNodeDataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True"
+					<Grid Margin="0 5 0 0 " Name="Tab1DataGridHeader">
+						<DataGrid Name="DataGrid1DataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True"
 							CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
 							<DataGrid.Columns>
-								<DataGridTemplateColumn Header="{ Binding Path = ResourcesGenerated.ELEMENT, Source = { StaticResource LocalizedStrings } }" Width="Auto" MinWidth="200"  x:Name="EMSLoadFlowNodeTree" SortMemberPath="Title">
+								<DataGridTemplateColumn Header="{ Binding Path = ResourcesGenerated.ELEMENT, Source = { StaticResource LocalizedStrings } }" Width="Auto" MinWidth="200"  x:Name="DataGrid1Tree" SortMemberPath="Title">
 									<DataGridTemplateColumn.CellTemplate>
 									<DataTemplate>
 										<dgtvi:DataGridTreeViewItem DataContext="{ Binding DataGridTreeViewItemInfo}" VerticalAlignment="Center" NoLevel="{ Binding DataContext.TabularViewIsActive, RelativeSource ={ RelativeSource AncestorType = Grid} }">
@@ -68,9 +68,23 @@
 									</DataTemplate>
 									</DataGridTemplateColumn.CellTemplate>
 								</DataGridTemplateColumn>
-								<cc:ExtendedDataGridTextColumn x:Name="ColEMSLoadFlowNodeP" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_P_End_1, Source={StaticResource LocalizedStrings} }" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=P}" />
-								<cc:ExtendedDataGridTextColumn x:Name="ColEMSLoadFlowNodeQ" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_Q, Source={StaticResource LocalizedStrings} }" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=Q}" />
+								<cc:ExtendedDataGridTextColumn x:Name="ColDataGrid1P" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_P_Inj, Source={StaticResource LocalizedStrings} }" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Binding="{Binding Path=P}" />
 							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</Grid>
+			</TabItem>
+
+			<TabItem Name="Tab2" Header="{Binding Path=ResourcesGenerated.EMSLoadFlow_Tab2, Source={ StaticResource LocalizedStrings} }">
+				<Grid>
+					<Grid x:Name="NoResultsTab2" Visibility="Collapsed">
+						<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+							<TextBlock Style="{DynamicResource HeaderTextBlockStyle}" Opacity="0.3" Text="{Binding Path=ResourcesGenerated.NO_RESULTS, Source={StaticResource LocalizedStrings} }" VerticalAlignment="Center" HorizontalAlignment="Center" />
+						</ScrollViewer>
+					</Grid>
+					<Grid Margin="0 5 0 0 " Name="Tab2DataGridHeader">
+						<DataGrid Name="DataGrid2DataGrid"  HorizontalScrollBarVisibility="Auto" SelectionMode="Single" SelectionUnit="FullRow" IsSynchronizedWithCurrentItem="True"
+							CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" AutoGenerateColumns="False" IsReadOnly="True">
 						</DataGrid>
 					</Grid>
 				</Grid>

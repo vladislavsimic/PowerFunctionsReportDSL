@@ -2076,6 +2076,94 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 		#endregion
+		#region Description domain property code
+		
+		/// <summary>
+		/// Description domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DescriptionDomainPropertyId = new global::System.Guid(0x77748f74, 0x2389, 0x464a, 0xb4, 0x6b, 0x51, 0x20, 0xd8, 0x10, 0x0d, 0x6f);
+		
+		/// <summary>
+		/// Storage for Description
+		/// </summary>
+		private global::System.String descriptionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Description domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Description
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/Description.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid/Description.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("77748f74-2389-464a-b46b-5120d8100d6f")]
+		public global::System.String Description
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return descriptionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DescriptionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the DataGrid.Description domain property.
+		/// </summary>
+		internal sealed partial class DescriptionPropertyHandler : DslModeling::DomainPropertyValueHandler<DataGrid, global::System.String>
+		{
+			private DescriptionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the DataGrid.Description domain property value handler.
+			/// </summary>
+			public static readonly DescriptionPropertyHandler Instance = new DescriptionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the DataGrid.Description domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DescriptionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(DataGrid element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.descriptionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(DataGrid element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.descriptionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region Tab opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Tab.
@@ -3310,6 +3398,94 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.unitSymbolPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Description domain property code
+		
+		/// <summary>
+		/// Description domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DescriptionDomainPropertyId = new global::System.Guid(0xb3d63381, 0x3525, 0x405f, 0xa1, 0x44, 0x26, 0x36, 0xc1, 0x26, 0xdd, 0x51);
+		
+		/// <summary>
+		/// Storage for Description
+		/// </summary>
+		private global::System.String descriptionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Description domain property.
+		/// Description for
+		/// SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Description
+		/// </summary>
+		[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/Description.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute/Description.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("b3d63381-3525-405f-a144-2636c126dd51")]
+		public global::System.String Description
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return descriptionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DescriptionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the ColumnAttribute.Description domain property.
+		/// </summary>
+		internal sealed partial class DescriptionPropertyHandler : DslModeling::DomainPropertyValueHandler<ColumnAttribute, global::System.String>
+		{
+			private DescriptionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the ColumnAttribute.Description domain property value handler.
+			/// </summary>
+			public static readonly DescriptionPropertyHandler Instance = new DescriptionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the ColumnAttribute.Description domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DescriptionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(ColumnAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.descriptionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(ColumnAttribute element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.descriptionPropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}

@@ -85,7 +85,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 				}
 				foreach (ColumnAttribute column in dg.Columns)
 				{
-					if (column.MeasurementType == MeasurementType.None)
+					if (column.MeasurementType == MeasurementType.None && column.UnitSymbol == UnitSymbol.None)
 					{
 						continue;
 					}
@@ -99,8 +99,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 					{
 						columnHeader = column.Name;
 					}
-					columnHeader = columnHeader.Trim().Replace(" ", "_");
-					sb.AppendLine(Resources.Tab3 + "Col" + dg.Name + column.Name + ".Header += String.Format(Properties." + tab.ModelRoot.Name + "ResourcesGenerated." + tab.ModelRoot.Name + "_" + columnHeader + ", UnitConverterHelper.GetUnitSymbol(MeasurementType." + column.MeasurementType + "));");
+
+					string key = ResxManager.Manager.AddResourceWithMeasUnit(columnHeader);
+
+					if(column.MeasurementType != MeasurementType.None)
+					{
+						sb.AppendLine(Resources.Tab3 + "Col" + dg.Name + column.Name + ".Header += String.Format(Properties." + tab.ModelRoot.Name + "ResourcesGenerated." + tab.ModelRoot.Name + "_" + key + ", UnitConverterHelper.GetUnitSymbol(MeasurementType." + column.MeasurementType + "));");
+					}
+					else
+					{
+						sb.AppendLine(Resources.Tab3 + "Col" + dg.Name + column.Name + ".Header += String.Format(Properties." + tab.ModelRoot.Name + "ResourcesGenerated." + tab.ModelRoot.Name + "_" + key + ", UnitConverterHelper.GetUnitSymbol(UnitSymbol." + column.UnitSymbol + "));");
+					}
 				}
 			}
 			sb.AppendLine(Resources.Tab2 + "}");
@@ -291,8 +300,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab3 + "InitializeComponent();");
             sb.AppendLine(Resources.Tab3 + "SetHeader();");
-            sb.AppendLine(Resources.Tab3 + "CanSaveLayout = true;");
-			sb.AppendLine(Resources.Tab3 + "ShouldPersistFilter = true;");
+
+            sb.AppendLine(Resources.Tab3 + "InitSummaryConfig(null, new ReportDocumentConfig(SummaryType.BaseSummary, PersistFilterMode.PersistFilters, null, true, true));");
 			sb.AppendLine(Resources.Tab3 + "HelpProvider.SetContextHelpId(this, \"" + root.Name + " Report\");");
 			sb.AppendLine(Resources.Tab3 + "this.shellView = shellView;");
 			sb.AppendLine(Resources.Tab3 + "this.reportViewModel = new " + root.Name +"ReportViewModel(this);");

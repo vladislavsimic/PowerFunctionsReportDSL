@@ -21,11 +21,11 @@ using TelventDMS.Common.DMS.Common.Converters;
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 {
-    public partial class EMSLoadFlowNodeViewModel : ViewModelBase, ILocatable
+    public partial class DataGrid2ViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         
-		private EMSLoadFlowNodeRecord reportRecord;
+		private DataGrid2Record reportRecord;
 
 		private DMSType recordType;
 
@@ -38,16 +38,16 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Constructors
 
-		public EMSLoadFlowNodeViewModel()
+		public DataGrid2ViewModel()
 		{
 		}
  
 
-		public EMSLoadFlowNodeViewModel(EMSLoadFlowNodeRecord reportRecord, bool tabularViewActive)
+		public DataGrid2ViewModel(DataGrid2Record reportRecord, bool tabularViewActive)
 		{
 			if (reportRecord == null)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowNodeViewModel(), should not be null.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to DataGrid2ViewModel(), should not be null.");
 				return;
 			}
 			this.reportRecord = reportRecord;
@@ -107,7 +107,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public EMSLoadFlowNodeRecord ReportRecord
+		public DataGrid2Record ReportRecord
 		{
 			get
 			{
@@ -142,22 +142,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			{
 				rowIsNotVisible = value;
 				OnPropertyChanged("RowIsNotVisible");
-			}
-		}
-
-		public float P
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSActivePowerM, reportRecord.P);
-			}
-		}
-
-		public float Q
-		{
-			get
-			{
-				return UnitConverterHelper.ConvertFromDMS(MeasurementType.EMSReactivePowerM, reportRecord.Q);
 			}
 		}
 

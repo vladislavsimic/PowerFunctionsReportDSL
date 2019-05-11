@@ -107,20 +107,21 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		private static string GetTabXaml(Tab tab)
 		{
 			StringBuilder sb = new StringBuilder();
+			string key = string.Empty;
 
             ModelRoot root = tab.ModelRoot;
 
 			string tabHeader = string.Empty;
-			if (tab.Header != null)
+			if (!string.IsNullOrEmpty(tab.Header))
 			{
                 
-                tabHeader = "{Binding Path=ResourcesGenerated." + root.Name + "_" + tab.Header.Trim().Replace(" ", "_") + ", Source={ StaticResource LocalizedStrings} }";
-				ResxManager.Manager.AddResource(tab.Header);
+				key = ResxManager.Manager.AddResource(tab.Header);
+                tabHeader = "{Binding Path=ResourcesGenerated." + root.Name + "_" + key + ", Source={ StaticResource LocalizedStrings} }";
 			}
 			else
 			{
-				tabHeader = "{Binding Path=ResourcesGenerated." + root.Name + "_" + tab.Name.Trim().Replace(" ", "_") + ", Source={ StaticResource LocalizedStrings} }";
-				ResxManager.Manager.AddResource(tab.Name);
+				key = ResxManager.Manager.AddResource(tab.Name);
+				tabHeader = "{Binding Path=ResourcesGenerated." + root.Name + "_" + key + ", Source={ StaticResource LocalizedStrings} }";
 			}
 
 			sb.AppendLine(Resources.Tab3 + "<TabItem Name=\"" + tab.Name + "\" Header=\"" + tabHeader + "\">");
@@ -197,8 +198,8 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 					if (dg.Columns.Count > 0)
 					{
 						sb.AppendLine(Resources.Tab7 + "<DataGrid.Columns>");
-						sb.AppendLine(Resources.Tab8 + "<DataGridTemplateColumn Header=\"{ Binding Path = ResourcesGenerated.ELEMENT, Source = { StaticResource LocalizedStrings } }\" Width=\"Auto\" MinWidth=\"200\"  x:Name=\"" + dg.Name + "Tree\" SortMemberPath=\"Title\">");
-						ResxManager.Manager.AddResource("ELEMENT");
+						key = ResxManager.Manager.AddResource("ELEMENT");
+						sb.AppendLine(Resources.Tab8 + "<DataGridTemplateColumn Header=\"{ Binding Path = ResourcesGenerated." + key + ", Source = { StaticResource LocalizedStrings } }\" Width=\"Auto\" MinWidth=\"200\"  x:Name=\"" + dg.Name + "Tree\" SortMemberPath=\"Title\">");
 						sb.AppendLine(Resources.Tab9 + "<DataGridTemplateColumn.CellTemplate>");
 						sb.AppendLine(Resources.Tab10 + "<DataTemplate>");
 						sb.AppendLine(Resources.Tab11 + "<dgtvi:DataGridTreeViewItem DataContext=\"{ Binding DataGridTreeViewItemInfo}\" VerticalAlignment=\"Center\" NoLevel=\"{ Binding DataContext.TabularViewIsActive, RelativeSource ={ RelativeSource AncestorType = Grid} }\">");
@@ -212,16 +213,21 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 							string name = string.Format("x:Name=\"Col{0}{1}\"", dg.Name ,attr.Name);
 
 							string header = string.Empty;
-							if (attr.Header != null)
+							// do not generate header from xaml, header is set in xaml.cs
+							if (attr.MeasurementType == MeasurementType.None && attr.UnitSymbol == UnitSymbol.None)
 							{
-                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Header.Trim().Replace(" ", "_") + ", Source={StaticResource LocalizedStrings} }\"";
-                                ResxManager.Manager.AddResource(attr.Header.Trim().Replace(" ", "_"));
+								if (!string.IsNullOrEmpty(attr.Header))
+								{
+									key = ResxManager.Manager.AddResource(attr.Header);
+									header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + key + ", Source={StaticResource LocalizedStrings} }\"";
+								}
+								else
+								{
+									key = ResxManager.Manager.AddResource(attr.Name);
+									header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + key + ", Source={StaticResource LocalizedStrings} }\"";
+								}
 							}
-							else
-							{
-                                header = " Header=\"{Binding Path=ResourcesGenerated." + root.Name + "_" + attr.Name.Trim().Replace(" ", "_") + ", Source={StaticResource LocalizedStrings} }\"";
-                                ResxManager.Manager.AddResource(attr.Name.Trim().Replace(" ", "_"));
-							}
+
 							string binding = string.Empty;
 							if (string.IsNullOrEmpty(attr.BindingName))
 							{
@@ -347,6 +353,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 				if (!attribute.ShouldGenerate)
 				{
 					continue;
+				}
+				if (!string.IsNullOrEmpty(attribute.Description))
+				{
+					sb.AppendLine(Resources.Tab2 + "/// <summary>");
+					sb.AppendLine(Resources.Tab2 + "/// " + attribute.Description);
+					sb.AppendLine(Resources.Tab2 + "/// </summary>");
 				}
 				sb.AppendLine(Resources.Tab2 + "public " + TypesToCSharpType.Convert(attribute) + " " + attribute.Name[0].ToString().ToUpper() + attribute.Name.Substring(1));
 				sb.AppendLine(Resources.Tab2 + "{");

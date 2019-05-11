@@ -37,6 +37,7 @@
 
 namespace <#=code["classNamespace"]#>
 {
+<#=code["description"]#>
     <#=code["dataContract"]#>
     public partial class <#=dg.Name#>Results : <#=this.ModelRoot.Name#>ReportResult
     {

@@ -539,6 +539,8 @@
         <xsd:attribute name="modelCodeResultsType" type="xsd:string" />
         <!-- Property: DMSType -->
         <xsd:attribute name="dMSType" type="xsd:string" />
+        <!-- Property: Description -->
+        <xsd:attribute name="description" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -588,6 +590,8 @@
         <xsd:attribute name="shouldGenerate" type="xsd:boolean" />
         <!-- Property: UnitSymbol -->
         <xsd:attribute name="unitSymbol" type="UnitSymbol" />
+        <!-- Property: Description -->
+        <xsd:attribute name="description" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

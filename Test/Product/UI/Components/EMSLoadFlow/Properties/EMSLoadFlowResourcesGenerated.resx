@@ -120,8 +120,8 @@
   <data name="EMSLoadFlow_NETWORK_TREE" xml:space="preserve">
     <value>NETWORK_TREE</value>
   </data>
-  <data name="EMSLoadFlow_Nodes" xml:space="preserve">
-    <value>Nodes</value>
+  <data name="EMSLoadFlow_Tab1" xml:space="preserve">
+    <value>Tab1</value>
   </data>
   <data name="EMSLoadFlow_NO_RESULTS" xml:space="preserve">
     <value>NO_RESULTS</value>
@@ -129,10 +129,10 @@
   <data name="EMSLoadFlow_ELEMENT" xml:space="preserve">
     <value>ELEMENT</value>
   </data>
-  <data name="EMSLoadFlow_P_End_1" xml:space="preserve">
-    <value>P End 1</value>
+  <data name="EMSLoadFlow_P_Inj" xml:space="preserve">
+    <value>P Inj</value>
   </data>
-  <data name="EMSLoadFlow_Q" xml:space="preserve">
-    <value>Q</value>
+  <data name="EMSLoadFlow_Tab2" xml:space="preserve">
+    <value>Tab2</value>
   </data>
 </root>

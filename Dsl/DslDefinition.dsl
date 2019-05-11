@@ -169,6 +169,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="77748f74-2389-464a-b46b-5120d8100d6f" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid.Description" Name="Description" DisplayName="Description">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
@@ -255,6 +260,11 @@
         <DomainProperty Id="9503bf85-6165-450c-8552-aa9288e652c0" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Unit Symbol" Name="UnitSymbol" DisplayName="Unit Symbol" DefaultValue="None">
           <Type>
             <DomainEnumerationMoniker Name="UnitSymbol" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="b3d63381-3525-405f-a144-2636c126dd51" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute.Description" Name="Description" DisplayName="Description">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
       </Properties>
@@ -811,6 +821,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="superHeaders">
             <DomainRelationshipMoniker Name="DataGridHasSuperHeaders" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="description">
+            <DomainPropertyMoniker Name="DataGrid/Description" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="UIElementShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIElementShapeMoniker" ElementName="uIElementShape" MonikerTypeName="UIElementShapeMoniker">
@@ -863,6 +876,9 @@
           </XmlPropertyData>
           <XmlPropertyData XmlName="unitSymbol">
             <DomainPropertyMoniker Name="ColumnAttribute/UnitSymbol" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="description">
+            <DomainPropertyMoniker Name="ColumnAttribute/Description" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>

@@ -7,40 +7,44 @@
 //														        #
 //###############################################################
 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using TelventDMS.Common.DMS.Common;
 using System.Runtime.Serialization;
 
 
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
-
-	[DataContract]
-	[KnownType(typeof(DataGrid1Results))]
-	[KnownType(typeof(DataGrid2Results))]
-
-    public partial class EMSLoadFlowReportResult : JobResult
+	/// <summary>
+	/// Class containing the result for <see cref="DataGrid2Record">.
+	/// </summary>
+    [DataContract]
+    public partial class DataGrid2Results : EMSLoadFlowReportResult
     {
         #region Constructors
 
-		public EMSLoadFlowReportResult()
+		/// <summary>
+		/// Default constructor
+		/// </summary>
+		public DataGrid2Results()
 		{
+			EMSLoadFlowReportType = EMSLoadFlowReportType.Tab2;
 		}
-
-
-		public EMSLoadFlowReportResult(EMSLoadFlowReportType reportType)
-		{
-			EMSLoadFlowReportType = reportType;
-		}
-
+      
 
         #endregion Constructors
 
         #region Properties
 
+		/// <summary>
+		/// The collection containing DataGrid2 records <see cref="DataGrid2Record"/>
+		/// </summary>
 		[DataMember]
-		public EMSLoadFlowReportType EMSLoadFlowReportType { get; set; }
+		public List<DataGrid2Record> Records { get; set; }
 
 
         #endregion Properties
-
     }
 }

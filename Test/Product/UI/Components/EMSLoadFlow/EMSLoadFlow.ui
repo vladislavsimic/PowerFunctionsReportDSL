@@ -1,26 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="013a1134-6657-4756-8643-df5e2c0695ae" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="baf507d9-b859-42af-9536-342c53941947" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="bd9054d1-5237-47c1-b052-8830a4354808">
-      <tab Id="3c376dbb-8b63-474a-9844-37a3c1c3c5ad" name="Node" header="Nodes">
+    <modelRootHasTypes Id="852ca52d-f56d-43fb-b706-b1ec63e9613a">
+      <tab Id="f74f83a2-d829-42f6-8487-b54959acec96" name="Tab1">
         <dataGrid>
-          <tabReferencesDataGrid Id="fa23e3fa-f2c8-4dcd-a404-1f7acc2ac266">
-            <dataGridMoniker Id="221a99f9-58d5-44cb-a74a-ce266b1e5e4b" />
+          <tabReferencesDataGrid Id="5655747a-be81-4a7c-b9eb-ee96a3d71e84">
+            <dataGridMoniker Id="2e27a942-3661-42ca-9124-91411a79e8cc" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="6e56eb82-601e-4591-b190-6214618df96b">
-      <dataGrid Id="221a99f9-58d5-44cb-a74a-ce266b1e5e4b" name="EMSLoadFlowNode" modelCodeResultsType="BUSNODERESTA" dMSType="BUSNODE">
+    <modelRootHasTypes Id="2a9533ce-e29e-4676-beeb-802a6a380bf3">
+      <dataGrid Id="2e27a942-3661-42ca-9124-91411a79e8cc" name="DataGrid1">
         <columns>
-          <dataGridHasColumns Id="80ff784b-fb9c-4996-a975-ef7493e514ea">
-            <columnAttribute Id="5f575a39-e03e-4e6c-8d52-aa4717786f75" name="P" header="P End 1" modelCode="LFRES_P" measurementType="EMSActivePowerM" />
-          </dataGridHasColumns>
-          <dataGridHasColumns Id="6fafece8-3ac1-4229-8e7d-6e78cd248b36">
-            <columnAttribute Id="962ded0b-8558-4df9-8b01-023aab8e32a6" name="Q" header="Q" modelCode="LFRES_Q" measurementType="EMSReactivePowerM" />
+          <dataGridHasColumns Id="2b7afce2-278b-4b45-8ae0-9867bcac2369">
+            <columnAttribute Id="e2a49734-7a55-4946-90d9-9f323cb8ed4a" name="P" header="P Inj" />
           </dataGridHasColumns>
         </columns>
       </dataGrid>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="54d1cf89-ccde-47a4-a88d-68f865a5747c">
+      <tab Id="be7aedae-fd27-4738-a366-417799b3450e" name="Tab2">
+        <dataGrid>
+          <tabReferencesDataGrid Id="e1aa04a9-f407-41e9-ac9c-94d87d4db81d">
+            <dataGridMoniker Id="a8cc34ed-568a-4d16-a614-9399bc843d67" />
+          </tabReferencesDataGrid>
+        </dataGrid>
+      </tab>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="25487f51-f7af-4119-af3a-d1a618cf36b0">
+      <dataGrid Id="a8cc34ed-568a-4d16-a614-9399bc843d67" name="DataGrid2" />
     </modelRootHasTypes>
   </types>
 </modelRoot>

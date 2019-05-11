@@ -25,10 +25,23 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			GeneratedCode.Add("usings", GetUsings());
 			GeneratedCode.Add("classNamespace", GetClassNamespace());
 			GeneratedCode.Add("superclass",GetSuperClass());
+			GeneratedCode.Add("description", GetDescription());
 			GeneratedCode.Add("dataContract", IsDataContractString());
 			GeneratedCode.Add("defaultConstructor", GetDefaultConstructor());
 			GeneratedCode.Add("attributes", GetJMSClassAttributes());
 			GeneratedCode.Add("associationProperties", GetJMSModelAssociationProperties());
+		}
+
+		private string GetDescription()
+		{
+			StringBuilder sb = new StringBuilder();
+			if (!string.IsNullOrEmpty(DataGrid.Description))
+			{
+				sb.AppendLine(Resources.Tab1 + "/// <summary>");
+				sb.AppendLine(Resources.Tab1 + "/// " + DataGrid.Description);
+				sb.Append(Resources.Tab1 + "/// </summary>");
+			}
+			return sb.ToString();
 		}
 
 		protected override string GetClassNamespace()
@@ -40,6 +53,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
+			sb.AppendLine(Resources.Tab2 + "/// <summary>");
+			sb.AppendLine(Resources.Tab2 + "/// Default constructor");
+			sb.AppendLine(Resources.Tab2 + "/// </summary>");
 			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.Name + "Record()");
 			sb.AppendLine(Resources.Tab2 + "{");
 			sb.AppendLine(Resources.Tab2 + "}");
@@ -54,6 +70,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			foreach (ColumnAttribute attr in DataGrid.Columns)
 			{
 				string customType = TypesToCSharpType.Convert(attr);
+				if (!string.IsNullOrEmpty(attr.Description))
+				{
+					sb.AppendLine(Resources.Tab2 + "/// <summary>");
+					sb.AppendLine(Resources.Tab2 + "/// " + attr.Description);
+					sb.AppendLine(Resources.Tab2 + "/// </summary>");
+				}
 				if (attr.IsDataMember)
 				{
 					sb.AppendLine(Resources.Tab2 + "[DataMember]");

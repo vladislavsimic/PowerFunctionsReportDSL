@@ -7672,6 +7672,23 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					}
 				}
 			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				string attribDescription = PowerFunctionsReportDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "description");
+				if (attribDescription != null)
+				{
+					global::System.String valueOfDescription;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribDescription, out valueOfDescription))
+					{
+						instanceOfDataGrid.Description = valueOfDescription;
+					}
+					else
+					{	// Invalid property value, ignored.
+						PowerFunctionsReportDSLSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "description", typeof(global::System.String), attribDescription);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -8326,6 +8343,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	
 				}
 			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfDataGrid.Description;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "description", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>
@@ -8792,6 +8820,23 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					else
 					{	// Invalid property value, ignored.
 						PowerFunctionsReportDSLSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "unitSymbol", typeof(UnitSymbol), attribUnitSymbol);
+					}
+				}
+			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				string attribDescription = PowerFunctionsReportDSLSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "description");
+				if (attribDescription != null)
+				{
+					global::System.String valueOfDescription;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribDescription, out valueOfDescription))
+					{
+						instanceOfColumnAttribute.Description = valueOfDescription;
+					}
+					else
+					{	// Invalid property value, ignored.
+						PowerFunctionsReportDSLSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "description", typeof(global::System.String), attribDescription);
 					}
 				}
 			}
@@ -9330,6 +9375,17 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 					{	// No need to write the value out if it's the same as default value.
 						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "unitSymbol", serializedPropValue);
 					}
+				}
+			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfColumnAttribute.Description;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						PowerFunctionsReportDSLSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "description", propValue);
+	
 				}
 			}
 		}

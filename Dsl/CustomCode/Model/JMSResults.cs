@@ -19,8 +19,20 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			GeneratedCode.Add("classNamespace", GetClassNamespace());
 			GeneratedCode.Add("superclass", GetSuperClass());
 			GeneratedCode.Add("dataContract", IsDataContractString());
+			GeneratedCode.Add("description", GetDescription());
 			GeneratedCode.Add("defaultConstructor", GetDefaultConstructor());
 			GeneratedCode.Add("attributes", GetJMSClassAttributes());
+		}
+
+		private string GetDescription()
+		{
+			StringBuilder sb = new StringBuilder();
+
+			sb.AppendLine(Resources.Tab1 + "/// <summary>");
+			sb.AppendLine(Resources.Tab1 + "/// Class containing the result for <see cref=\"" + DataGrid.Name +"Record\">.");
+			sb.Append(Resources.Tab1 + "/// </summary>");
+
+			return sb.ToString();
 		}
 
 		protected override string GetClassNamespace()
@@ -34,6 +46,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 
 			string rootName = DataGrid.ModelRoot.Name;
 
+			sb.AppendLine(Resources.Tab2 + "/// <summary>");
+			sb.AppendLine(Resources.Tab2 + "/// Default constructor");
+			sb.AppendLine(Resources.Tab2 + "/// </summary>");
 			sb.AppendLine(Resources.Tab2 + "public " + DataGrid.Name + "Results()");
 			sb.AppendLine(Resources.Tab2 + "{");
 			if (DataGrid.Tab != null)
@@ -49,6 +64,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 		{
 			StringBuilder sb = new StringBuilder();
 
+			sb.AppendLine(Resources.Tab2 + "/// <summary>");
+			sb.AppendLine(Resources.Tab2 + "/// The collection containing " + DataGrid.Name + " records <see cref=\"" + DataGrid.Name +"Record\"/>");
+			sb.AppendLine(Resources.Tab2 + "/// </summary>");
 			sb.AppendLine(Resources.Tab2 + "[DataMember]");
 			sb.AppendLine(Resources.Tab2 + "public List<" + DataGrid.Name + "Record> Records { get; set; }");
 

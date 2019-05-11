@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Resources;
 
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
@@ -7,7 +8,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
     {
         private static ResxManager manager;
 
-        private static HashSet<string> resources = new HashSet<string>();
+        private static Dictionary<string, string> resources = new Dictionary<string, string>();
+
+		private static Dictionary<string, string> specificResource = new Dictionary<string, string>();
 
         public ResxManager()
         {
@@ -26,13 +29,35 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
             }
         }
 
-        public void AddResource(string value)
+        public string AddResource(string headerValue)
         {
-            resources.Add(value);
+			string resxKey = headerValue.Trim().Replace(" ", "_");
+
+			string str;
+			if(!resources.TryGetValue(resxKey, out str))
+			{
+				resources.Add(resxKey, headerValue);
+			}
+			return resxKey;
         }
 
-        public void GenerateResxFile(string projectPath, string rootName)
+		public string AddResourceWithMeasUnit(string headerValue)
+		{
+			string resxKey = "MEAS_UNIT_" + headerValue.Trim().Replace(" ", "_");
+
+			headerValue = headerValue + " [{0}]";
+
+			string str;
+			if (!resources.TryGetValue(resxKey, out str))
+			{
+				resources.Add(resxKey, headerValue);
+			}
+			return resxKey;
+		}
+
+		public void GenerateResxFile(string projectPath, string rootName)
         {
+
 			string resxPath = projectPath + "\\Properties";
 			if (!System.IO.Directory.Exists(resxPath))
 			{
@@ -40,14 +65,28 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 			}
 
             string fullPath = resxPath + "\\" + rootName + "ResourcesGenerated.resx";
+
+			ClearContent(fullPath);
+
             using (ResXResourceWriter resx = new ResXResourceWriter(fullPath))
             {
-                foreach (string str in resources)
+                foreach (KeyValuePair<string, string> keyPair in resources)
                 {
-					string newString = str.Trim().Replace(" ", "_");
-                    resx.AddResource("EMSLoadFlow_" + newString, str);
+                    resx.AddResource("EMSLoadFlow_" + keyPair.Key, keyPair.Value);
                 }
             }
         }
-    }
+
+		private void ClearContent(string path)
+		{
+			using (ResXResourceWriter resx = new ResXResourceWriter(path))
+			{
+			}
+		}
+
+		public void ClearResources()
+		{
+			resources.Clear();
+		}
+	}
 }

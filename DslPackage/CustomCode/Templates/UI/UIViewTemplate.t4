@@ -23,7 +23,6 @@
 <#
     UITab uiTab = new UITab(tab);
     string xamlCode = uiTab.GetXaml();
-	ResxManager.Manager.GenerateResxFile(inputFilePath, this.ModelRoot.Name);
 #>
 <#=xamlCode#>
 <#
