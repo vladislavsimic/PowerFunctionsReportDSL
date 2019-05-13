@@ -361,16 +361,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Model
 			sb.AppendLine(Resources.Tab2 + "private IWorkspaceManager workspaceManager;");
 			sb.AppendLine(Resources.Tab2 + "private IModuleEnvironment moduleEnvironment;");
 
-			foreach(ModelType type in root.Types)
-			{
-				if(type is DataGrid)
-				{
-					DataGrid dg = type as DataGrid;
-					string propertyName = string.Format("{0}ReportGridVisibilityControl{1}", root.Name, dg.Name);
-					sb.AppendLine(Resources.Tab2 + "private DataGridColumnVisibilityControl " + propertyName + ";");
-				}
-			}
-
 			return sb.ToString();
 		}
 
