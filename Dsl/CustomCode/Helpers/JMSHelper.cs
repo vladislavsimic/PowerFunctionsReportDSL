@@ -14,10 +14,10 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Helpers
 		{
 			StringBuilder sb = new StringBuilder();
 
-			foreach(EnumAttribute attr in enumClass.Values)
+			/*foreach(ExternalType attr in enumClass.ExternalType)
 			{
 				sb.AppendLine(Resources.Tab2 +  attr.Name + ",");
-			}
+			}*/
 
 			return sb.ToString();
 		}

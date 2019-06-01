@@ -274,12 +274,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			
 			// Line pen settings for this connector.
 			DslDiagrams::PenSettings linePen = new DslDiagrams::PenSettings();
-			linePen.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Gray);
+			linePen.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.SkyBlue);
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLineDecorator, linePen);
 			linePen.Width = 0.02f;
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLine, linePen);
 			DslDiagrams::BrushSettings lineBrush = new DslDiagrams::BrushSettings();
-			lineBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Gray);
+			lineBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.SkyBlue);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ConnectionLineDecorator, lineBrush);
 			
 		}
@@ -411,12 +411,12 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			
 			// Line pen settings for this connector.
 			DslDiagrams::PenSettings linePen = new DslDiagrams::PenSettings();
-			linePen.Color = global::System.Drawing.Color.FromArgb(255, 128, 255, 128);
+			linePen.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LimeGreen);
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLineDecorator, linePen);
 			linePen.Width = 0.02f;
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLine, linePen);
 			DslDiagrams::BrushSettings lineBrush = new DslDiagrams::BrushSettings();
-			lineBrush.Color = global::System.Drawing.Color.FromArgb(255, 128, 255, 128);
+			lineBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LimeGreen);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ConnectionLineDecorator, lineBrush);
 			
 		}

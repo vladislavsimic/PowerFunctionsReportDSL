@@ -37,11 +37,6 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="ad15ec76-7156-4597-b0b2-85c3ad76bb53" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.Alias" Name="Alias" DisplayName="Alias">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
       </Properties>
     </DomainClass>
     <DomainClass Id="bf1070c6-59b9-4636-a65d-0ef5aa8713c4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelElement" Name="ModelElement" DisplayName="Model Element" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
@@ -56,63 +51,14 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
-    <DomainClass Id="829a8092-5e51-41f1-bff5-977ee88c66a4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute" Name="ModelAttribute" DisplayName="Model Attribute" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
-      <BaseClass>
-        <DomainClassMoniker Name="ModelElement" />
-      </BaseClass>
-      <Properties>
-        <DomainProperty Id="2d411332-72ca-497e-9b2e-93bba3032d06" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Type" Name="Type" DisplayName="Type" DefaultValue="Float">
-          <Type>
-            <DomainEnumerationMoniker Name="Types" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="9a5402cf-296d-429d-b28b-d95981fc0472" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Is Data Member" Name="IsDataMember" DisplayName="Is Data Member" DefaultValue="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Boolean" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="f6be6a7b-5e44-43f2-ab97-c56c95242d17" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Model Code" Name="ModelCode" DisplayName="Model Code">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-        <DomainProperty Id="386a150a-60f2-43dc-93ce-625a2f97e37e" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Measurement Type" Name="MeasurementType" DisplayName="Measurement Type" DefaultValue="None">
-          <Type>
-            <DomainEnumerationMoniker Name="MeasurementType" />
-          </Type>
-        </DomainProperty>
-      </Properties>
-    </DomainClass>
     <DomainClass Id="8ddb44cf-3b06-4b91-b747-b1eec2bc30b4" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass" Name="ModelClass" DisplayName="Model Class" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
       <BaseClass>
         <DomainClassMoniker Name="ModelType" />
       </BaseClass>
-      <Properties>
-        <DomainProperty Id="49e6db7c-b6b1-4cda-8d31-c5bad8b5a7c2" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass.Should Generate" Name="ShouldGenerate" DisplayName="Should Generate" DefaultValue="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Boolean" />
-          </Type>
-        </DomainProperty>
-      </Properties>
     </DomainClass>
-    <DomainClass Id="cccc1a1d-067f-4adb-a360-85a9fb4f5b2b" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Enum" Name="Enum" DisplayName="Enum" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
+    <DomainClass Id="cccc1a1d-067f-4adb-a360-85a9fb4f5b2b" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType" Name="ExternalType" DisplayName="External Type" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
       <BaseClass>
         <DomainClassMoniker Name="ModelClass" />
-      </BaseClass>
-      <ElementMergeDirectives>
-        <ElementMergeDirective>
-          <Index>
-            <DomainClassMoniker Name="EnumAttribute" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>EnumHasValues.Values</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-      </ElementMergeDirectives>
-    </DomainClass>
-    <DomainClass Id="2cbf3442-ee61-4c37-b0c7-44b126765931" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute" Name="EnumAttribute" DisplayName="Enum Attribute" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
-      <BaseClass>
-        <DomainClassMoniker Name="ModelElement" />
       </BaseClass>
     </DomainClass>
     <DomainClass Id="66aabeac-09c2-4ce5-9322-96b3248a8383" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement" Name="UIElement" DisplayName="UIElement" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL">
@@ -347,22 +293,6 @@
         <DomainRole Id="7c256cee-4104-4ef5-93bf-db2c35e0a465" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes.ModelType" Name="ModelType" DisplayName="Model Type" PropertyName="ModelRoot" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Model Root">
           <RolePlayer>
             <DomainClassMoniker Name="ModelType" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="79613aa9-9394-44e8-bed4-a86f5cf31be9" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues" Name="EnumHasValues" DisplayName="Enum Has Values" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="8e8acfb2-6417-4e13-8b91-613ef13455f7" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.Enum" Name="Enum" DisplayName="Enum" PropertyName="Values" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Values">
-          <RolePlayer>
-            <DomainClassMoniker Name="Enum" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="1af0f984-b645-47fd-b193-d86a85fb5c22" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.EnumAttribute" Name="EnumAttribute" DisplayName="Enum Attribute" PropertyName="Enum" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Enum">
-          <RolePlayer>
-            <DomainClassMoniker Name="EnumAttribute" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -616,21 +546,26 @@
   </Types>
   <Shapes>
     <GeometryShape Id="feedcd67-3fec-445b-9525-554debbd5c43" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentShape" Name="CommentShape" DisplayName="Comment Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Comment Shape" InitialHeight="1" Geometry="Rectangle" />
-    <CompartmentShape Id="66b09fe4-0a78-43b4-9f09-385e4e2dfb29" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape" Name="EnumShape" DisplayName="Enum Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Enum Shape" FillColor="LemonChiffon" InitialWidth="2" InitialHeight="0.5" OutlineThickness="0.01" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+    <CompartmentShape Id="66b09fe4-0a78-43b4-9f09-385e4e2dfb29" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape" Name="ExternalTypeShape" DisplayName="External Type Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="External Type Shape" FillColor="LemonChiffon" InitialWidth="2" InitialHeight="0.5" OutlineThickness="0.01" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0.15">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
         <ExpandCollapseDecorator Name="ExpandCollapseDecorator" DisplayName="Expand Collapse Decorator" />
       </ShapeHasDecorators>
-      <Compartment Name="EnumAttributes" Title="Values" />
-    </CompartmentShape>
-    <CompartmentShape Id="e66c55af-0348-48db-8963-eac7b1b01c4b" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape" Name="TabShape" DisplayName="Tab Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Tab Shape" FillColor="Gray" InitialHeight="1" OutlineThickness="0.01" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Stereotype" DisplayName="Stereotype" DefaultText="&lt;&lt;External Type&gt;&gt;" />
+      </ShapeHasDecorators>
+    </CompartmentShape>
+    <CompartmentShape Id="e66c55af-0348-48db-8963-eac7b1b01c4b" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape" Name="TabShape" DisplayName="Tab Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Tab Shape" FillColor="SkyBlue" InitialHeight="1" OutlineThickness="0.01" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0.15">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
         <ExpandCollapseDecorator Name="ExpandCollapseDecorator1" DisplayName="Expand Collapse Decorator1" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Stereotype" DisplayName="Stereotype" DefaultText="&lt;&lt;Tab&gt;&gt;" />
       </ShapeHasDecorators>
       <Compartment Name="Attributes" Title="Attributes" />
     </CompartmentShape>
@@ -643,12 +578,15 @@
       </ShapeHasDecorators>
       <Compartment Name="Attributes" Title="Attributes" />
     </CompartmentShape>
-    <CompartmentShape Id="47830df0-8582-4b3d-887f-91e93dd358af" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape" Name="DataGridShape" DisplayName="Data Grid Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Data Grid Shape" FillColor="128, 255, 128" InitialHeight="1" OutlineThickness="0.01" Geometry="Rectangle">
-      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+    <CompartmentShape Id="47830df0-8582-4b3d-887f-91e93dd358af" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape" Name="DataGridShape" DisplayName="Data Grid Shape" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Data Grid Shape" FillColor="LimeGreen" InitialHeight="1" OutlineThickness="0.01" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0.15">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
       <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
         <ExpandCollapseDecorator Name="ExpandCollapseDecorator1" DisplayName="Expand Collapse Decorator1" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Stereotype" DisplayName="Stereotype" DefaultText="&lt;&lt;DataGrid&gt;&gt;" />
       </ShapeHasDecorators>
       <Compartment Name="Attributes" Title="Attributes" />
       <Compartment Name="Columns" Title="Columns" />
@@ -658,12 +596,12 @@
   <Connectors>
     <Connector Id="1b439915-326b-456f-908a-103256c71915" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector" Name="CommentConnector" DisplayName="Comment Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Comment Connector" />
     <Connector Id="1ef5e009-fe1d-4e67-ae4c-d1bfcc970771" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIConnector" Name="UIConnector" DisplayName="UIConnector" InheritanceModifier="Abstract" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="UIConnector" Thickness="0.01" />
-    <Connector Id="033d3a33-4f8f-4648-b18d-3536fb95ffec" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabConnector" Name="TabConnector" DisplayName="Tab Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Tab Connector" Color="Gray" Thickness="0.02">
+    <Connector Id="033d3a33-4f8f-4648-b18d-3536fb95ffec" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabConnector" Name="TabConnector" DisplayName="Tab Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="Tab Connector" Color="SkyBlue" Thickness="0.02">
       <BaseConnector>
         <ConnectorMoniker Name="UIConnector" />
       </BaseConnector>
     </Connector>
-    <Connector Id="da3eab5c-4b1c-4274-8403-5a9bf475cb3f" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ViewModelConnector" Name="ViewModelConnector" DisplayName="View Model Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="View Model Connector" Color="128, 255, 128" Thickness="0.02">
+    <Connector Id="da3eab5c-4b1c-4274-8403-5a9bf475cb3f" Description="Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ViewModelConnector" Name="ViewModelConnector" DisplayName="View Model Connector" Namespace="SchneiderElectricDMS.PowerFunctionsReportDSL" FixedTooltipText="View Model Connector" Color="LimeGreen" Thickness="0.02">
       <BaseConnector>
         <ConnectorMoniker Name="UIConnector" />
       </BaseConnector>
@@ -705,9 +643,6 @@
           <XmlPropertyData XmlName="name">
             <DomainPropertyMoniker Name="NamedElement/Name" />
           </XmlPropertyData>
-          <XmlPropertyData XmlName="alias">
-            <DomainPropertyMoniker Name="NamedElement/Alias" />
-          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="CommentReferencesModelTyped" MonikerAttributeName="" SerializeId="true" MonikerElementName="commentReferencesModelTypedMoniker" ElementName="commentReferencesModelTyped" MonikerTypeName="CommentReferencesModelTypedMoniker">
@@ -730,47 +665,14 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="ModelAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="modelAttributeMoniker" ElementName="modelAttribute" MonikerTypeName="ModelAttributeMoniker">
-        <DomainClassMoniker Name="ModelAttribute" />
-        <ElementData>
-          <XmlPropertyData XmlName="type">
-            <DomainPropertyMoniker Name="ModelAttribute/Type" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="isDataMember">
-            <DomainPropertyMoniker Name="ModelAttribute/IsDataMember" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="modelCode">
-            <DomainPropertyMoniker Name="ModelAttribute/ModelCode" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="measurementType">
-            <DomainPropertyMoniker Name="ModelAttribute/MeasurementType" />
-          </XmlPropertyData>
-        </ElementData>
-      </XmlClassData>
       <XmlClassData TypeName="ModelClass" MonikerAttributeName="" SerializeId="true" MonikerElementName="modelClassMoniker" ElementName="modelClass" MonikerTypeName="ModelClassMoniker">
         <DomainClassMoniker Name="ModelClass" />
-        <ElementData>
-          <XmlPropertyData XmlName="shouldGenerate">
-            <DomainPropertyMoniker Name="ModelClass/ShouldGenerate" />
-          </XmlPropertyData>
-        </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="Enum" MonikerAttributeName="" SerializeId="true" MonikerElementName="enumMoniker" ElementName="enum" MonikerTypeName="EnumMoniker">
-        <DomainClassMoniker Name="Enum" />
-        <ElementData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="values">
-            <DomainRelationshipMoniker Name="EnumHasValues" />
-          </XmlRelationshipData>
-        </ElementData>
+      <XmlClassData TypeName="ExternalType" MonikerAttributeName="" SerializeId="true" MonikerElementName="externalTypeMoniker" ElementName="externalType" MonikerTypeName="ExternalTypeMoniker">
+        <DomainClassMoniker Name="ExternalType" />
       </XmlClassData>
-      <XmlClassData TypeName="EnumAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="enumAttributeMoniker" ElementName="enumAttribute" MonikerTypeName="EnumAttributeMoniker">
-        <DomainClassMoniker Name="EnumAttribute" />
-      </XmlClassData>
-      <XmlClassData TypeName="EnumHasValues" MonikerAttributeName="" SerializeId="true" MonikerElementName="enumHasValuesMoniker" ElementName="enumHasValues" MonikerTypeName="EnumHasValuesMoniker">
-        <DomainRelationshipMoniker Name="EnumHasValues" />
-      </XmlClassData>
-      <XmlClassData TypeName="EnumShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="enumShapeMoniker" ElementName="enumShape" MonikerTypeName="EnumShapeMoniker">
-        <CompartmentShapeMoniker Name="EnumShape" />
+      <XmlClassData TypeName="ExternalTypeShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="externalTypeShapeMoniker" ElementName="externalTypeShape" MonikerTypeName="ExternalTypeShapeMoniker">
+        <CompartmentShapeMoniker Name="ExternalTypeShape" />
       </XmlClassData>
       <XmlClassData TypeName="UIElement" MonikerAttributeName="" SerializeId="true" MonikerElementName="uIElementMoniker" ElementName="uIElement" MonikerTypeName="UIElementMoniker">
         <DomainClassMoniker Name="UIElement" />
@@ -995,12 +897,12 @@
         <GeometryShapeMoniker Name="CommentShape" />
       </ShapeMap>
       <CompartmentShapeMap>
-        <DomainClassMoniker Name="Enum" />
+        <DomainClassMoniker Name="ExternalType" />
         <ParentElementPath>
           <DomainPath>ModelRootHasTypes.ModelRoot/!ModelRoot</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="EnumShape/Name" />
+          <TextDecoratorMoniker Name="ExternalTypeShape/Name" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="NamedElement/Name" />
@@ -1008,18 +910,7 @@
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
-        <CompartmentShapeMoniker Name="EnumShape" />
-        <CompartmentMap>
-          <CompartmentMoniker Name="EnumShape/EnumAttributes" />
-          <ElementsDisplayed>
-            <DomainPath>EnumHasValues.Values/!EnumAttribute</DomainPath>
-          </ElementsDisplayed>
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="NamedElement/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </CompartmentMap>
+        <CompartmentShapeMoniker Name="ExternalTypeShape" />
       </CompartmentShapeMap>
       <CompartmentShapeMap>
         <DomainClassMoniker Name="Tab" />
@@ -1114,7 +1005,7 @@
         <DomainRelationshipMoniker Name="TabReferencesTargetTabbed" />
       </ConnectorMap>
       <ConnectorMap>
-        <ConnectorMoniker Name="TabConnector" />
+        <ConnectorMoniker Name="ViewModelConnector" />
         <DomainRelationshipMoniker Name="TabReferencesDataGrid" />
       </ConnectorMap>
     </ConnectorMaps>
@@ -1127,8 +1018,8 @@
       <XmlSerializationBehaviorMoniker Name="PowerFunctionsReportDSLSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="PowerFunctionsReportDSL">
-      <ElementTool Name="Enum" ToolboxIcon="Resources\ClassTool.bmp" Caption="Enum" Tooltip="Enum" HelpKeyword="Enum">
-        <DomainClassMoniker Name="Enum" />
+      <ElementTool Name="ExternalType" ToolboxIcon="Resources\ClassTool.bmp" Caption="External Type" Tooltip="External Type" HelpKeyword="ExternalType">
+        <DomainClassMoniker Name="ExternalType" />
       </ElementTool>
       <ElementTool Name="Comment" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Comment" Tooltip="Comment" HelpKeyword="Comment">
         <DomainClassMoniker Name="Comment" />

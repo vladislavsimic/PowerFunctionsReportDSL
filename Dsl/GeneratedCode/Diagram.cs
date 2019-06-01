@@ -278,8 +278,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			if (connector == null)
 				throw new global::System.ArgumentNullException("connector");
 			#endregion
-			if (connector.GetType() == typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ViewModelConnector))
-				return false;
 			if (connector.GetType() == typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.UIConnector))
 				return false;
 			return base.IsConnectorMappedToLink(connector);
@@ -292,9 +290,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
-			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)
+			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType)
 			{
-				global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape(this.Partition);
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -328,7 +326,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 			if(element is global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesDataGrid)
 			{
-				global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabConnector(this.Partition);
+				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ViewModelConnector newShape = new global::SchneiderElectricDMS.PowerFunctionsReportDSL.ViewModelConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -342,18 +340,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape.DecoratorsInitialized += EnumShapeDecoratorMap.OnDecoratorsInitialized;
+			global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape.DecoratorsInitialized += ExternalTypeShapeDecoratorMap.OnDecoratorsInitialized;
 			global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape.DecoratorsInitialized += TabShapeDecoratorMap.OnDecoratorsInitialized;
 			global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridShape.DecoratorsInitialized += DataGridShapeDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for EnumShape.
+		/// Class containing decorator path traversal methods for ExternalTypeShape.
 		/// </summary>
-		internal static partial class EnumShapeDecoratorMap
+		internal static partial class ExternalTypeShapeDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for EnumShape.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for ExternalTypeShape.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
@@ -599,7 +597,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGrid), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Comment), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
@@ -621,9 +619,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
-				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)
+				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType)
 				{
-					parentElement = GetParentForEnum((global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)childElement);
+					parentElement = GetParentForExternalType((global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType)childElement);
 				} else
 				if(childElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.Tab)
 				{
@@ -653,7 +651,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot GetParentForEnum( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType root )
+			public static global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot GetParentForExternalType( global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelType root )
 			{
 				// Segments 0 and 1
 				global::SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRoot result = root.ModelRoot;
@@ -762,7 +760,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule to update compartments when an item is added to the list
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
@@ -783,11 +780,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				if(e==null) throw new global::System.ArgumentNullException("e");
 				if (e.ModelElement.IsDeleted)
 					return;
-				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)
-				{
-					global::System.Collections.IEnumerable elements = GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)e.ModelElement);
-					UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
-				}
 				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes)
 				{
 					global::System.Collections.IEnumerable elements = GetTabForTabShapeAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes)e.ModelElement);
@@ -811,20 +803,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			}
 			
 			#region static DomainPath traversal methods to get the list of compartments to update
-			internal static global::System.Collections.ICollection GetEnumForEnumShapeEnumAttributesFromLastLink(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues root)
-			{
-				// Segment 0
-				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum result = root.Enum;
-				if ( result == null ) return new DslModeling::ModelElement[0];
-				return new DslModeling::ModelElement[] {result};
-			}
-			internal static global::System.Collections.ICollection GetEnumForEnumShapeEnumAttributes(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute root)
-			{
-				// Segments 1 and 0
-				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum result = root.Enum;
-				if ( result == null ) return new DslModeling::ModelElement[0];
-				return new DslModeling::ModelElement[] {result};
-			}
 			internal static global::System.Collections.ICollection GetTabForTabShapeAttributesFromLastLink(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes root)
 			{
 				// Segment 0
@@ -926,7 +904,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule to update compartments when an items is removed from the list
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
@@ -945,11 +922,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			internal static void ElementDeleted(DslModeling::ElementDeletedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)
-				{
-					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
-				}
 				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes)
 				{
 					global::System.Collections.ICollection elements = CompartmentItemAddRule.GetTabForTabShapeAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes)e.ModelElement);
@@ -976,7 +948,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule to update compartments when the property on an item being displayed changes.
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ColumnAttribute), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
@@ -995,11 +966,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			internal static void ElementPropertyChanged(DslModeling::ElementPropertyChangedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute.NameDomainPropertyId)
-				{
-					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.ModelElement);
-					CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
-				}
 				if(e.ModelElement is global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute && e.DomainProperty.Id == global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute.NameDomainPropertyId)
 				{
 					global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetTabForTabShapeAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabAttribute)e.ModelElement);
@@ -1026,7 +992,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule to update compartments when a roleplayer change happens
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
@@ -1045,33 +1010,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			internal static void RolePlayerChanged(DslModeling::RolePlayerChangedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
-				{
-					if(e.DomainRole.IsSource)
-					{
-						//global::System.Collections.IEnumerable oldElements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.OldRolePlayer);
-						//foreach(DslModeling::ModelElement element in oldElements)
-						//{
-						//	DslModeling::LinkedElementCollection<DslDiagrams::PresentationElement> pels = DslDiagrams::PresentationViewsSubject.GetPresentation(element);
-						//	foreach(DslDiagrams::PresentationElement pel in pels)
-						//	{
-						//		global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape compartmentShape = pel as global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape;
-						//		if(compartmentShape != null)
-						//		{
-						//			compartmentShape.GetCompartmentMappings()[0].InitializeCompartmentShape(compartmentShape);
-						//		}
-						//	}
-						//}
-						
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributesFromLastLink((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues)e.ElementLink);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
-					}
-					else 
-					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.NewRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
-					}
-				}
 				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
 				{
 					if(e.DomainRole.IsSource)
@@ -1186,7 +1124,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// <summary>
 		/// Rule to update compartments when the order of items in the list changes.
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasAttributes), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.DataGridHasColumns), FireTime=DslModeling::TimeToFire.TopLevelCommit, InitiallyDisabled=true)]
@@ -1205,14 +1142,6 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			internal static void RolePlayerPositionChanged(DslModeling::RolePlayerOrderChangedEventArgs e, bool repaintOnly)
 			{
 				if(e==null) throw new global::System.ArgumentNullException("e");
-				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
-				{
-					if(!e.CounterpartDomainRole.IsSource)
-					{
-						global::System.Collections.IEnumerable elements = CompartmentItemAddRule.GetEnumForEnumShapeEnumAttributes((global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute)e.CounterpartRolePlayer);
-						CompartmentItemAddRule.UpdateCompartments(elements, typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape), "EnumAttributes", repaintOnly);
-					}
-				}
 				if(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.TabHasAttributes).IsAssignableFrom(e.DomainRelationship.ImplementationClass))
 				{
 					if(!e.CounterpartDomainRole.IsSource)

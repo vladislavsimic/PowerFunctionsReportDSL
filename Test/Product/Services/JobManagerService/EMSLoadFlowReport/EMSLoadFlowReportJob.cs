@@ -258,16 +258,22 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 		{
 			switch (reportType)
 			{
-				case EMSLoadFlowReportType.Tab1:
+				case EMSLoadFlowReportType.Node:
 					{
-						List<DataGrid1Record> records = CreateDataGrid1Records();
-						DataGrid1Results results = new DataGrid1Results { Records = records };
+						List<EMSLoadFlowNodeRecord> records = CreateEMSLoadFlowNodeRecords();
+						EMSLoadFlowNodeResults results = new EMSLoadFlowNodeResults { Records = records };
 						return results;
 					}
-				case EMSLoadFlowReportType.Tab2:
+				case EMSLoadFlowReportType.Generator:
 					{
-						List<DataGrid2Record> records = CreateDataGrid2Records();
-						DataGrid2Results results = new DataGrid2Results { Records = records };
+						List<EMSLoadFlowGeneratorRecord> records = CreateEMSLoadFlowGeneratorRecords();
+						EMSLoadFlowGeneratorResults results = new EMSLoadFlowGeneratorResults { Records = records };
+						return results;
+					}
+				case EMSLoadFlowReportType.Load:
+					{
+						List<EMSLoadFlowLoadRecord> records = CreateEMSLoadFlowLoadRecords();
+						EMSLoadFlowLoadResults results = new EMSLoadFlowLoadResults { Records = records };
 						return results;
 					}
 				default:
@@ -279,44 +285,44 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 		}
 
 
-		#region DataGrid1Record
+		#region EMSLoadFlowNodeRecord
 
-		private List<DataGrid1Record> CreateDataGrid1Records()
+		private List<EMSLoadFlowNodeRecord> CreateEMSLoadFlowNodeRecords()
 		{
-			List<DataGrid1Record> records = new List<DataGrid1Record>();
+			List<EMSLoadFlowNodeRecord> records = new List<EMSLoadFlowNodeRecord>();
 			try
 			{
-				List<long> gids = GetElementsForSelectedCircuits(selectedRecords, ModelCode., ModelCode.TARESVAL_PARENTCIRCUIT);
-				FillDataGrid1Properties(gids);
+				List<long> gids = GetElementsForSelectedCircuits(selectedRecords, ModelCode.BUSNODERESULTSTA, ModelCode.TARESVAL_PARENTCIRCUIT);
+				FillEMSLoadFlowNodeProperties(gids);
 				GetElementsNames(gids);
 				foreach (long id in selectedRecords)
 				{
-					DataGrid1Record circuitRecord = CreateDataGrid1Record(hierarchyTreeFilter, id);
+					EMSLoadFlowNodeRecord circuitRecord = CreateEMSLoadFlowNodeRecord(hierarchyTreeFilter, id);
 					records.Add(circuitRecord);
 					if (hierarchyTreeFilter.GetNodeByLid(id).Children == null) continue;
 					foreach (HierarchicalFilterNode childNode in hierarchyTreeFilter.GetNodeByLid(id).Children)
 					{
-						if ((DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(childNode.Lid) != DMSType.) continue;
+						if ((DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(childNode.Lid) != DMSType.BUSNODE) continue;
 						MeasurementValueQuality lfQuality;
 						if (!lfMeasureQuality.TryGetValue(id, out lfQuality) || CheckIsLFStatusDisabled(lfQuality))
 						{
 							continue;
 						}
-						records.Add(CreateDataGrid1Record(hierarchyTreeFilter, childNode.Lid));
+						records.Add(CreateEMSLoadFlowNodeRecord(hierarchyTreeFilter, childNode.Lid));
 					}
 				}
 			}
 			catch (Exception)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while creating DataGrid1 records.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while creating EMSLoadFlowNode records.");
 				throw;
 			}
 			return records;
 		}
 
-		private DataGrid1Record CreateDataGrid1Record(HierarchicalFilter hierarchyTree, long id)
+		private EMSLoadFlowNodeRecord CreateEMSLoadFlowNodeRecord(HierarchicalFilter hierarchyTree, long id)
 		{
-			DataGrid1Record rec = new DataGrid1Record();
+			EMSLoadFlowNodeRecord rec = new EMSLoadFlowNodeRecord();
 			HierarchicalRecordData recordData;
 			if (!hierarchicalRecordData.TryGetValue(id, out recordData))
 			{
@@ -334,19 +340,23 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			rec.Lid = id;
 			rec.Level = (byte)hierarchyTreeFilter.GetNodeByLid(id).Level;
 			EMSLoadFlowRecordBean data = recordData as EMSLoadFlowRecordBean;
-			if (data != null && (DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(id) == DMSType.)
+			if (data != null && (DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(id) == DMSType.BUSNODE)
 			{
-				rec.P = data.P;
+				rec.Voltage = data.Voltage;
+				rec.VoltageLevel = data.VoltageLevel;
+				rec.PNode = data.PNode;
 			}
 			return rec;
 		}
 
-		private void FillDataGrid1Properties(List<long> gids)
+		private void FillEMSLoadFlowNodeProperties(List<long> gids)
 		{
 			long mdc = 0;
 			if (gids.Count <= 0) return;
 			var iteratorId = GdaQuery.GetDescendentValues(0,
 				new List<ModelCode> {
+					ModelCode.BUSNODERESLF_LINETOLINE_VMIN,
+					ModelCode.,
 					ModelCode.,
 
 				}, new List<Association>(), gids, new List<Association>(), ref mdc);
@@ -359,10 +369,12 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 					EMSLoadFlowRecordBean data = (hierarchicalRecordData[rds[i].Id] as EMSLoadFlowRecordBean);
 					if (data == null)
 					{
-						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting DataGrid1. Record data is null!");
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting EMSLoadFlowNode. Record data is null!");
 						throw new ArgumentNullException("gids");
 					}
-					data.P = rds[i].GetProperty(ModelCode.).AsFloat();
+					data.Voltage = rds[i].GetProperty(ModelCode.BUSNODERESLF_LINETOLINE_VMIN).AsEnum();
+					data.VoltageLevel = rds[i].GetProperty(ModelCode.).AsFloat();
+					data.PNode = rds[i].GetProperty(ModelCode.).AsFloat();
 
 				}
 				count -= rds.Count;
@@ -370,22 +382,22 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			GdaQuery.IteratorClose(iteratorId);
 		}
 
-		#endregion DataGrid1Record
+		#endregion EMSLoadFlowNodeRecord
 
 
-		#region DataGrid2Record
+		#region EMSLoadFlowGeneratorRecord
 
-		private List<DataGrid2Record> CreateDataGrid2Records()
+		private List<EMSLoadFlowGeneratorRecord> CreateEMSLoadFlowGeneratorRecords()
 		{
-			List<DataGrid2Record> records = new List<DataGrid2Record>();
+			List<EMSLoadFlowGeneratorRecord> records = new List<EMSLoadFlowGeneratorRecord>();
 			try
 			{
 				List<long> gids = GetElementsForSelectedCircuits(selectedRecords, ModelCode., ModelCode.TARESVAL_PARENTCIRCUIT);
-				FillDataGrid2Properties(gids);
+				FillEMSLoadFlowGeneratorProperties(gids);
 				GetElementsNames(gids);
 				foreach (long id in selectedRecords)
 				{
-					DataGrid2Record circuitRecord = CreateDataGrid2Record(hierarchyTreeFilter, id);
+					EMSLoadFlowGeneratorRecord circuitRecord = CreateEMSLoadFlowGeneratorRecord(hierarchyTreeFilter, id);
 					records.Add(circuitRecord);
 					if (hierarchyTreeFilter.GetNodeByLid(id).Children == null) continue;
 					foreach (HierarchicalFilterNode childNode in hierarchyTreeFilter.GetNodeByLid(id).Children)
@@ -396,21 +408,21 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 						{
 							continue;
 						}
-						records.Add(CreateDataGrid2Record(hierarchyTreeFilter, childNode.Lid));
+						records.Add(CreateEMSLoadFlowGeneratorRecord(hierarchyTreeFilter, childNode.Lid));
 					}
 				}
 			}
 			catch (Exception)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while creating DataGrid2 records.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while creating EMSLoadFlowGenerator records.");
 				throw;
 			}
 			return records;
 		}
 
-		private DataGrid2Record CreateDataGrid2Record(HierarchicalFilter hierarchyTree, long id)
+		private EMSLoadFlowGeneratorRecord CreateEMSLoadFlowGeneratorRecord(HierarchicalFilter hierarchyTree, long id)
 		{
-			DataGrid2Record rec = new DataGrid2Record();
+			EMSLoadFlowGeneratorRecord rec = new EMSLoadFlowGeneratorRecord();
 			HierarchicalRecordData recordData;
 			if (!hierarchicalRecordData.TryGetValue(id, out recordData))
 			{
@@ -434,7 +446,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			return rec;
 		}
 
-		private void FillDataGrid2Properties(List<long> gids)
+		private void FillEMSLoadFlowGeneratorProperties(List<long> gids)
 		{
 			long mdc = 0;
 			if (gids.Count <= 0) return;
@@ -451,7 +463,7 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 					EMSLoadFlowRecordBean data = (hierarchicalRecordData[rds[i].Id] as EMSLoadFlowRecordBean);
 					if (data == null)
 					{
-						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting DataGrid2. Record data is null!");
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting EMSLoadFlowGenerator. Record data is null!");
 						throw new ArgumentNullException("gids");
 					}
 
@@ -461,7 +473,98 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 			GdaQuery.IteratorClose(iteratorId);
 		}
 
-		#endregion DataGrid2Record
+		#endregion EMSLoadFlowGeneratorRecord
+
+
+		#region EMSLoadFlowLoadRecord
+
+		private List<EMSLoadFlowLoadRecord> CreateEMSLoadFlowLoadRecords()
+		{
+			List<EMSLoadFlowLoadRecord> records = new List<EMSLoadFlowLoadRecord>();
+			try
+			{
+				List<long> gids = GetElementsForSelectedCircuits(selectedRecords, ModelCode., ModelCode.TARESVAL_PARENTCIRCUIT);
+				FillEMSLoadFlowLoadProperties(gids);
+				GetElementsNames(gids);
+				foreach (long id in selectedRecords)
+				{
+					EMSLoadFlowLoadRecord circuitRecord = CreateEMSLoadFlowLoadRecord(hierarchyTreeFilter, id);
+					records.Add(circuitRecord);
+					if (hierarchyTreeFilter.GetNodeByLid(id).Children == null) continue;
+					foreach (HierarchicalFilterNode childNode in hierarchyTreeFilter.GetNodeByLid(id).Children)
+					{
+						if ((DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(childNode.Lid) != DMSType.) continue;
+						MeasurementValueQuality lfQuality;
+						if (!lfMeasureQuality.TryGetValue(id, out lfQuality) || CheckIsLFStatusDisabled(lfQuality))
+						{
+							continue;
+						}
+						records.Add(CreateEMSLoadFlowLoadRecord(hierarchyTreeFilter, childNode.Lid));
+					}
+				}
+			}
+			catch (Exception)
+			{
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while creating EMSLoadFlowLoad records.");
+				throw;
+			}
+			return records;
+		}
+
+		private EMSLoadFlowLoadRecord CreateEMSLoadFlowLoadRecord(HierarchicalFilter hierarchyTree, long id)
+		{
+			EMSLoadFlowLoadRecord rec = new EMSLoadFlowLoadRecord();
+			HierarchicalRecordData recordData;
+			if (!hierarchicalRecordData.TryGetValue(id, out recordData))
+			{
+				DMSLogger.Log(DMSLogger.LogLevel.DebugLog, "[EMSLoadFlow]: Record { 0:X} does not exists in hierarchical record data dictionary.", id);
+				return rec;
+			}
+			if (recordData.Name != null && !recordData.Name.Equals(string.Empty))
+			{
+				rec.Title = string.Format("{0}", recordData.Name);
+			}
+			else
+			{
+				rec.Title = string.Empty;
+			}
+			rec.Lid = id;
+			rec.Level = (byte)hierarchyTreeFilter.GetNodeByLid(id).Level;
+			EMSLoadFlowRecordBean data = recordData as EMSLoadFlowRecordBean;
+			if (data != null && (DMSType)ModelCodeHelper.ExtractTypeFromGlobalId(id) == DMSType.)
+			{
+			}
+			return rec;
+		}
+
+		private void FillEMSLoadFlowLoadProperties(List<long> gids)
+		{
+			long mdc = 0;
+			if (gids.Count <= 0) return;
+			var iteratorId = GdaQuery.GetDescendentValues(0,
+				new List<ModelCode> {
+
+				}, new List<Association>(), gids, new List<Association>(), ref mdc);
+			var count = GdaQuery.IteratorResourcesLeft(iteratorId);
+			while (count > 0)
+			{
+				List<ResourceDescription> rds = GdaQuery.IteratorNext(50000, iteratorId);
+				for (int i = 0; i < rds.Count; i++)
+				{
+					EMSLoadFlowRecordBean data = (hierarchicalRecordData[rds[i].Id] as EMSLoadFlowRecordBean);
+					if (data == null)
+					{
+						DMSLogger.Log(DMSLogger.LogLevel.Error, "[EMSLoadFlow]: Error occurred while collecting EMSLoadFlowLoad. Record data is null!");
+						throw new ArgumentNullException("gids");
+					}
+
+				}
+				count -= rds.Count;
+			}
+			GdaQuery.IteratorClose(iteratorId);
+		}
+
+		#endregion EMSLoadFlowLoadRecord
 
 
 

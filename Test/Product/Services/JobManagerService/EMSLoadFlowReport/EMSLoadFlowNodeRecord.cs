@@ -16,16 +16,18 @@ using System.Runtime.Serialization;
 
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
-
+	/// <summary>
+	/// Results for nodes
+	/// </summary>
     [DataContract]
-    public partial class DataGrid1Record : HierarchicalReportRecord
+    public partial class EMSLoadFlowNodeRecord : HierarchicalReportRecord
     {
         #region Constructors
 
 		/// <summary>
 		/// Default constructor
 		/// </summary>
-		public DataGrid1Record()
+		public EMSLoadFlowNodeRecord()
 		{
 		}
         
@@ -34,8 +36,17 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 
         #region Properties
         
+		/// <summary>
+		/// Voltage of node
+		/// </summary>
 		[DataMember]
-		public float P { get; set; }
+		public ELimitViolation Voltage { get; set; }
+
+		[DataMember]
+		public float VoltageLevel { get; set; }
+
+		[DataMember]
+		public float PNode { get; set; }
 
 
 

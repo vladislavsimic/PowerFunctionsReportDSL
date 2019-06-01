@@ -18,19 +18,19 @@ using System.Runtime.Serialization;
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
 	/// <summary>
-	/// Class containing the result for <see cref="DataGrid12Record">.
+	/// Class containing the result for <see cref="EMSLoadFlowLoadRecord">.
 	/// </summary>
     [DataContract]
-    public partial class DataGrid12Results : EMSLoadFlowReportResult
+    public partial class EMSLoadFlowLoadResults : EMSLoadFlowReportResult
     {
         #region Constructors
 
 		/// <summary>
 		/// Default constructor
 		/// </summary>
-		public DataGrid12Results()
+		public EMSLoadFlowLoadResults()
 		{
-			EMSLoadFlowReportType = EMSLoadFlowReportType.Tab12;
+			EMSLoadFlowReportType = EMSLoadFlowReportType.Load;
 		}
       
 
@@ -39,10 +39,10 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
         #region Properties
 
 		/// <summary>
-		/// The collection containing DataGrid12 records <see cref="DataGrid12Record"/>
+		/// The collection containing EMSLoadFlowLoad records <see cref="EMSLoadFlowLoadRecord"/>
 		/// </summary>
 		[DataMember]
-		public List<DataGrid12Record> Records { get; set; }
+		public List<EMSLoadFlowLoadRecord> Records { get; set; }
 
 
         #endregion Properties

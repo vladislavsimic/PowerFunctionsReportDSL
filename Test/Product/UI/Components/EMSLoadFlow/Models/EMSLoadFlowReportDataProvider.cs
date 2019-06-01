@@ -168,21 +168,30 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.Models
 				EMSLoadFlowReportResult reportResult = (EMSLoadFlowReportResult)result;
 				switch (reportResult.EMSLoadFlowReportType)
 				{
-					case EMSLoadFlowReportType.Tab1:
+					case EMSLoadFlowReportType.Node:
 						{
-							DataGrid1Results results = reportResult as DataGrid1Results;
+							EMSLoadFlowNodeResults results = reportResult as EMSLoadFlowNodeResults;
 							if (results != null && results.Records.Count != 0)
 							{
-								FillDataGrid1Results(results);
+								FillEMSLoadFlowNodeResults(results);
 							}
 							break;
 						}
-					case EMSLoadFlowReportType.Tab2:
+					case EMSLoadFlowReportType.Generator:
 						{
-							DataGrid2Results results = reportResult as DataGrid2Results;
+							EMSLoadFlowGeneratorResults results = reportResult as EMSLoadFlowGeneratorResults;
 							if (results != null && results.Records.Count != 0)
 							{
-								FillDataGrid2Results(results);
+								FillEMSLoadFlowGeneratorResults(results);
+							}
+							break;
+						}
+					case EMSLoadFlowReportType.Load:
+						{
+							EMSLoadFlowLoadResults results = reportResult as EMSLoadFlowLoadResults;
+							if (results != null && results.Records.Count != 0)
+							{
+								FillEMSLoadFlowLoadResults(results);
 							}
 							break;
 						}
@@ -194,46 +203,67 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.Models
 			}
 		}
 
-		internal void FillDataGrid1Results(DataGrid1Results result)
+		internal void FillEMSLoadFlowNodeResults(EMSLoadFlowNodeResults result)
 		{
-			List<DataGrid1ViewModel> records = new List<DataGrid1ViewModel>();
-			foreach (DataGrid1Record record in result.Records)
+			List<EMSLoadFlowNodeViewModel> records = new List<EMSLoadFlowNodeViewModel>();
+			foreach (EMSLoadFlowNodeRecord record in result.Records)
 			{
-				records.Add(new DataGrid1ViewModel(record, isTabularViewActive));
+				records.Add(new EMSLoadFlowNodeViewModel(record, isTabularViewActive));
 			}
 			if (records.Count > 0)
 			{
 				byte minLevel = records.Min(rec => rec.DataGridTreeViewItemInfo.Level);
 				if (minLevel > 0)
 				{
-					foreach (DataGrid1ViewModel record in records)
+					foreach (EMSLoadFlowNodeViewModel record in records)
 					{
 						record.DataGridTreeViewItemInfo.Level = (byte)(record.DataGridTreeViewItemInfo.Level - minLevel);
 					}
 				}
 			}
-			reportView.DataGrid1DataGrid.ItemsSource = records;
+			reportView.EMSLoadFlowNodeDataGrid.ItemsSource = records;
 		}
 
-		internal void FillDataGrid2Results(DataGrid2Results result)
+		internal void FillEMSLoadFlowGeneratorResults(EMSLoadFlowGeneratorResults result)
 		{
-			List<DataGrid2ViewModel> records = new List<DataGrid2ViewModel>();
-			foreach (DataGrid2Record record in result.Records)
+			List<EMSLoadFlowGeneratorViewModel> records = new List<EMSLoadFlowGeneratorViewModel>();
+			foreach (EMSLoadFlowGeneratorRecord record in result.Records)
 			{
-				records.Add(new DataGrid2ViewModel(record, isTabularViewActive));
+				records.Add(new EMSLoadFlowGeneratorViewModel(record, isTabularViewActive));
 			}
 			if (records.Count > 0)
 			{
 				byte minLevel = records.Min(rec => rec.DataGridTreeViewItemInfo.Level);
 				if (minLevel > 0)
 				{
-					foreach (DataGrid2ViewModel record in records)
+					foreach (EMSLoadFlowGeneratorViewModel record in records)
 					{
 						record.DataGridTreeViewItemInfo.Level = (byte)(record.DataGridTreeViewItemInfo.Level - minLevel);
 					}
 				}
 			}
-			reportView.DataGrid2DataGrid.ItemsSource = records;
+			reportView.EMSLoadFlowGeneratorDataGrid.ItemsSource = records;
+		}
+
+		internal void FillEMSLoadFlowLoadResults(EMSLoadFlowLoadResults result)
+		{
+			List<EMSLoadFlowLoadViewModel> records = new List<EMSLoadFlowLoadViewModel>();
+			foreach (EMSLoadFlowLoadRecord record in result.Records)
+			{
+				records.Add(new EMSLoadFlowLoadViewModel(record, isTabularViewActive));
+			}
+			if (records.Count > 0)
+			{
+				byte minLevel = records.Min(rec => rec.DataGridTreeViewItemInfo.Level);
+				if (minLevel > 0)
+				{
+					foreach (EMSLoadFlowLoadViewModel record in records)
+					{
+						record.DataGridTreeViewItemInfo.Level = (byte)(record.DataGridTreeViewItemInfo.Level - minLevel);
+					}
+				}
+			}
+			reportView.EMSLoadFlowLoadDataGrid.ItemsSource = records;
 		}
 
 

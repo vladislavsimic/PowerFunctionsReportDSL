@@ -165,14 +165,6 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement/Alias.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.Alias</value>
-    <comment>Description for DomainProperty &apos;Alias&apos; on DomainClass &apos;NamedElement&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement/Alias.DisplayName" xml:space="preserve">
-    <value>Alias</value>
-    <comment>DisplayName for DomainProperty &apos;Alias&apos; on DomainClass &apos;NamedElement&apos;</comment>
-  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelElement.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelElement</value>
     <comment>Description for DomainClass &apos;ModelElement&apos;</comment>
@@ -189,46 +181,6 @@
     <value>Description</value>
     <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;ModelElement&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute</value>
-    <comment>Description for DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.DisplayName" xml:space="preserve">
-    <value>Model Attribute</value>
-    <comment>DisplayName for DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/Type.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Type</value>
-    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/Type.DisplayName" xml:space="preserve">
-    <value>Type</value>
-    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/IsDataMember.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Is Data Member</value>
-    <comment>Description for DomainProperty &apos;IsDataMember&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/IsDataMember.DisplayName" xml:space="preserve">
-    <value>Is Data Member</value>
-    <comment>DisplayName for DomainProperty &apos;IsDataMember&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/ModelCode.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Model Code</value>
-    <comment>Description for DomainProperty &apos;ModelCode&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/ModelCode.DisplayName" xml:space="preserve">
-    <value>Model Code</value>
-    <comment>DisplayName for DomainProperty &apos;ModelCode&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/MeasurementType.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute.Measurement Type</value>
-    <comment>Description for DomainProperty &apos;MeasurementType&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelAttribute/MeasurementType.DisplayName" xml:space="preserve">
-    <value>Measurement Type</value>
-    <comment>DisplayName for DomainProperty &apos;MeasurementType&apos; on DomainClass &apos;ModelAttribute&apos;</comment>
-  </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass</value>
     <comment>Description for DomainClass &apos;ModelClass&apos;</comment>
@@ -237,29 +189,13 @@
     <value>Model Class</value>
     <comment>DisplayName for DomainClass &apos;ModelClass&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass/ShouldGenerate.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass.Should Generate</value>
-    <comment>Description for DomainProperty &apos;ShouldGenerate&apos; on DomainClass &apos;ModelClass&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType</value>
+    <comment>Description for DomainClass &apos;ExternalType&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelClass/ShouldGenerate.DisplayName" xml:space="preserve">
-    <value>Should Generate</value>
-    <comment>DisplayName for DomainProperty &apos;ShouldGenerate&apos; on DomainClass &apos;ModelClass&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Enum.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.Enum</value>
-    <comment>Description for DomainClass &apos;Enum&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.Enum.DisplayName" xml:space="preserve">
-    <value>Enum</value>
-    <comment>DisplayName for DomainClass &apos;Enum&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute</value>
-    <comment>Description for DomainClass &apos;EnumAttribute&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute.DisplayName" xml:space="preserve">
-    <value>Enum Attribute</value>
-    <comment>DisplayName for DomainClass &apos;EnumAttribute&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType.DisplayName" xml:space="preserve">
+    <value>External Type</value>
+    <comment>DisplayName for DomainClass &apos;ExternalType&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.UIElement</value>
@@ -580,38 +516,6 @@
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ModelRootHasTypes/ModelType.PropertyDisplayName" xml:space="preserve">
     <value>Model Root</value>
     <comment>PropertyDisplayName for DomainRole &apos;ModelType&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues</value>
-    <comment>Description for DomainClass &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.DisplayName" xml:space="preserve">
-    <value>Enum Has Values</value>
-    <comment>DisplayName for DomainClass &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues/Enum.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.Enum</value>
-    <comment>Description for DomainRole &apos;Enum&apos; on DomainRelationship &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues/Enum.DisplayName" xml:space="preserve">
-    <value>Enum</value>
-    <comment>DisplayName for DomainRole &apos;Enum&apos; on DomainRelationship &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues/Enum.PropertyDisplayName" xml:space="preserve">
-    <value>Values</value>
-    <comment>PropertyDisplayName for DomainRole &apos;Enum&apos; on DomainRelationship &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues/EnumAttribute.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues.EnumAttribute</value>
-    <comment>Description for DomainRole &apos;EnumAttribute&apos; on DomainRelationship &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues/EnumAttribute.DisplayName" xml:space="preserve">
-    <value>Enum Attribute</value>
-    <comment>DisplayName for DomainRole &apos;EnumAttribute&apos; on DomainRelationship &apos;EnumHasValues&apos;</comment>
-  </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumHasValues/EnumAttribute.PropertyDisplayName" xml:space="preserve">
-    <value>Enum</value>
-    <comment>PropertyDisplayName for DomainRole &apos;EnumAttribute&apos; on DomainRelationship &apos;EnumHasValues&apos;</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed.Description" xml:space="preserve">
     <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.TabReferencesTargetTabbed</value>
@@ -1589,20 +1493,20 @@
     <value>Comment Shape</value>
     <comment>DisplayName for DomainClass &apos;CommentShape&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape.Description" xml:space="preserve">
-    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape</value>
-    <comment>Description for DomainClass &apos;EnumShape&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape.Description" xml:space="preserve">
+    <value>Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape</value>
+    <comment>Description for DomainClass &apos;ExternalTypeShape&apos;</comment>
   </data>
-  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape.DisplayName" xml:space="preserve">
-    <value>Enum Shape</value>
-    <comment>DisplayName for DomainClass &apos;EnumShape&apos;</comment>
+  <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape.DisplayName" xml:space="preserve">
+    <value>External Type Shape</value>
+    <comment>DisplayName for DomainClass &apos;ExternalTypeShape&apos;</comment>
   </data>
-  <data name="EnumShapeEnumAttributesTitle" xml:space="preserve">
-    <value>Values</value>
-    <comment>Compartment title</comment>
-  </data>
-  <data name="EnumShapeNameDefaultText" xml:space="preserve">
+  <data name="ExternalTypeShapeNameDefaultText" xml:space="preserve">
     <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="ExternalTypeShapeStereotypeDefaultText" xml:space="preserve">
+    <value>&lt;&lt;External Type&gt;&gt;</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.TabShape.Description" xml:space="preserve">
@@ -1619,6 +1523,10 @@
   </data>
   <data name="TabShapeNameDefaultText" xml:space="preserve">
     <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="TabShapeStereotypeDefaultText" xml:space="preserve">
+    <value>&lt;&lt;Tab&gt;&gt;</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.UIElementShape.Description" xml:space="preserve">
@@ -1659,6 +1567,10 @@
   </data>
   <data name="DataGridShapeNameDefaultText" xml:space="preserve">
     <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DataGridShapeStereotypeDefaultText" xml:space="preserve">
+    <value>&lt;&lt;DataGrid&gt;&gt;</value>
     <comment>Text decorator default text</comment>
   </data>
   <data name="SchneiderElectricDMS.PowerFunctionsReportDSL.CommentConnector.Description" xml:space="preserve">
@@ -1713,12 +1625,12 @@
     <value>PowerFunctionsReportDSL</value>
     <comment>Toolbox item tab name</comment>
   </data>
-  <data name="EnumToolboxItem" xml:space="preserve">
-    <value>Enum</value>
+  <data name="ExternalTypeToolboxItem" xml:space="preserve">
+    <value>External Type</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="EnumToolboxTooltip" xml:space="preserve">
-    <value>Enum</value>
+  <data name="ExternalTypeToolboxTooltip" xml:space="preserve">
+    <value>External Type</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="CommentToolboxItem" xml:space="preserve">
@@ -1894,7 +1806,7 @@ A DomainClass can be serialized as a moniker only if
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EnumToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="ExternalTypeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ClassTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

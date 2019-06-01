@@ -163,15 +163,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 {
 	/// <summary>
-	/// DomainClass EnumShape
-	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape
+	/// DomainClass ExternalTypeShape
+	/// Description for SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.EnumShape.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape.DisplayName", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeShape.Description", typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel), "SchneiderElectricDMS.PowerFunctionsReportDSL.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("66b09fe4-0a78-43b4-9f09-385e4e2dfb29")]
-	public partial class EnumShape : DslDiagrams::CompartmentShape
+	public partial class ExternalTypeShape : DslDiagrams::CompartmentShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -236,9 +236,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with EnumShape.
+		/// Finds a decorator associated with ExternalTypeShape.
 		/// </summary>
-		public static DslDiagrams::Decorator FindEnumShapeDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindExternalTypeShapeDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -326,7 +326,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		{
 			base.InitializeShapeFields(shapeFields);
 			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
-			field1.DefaultText = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("EnumShapeNameDefaultText");
+			field1.DefaultText = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("ExternalTypeShapeNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -338,6 +338,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			field2.DefaultSelectable = false;
 			field2.DefaultFocusable = false;
 			shapeFields.Add(field2);
+			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("Stereotype");
+			field3.DefaultText = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("ExternalTypeShapeStereotypeDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
 			
 		}
 		
@@ -351,12 +360,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, new DslDiagrams::PointD(0, 0.15));
 			decorators.Add(decorator1);
 				
 			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ExpandCollapseDecorator");
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ExpandCollapseDecorator(this.Store, (DslDiagrams::ToggleButtonField)field2, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Stereotype");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
 				
 		}
 		
@@ -410,24 +423,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					localCompartmentsOffset = baseCompartmentDescriptions.Length;
 				}
-				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[1+localCompartmentsOffset];
+				compartmentDescriptions = new DslDiagrams::ElementListCompartmentDescription[0+localCompartmentsOffset];
 				
 				if(baseCompartmentDescriptions!=null)
 				{
 					baseCompartmentDescriptions.CopyTo(compartmentDescriptions, 0);	
 				}
-				{
-					string title = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("EnumShapeEnumAttributesTitle");
-					DslDiagrams::ElementListCompartmentDescription descriptor = new DslDiagrams::ElementListCompartmentDescription("EnumAttributes", title, 
-						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LightGray), false, 
-						global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.White), false,
-						null, null,
-						false);
-					compartmentDescriptions[localCompartmentsOffset+0] = descriptor;
-				}
 			}
 			
-			return EnumShape.compartmentDescriptions;
+			return ExternalTypeShape.compartmentDescriptions;
 		}
 		
 		private static global::System.Collections.Generic.Dictionary<global::System.Type, DslDiagrams::CompartmentMapping[]> compartmentMappings;
@@ -451,27 +455,19 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 				{
 					// First we get the mappings defined for the base shape, and add on any mappings defined for this
 					// shape. 
-					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum));
+					DslDiagrams::CompartmentMapping[] baseMappings = base.GetCompartmentMappings(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType));
 					int localCompartmentMappingsOffset = 0;
 					if(baseMappings!=null)
 					{
 						localCompartmentMappingsOffset = baseMappings.Length;
 					}
-					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[1+localCompartmentMappingsOffset];
+					DslDiagrams::CompartmentMapping[] mappings = new DslDiagrams::CompartmentMapping[0+localCompartmentMappingsOffset];
 					
 					if(baseMappings!=null)
 					{
 						baseMappings.CopyTo(mappings, 0);
 					}
-					mappings[localCompartmentMappingsOffset+0] = new DslDiagrams::ElementListCompartmentMapping(
-																				"EnumAttributes", 
-																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.NamedElement.NameDomainPropertyId, 
-																				global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute.DomainClassId, 
-																				GetElementsFromEnumForEnumAttributes,
-																				null,
-																				null,
-																				null);
-					compartmentMappings.Add(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum), mappings);
+					compartmentMappings.Add(typeof(global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType), mappings);
 				}
 			}
 			
@@ -500,20 +496,13 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		}
 		
 			#region DomainPath traversal methods to get the list of elements to display in a compartment.
-			internal static global::System.Collections.IList GetElementsFromEnumForEnumAttributes(DslModeling::ModelElement rootElement)
-			{
-				global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum root = (global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum)rootElement;
-					// Segments 0 and 1
-					DslModeling::LinkedElementCollection<global::SchneiderElectricDMS.PowerFunctionsReportDSL.EnumAttribute> result = root.Values;
-				return result;
-			}
 			#endregion
 		
 		#endregion
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// EnumShape domain class Id.
+		/// ExternalTypeShape domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x66b09fe4, 0x0a78, 0x43b4, 0x9f, 0x09, 0x38, 0x5e, 0x4e, 0x2d, 0xfb, 0x29);
 		/// <summary>
@@ -521,7 +510,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public EnumShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ExternalTypeShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -531,7 +520,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public EnumShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ExternalTypeShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -669,7 +658,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ShapeOutline, outlinePen);
 			// Fill brush settings for this shape.
 			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
-			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.Gray);
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.SkyBlue);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
 		
 		}
@@ -717,6 +706,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			field2.DefaultFocusable = false;
 			shapeFields.Add(field2);
 			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("Stereotype");
+			field3.DefaultText = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("TabShapeStereotypeDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
+			
 		}
 		
 		/// <summary>
@@ -729,12 +727,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, new DslDiagrams::PointD(0, 0.15));
 			decorators.Add(decorator1);
 				
 			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ExpandCollapseDecorator1");
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ExpandCollapseDecorator(this.Store, (DslDiagrams::ToggleButtonField)field2, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Stereotype");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
 				
 		}
 		
@@ -1274,7 +1276,7 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ShapeOutline, outlinePen);
 			// Fill brush settings for this shape.
 			DslDiagrams::BrushSettings backgroundBrush = new DslDiagrams::BrushSettings();
-			backgroundBrush.Color = global::System.Drawing.Color.FromArgb(255, 128, 255, 128);
+			backgroundBrush.Color = global::System.Drawing.Color.FromKnownColor(global::System.Drawing.KnownColor.LimeGreen);
 			classStyleSet.OverrideBrush(DslDiagrams::DiagramBrushes.ShapeBackground, backgroundBrush);
 		
 		}
@@ -1322,6 +1324,15 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			field2.DefaultFocusable = false;
 			shapeFields.Add(field2);
 			
+			DslDiagrams::TextField field3 = new DslDiagrams::TextField("Stereotype");
+			field3.DefaultText = global::SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLDomainModel.SingletonResourceManager.GetString("DataGridShapeStereotypeDefaultText");
+			field3.DefaultFocusable = true;
+			field3.DefaultAutoSize = true;
+			field3.AnchoringBehavior.MinimumHeightInLines = 1;
+			field3.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field3.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			shapeFields.Add(field3);
+			
 		}
 		
 		/// <summary>
@@ -1334,12 +1345,16 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			base.InitializeDecorators(shapeFields, decorators);
 			
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, new DslDiagrams::PointD(0, 0.15));
 			decorators.Add(decorator1);
 				
 			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "ExpandCollapseDecorator1");
 			DslDiagrams::Decorator decorator2 = new DslDiagrams::ExpandCollapseDecorator(this.Store, (DslDiagrams::ToggleButtonField)field2, DslDiagrams::ShapeDecoratorPosition.InnerTopRight, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator2);
+				
+			DslDiagrams::ShapeField field3 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Stereotype");
+			DslDiagrams::Decorator decorator3 = new DslDiagrams::ShapeDecorator(field3, DslDiagrams::ShapeDecoratorPosition.InnerTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator3);
 				
 		}
 		

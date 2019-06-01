@@ -21,11 +21,11 @@ using TelventDMS.Common.DMS.Common.Converters;
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 {
-    public partial class DataGrid1ViewModel : ViewModelBase, ILocatable
+    public partial class EMSLoadFlowLoadViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         
-		private DataGrid1Record reportRecord;
+		private EMSLoadFlowLoadRecord reportRecord;
 
 		private DMSType recordType;
 
@@ -38,16 +38,16 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Constructors
 
-		public DataGrid1ViewModel()
+		public EMSLoadFlowLoadViewModel()
 		{
 		}
  
 
-		public DataGrid1ViewModel(DataGrid1Record reportRecord, bool tabularViewActive)
+		public EMSLoadFlowLoadViewModel(EMSLoadFlowLoadRecord reportRecord, bool tabularViewActive)
 		{
 			if (reportRecord == null)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to DataGrid1ViewModel(), should not be null.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowLoadViewModel(), should not be null.");
 				return;
 			}
 			this.reportRecord = reportRecord;
@@ -107,7 +107,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public DataGrid1Record ReportRecord
+		public EMSLoadFlowLoadRecord ReportRecord
 		{
 			get
 			{
@@ -142,14 +142,6 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			{
 				rowIsNotVisible = value;
 				OnPropertyChanged("RowIsNotVisible");
-			}
-		}
-
-		public float P
-		{
-			get
-			{
-				return reportRecord.P;
 			}
 		}
 

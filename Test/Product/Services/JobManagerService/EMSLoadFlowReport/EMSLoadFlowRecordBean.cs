@@ -30,7 +30,11 @@ namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
         #region Properties
 
 		public MeasurementValueQuality Quality { get; set; }
-		public float P { get; set; }
+		public ELimitViolation Voltage { get; set; }
+
+		public float VoltageLevel { get; set; }
+
+		public float PNode { get; set; }
 
 
 

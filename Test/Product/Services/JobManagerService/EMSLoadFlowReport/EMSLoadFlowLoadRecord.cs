@@ -7,7 +7,6 @@
 //														        #
 //###############################################################
 
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,32 +16,25 @@ using System.Runtime.Serialization;
 
 namespace TelventDMS.Services.JobManagerService.EMSLoadFlowReport
 {
-	/// <summary>
-	/// Class containing the result for <see cref="DataGrid3Record">.
-	/// </summary>
+
     [DataContract]
-    public partial class DataGrid3Results : EMSLoadFlowReportResult
+    public partial class EMSLoadFlowLoadRecord : HierarchicalReportRecord
     {
         #region Constructors
 
 		/// <summary>
 		/// Default constructor
 		/// </summary>
-		public DataGrid3Results()
+		public EMSLoadFlowLoadRecord()
 		{
-			EMSLoadFlowReportType = EMSLoadFlowReportType.Tab4;
 		}
-      
+        
 
         #endregion Constructors
 
         #region Properties
+        
 
-		/// <summary>
-		/// The collection containing DataGrid3 records <see cref="DataGrid3Record"/>
-		/// </summary>
-		[DataMember]
-		public List<DataGrid3Record> Records { get; set; }
 
 
         #endregion Properties

@@ -21,11 +21,11 @@ using TelventDMS.Common.DMS.Common.Converters;
 
 namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 {
-    public partial class DataGrid2ViewModel : ViewModelBase, ILocatable
+    public partial class EMSLoadFlowNodeViewModel : ViewModelBase, ILocatable
     {
         #region Fields
         
-		private DataGrid2Record reportRecord;
+		private EMSLoadFlowNodeRecord reportRecord;
 
 		private DMSType recordType;
 
@@ -38,16 +38,16 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 
         #region Constructors
 
-		public DataGrid2ViewModel()
+		public EMSLoadFlowNodeViewModel()
 		{
 		}
  
 
-		public DataGrid2ViewModel(DataGrid2Record reportRecord, bool tabularViewActive)
+		public EMSLoadFlowNodeViewModel(EMSLoadFlowNodeRecord reportRecord, bool tabularViewActive)
 		{
 			if (reportRecord == null)
 			{
-				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to DataGrid2ViewModel(), should not be null.");
+				DMSLogger.Log(DMSLogger.LogLevel.Error, "Parameter reportRecord passed to EMSLoadFlowNodeViewModel(), should not be null.");
 				return;
 			}
 			this.reportRecord = reportRecord;
@@ -107,7 +107,7 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			}
 		}
 
-		public DataGrid2Record ReportRecord
+		public EMSLoadFlowNodeRecord ReportRecord
 		{
 			get
 			{
@@ -142,6 +142,33 @@ namespace TelventDMS.UI.Components.EMSLoadFlow.ViewModels
 			{
 				rowIsNotVisible = value;
 				OnPropertyChanged("RowIsNotVisible");
+			}
+		}
+
+		/// <summary>
+		/// Voltage of node
+		/// </summary>
+		public ELimitViolation Voltage
+		{
+			get
+			{
+				return UnitConverterHelper.ConvertFromDMS(MeasurementType.Voltage, reportRecord.Voltage);
+			}
+		}
+
+		public float VoltageLevel
+		{
+			get
+			{
+				return reportRecord.VoltageLevel;
+			}
+		}
+
+		public float PNode
+		{
+			get
+			{
+				return reportRecord.PNode;
 			}
 		}
 

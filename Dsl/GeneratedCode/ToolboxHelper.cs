@@ -155,18 +155,18 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 			global::System.Globalization.CultureInfo resourceCulture = global::System.Globalization.CultureInfo.CurrentUICulture;
 			switch(itemId)
 			{
-				case "SchneiderElectricDMS.PowerFunctionsReportDSL.EnumToolboxItem":
-					// Add Enum shape tool.
+				case "SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeToolboxItem":
+					// Add ExternalType shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"SchneiderElectricDMS.PowerFunctionsReportDSL.EnumToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						1, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("EnumToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EnumToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("ExternalTypeToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ExternalTypeToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("PowerFunctionsReportDSLToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"Enum", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("EnumToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.Enum.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						"ExternalType", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ExternalTypeToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalType.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

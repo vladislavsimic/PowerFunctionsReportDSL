@@ -1,35 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="baf507d9-b859-42af-9536-342c53941947" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
+<modelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6a24c7eb-e8a9-4ccb-a968-b9d3c56a6c76" name="EMSLoadFlow" xmlns="http://schemas.microsoft.com/dsltools/PowerFunctionsReportDSL">
   <types>
-    <modelRootHasTypes Id="852ca52d-f56d-43fb-b706-b1ec63e9613a">
-      <tab Id="f74f83a2-d829-42f6-8487-b54959acec96" name="Tab1">
+    <modelRootHasTypes Id="327d64e3-e49c-48df-b4a8-13958616903e">
+      <tab Id="4b68a016-7928-45dd-b21c-62ac733ec3f4" name="Node" header="Nodes">
         <dataGrid>
-          <tabReferencesDataGrid Id="5655747a-be81-4a7c-b9eb-ee96a3d71e84">
-            <dataGridMoniker Id="2e27a942-3661-42ca-9124-91411a79e8cc" />
+          <tabReferencesDataGrid Id="778ddc18-1815-4549-8df2-686f22790c84">
+            <dataGridMoniker Id="4d7035bc-328c-46fe-929e-82f9c95c1967" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="2a9533ce-e29e-4676-beeb-802a6a380bf3">
-      <dataGrid Id="2e27a942-3661-42ca-9124-91411a79e8cc" name="DataGrid1">
+    <modelRootHasTypes Id="387f346c-caa6-4029-86a7-a5d48ca10f94">
+      <dataGrid Id="4d7035bc-328c-46fe-929e-82f9c95c1967" name="EMSLoadFlowNode" modelCodeResultsType="BUSNODERESULTSTA" dMSType="BUSNODE" description="Results for nodes">
         <columns>
-          <dataGridHasColumns Id="2b7afce2-278b-4b45-8ae0-9867bcac2369">
-            <columnAttribute Id="e2a49734-7a55-4946-90d9-9f323cb8ed4a" name="P" header="P Inj" />
+          <dataGridHasColumns Id="5f3422ad-af88-4af7-902f-5e649d728388">
+            <columnAttribute Id="932c9bcc-6bb1-42b5-a685-409570095418" name="Voltage" header="Voltage" type="ELimitViolation" modelCode="BUSNODERESLF_LINETOLINE_VMIN" measurementType="Voltage" description="Voltage of node" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="fa0a6475-5a98-48d8-a366-7f84ea15d123">
+            <columnAttribute Id="5e19bfce-d2e8-4e07-b7ba-936f5e3761b1" name="VoltageLevel" />
+          </dataGridHasColumns>
+          <dataGridHasColumns Id="6d1d0274-855a-4104-bd8c-f9b0ab253837">
+            <columnAttribute Id="b5a75838-7a2f-4dc8-8c4d-07d47cdc265a" name="PNode" />
           </dataGridHasColumns>
         </columns>
+        <superHeaders>
+          <dataGridHasSuperHeaders Id="2954c58c-1ff4-49f8-a580-5cee7d2fd5b3">
+            <dataGridSuperHeader Id="9b383990-962a-4444-9443-c05c2eb54935" name="Voltage" column="Voltage" columnSpan="2" text="Voltages" />
+          </dataGridHasSuperHeaders>
+        </superHeaders>
       </dataGrid>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="54d1cf89-ccde-47a4-a88d-68f865a5747c">
-      <tab Id="be7aedae-fd27-4738-a366-417799b3450e" name="Tab2">
+    <modelRootHasTypes Id="2d05b900-7459-48cd-90ef-36ad175b6812">
+      <tab Id="a29e4462-75e5-41b5-b7f8-26922d454e27" name="Shunt" header="Shunts">
+        <targetTabbed>
+          <tabReferencesTargetTabbed Id="a9f29ac9-de1f-4135-8fff-e7f05a2bd512">
+            <tabMoniker Id="9e376701-79f0-457f-98fe-e7c184861032" />
+          </tabReferencesTargetTabbed>
+          <tabReferencesTargetTabbed Id="eff445b1-47fe-412b-9956-09e4d7cb783a">
+            <tabMoniker Id="2c40f8bd-edf6-419e-b802-2f0d4cf52990" />
+          </tabReferencesTargetTabbed>
+        </targetTabbed>
+      </tab>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="c1da299f-662a-4012-9f63-cb794203dfc3">
+      <tab Id="9e376701-79f0-457f-98fe-e7c184861032" name="Generator" header="Generators">
         <dataGrid>
-          <tabReferencesDataGrid Id="e1aa04a9-f407-41e9-ac9c-94d87d4db81d">
-            <dataGridMoniker Id="a8cc34ed-568a-4d16-a614-9399bc843d67" />
+          <tabReferencesDataGrid Id="98562b91-0a18-43e2-8bf2-0bf69c6dc34d">
+            <dataGridMoniker Id="8f872235-1d43-4b59-8d04-5afe687ad725" />
           </tabReferencesDataGrid>
         </dataGrid>
       </tab>
     </modelRootHasTypes>
-    <modelRootHasTypes Id="25487f51-f7af-4119-af3a-d1a618cf36b0">
-      <dataGrid Id="a8cc34ed-568a-4d16-a614-9399bc843d67" name="DataGrid2" />
+    <modelRootHasTypes Id="c14df8da-c385-47f7-bc52-64469cda9517">
+      <tab Id="2c40f8bd-edf6-419e-b802-2f0d4cf52990" name="Load" header="Loads">
+        <dataGrid>
+          <tabReferencesDataGrid Id="d55f934a-fafe-436b-99f1-8db05931e45b">
+            <dataGridMoniker Id="0b7eda20-92b7-4e25-9aaf-abaa111b6acd" />
+          </tabReferencesDataGrid>
+        </dataGrid>
+      </tab>
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="30123df0-62e7-4859-aee2-ae4a3292ac57">
+      <dataGrid Id="8f872235-1d43-4b59-8d04-5afe687ad725" name="EMSLoadFlowGenerator" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="18f570a0-2a0b-4dfd-aeef-a7e2eeeb5789">
+      <dataGrid Id="0b7eda20-92b7-4e25-9aaf-abaa111b6acd" name="EMSLoadFlowLoad" />
+    </modelRootHasTypes>
+    <modelRootHasTypes Id="4aa4baf3-9c00-463b-a029-2c5267a467af">
+      <externalType Id="cf750e19-4280-410e-9d25-c9fe74da812e" name="ELimitViolation" />
     </modelRootHasTypes>
   </types>
 </modelRoot>

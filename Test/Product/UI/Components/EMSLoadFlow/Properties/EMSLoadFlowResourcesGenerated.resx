@@ -120,8 +120,8 @@
   <data name="EMSLoadFlow_NETWORK_TREE" xml:space="preserve">
     <value>NETWORK_TREE</value>
   </data>
-  <data name="EMSLoadFlow_Tab1" xml:space="preserve">
-    <value>Tab1</value>
+  <data name="EMSLoadFlow_Nodes" xml:space="preserve">
+    <value>Nodes</value>
   </data>
   <data name="EMSLoadFlow_NO_RESULTS" xml:space="preserve">
     <value>NO_RESULTS</value>
@@ -129,10 +129,22 @@
   <data name="EMSLoadFlow_ELEMENT" xml:space="preserve">
     <value>ELEMENT</value>
   </data>
-  <data name="EMSLoadFlow_P_Inj" xml:space="preserve">
-    <value>P Inj</value>
+  <data name="EMSLoadFlow_VoltageLevel" xml:space="preserve">
+    <value>VoltageLevel</value>
   </data>
-  <data name="EMSLoadFlow_Tab2" xml:space="preserve">
-    <value>Tab2</value>
+  <data name="EMSLoadFlow_PNode" xml:space="preserve">
+    <value>PNode</value>
+  </data>
+  <data name="EMSLoadFlow_Shunts" xml:space="preserve">
+    <value>Shunts</value>
+  </data>
+  <data name="EMSLoadFlow_Generators" xml:space="preserve">
+    <value>Generators</value>
+  </data>
+  <data name="EMSLoadFlow_Loads" xml:space="preserve">
+    <value>Loads</value>
+  </data>
+  <data name="EMSLoadFlow_MEAS_UNIT_Voltage" xml:space="preserve">
+    <value>Voltage [{0}]</value>
   </data>
 </root>

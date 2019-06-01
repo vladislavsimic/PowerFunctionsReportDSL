@@ -52,11 +52,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 				List<string> enums = new List<string>();
 				foreach (ModelType modelType in attr.DataGrid.ModelRoot.Types)
 				{
-					if (!(modelType is Enum))
+					if (!(modelType is ExternalType))
 					{
 						continue;
 					}
-					Enum typeEnum = modelType as Enum;
+					ExternalType typeEnum = modelType as ExternalType;
 					enums.Add(typeEnum.Name);
 				}
 				if (enums.Contains(attr.Type))

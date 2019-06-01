@@ -29,11 +29,11 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL
 	[VSShell::ProvideToolWindowVisibility(typeof(PowerFunctionsReportDSLExplorerToolWindow), Constants.PowerFunctionsReportDSLEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@PowerFunctionsReportDSLToolboxTab;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", "SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",
-					"@EnumToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
-					"SchneiderElectricDMS.PowerFunctionsReportDSL.EnumToolboxItem", 
+					"@ExternalTypeToolboxItem;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"SchneiderElectricDMS.PowerFunctionsReportDSL.ExternalTypeToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"Enum", 
-					"@EnumToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
+					"ExternalType", 
+					"@ExternalTypeToolboxBitmap;SchneiderElectricDMS.PowerFunctionsReportDSL.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("SchneiderElectricDMS.PowerFunctionsReportDSL.PowerFunctionsReportDSLToolboxTab",

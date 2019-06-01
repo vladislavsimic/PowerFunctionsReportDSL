@@ -54,9 +54,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode
 			genCode = GenerateCode(JMSReportTypeTemplate, inputFileName, inputFileContent);
 			sb.AppendLine(genCode);
 
-			SCGTemplate JMSEnumTemplate = new SCGTemplate(CodeGenerationResource.JMSEnumTemplate, folderRelativePath, ".cs");
+			/*SCGTemplate JMSEnumTemplate = new SCGTemplate(CodeGenerationResource.JMSEnumTemplate, folderRelativePath, ".cs");
 			genCode = GenerateCode(JMSEnumTemplate, inputFileName, inputFileContent);
-			sb.AppendLine(genCode);
+			sb.AppendLine(genCode);*/
 
 			folderRelativePath = "\\";
 			sb.AppendLine("UI ::::\n\n");

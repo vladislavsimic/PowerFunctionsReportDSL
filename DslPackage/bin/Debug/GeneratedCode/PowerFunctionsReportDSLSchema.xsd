@@ -158,8 +158,6 @@
         </xsd:attribute>
         <!-- Property: Name -->
         <xsd:attribute name="name" type="xsd:string" />
-        <!-- Property: Alias -->
-        <xsd:attribute name="alias" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -210,41 +208,6 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ModelAttribute -->
-  <xsd:element name="modelAttribute" type="ModelAttribute" substitutionGroup="modelElement" />
-  <xsd:complexType name="ModelAttribute">
-    <xsd:complexContent>
-      <xsd:extension base="ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <!-- Property: Type -->
-        <xsd:attribute name="type" type="Types" />
-        <!-- Property: IsDataMember -->
-        <xsd:attribute name="isDataMember" type="xsd:boolean" />
-        <!-- Property: ModelCode -->
-        <xsd:attribute name="modelCode" type="xsd:string" />
-        <!-- Property: MeasurementType -->
-        <xsd:attribute name="measurementType" type="MeasurementType" />
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ModelAttribute Moniker -->
-  <xsd:element name="modelAttributeMoniker" type="ModelAttributeMoniker" substitutionGroup="modelElementMoniker" />
-  <xsd:complexType name="ModelAttributeMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ModelAttribute instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="ModelElementMoniker">
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
   <!-- ModelClass -->
   <xsd:element name="modelClass" abstract="true" type="ModelClass" substitutionGroup="modelType" />
   <xsd:complexType name="ModelClass" abstract="true" >
@@ -256,8 +219,6 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: ShouldGenerate -->
-        <xsd:attribute name="shouldGenerate" type="xsd:boolean" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -274,28 +235,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- Enum -->
-  <xsd:element name="enum" type="Enum" substitutionGroup="modelClass" />
-  <xsd:complexType name="Enum">
+  <!-- ExternalType -->
+  <xsd:element name="externalType" type="ExternalType" substitutionGroup="modelClass" />
+  <xsd:complexType name="ExternalType">
     <xsd:complexContent>
       <xsd:extension base="ModelClass">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: EnumHasValues -->
-          <xsd:element name="values" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of EnumHasValues</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="enumHasValues" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of EnumHasValues needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -306,41 +250,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- Enum Moniker -->
-  <xsd:element name="enumMoniker" type="EnumMoniker" substitutionGroup="modelClassMoniker" />
-  <xsd:complexType name="EnumMoniker">
+  <!-- ExternalType Moniker -->
+  <xsd:element name="externalTypeMoniker" type="ExternalTypeMoniker" substitutionGroup="modelClassMoniker" />
+  <xsd:complexType name="ExternalTypeMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for Enum instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ExternalType instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="ModelClassMoniker">
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- EnumAttribute -->
-  <xsd:element name="enumAttribute" type="EnumAttribute" substitutionGroup="modelElement" />
-  <xsd:complexType name="EnumAttribute">
-    <xsd:complexContent>
-      <xsd:extension base="ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- EnumAttribute Moniker -->
-  <xsd:element name="enumAttributeMoniker" type="EnumAttributeMoniker" substitutionGroup="modelElementMoniker" />
-  <xsd:complexType name="EnumAttributeMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for EnumAttribute instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="ModelElementMoniker">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -803,46 +720,6 @@
   <xsd:complexType name="ModelRootHasTypesMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for ModelRootHasTypes instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- EnumHasValues -->
-  <xsd:element name="enumHasValues" type="EnumHasValues" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="EnumHasValues">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end EnumAttribute -->
-          <xsd:element ref="enumAttribute" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- EnumHasValues Moniker -->
-  <xsd:element name="enumHasValuesMoniker" type="EnumHasValuesMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="EnumHasValuesMoniker">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for EnumHasValues instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

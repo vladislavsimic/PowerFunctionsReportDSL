@@ -61,9 +61,9 @@ namespace SchneiderElectricDMS.PowerFunctionsReportDSL.CustomCode.Converters
 			{
 				foreach (ModelType type in root.Types)
 				{
-					if(type is Enum)
+					if(type is ExternalType)
 					{
-						Enum typeEnum =  type as Enum;
+						ExternalType typeEnum =  type as ExternalType;
 						values.Add(typeEnum.Name);
 					}
 				}
